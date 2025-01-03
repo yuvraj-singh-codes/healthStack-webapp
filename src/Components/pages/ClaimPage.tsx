@@ -191,7 +191,7 @@ const ClaimPage = () => {
                 onClick={toggleText3}
               >
                 Insights Summary{" "}
-                <span style={{marginTop:"5px"}}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+                <span style={{ marginTop: "5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
               </Typography>
               {showText.text_3 && (
                 <>
@@ -199,7 +199,7 @@ const ClaimPage = () => {
                     These insights summarize the evidence on how sauna use impacts the risk of heart disease.
                   </Typography>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    {newClaim[0]?.claimImpactRatingDescription && <Grid item xs={12} sm={6} md={6}>
                       <Box
                         sx={{
                           display: "flex",
@@ -229,8 +229,8 @@ const ClaimPage = () => {
                           </Typography>
                         </Box>
                       </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} >
+                    </Grid>}
+                    {newClaim[0]?.claimMaturityRatingDescription && <Grid item xs={12} sm={6} md={6} >
                       <Box
                         sx={{
                           display: "flex",
@@ -260,8 +260,8 @@ const ClaimPage = () => {
                           </Typography>
                         </Box>
                       </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </Grid>}
+                    {newClaim[0]?.claimConsensusRatingDescription && <Grid item xs={12} sm={6} md={6}>
                       <Box
                         sx={{
                           display: "flex",
@@ -291,8 +291,8 @@ const ClaimPage = () => {
                           </Typography>
                         </Box>
                       </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    </Grid>}
+                    {newClaim[0]?.claimOverallEvidenceRatingDescription && <Grid item xs={12} sm={6} md={6}>
                       <Box
                         sx={{
                           display: "flex",
@@ -322,7 +322,7 @@ const ClaimPage = () => {
                           </Typography>
                         </Box>
                       </Box>
-                    </Grid>
+                    </Grid>}
                   </Grid>
                 </>
               )}

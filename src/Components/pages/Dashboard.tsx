@@ -15,8 +15,8 @@ function Dashboard() {
             }}
         >
             {/* Header */}
+            <Box sx={{ overflow: "auto", height: "90vh", alignItems: "center",position:"relative" }}>
             <Header />
-            <Box sx={{ overflow: "auto", height: "72vh", alignItems: "center" }}>
                 <Outlet />
             </Box>
             {/* Bottom Navigation */}

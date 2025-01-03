@@ -20,7 +20,7 @@ function Header() {
             <Box
                 sx={{
                     zIndex: 100000,
-                    height: "18vh",
+                    // height: "18vh",
                     backgroundColor: "rgba(255, 255, 255, 0.1)",
                     backdropFilter: "blur(5px)",
                     WebkitBackdropFilter: "blur(5px)",
@@ -35,7 +35,7 @@ function Header() {
                     />
                     <Typography sx={{ color: "#49454F", fontSize: "16px", fontWeight: 400 }}>Early Access</Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", gap: "20px", px: 2, }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: "20px", px: 2,pb:1 }}>
                     <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
                     <TextField
                         size="small"
