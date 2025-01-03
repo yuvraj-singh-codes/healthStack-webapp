@@ -1,0 +1,115 @@
+{
+    "protocols": [
+        {
+            "protocolID": "protocol_001",
+            "protocolName": "Sauna Therapy",
+            "protocolDescription": "A traditional practice involving heat exposure in a controlled environment, often used for relaxation and as part of cultural or wellness traditions.",
+            "protocolInstructions": "Spend 15–20 minutes in a sauna at 70-100°C, 2–3 times per week.",
+            "protocolImageID": "protocol_001_image",
+            "protocolLinkedBenefits": [
+                "benefit_001"
+            ],
+            "protocolSearchTerms": [
+                "heat therapy",
+                "sauna sessions",
+                "thermal therapy",
+                "steam bath",
+                "hot room",
+                "sweat lodge",
+                "dry sauna",
+                "infrared sauna",
+                "steam sauna",
+                "sweat bath",
+                "heat bath",
+                "Finnish sauna",
+                "banya",
+                "hot therapy",
+                "therapeutic heat",
+                "sweating session",
+                "detox sauna",
+                "infrared therapy"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 3,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 3.1
+        }
+    ],
+    "benefits": [
+        {
+            "benefitID": "benefit_001",
+            "benefitName": "Heart Health",
+            "benefitDescription": "Heart disease is the leading cause of death in many countries and should be a priority for overall health.",
+            "benefitImageID": "benefit_001_image",
+            "benefitLinkedProtocols": [
+                "protocol_001"
+            ],
+            "benefitSearchTerms": [
+                "heart health",
+                "cardiovascular wellness",
+                "circulation improvement",
+                "healthy heart",
+                "blood pressure management",
+                "vascular health",
+                "endothelial function",
+                "cardiovascular fitness",
+                "reduce heart disease risk",
+                "improve blood flow",
+                "arterial compliance",
+                "heart rate regulation",
+                "cardiac care",
+                "strengthen cardiovascular system"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        }
+    ],
+    "claims": [
+        {
+            "claimID": "claim_001",
+            "claimProtocolID": "protocol_001",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Sauna is linked to significant cardiovascular benefits. Regular use may lower the risk of heart disease, supported by growing evidence across various studies.",
+            "claimMechanisms": "Heat exposure induces an increase in heart rate and vascular compliance by promoting vasodilation and improving blood flow. This mimics the cardiovascular effects of light exercise, as the body's core temperature rises, stimulating the autonomic nervous system and enhancing circulation throughout the body.",
+            "claimProtocolInstructions": "1. Hydrate adequately before starting; drink at least 500 ml of water to prevent dehydration.\n2. Begin with 10-minute sessions at a moderate temperature (70–90°C or 158–194°F).\n3. Gradually increase session duration by 5-minute increments and heat intensity, aiming for a maximum of 20 minutes per session as tolerated.\n4. Take breaks between sessions if using multiple rounds to cool down and regulate your body temperature.\n5. Listen to your body; leave the sauna immediately if you feel lightheaded, dizzy, or overheated.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Studies suggest that regular sauna use can lower the risk of heart disease by up to 40%.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "The research is moderately established, with studies  spanning several decades.",
+            "claimConsensusRating": 3,
+            "claimConsensusRtingDescription": "While many studies support this, there is moderate variability in the results.",
+            "claimOverallEvidenceRating": 3.7,
+            "claimOverallEvidenceRatingDescription": "This protocol shows promising results, supported by moderate to high-quality evidence.",
+            "claimEasyWinRating": 3.4,
+            "claimSources": [
+                {
+                    "title": "Sauna Use and Cardiovascular Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2021,
+                    "url": "https://example.com/sauna-cardiovascular-health",
+                    "summary": "This study found that regular sauna use significantly reduces cardiovascular risks by improving vascular function."
+                },
+                {
+                    "title": "Heat Therapy and Heart Rate Variability",
+                    "authors": "Nguyen H., Patel K.",
+                    "publisher": "International Journal of Cardiology",
+                    "year": 2020,
+                    "url": "https://example.com/heat-heart-rate",
+                    "summary": "This research highlights how heat exposure from saunas improves heart rate variability, a key marker of cardiovascular health."
+                },
+                {
+                    "title": "Thermal Stress and Vascular Health",
+                    "authors": "Taylor B., Green L.",
+                    "publisher": "Journal of Vascular Research",
+                    "year": 2019,
+                    "url": "https://example.com/thermal-vascular-health",
+                    "summary": "Findings show that repeated heat exposure enhances vascular compliance and promotes endothelial function."
+                }
+            ]
+        }
+    ]
+}
