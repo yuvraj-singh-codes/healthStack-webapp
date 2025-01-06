@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaDollarSign } from "react-icons/fa6";
 import {
     Box,
@@ -12,14 +12,41 @@ import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
 import { Hourglass } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-import jsonData from '../../JSON_Example/JSON_example_vShort.json'
+// import jsonData from '../../JSON_Example/JSON_example_vShort.json'
+import jsonData from '../../JSON_Example/healthstack_data_example.json'
 
 const ProtocolBenefitPage: React.FC = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const protocolID = queryParams.get('id');
-    const { protocols } = jsonData;
-    const protocolsData = protocols.find((val) => val.protocolID === protocolID)
+    const { protocols, benefits } = jsonData;
+    const protocolsData = protocols.find((val) => val.protocolID === protocolID);
+    const filterOptionsData = ["Physical Health", "Mental Health"];
+    const [selectedFilters, setSelectedFilters] = useState<Record<string, boolean>>(() =>
+        filterOptionsData.reduce((acc, option) => {
+            acc[option] = true;
+            return acc;
+        }, {} as Record<string, boolean>)
+    );
+
+    // Update selected filters
+    const handleFilterChange = (label: string) => {
+        setSelectedFilters((prev) => ({
+            ...prev,
+            [label]: !prev[label],
+        }));
+    };
+
+    // Filter the benefit categories dynamically
+    const filteredBenefits = benefits.map((benefit) => ({
+        ...benefit,
+        benefitCategories: benefit.benefitCategories.filter((category) =>
+            Object.keys(selectedFilters).some(
+                (key) => selectedFilters[key] && category.includes(key)
+            )
+        ),
+    })).filter((benefit) => benefit.benefitCategories.length > 0);
+
     return (
         <Box sx={{ maxWidth: 600, margin: "auto", p: 2 }}>
             <Card sx={{ boxShadow: "none" }}>
@@ -94,11 +121,15 @@ const ProtocolBenefitPage: React.FC = () => {
                 </Typography>
                 <Box marginLeft="auto" display="flex" alignItems="center">
                     <SortMenu />
-                    <FilterMenu />
+                    <FilterMenu
+                        options={filterOptionsData}
+                        onChange={handleFilterChange}
+                        selectedFilters={selectedFilters}
+                    />
                 </Box>
             </Box>
             <Box>
-                <ProtocolBenefitCard protocolID={protocolID} />
+                <ProtocolBenefitCard protocolID={protocolID} data={filteredBenefits} />
             </Box>
         </Box>
     );

@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import BenefitProtocolCard from '../BenifitProtocolCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
-import jsonData from '../../JSON_Example/JSON_example_vShort.json'
+// import jsonData from '../../JSON_Example/JSON_example_vShort.json'
+import jsonData from '../../JSON_Example/healthstack_data_example.json'
 import { useLocation } from 'react-router-dom';
 
 const BenefitProtocolPage: React.FC = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const benefitId = queryParams.get('id');
-    const { benefits } = jsonData;
+    const { benefits, protocols } = jsonData;
     const benefitdata = benefits.find((val) => val.benefitID === benefitId)
+    const filterOptionsData = ["Behaviour", "Food", "Supplements","Dietary"];
+    const [selectedFilters, setSelectedFilters] = useState<Record<string, boolean>>(() =>
+        filterOptionsData.reduce((acc, option) => {
+          acc[option] = true;
+          return acc;
+        }, {} as Record<string, boolean>)
+      );
 
+    const handleFilterChange = (label: string) => {
+        setSelectedFilters((prev) => ({
+            ...prev,
+            [label]: !prev[label],
+        }));
+    };
+    const filterProtocols = protocols.map((protocol) => ({
+        ...protocol,
+        protocolCategories: protocol.protocolCategories.filter((category) =>
+            Object.keys(selectedFilters).some(
+                (key) => selectedFilters[key] && category.includes(key)
+            )
+        ),
+    })).filter((protocol) => protocol.protocolCategories.length > 0);
     return (
         <Box sx={{ maxWidth: 600, margin: "auto", p: 2 }}>
             <Card sx={{ boxShadow: "none" }}>
@@ -25,7 +47,7 @@ const BenefitProtocolPage: React.FC = () => {
                             justifyContent: 'center',
                             width: "120px",
                             height: '120px',
-                            position:"relative"
+                            position: "relative"
                         }}
                     >
                         <CardMedia
@@ -78,11 +100,15 @@ const BenefitProtocolPage: React.FC = () => {
                 </Typography>
                 <Box marginLeft="auto" display="flex" alignItems="center">
                     <SortMenu />
-                    <FilterMenu />
+                    <FilterMenu
+                        options={filterOptionsData}
+                        onChange={handleFilterChange}
+                        selectedFilters={selectedFilters}
+                    />
                 </Box>
             </Box>
             <Box sx={{ mt: 2 }}>
-                <BenefitProtocolCard benefitId={benefitId} />
+                <BenefitProtocolCard benefitId={benefitId} data={filterProtocols} />
             </Box>
         </Box>
     );

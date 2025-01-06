@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import jsonData from "../../JSON_Example/JSON_example_vShort.json"
+// import jsonData from "../../JSON_Example/JSON_example_vShort.json"
+import jsonData from '../../JSON_Example/healthstack_data_example.json'
 import { useLocation } from "react-router-dom";
 import { AiOutlineLike } from "react-icons/ai";
 import { PiFlowerTulip } from "react-icons/pi";
