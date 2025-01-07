@@ -57,24 +57,24 @@ function LandingPage() {
                     How It Works
                 </Typography>
                 <Typography sx={{ mt: 2, fontSize: "16px", color: "#212121" }}>HealthStack simplifies health decisions with <strong>natural protocols</strong> focused on:</Typography>
-               <ul style={{ color: "#212121", fontSize: "12px",paddingLeft:"20px",marginTop:"10px" }}>
+               <ul style={{ color: "#212121", fontSize: "16px",paddingLeft:"20px",marginTop:"10px" }}>
                     <li>Behavior (e.g., sleep improvement, meditation)</li>
                     <li>Food (e.g., wholegrains, omega-3 foods)</li>
                     <li>Supplements (e.g., green tea extract)</li>
                 </ul>
                 <Box mt={2}>
-                    <Typography sx={{ color: "#212121", fontSize: "14px" }}><strong>🔍 Explore Protocols:</strong> Browse protocols linked to specific health benefits.</Typography>
-                    <Typography sx={{ color: "#212121", fontSize: "14px" }}><strong>📚 Backed by Science:</strong> Powered by over 200 million research publications.</Typography>
-                    <Typography sx={{ color: "#212121", fontSize: "14px" }}><strong>⚙️ Tailored for You:</strong> Filter by time, cost, and evidence strength to find what works best for you.</Typography>
+                    <Typography sx={{ color: "#212121", fontSize: "16px" }}><strong>🔍 Explore Protocols:</strong> Browse protocols linked to specific health benefits.</Typography>
+                    <Typography sx={{ color: "#212121", fontSize: "16px" }}><strong>📚 Backed by Science:</strong> Powered by over 200 million research publications.</Typography>
+                    <Typography sx={{ color: "#212121", fontSize: "16px" }}><strong>⚙️ Tailored for You:</strong> Filter by time, cost, and evidence strength to find what works best for you.</Typography>
                 </Box>
                 <Box>
                     <Typography sx={{ color: "#212121", fontSize: "14px", fontWeight: 600, py: 2 }}>
                         We are currently in our test phase and would love your feedback!
                     </Typography>
-                    <Typography sx={{ color: "#212121", fontSize: "12px" }}>
+                    <Typography sx={{ color: "#212121", fontSize: "14px" }}>
                         Disclaimer
                     </Typography>
-                    <Typography sx={{ color: "#212121", fontSize: "12px" }}>
+                    <Typography sx={{ color: "#212121", fontSize: "14px" }}>
                         While HealthStack strives to provide accurate and reliable information, it is possible that the data provided is inaccurate or incorrect. By clicking "Enter" below, you acknowledge that HealthStack provides general information only and is not a substitute for professional health advice. You agree to consult a qualified health professional before making any lifestyle changes.
                     </Typography>
                 </Box>

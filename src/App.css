@@ -4,4 +4,9 @@
   height: 100%;
   margin: 0px;
   padding: 0px;
+  font-family: "Open Sans";
+}
+
+body{
+  font-family:"open Sans" !important;
 }

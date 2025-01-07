@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
-import { FaAward } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { Benefit } from "./Interface/Interface";
 
@@ -27,7 +26,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ protocolID, d
                   flexDirection: "column",
                   alignItems: "center",
                   backgroundColor: "#ffffff",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
               >
                 {/* Top Section with Background */}
@@ -36,7 +35,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ protocolID, d
                     width: "100%",
                     backgroundColor: "#EAF5F6",
                     borderRadius: "10px 10px 0 0",
-                    py: 1,
+                    pt: 1,
+                    px:1,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -57,9 +57,12 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ protocolID, d
                   {/* Title */}
                   <Typography
                     variant="subtitle2"
-                    sx={{ textAlign: "center", fontSize: "12px", mt: 1 }}
+                    sx={{
+                      textAlign: "center", fontSize: "12px", mt: 1, height: "40px",
+                      overflow: 'auto',
+                    }}
                   >
-                    {`<${item.benefitName}>`}
+                    {item.benefitName}
                   </Typography>
                 </Box>
                 {/* Icons Section */}
@@ -71,7 +74,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ protocolID, d
                       alignItems: "center",
                     }}
                   >
-                    <FaAward size={20} />
+                     <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
                     <Typography variant="caption" sx={{ fontSize: "10px" }}>
                       X/X
                     </Typography>

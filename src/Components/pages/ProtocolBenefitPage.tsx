@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaDollarSign } from "react-icons/fa6";
 import {
     Box,
@@ -14,8 +14,10 @@ import { Hourglass } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 // import jsonData from '../../JSON_Example/JSON_example_vShort.json'
 import jsonData from '../../JSON_Example/healthstack_data_example.json'
+import { Benefit } from '../Interface/Interface';
 
 const ProtocolBenefitPage: React.FC = () => {
+    const [benefit, setBenefit] = useState<Benefit[]>([])
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const protocolID = queryParams.get('id');
@@ -28,8 +30,20 @@ const ProtocolBenefitPage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
-
-    // Update selected filters
+    const benefitFilterOption = ["Name"]
+    const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
+        () => benefitFilterOption.reduce((acc, option) => {
+            acc[option] = false;
+            return acc;
+        }, {} as Record<string, boolean>)
+    );
+    const handleSortChange = (label: string) => {
+        setSelectedSortValue((prev) => ({
+            ...prev,
+            [label]: !prev[label],
+        }));
+    };
+    const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
     const handleFilterChange = (label: string) => {
         setSelectedFilters((prev) => ({
             ...prev,
@@ -37,16 +51,28 @@ const ProtocolBenefitPage: React.FC = () => {
         }));
     };
 
-    // Filter the benefit categories dynamically
-    const filteredBenefits = benefits.map((benefit) => ({
-        ...benefit,
-        benefitCategories: benefit.benefitCategories.filter((category) =>
-            Object.keys(selectedFilters).some(
-                (key) => selectedFilters[key] && category.includes(key)
-            )
-        ),
-    })).filter((benefit) => benefit.benefitCategories.length > 0);
-
+    useEffect(() => {
+        const filteredBenefits = benefits
+            .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID))
+            .map((benefit) => ({
+                ...benefit,
+                benefitCategories: benefit.benefitCategories.filter((category) =>
+                    Object.keys(selectedFilters).some(
+                        (key) => selectedFilters[key] && category.includes(key)
+                    )
+                ),
+            }))
+            .filter((benefit) => benefit.benefitCategories.length > 0);
+        setBenefit(filteredBenefits)
+    }, [benefits, linkedBenefitIds, selectedFilters])
+    useEffect(() => {
+        if (selectedSortValue.Name) {
+            const sortedBenefits = [...benefits].sort((a, b) => a.benefitName.localeCompare(b.benefitName));
+            setBenefit(sortedBenefits);
+        } else {
+            setBenefit(benefits);
+        }
+    }, [benefits, selectedSortValue]);
     return (
         <Box sx={{ maxWidth: 600, margin: "auto", p: 2 }}>
             <Card sx={{ boxShadow: "none" }}>
@@ -67,8 +93,8 @@ const ProtocolBenefitPage: React.FC = () => {
                             image={protocolsData?.protocolImageID}
                             alt=""
                             sx={{
-                                width: "80px",
-                                height: '80px',
+                                width: "120px",
+                                height: '120px',
                             }}
                         />
                         <Box
@@ -78,31 +104,31 @@ const ProtocolBenefitPage: React.FC = () => {
                                 left: 0,
                                 width: '100%',
                                 bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                backdropFilter: 'blur(0.1px)',
+                                // backdropFilter: 'blur(0.1px)',
                                 padding: 1,
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                                height: "auto"
+                                height: { xs: "70px", sm: "80px", md: "80px", lg: "80px" },
                             }}
                         >
                             <Typography
                                 sx={{ fontWeight: 'bold', color: '#212121', textAlign: 'center', fontSize: "12px" }}
                             >
-                                {`<${protocolsData?.protocolName}>`}
+                                {protocolsData?.protocolName}
                             </Typography>
                         </Box>
                     </Box>
                     <CardContent>
-                        <Typography variant="body2" sx={{ fontSize: '12px', lineHeight: 'normal' }}>
-                            &lt; {protocolsData?.protocolDescription}&gt;
+                        <Typography variant="body2" sx={{ fontSize: '14px', lineHeight: 'normal' }}>
+                            {protocolsData?.protocolDescription}
                         </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                            <Typography variant="caption" sx={{ fontSize: 10, display: "flex", alignItems: 'center', }}>
-                                <Hourglass style={{ height: "14px" }} /> &lt;MODERATE&gt;
+                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, justifyContent: "space-around" }}>
+                            <Typography variant="caption" sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
+                                <Hourglass style={{ height: "14px" }} /> {protocolsData?.protocolRelativeTimeRating}
                             </Typography>
-                            <Typography variant="caption" sx={{ fontSize: 10, display: "flex", alignItems: 'center', }}>
-                                <FaDollarSign style={{ fontSize: "14px" }} /> &lt;MODERATE&gt;
+                            <Typography variant="caption" sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
+                                <FaDollarSign style={{ fontSize: "14px" }} /> {protocolsData?.protocolRelativeCostRating}
                             </Typography>
                         </Box>
                     </CardContent>
@@ -117,10 +143,10 @@ const ProtocolBenefitPage: React.FC = () => {
                 }}
             >
                 <Typography variant="h6" sx={{ fontSize: 16 }}>
-                    <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this protocol:
+                    <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this protocol :
                 </Typography>
                 <Box marginLeft="auto" display="flex" alignItems="center">
-                    <SortMenu />
+                    <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />
                     <FilterMenu
                         options={filterOptionsData}
                         onChange={handleFilterChange}
@@ -129,7 +155,7 @@ const ProtocolBenefitPage: React.FC = () => {
                 </Box>
             </Box>
             <Box>
-                <ProtocolBenefitCard protocolID={protocolID} data={filteredBenefits} />
+                <ProtocolBenefitCard protocolID={protocolID} data={benefit} />
             </Box>
         </Box>
     );

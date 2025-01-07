@@ -1,9 +1,8 @@
 import { Box, Typography, List, ListItem, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-// import ClaimPage from "./ClaimPage";
+// import { useNavigate } from "react-router-dom";
 
 const About = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     return (
         <Box
             sx={{
@@ -93,9 +92,8 @@ const About = () => {
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 4 }}>
                 <Button
-                    onClick={() => navigate("/dashboard/feedback")}
+                    // onClick={() => navigate("/dashboard/home")}
                     sx={{
-                        // mt: 2,
                         bgcolor: "#D4C89E",
                         border: "1px solid #212121",
                         color: "#212121",
@@ -109,10 +107,9 @@ const About = () => {
                         },
                     }}
                 >
-                    Feedback Page
+                    Share My Thoughts
                 </Button>
             </Box>
-            {/* <ClaimPage/> */}
         </Box>
     );
 };

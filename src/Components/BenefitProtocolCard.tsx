@@ -1,7 +1,4 @@
 import React from 'react';
-import { FaAward } from 'react-icons/fa';
-import { BiTimer } from 'react-icons/bi';
-import { BsCurrencyDollar } from 'react-icons/bs';
 import { Card, CardContent, CardMedia, Typography, Box, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Protocol } from './Interface/Interface';
@@ -13,7 +10,8 @@ interface BenefitProtocolCardProps {
 
 const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, data }) => {
   const navigate = useNavigate();
-
+  console.log(data,"=========data");
+  
   return (
     <Grid container spacing={1}>
       {data.length > 0 ? (
@@ -31,6 +29,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                 alignItems: 'center',
                 backgroundColor: 'white',
                 cursor: 'pointer',
+                height:"auto"
               }}
             >
               {/* Top Section with Background */}
@@ -40,7 +39,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   backgroundColor: '#F4F1E6',
                   borderTopLeftRadius: '10px',
                   borderTopRightRadius: '10px',
-                  py: 1,
+                  pt: 1,
+                  px:1,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -65,6 +65,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                     fontWeight: 500,
                     mt: 1,
                     px: 1,
+                    height:"40px",
+                    overflow: 'auto',
                   }}
                 >
                   {item.protocolName}
@@ -77,28 +79,28 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  gap: '5px',
+                  gap: '15px',
                 }}
               >
                 {/* Icon 1 */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <FaAward size={16} />
-                  <Typography variant="caption" sx={{ fontSize: '10px' }}>
-                    &lt;X/X&gt;
+                  <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
+                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                    {item?.protocolOverallImpactRating}
                   </Typography>
                 </Box>
                 {/* Icon 2 */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <BiTimer size={16} />
-                  <Typography variant="caption" sx={{ fontSize: '10px' }}>
-                    &lt;X/X&gt;
+                <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} />
+                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                  {item?.protocolRelativeTimeRating}
                   </Typography>
                 </Box>
                 {/* Icon 3 */}
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <BsCurrencyDollar size={16} />
-                  <Typography variant="caption" sx={{ fontSize: '10px' }}>
-                    &lt;X/X&gt;
+                <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} />
+                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                  {item?.protocolRelativeCostRating}
                   </Typography>
                 </Box>
               </CardContent>

@@ -7,7 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Box, Typography } from '@mui/material';
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-
+import { useNavigate } from 'react-router-dom';
 interface FormData {
   rating: number;
 }
@@ -15,7 +15,6 @@ interface FormData {
 interface AlertDialogProps {
   open: boolean;
   onClose: () => void;
-  handleSubmit?: () => void;
   handleRatingClick?: (e: number) => void;
   formData: FormData;
 }
@@ -23,13 +22,17 @@ interface AlertDialogProps {
 const FeedBackAlert: React.FC<AlertDialogProps> = ({
   open,
   onClose,
-  handleSubmit,
   handleRatingClick,
   formData,
 }) => {
+  const navigate=useNavigate()
+  const handleFeedback = () => {
+    onClose();
+    navigate("/dashboard/feedback");
+  };
   return (
-    <Dialog open={open} onClose={onClose}
-      sx={{maxWidth:600,margin:"auto"}} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+    <Dialog open={open} 
+      sx={{ maxWidth: 600, margin: "auto" }} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
       <Box sx={{ display: "flex", justifyContent: "end" }}><IoMdClose onClick={onClose} style={{ marginTop: "10px", marginRight: "10px", cursor: "pointer" }} size={30} /></Box>
       <DialogTitle id="alert-dialog-title" sx={{ fontSize: "18px", color: "#000", textAlign: "center" }}>How’s your experience using HealthStack Early Access so far?</DialogTitle>
       <DialogContent>
@@ -39,7 +42,7 @@ const FeedBackAlert: React.FC<AlertDialogProps> = ({
               <Box
                 key={index}
                 sx={{ cursor: "pointer", mx: 0.5 }}
-                onClick={() => handleRatingClick && handleRatingClick(index - 1)}
+                onClick={() => handleRatingClick && handleRatingClick(index)}
               >
                 {index < formData.rating ? (
                   <FaStar style={{ color: "#ABD8DB", fontSize: "40px" }} />
@@ -53,26 +56,23 @@ const FeedBackAlert: React.FC<AlertDialogProps> = ({
             Thanks! Can you tell us more?
           </Typography>
         </DialogContentText>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center",mt:1 }}>
-        <Button
-          onClick={handleSubmit}
-          sx={{
-            bgcolor: "#D4C89E",
-            border: "1px solid #212121",
-            color: "#212121",
-            textTransform: "capitalize",
-            fontWeight: "bold",
-            width: "219px",
-            height: "40px",
-            "&:hover": {
-              backgroundColor: "#000",
-              color: "#fff",
-            },
-          }}
-        >
-          Share My Toughts
-        </Button>
-      </Box>
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 1 }}>
+          <Button
+            onClick={handleFeedback}
+            sx={{
+              bgcolor: "#D4C89E",
+              border: "1px solid #212121",
+              color: "#212121",
+              textTransform: "capitalize",
+              fontWeight: "bold",
+              width: "219px",
+              height: "40px",
+            }}
+          >
+            Share My Toughts
+            {/* <Link to={'/dashboard/feedback'} style={{textDecoration:"none",color:"#212121"}}>Share My Toughts</Link> */}
+          </Button>
+        </Box>
       </DialogContent>
     </Dialog>
   );

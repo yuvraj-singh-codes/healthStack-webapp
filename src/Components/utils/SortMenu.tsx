@@ -10,28 +10,15 @@ import {
 } from "@mui/material";
 import { FaSortAmountDown } from "react-icons/fa";
 
-interface Option {
-  label: string;
-  key: string; // Key for state management
+interface sortProps {
+  options:string[]
+  selectedSortValue:Record<string, boolean>;
+  onChange: (value: string) => void;
 }
 
-const sortOptionsData: Option[] = [
-  { label: "Easy Wins", key: "easyWins" },
-  { label: "Overall Evidence Rating", key: "overallEvidence" },
-  { label: "Time", key: "time" },
-  { label: "Cost", key: "cost" },
-  { label: "Name", key: "name" },
-];
 
-export const SortMenu = () => {
+export const SortMenu = ({options,onChange,selectedSortValue}:sortProps) => {
   const [anchorSort, setAnchorSort] = useState<null | HTMLElement>(null);
-  const [sortOptions, setSortOptions] = useState<Record<string, boolean>>({
-    easyWins: true,
-    overallEvidence: false,
-    time: false,
-    cost: false,
-    name: false,
-  });
 
   const handleSortClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorSort(event.currentTarget);
@@ -39,10 +26,6 @@ export const SortMenu = () => {
 
   const handleClose = () => {
     setAnchorSort(null);
-  };
-
-  const handleOptionChange = (key: string) => {
-    setSortOptions((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -55,12 +38,12 @@ export const SortMenu = () => {
         open={Boolean(anchorSort)}
         onClose={handleClose}
       >
-        {sortOptionsData.map((option) => (
-          <MenuItem key={option.key}>
-            <Typography flexGrow={1}>{option.label}</Typography>
+        {options.map((option,index) => (
+          <MenuItem key={index}>
+            <Typography flexGrow={1}>{option}</Typography>
             <Checkbox
-              checked={sortOptions[option.key]}
-              onChange={() => handleOptionChange(option.key)}
+              checked={selectedSortValue[option] || false}
+              onChange={() => onChange(option)}
               sx={{
                 color: "#212121",
                 "&.Mui-checked": {

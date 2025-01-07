@@ -1,76 +1,41 @@
-import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import CommonSelect from "../utils/CommonSelect";
 import CommonTextField from "../utils/CommonTextField";
-import FeedBackAlert from "../FeedBackAlert";
 
-const Feedback = () => {
-    // Single state object for all form fields
-    const [formData, setFormData] = React.useState({
-        rating: 0,
-        feedbackType: "",
-        feedbackText: "",
-        name: "",
-        email: "",
-    });
-    const [errors, setErrors] = React.useState({
-        feedbackType: false,
-        rating: false,
-    });
+// Define the interface for FeedbackProps
+interface FeedbackProps {
+    setOpen: (value: boolean) => void;
+    formData: {
+        rating: number;
+        feedbackType: string;
+        feedbackText: string;
+        name: string;
+        email: string;
+    };
+    setFormData: (data: Partial<typeof formData>) => void;
+    handleRatingClick: (rating: number) => void;
+    errors: {
+        feedbackType: boolean,
+        rating: boolean,
+    };
+    handleSubmit?: () => void;
+}
 
+const Feedback: React.FC<FeedbackProps> = ({
+    // setOpen,
+    formData,
+    setFormData,
+    handleRatingClick,
+    errors,
+    handleSubmit
+}) => {
     // Feedback Type Options
     const feedbackOptions = [
         { value: "bug", label: "Bug Report" },
         { value: "feature", label: "Feature Request" },
         { value: "general", label: "General Feedback" },
     ];
-
-    const handleRatingClick = (index: number) => {
-        setFormData({ ...formData, rating: index + 1 });
-    };
-
-    const validation = () => {
-        let hasError = false;
-
-        if (!formData.feedbackType) {
-            setErrors((prev) => ({ ...prev, feedbackType: true }));
-            hasError = true;
-        } else {
-            setErrors((prev) => ({ ...prev, feedbackType: false }));
-        }
-
-        if (formData.rating === 0) {
-            setErrors((prev) => ({ ...prev, rating: true }));
-            hasError = true;
-        } else {
-            setErrors((prev) => ({ ...prev, rating: false }));
-        }
-
-        return hasError;
-    };
-
-    const handleSubmit = () => {
-        console.log("Form Submitted===", formData);
-        handleClose();
-        setFormData({
-            rating: 0,
-            feedbackType: "",
-            feedbackText: "",
-            name: "",
-            email: "",
-        })
-    };
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        if (validation()) return;
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
 
     return (
         <Box
@@ -90,19 +55,20 @@ const Feedback = () => {
 
             {/* Rating Stars */}
             <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-                {[...Array(5)].map((_, index) => (
-                    <Box
-                        key={index}
-                        sx={{ cursor: "pointer", mx: 0.5 }}
-                        onClick={() => handleRatingClick(index)}
-                    >
-                        {index < formData.rating ? (
-                            <FaStar style={{ color: "#ABD8DB", fontSize: "48px" }} />
-                        ) : (
-                            <FaRegStar style={{ color: "#000", fontSize: "48px" }} />
-                        )}
-                    </Box>
-                ))}
+            {[...Array(5)].map((_, index) => (
+        <Box
+          key={index}
+          sx={{ cursor: "pointer", mx: 0.5 }}
+          onClick={() => handleRatingClick(index)}
+        >
+          {index < formData.rating ? (
+            <FaStar style={{ color: "#ABD8DB", fontSize: "48px" }} />
+          ) : (
+            <FaRegStar style={{ color: "#000", fontSize: "48px" }} />
+          )}
+        </Box>
+      ))}
+
             </Box>
 
             {/* Feedback Type */}
@@ -167,7 +133,7 @@ const Feedback = () => {
             {/* Submit Button */}
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Button
-                    onClick={handleClickOpen}
+                onClick={handleSubmit}
                     sx={{
                         mt: 2,
                         bgcolor: "#D4C89E",
@@ -191,13 +157,6 @@ const Feedback = () => {
             <Typography sx={{ textAlign: "center", color: "#000", fontSize: "12px" }}>
                 All feedback submitted is collected for testing purposes only and will not be shared with third parties.
             </Typography>
-            <FeedBackAlert
-                open={open}
-                onClose={handleClose}
-                handleSubmit={handleSubmit}
-                handleRatingClick={handleRatingClick}
-                formData={formData}
-            />
         </Box>
     );
 };
