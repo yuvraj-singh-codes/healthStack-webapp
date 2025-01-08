@@ -10,7 +10,6 @@ interface BenefitProtocolCardProps {
 
 const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, data }) => {
   const navigate = useNavigate();
-  console.log(data,"=========data");
   
   return (
     <Grid container spacing={1}>
@@ -59,6 +58,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                 {/* Title */}
                 <Typography
                   variant="subtitle2"
+                  className='scrollbar'
                   sx={{
                     textAlign: 'center',
                     fontSize: '12px',

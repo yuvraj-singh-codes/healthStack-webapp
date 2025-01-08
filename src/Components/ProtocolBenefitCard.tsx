@@ -48,15 +48,16 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ protocolID, d
                     image={item.benefitImageID}
                     alt={item.benefitName}
                     sx={{
-                      width: 87,
-                      height: 87,
-                      borderRadius: "8px",
+                      // width: 87,
+                      // height: 87,
+                      borderRadius: "10px",
                       objectFit: "cover",
                     }}
                   />
                   {/* Title */}
                   <Typography
                     variant="subtitle2"
+                    className='scrollbar'
                     sx={{
                       textAlign: "center", fontSize: "12px", mt: 1, height: "40px",
                       overflow: 'auto',

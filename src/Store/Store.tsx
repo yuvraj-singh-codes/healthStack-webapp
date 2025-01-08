@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import itemReducer from '../features/slice';
-import tabReducer from '../features/tabSlice'
+import tabReducer from '../features/tabSlice';
+import appReducer from '../features/allStateSlice'
 
 export const store = configureStore({
   reducer: {
     items:itemReducer,
-    tabvalue:tabReducer
+    tabvalue:tabReducer,
+    app: appReducer,
   },
 })
 

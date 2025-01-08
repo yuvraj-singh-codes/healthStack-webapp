@@ -9,20 +9,34 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setValue } from '../../features/tabSlice';
 import { RootState } from '../../Store/Store';
-import { Benefit, Protocol } from '../Interface/Interface';
+import { setBenefit, setProtocol } from '../../features/allStateSlice';
+import { CommonSearch } from '../utils/CommonSearch';
+import axios from 'axios';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const [benefit, setBenefit] = useState<Benefit[]>([])
-    const [protocol, setProtocol] = useState<Protocol[]>([])
-    const { protocols, benefits } = jsonData;
+    const benefit = useSelector((state: RootState) => state.app.benefit);
+    const protocol = useSelector((state: RootState) => state.app.protocol);
     const activeTab = useSelector((state: RootState) => state.tabvalue.tab)
+    const [searchTerm, setSearchTerm] = useState<string>("");
+    const { protocols, benefits } = jsonData;
     const handleTabChange = (value: number) => {
         dispatch(setValue(value))
     };
-    // const claimFilterOption = ["Easy Wins", "Overall Evidence Rating"]
-    const benefitFilterOption = ["Name"]
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('/healthstack_data_example.json');
+            dispatch(setBenefit(response.data.benefits));
+            dispatch(setProtocol(response.data.protocols));
+        } catch (error) {
+            console.error('Error fetching JSON data:', error);
+        }
+    }
+    useEffect(() => {
+        fetchData();
+    }, [dispatch])
+    const benefitFilterOption = ["Name (A-Z)", "Name (Z-A)"]
     const protocolFilterOption = ["Time", "Cost"]
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
         () => benefitFilterOption.reduce((acc, option) => {
@@ -84,10 +98,20 @@ const HomePage: React.FC = () => {
         }));
     };
     const handleSortChange = (label: string) => {
-        setSelectedSortValue((prev) => ({
-            ...prev,
-            [label]: !prev[label],
-        }));
+        if (activeTab === 0) {
+            setSelectedSortValue((prev) => ({
+                ...Object.keys(prev).reduce((acc, key) => {
+                    acc[key] = false;
+                    return acc;
+                }, {} as Record<string, boolean>),
+                [label]: true,
+            }));
+        } else if (activeTab === 1) {
+            setSelectedSortValue((prev) => ({
+                ...prev,
+                [label]: !prev[label],
+            }));
+        }
     };
 
     useEffect(() => {
@@ -101,7 +125,7 @@ const HomePage: React.FC = () => {
                 ),
             }))
             .filter((protocol) => protocol.protocolCategories?.length > 0);
-        setProtocol(filterProtocols);
+        dispatch(setProtocol(filterProtocols));
     }, [protocols, selectedFilters])
 
     useEffect(() => {
@@ -115,15 +139,18 @@ const HomePage: React.FC = () => {
                 ),
             }))
             .filter((benefit) => benefit.benefitCategories?.length > 0);
-        setBenefit(filteredBenefits)
+        dispatch(setBenefit(filteredBenefits));
     }, [benefits, selectedFilters])
 
     useEffect(() => {
-        if (selectedSortValue.Name) {
+        if (selectedSortValue["Name (A-Z)"]) {
             const sortedBenefits = [...benefits].sort((a, b) => a.benefitName.localeCompare(b.benefitName));
-            setBenefit(sortedBenefits);
+            dispatch(setBenefit(sortedBenefits));
+        } else if (selectedSortValue["Name (Z-A)"]) {
+            const sortedBenefits = [...benefits].sort((a, b) => b.benefitName.localeCompare(a.benefitName));
+            dispatch(setBenefit(sortedBenefits));
         } else {
-            setBenefit(benefits);
+            dispatch(setBenefit(benefits));
         }
     }, [benefits, selectedSortValue]);
 
@@ -142,12 +169,44 @@ const HomePage: React.FC = () => {
             }
             return 0;
         });
-        setProtocol(sorted);
+        dispatch(setProtocol(sorted));
     }, [protocols, selectedSortValue]);
+
+    const handleSearch = (term: string) => {
+        setSearchTerm(term);
+    };
+
+    useEffect(() => {
+        if (searchTerm.trim() === "") {
+            fetchData();
+        } else {
+            const lowerCaseTerm = searchTerm.toLowerCase();
+            if (activeTab === 0) {
+                const filtered = benefit.filter((item) =>
+                    item.benefitSearchTerms.some((search) =>
+                        search.toLowerCase().includes(lowerCaseTerm)
+                    )
+                );
+                dispatch(setBenefit(filtered));
+            } else {
+                const filtered = protocol.filter((item) =>
+                    item.protocolSearchTerms.some((search) =>
+                        search.toLowerCase().includes(lowerCaseTerm)
+                    )
+                );
+                dispatch(setProtocol(filtered));
+            }
+        }
+    }, [activeTab, searchTerm, dispatch]);
+
+    useEffect(() => {
+        setSearchTerm("")
+    }, [activeTab])
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>
             {/* Banner */}
+            <CommonSearch onChange={handleSearch} searchTerm={searchTerm} />
             <Box
                 sx={{
                     backgroundImage: `url(${mainImg})`,
@@ -155,17 +214,12 @@ const HomePage: React.FC = () => {
                     backgroundPosition: "center",
                     height: "168px",
                     display: "flex",
-                    alignItems: "center",
                     justifyContent: "center",
                     color: "#ffffff",
                     textAlign: "center",
                     px: 4,
-                    // position: "sticky",
-                    // top: "58px",
-                    // zIndex: 10000,
                 }}
             >
-                {/* <img src='/images/mainUIImage.svg' alt='' height={'auto'} width={'auto'} style={{zIndex:1000}} /> */}
                 <Typography
                     sx={{
                         fontSize: "16px",
@@ -173,7 +227,7 @@ const HomePage: React.FC = () => {
                         fontWeight: "bold",
                         color: "#212121",
                         position: "absolute",
-
+                        mt: 2
                     }}
                 >
                     Empower your health journey with science-backed protocols.
@@ -181,7 +235,7 @@ const HomePage: React.FC = () => {
             </Box>
 
             {/* Tabs */}
-            <Box display="flex" alignItems="center" p={1} sx={{ position: "sticky", top: "57px", zIndex: 100,bgcolor:"#fff" }}>
+            <Box display="flex" alignItems="center" p={1} sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff" }}>
                 <Box sx={{ border: '1px solid #94a5bd', borderRadius: "50px" }}>
                     <Button
                         onClick={() => handleTabChange(0)}
@@ -225,7 +279,7 @@ const HomePage: React.FC = () => {
 
             {/* Cards Display */}
             {activeTab === 0 ? (
-                <Box sx={{ padding: 2, bgcolor: '#F4F1E6' }}>
+                <Box sx={{ padding: 2,  bgcolor: '#EAF5F6' }}>
                     <Grid container spacing={2}>
                         {benefit?.length > 0 ? (benefit?.map((item, index) => (
                             <Grid item xs={4} sm={4} key={index}>
@@ -248,14 +302,14 @@ const HomePage: React.FC = () => {
                                         }}
                                     />
                                     <Box
+                                        className="scrollbar"
                                         sx={{
                                             position: 'absolute',
                                             bottom: 0,
                                             left: 0,
                                             width: '100%',
-                                            bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                            // backdropFilter: 'blur(0.1px)',
-                                            padding: 1,
+                                            bgcolor: 'rgba(255, 255, 255, 0.8)',
+                                            p: 1,
                                             display: 'flex',
                                             justifyContent: 'center',
                                             alignItems: 'center',
@@ -267,7 +321,7 @@ const HomePage: React.FC = () => {
                                         }}
                                     >
                                         <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: 'center', fontSize: "12px" }}
+                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}
                                         >
                                             {item.benefitName}
                                         </Typography>
@@ -282,7 +336,7 @@ const HomePage: React.FC = () => {
                     </Grid>
                 </Box>
             ) : (
-                <Box sx={{ padding: 2, bgcolor: '#EAF5F6' }}>
+                <Box sx={{ padding: 2,bgcolor: '#F4F1E6' }}>
                     <Grid container spacing={2}>
                         {protocol?.length > 0 ? (protocol?.map((item, index) => (
                             <Grid item xs={4} sm={4} key={index}>
@@ -305,14 +359,15 @@ const HomePage: React.FC = () => {
                                         }}
                                     />
                                     <Box
+                                        className="scrollbar"
                                         sx={{
                                             position: 'absolute',
                                             bottom: 0,
                                             left: 0,
                                             width: '100%',
-                                            bgcolor: 'rgba(255, 255, 255, 0.5)',
+                                            bgcolor: 'rgba(255, 255, 255, 0.8)',
                                             // backdropFilter: 'blur(0.1px)',
-                                            padding: 1,
+                                            p: 1,
                                             display: 'flex',
                                             justifyContent: 'center',
                                             alignItems: 'center',
@@ -324,7 +379,7 @@ const HomePage: React.FC = () => {
                                         }}
                                     >
                                         <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: 'center', fontSize: "12px" }}
+                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}
                                         >
                                             {item.protocolName}
                                         </Typography>

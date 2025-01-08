@@ -35,7 +35,7 @@ function LandingPage() {
                     backgroundPosition: "center",
                     height: "168px",
                     display: "flex",
-                    alignItems: "center",
+                    // alignItems: "center",
                     justifyContent: "center",
                     color: "#ffffff",
                     textAlign: "center",
@@ -48,6 +48,7 @@ function LandingPage() {
                         fontStyle: "italic",
                         fontWeight: "bold",
                         color: "#212121",
+                        mt:2
                     }}
                 >
                     Empower your health journey with science-backed protocols.
