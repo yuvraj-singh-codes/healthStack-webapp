@@ -24,7 +24,7 @@ function Dashboard() {
             {/* Header */}
             <Box sx={{ overflow: "auto", height: "90vh", alignItems: "center", position: "relative" }}>
                 <Header />
-                <Box sx={{ display: "flex", alignItems: "center", gap: "20px", px: 2, pb: 1, position: "sticky", top: 0, bgcolor: "#fff", py: 1, zIndex: 100, borderBottom: "2px solid lightgray", }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: "20px", px: 2, pb: 1, position: "sticky", top: 0, bgcolor: "#fff", py: 1, zIndex: 100, borderBottom: "2px solid lightgray",maxWidth:600,margin:"auto" }}>
                     <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
                     <TextField
                         size="small"

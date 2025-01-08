@@ -3,8 +3,10 @@ import {
     Typography,
 } from "@mui/material";
 import logo from '../../assets/HS_logo_wText.svg';
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+    const navigate=useNavigate();
     return (
             <Box
                 sx={{
@@ -17,11 +19,12 @@ function Header() {
                 }}>
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: 2,pt:2 }}>
                     <img
+                     onClick={() => navigate("/dashboard/home")}
                         src={logo}
                         alt="HealthStack Logo"
-                        style={{ height: "35px", }}
+                        style={{ height: "35px",cursor:"pointer" }}
                     />
-                    <Typography sx={{ color: "#49454F", fontSize: "16px", fontWeight: 400 }}>Early Access</Typography>
+                    <Typography onClick={() => navigate("/dashboard/about")} sx={{ color: "#49454F", fontSize: "18px", fontWeight: 700 ,cursor:"pointer"}}>Early Access</Typography>
                 </Box>
             </Box>
     );

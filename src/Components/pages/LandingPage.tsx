@@ -15,14 +15,15 @@ function LandingPage() {
     };
 
     return (
-        <Box sx={{maxWidth:600,margin:'auto'}} >
-            <Box sx={{ display: "flex", alignItems: "center",justifyContent:"space-between",p:1 }}>
+        <Box sx={{ maxWidth: 600, margin: 'auto' }} >
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", p: 1 }}>
                 <img
+                    onClick={() => navigate("/dashboard/home")}
                     src={logo}
                     alt="HealthStack Logo"
-                    style={{ height: "35px", }}
+                    style={{ height: "35px",cursor:"pointer" }}
                 />
-                <Typography sx={{ color: "#49454F", fontSize: "16px", fontWeight: 400 }}>Early Access</Typography>
+                <Typography onClick={() => navigate("/dashboard/about")} sx={{ color: "#49454F", fontSize: "18px", fontWeight: 700,cursor:"pointer" }}>Early Access</Typography>
             </Box>
             <Typography variant="h5" sx={{ mt: 2, p: 2, color: "#212121", fontSize: "20px", fontWeight: 700 }}>
                 Welcome to HealthStack.
@@ -57,7 +58,7 @@ function LandingPage() {
                     How It Works
                 </Typography>
                 <Typography sx={{ mt: 2, fontSize: "16px", color: "#212121" }}>HealthStack simplifies health decisions with <strong>natural protocols</strong> focused on:</Typography>
-               <ul style={{ color: "#212121", fontSize: "16px",paddingLeft:"20px",marginTop:"10px" }}>
+                <ul style={{ color: "#212121", fontSize: "16px", paddingLeft: "20px", marginTop: "10px" }}>
                     <li>Behavior (e.g., sleep improvement, meditation)</li>
                     <li>Food (e.g., wholegrains, omega-3 foods)</li>
                     <li>Supplements (e.g., green tea extract)</li>
