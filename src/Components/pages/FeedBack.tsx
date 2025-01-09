@@ -55,19 +55,19 @@ const Feedback: React.FC<FeedbackProps> = ({
 
             {/* Rating Stars */}
             <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
-            {[...Array(5)].map((_, index) => (
-        <Box
-          key={index}
-          sx={{ cursor: "pointer", mx: 0.5 }}
-          onClick={() => handleRatingClick(index)}
-        >
-          {index < formData.rating ? (
-            <FaStar style={{ color: "#ABD8DB", fontSize: "48px" }} />
-          ) : (
-            <FaRegStar style={{ color: "#000", fontSize: "48px" }} />
-          )}
-        </Box>
-      ))}
+                {[...Array(5)].map((_, index) => (
+                    <Box
+                        key={index}
+                        sx={{ cursor: "pointer", mx: 0.5 }}
+                        onClick={() => handleRatingClick(index)}
+                    >
+                        {index < formData.rating ? (
+                            <FaStar style={{ color: "#ABD8DB", fontSize: "48px" }} />
+                        ) : (
+                            <FaRegStar style={{ color: "#000", fontSize: "48px" }} />
+                        )}
+                    </Box>
+                ))}
 
             </Box>
 
@@ -133,7 +133,7 @@ const Feedback: React.FC<FeedbackProps> = ({
             {/* Submit Button */}
             <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Button
-                onClick={handleSubmit}
+                    onClick={handleSubmit}
                     sx={{
                         mt: 2,
                         bgcolor: "#D4C89E",
@@ -149,7 +149,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                         },
                     }}
                 >
-                    Save
+                    Send Feedback
                 </Button>
             </Box>
 

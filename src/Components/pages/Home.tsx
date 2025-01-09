@@ -3,15 +3,13 @@ import { Typography, Box, Grid, Card, CardMedia, Button } from '@mui/material';
 import mainImg from '../../assets/mainUIImage.svg'
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
-// import jsonData from '../../JSON_Example/JSON_example_vShort.json'
-import jsonData from '../../JSON_Example/healthstack_data_example.json'
+import jsonData from '../../healthstack_data_example.json'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setValue } from '../../features/tabSlice';
 import { RootState } from '../../Store/Store';
 import { setBenefit, setProtocol } from '../../features/allStateSlice';
 import { CommonSearch } from '../utils/CommonSearch';
-import axios from 'axios';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
@@ -24,20 +22,13 @@ const HomePage: React.FC = () => {
     const handleTabChange = (value: number) => {
         dispatch(setValue(value))
     };
-    const fetchData = async () => {
-        try {
-            const response = await axios.get('/healthstack_data_example.json');
-            dispatch(setBenefit(response.data.benefits));
-            dispatch(setProtocol(response.data.protocols));
-        } catch (error) {
-            console.error('Error fetching JSON data:', error);
-        }
-    }
+
     useEffect(() => {
-        fetchData();
+        dispatch(setBenefit(benefits));
+        dispatch(setProtocol(protocols));
     }, [dispatch])
     const benefitFilterOption = ["Name (A-Z)", "Name (Z-A)"]
-    const protocolFilterOption = ["Time", "Cost"]
+    const protocolFilterOption = ["Time", "Cost", "Name (A-Z)", "Name (Z-A)"]
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
         () => benefitFilterOption.reduce((acc, option) => {
             acc[option] = false;
@@ -62,8 +53,18 @@ const HomePage: React.FC = () => {
         }
     }, [activeTab]);
 
-    const filterOptionsProtocol = ["Behaviour", "Food", "Supplements", "Dietary"];
-    const filterOptionsBenefit = ["Physical Health", "Mental Health"];
+    const uniqueProtocolCategories = Array.from(
+        new Set(
+            protocols.flatMap(item => item.protocolCategories)
+        )
+    );
+    const uniqueBenefitCategories = Array.from(
+        new Set(
+            benefits.flatMap(item => item.benefitCategories)
+        )
+    );
+    const filterOptionsProtocol = uniqueProtocolCategories;
+    const filterOptionsBenefit = uniqueBenefitCategories;
 
     const [selectedFilters, setSelectedFilters] = useState<Record<string, boolean>>(
         () => filterOptionsBenefit.reduce((acc, option) => {
@@ -107,10 +108,16 @@ const HomePage: React.FC = () => {
                 [label]: true,
             }));
         } else if (activeTab === 1) {
-            setSelectedSortValue((prev) => ({
-                ...prev,
-                [label]: !prev[label],
-            }));
+            setSelectedSortValue((prev) => {
+                const updated = { ...prev };
+                if (label === "Name (A-Z)") {
+                    updated["Name (Z-A)"] = false;
+                } else if (label === "Name (Z-A)") {
+                    updated["Name (A-Z)"] = false;
+                }
+                updated[label] = !prev[label];
+                return updated;
+            });
         }
     };
 
@@ -156,16 +163,23 @@ const HomePage: React.FC = () => {
 
     useEffect(() => {
         const sorted = [...protocols].sort((a, b) => {
-            if (selectedSortValue.Time && selectedSortValue.Cost) {
+            if (selectedSortValue["Time"] && selectedSortValue["Cost"]) {
                 // First, sort by Time, then by Cost if Time is the same
                 const timeComparison = a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
                 if (timeComparison !== 0) return timeComparison;
                 return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
             }
-            if (selectedSortValue.Time) {
+            if (selectedSortValue["Time"]) {
                 return a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
-            } else if (selectedSortValue.Cost) {
+            }
+            if (selectedSortValue["Cost"]) {
                 return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
+            }
+            if (selectedSortValue["Name (A-Z)"]) {
+                return a.protocolName.localeCompare(b.protocolName); // Sort alphabetically
+            }
+            if (selectedSortValue["Name (Z-A)"]) {
+                return b.protocolName.localeCompare(a.protocolName); // Sort in reverse alphabetical order
             }
             return 0;
         });
@@ -178,7 +192,8 @@ const HomePage: React.FC = () => {
 
     useEffect(() => {
         if (searchTerm.trim() === "") {
-            fetchData();
+            dispatch(setBenefit(benefits));
+            dispatch(setProtocol(protocols));
         } else {
             const lowerCaseTerm = searchTerm.toLowerCase();
             if (activeTab === 0) {
@@ -279,7 +294,7 @@ const HomePage: React.FC = () => {
 
             {/* Cards Display */}
             {activeTab === 0 ? (
-                <Box sx={{ padding: 2,  bgcolor: '#EAF5F6' }}>
+                <Box sx={{ padding: 2, bgcolor: '#EAF5F6' }}>
                     <Grid container spacing={2}>
                         {benefit?.length > 0 ? (benefit?.map((item, index) => (
                             <Grid item xs={4} sm={4} key={index}>
@@ -321,7 +336,7 @@ const HomePage: React.FC = () => {
                                         }}
                                     >
                                         <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}
+                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto",lineHeight: 'normal' }}
                                         >
                                             {item.benefitName}
                                         </Typography>
@@ -336,7 +351,7 @@ const HomePage: React.FC = () => {
                     </Grid>
                 </Box>
             ) : (
-                <Box sx={{ padding: 2,bgcolor: '#F4F1E6' }}>
+                <Box sx={{ padding: 2, bgcolor: '#F4F1E6' }}>
                     <Grid container spacing={2}>
                         {protocol?.length > 0 ? (protocol?.map((item, index) => (
                             <Grid item xs={4} sm={4} key={index}>
@@ -379,7 +394,7 @@ const HomePage: React.FC = () => {
                                         }}
                                     >
                                         <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}
+                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto",lineHeight: 'normal' }}
                                         >
                                             {item.protocolName}
                                         </Typography>

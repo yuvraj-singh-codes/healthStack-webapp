@@ -3,8 +3,7 @@ import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
 import BenefitProtocolCard from '../BenefitProtocolCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
-// import jsonData from '../../JSON_Example/JSON_example_vShort.json'
-import jsonData from '../../JSON_Example/healthstack_data_example.json';
+import jsonData from '../../healthstack_data_example.json'
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
@@ -20,7 +19,7 @@ const BenefitProtocolPage: React.FC = () => {
     const benefitId = queryParams.get('id');
     const { benefits, protocols } = jsonData;
     const benefitData = benefits.find((val) => val.benefitID === benefitId);
-    const protocolFilterOption = ["Time", "Cost"]
+    const protocolFilterOption = ["Time", "Cost", "Name (A-Z)", "Name (Z-A)"]
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
         () => protocolFilterOption.reduce((acc, option) => {
             acc[option] = false;
@@ -28,10 +27,16 @@ const BenefitProtocolPage: React.FC = () => {
         }, {} as Record<string, boolean>)
     );
     const handleSortChange = (label: string) => {
-        setSelectedSortValue((prev) => ({
-            ...prev,
-            [label]: !prev[label],
-        }));
+        setSelectedSortValue((prev) => {
+            const updated = { ...prev };
+            if (label === "Name (A-Z)") {
+                updated["Name (Z-A)"] = false;
+            } else if (label === "Name (Z-A)") {
+                updated["Name (A-Z)"] = false;
+            }
+            updated[label] = !prev[label];
+            return updated;
+        });
     };
 
     const linkedProtocolIds = benefitData?.benefitLinkedProtocols || [];
@@ -40,7 +45,12 @@ const BenefitProtocolPage: React.FC = () => {
             .filter((item) => linkedProtocolIds.includes(item.protocolID));
         dispatch(setProtocol(filteredBenefits));
     }, [protocols, linkedProtocolIds])
-    const filterOptionsData = ['Behaviour', 'Food', 'Supplements', 'Dietary'];
+    const uniqueProtocolCategories = Array.from(
+        new Set(
+            protocols.flatMap(item => item.protocolCategories)
+        )
+    );
+    const filterOptionsData = uniqueProtocolCategories;
     const [selectedFilters, setSelectedFilters] = useState<Record<string, boolean>>(() =>
         filterOptionsData.reduce((acc, option) => {
             acc[option] = true;
@@ -73,17 +83,24 @@ const BenefitProtocolPage: React.FC = () => {
         const filteredProtocols = protocols.filter((protocol) =>
             linkedProtocolIds.includes(protocol.protocolID)
         );
+
         const sortedProtocols = [...filteredProtocols].sort((a, b) => {
-            if (selectedSortValue.Time && selectedSortValue.Cost) {
-                // First, sort by Time, then by Cost if Time is the same
+            if (selectedSortValue["Time"] && selectedSortValue["Cost"]) {
                 const timeComparison = a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
                 if (timeComparison !== 0) return timeComparison;
                 return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
             }
-            if (selectedSortValue.Time) {
+            if (selectedSortValue["Time"]) {
                 return a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
-            } else if (selectedSortValue.Cost) {
+            }
+            if (selectedSortValue["Cost"]) {
                 return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
+            }
+            if (selectedSortValue["Name (A-Z)"]) {
+                return a.protocolName.localeCompare(b.protocolName);
+            }
+            if (selectedSortValue["Name (Z-A)"]) {
+                return b.protocolName.localeCompare(a.protocolName);
             }
             return 0;
         });
@@ -115,7 +132,7 @@ const BenefitProtocolPage: React.FC = () => {
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} />
             <Box sx={{ maxWidth: 600, margin: 'auto', p: 2 }}>
                 <Card sx={{ boxShadow: 'none' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
                                 background: 'radial-gradient(circle, #ABD8DB 20%, #FFFFFF 70%)',
@@ -124,7 +141,6 @@ const BenefitProtocolPage: React.FC = () => {
                                 justifyContent: 'center',
                                 width: '120px',
                                 height: '120px',
-                                position: 'relative',
                             }}
                         >
                             <CardMedia
@@ -136,34 +152,18 @@ const BenefitProtocolPage: React.FC = () => {
                                     height: '120px',
                                 }}
                             />
-                            <Box
+
+                        </Box>
+                        <CardContent sx={{pt:"2px"}}>
+                            <Typography
                                 sx={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                    // backdropFilter: 'blur(0.1px)',
-                                    padding: 1,
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: { xs: "70px", sm: "80px", md: "80px", lg: "80px" },
+                                    fontWeight: 'bold',
+                                    color: '#212121',
+                                    fontSize: '14px',
                                 }}
                             >
-                                <Typography
-                                    sx={{
-                                        fontWeight: 'bold',
-                                        color: '#212121',
-                                        textAlign: 'center',
-                                        fontSize: '14px',
-                                    }}
-                                >
-                                    {benefitData?.benefitName}
-                                </Typography>
-                            </Box>
-                        </Box>
-                        <CardContent>
+                                {benefitData?.benefitName}
+                            </Typography>
                             <Typography
                                 variant="body2"
                                 sx={{ fontSize: '14px', lineHeight: 'normal' }}

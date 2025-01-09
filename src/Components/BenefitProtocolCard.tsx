@@ -1,16 +1,16 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Box, Grid } from '@mui/material';
+import { Card, CardMedia, Typography, Box, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Protocol } from './Interface/Interface';
 
 interface BenefitProtocolCardProps {
   benefitId: string | null;
-  data: Protocol[]; 
+  data: Protocol[];
 }
 
 const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, data }) => {
   const navigate = useNavigate();
-  
+
   return (
     <Grid container spacing={1}>
       {data.length > 0 ? (
@@ -26,9 +26,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                backgroundColor: 'white',
                 cursor: 'pointer',
-                height:"auto"
+                height: "auto"
               }}
             >
               {/* Top Section with Background */}
@@ -39,7 +38,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   borderTopLeftRadius: '10px',
                   borderTopRightRadius: '10px',
                   pt: 1,
-                  px:1,
+                  px: 1,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -61,11 +60,11 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   className='scrollbar'
                   sx={{
                     textAlign: 'center',
-                    fontSize: '12px',
+                    fontSize: '14px',
                     fontWeight: 500,
                     mt: 1,
                     px: 1,
-                    height:"40px",
+                    height: "40px",
                     overflow: 'auto',
                   }}
                 >
@@ -74,36 +73,38 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
               </Box>
 
               {/* Icons Section */}
-              <CardContent
-                sx={{
+              <Box
+                sx={{py:1,px:2,width:"100%" }}
+              >
+                <Box sx={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   gap: '15px',
-                }}
-              >
-                {/* Icon 1 */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
-                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                    {item?.protocolOverallImpactRating}
-                  </Typography>
+                }}>
+                  {/* Icon 1 */}
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
+                    <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                      {item?.protocolOverallImpactRating}
+                    </Typography>
+                  </Box>
+                  {/* Icon 2 */}
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} />
+                    <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                      {item?.protocolRelativeTimeRating}
+                    </Typography>
+                  </Box>
+                  {/* Icon 3 */}
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} />
+                    <Typography variant="caption" sx={{ fontSize: '12px' }}>
+                      {item?.protocolRelativeCostRating}
+                    </Typography>
+                  </Box>
                 </Box>
-                {/* Icon 2 */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} />
-                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                  {item?.protocolRelativeTimeRating}
-                  </Typography>
-                </Box>
-                {/* Icon 3 */}
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} />
-                  <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                  {item?.protocolRelativeCostRating}
-                  </Typography>
-                </Box>
-              </CardContent>
+              </Box>
             </Card>
           </Grid>
         ))

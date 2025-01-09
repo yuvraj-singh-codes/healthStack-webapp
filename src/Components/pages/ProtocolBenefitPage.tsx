@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { FaDollarSign } from "react-icons/fa6";
 import {
     Box,
     Typography,
     CardMedia,
     Card,
     CardContent,
+    Grid,
 } from '@mui/material';
 import ProtocolBenefitCard from '../ProtocolBenefitCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
-import { Hourglass } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
-// import jsonData from '../../JSON_Example/JSON_example_vShort.json'
-import jsonData from '../../JSON_Example/healthstack_data_example.json'
+import jsonData from '../../healthstack_data_example.json'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setBenefit } from '../../features/allStateSlice';
@@ -28,7 +26,12 @@ const ProtocolBenefitPage: React.FC = () => {
     const protocolID = queryParams.get('id');
     const { protocols, benefits } = jsonData;
     const protocolsData = protocols.find((val) => val.protocolID === protocolID);
-    const filterOptionsData = ["Physical Health", "Mental Health"];
+    const uniqueBenefitCategories = Array.from(
+        new Set(
+            benefits.flatMap(item => item.benefitCategories)
+        )
+    );
+    const filterOptionsData = uniqueBenefitCategories;
     const [selectedFilters, setSelectedFilters] = useState<Record<string, boolean>>(() =>
         filterOptionsData.reduce((acc, option) => {
             acc[option] = true;
@@ -124,13 +127,29 @@ const ProtocolBenefitPage: React.FC = () => {
             dispatch(setBenefit(filtered));
         }
     }, [searchTerm, dispatch]);
+    const getRatingLabel = (rating?: number): string => {
+        switch (rating) {
+            case 1:
+                return 'Low';
+            case 2:
+                return 'Low/Moderate';
+            case 3:
+                return 'Moderate';
+            case 4:
+                return 'Moderate/High';
+            case 5:
+                return 'High';
+            default:
+                return '';
+        }
+    };
 
     return (
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} />
             <Box sx={{ maxWidth: 600, margin: "auto", p: 2 }}>
                 <Card sx={{ boxShadow: "none" }}>
-                    <Box sx={{ display: 'flex', alignItems: "center" }}>
+                    <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
                                 background: 'radial-gradient(circle, #D4C89E 20%, #FFFFFF 70%)',
@@ -139,7 +158,6 @@ const ProtocolBenefitPage: React.FC = () => {
                                 justifyContent: 'center',
                                 width: "120px",
                                 height: '120px',
-                                position: 'relative'
                             }}
                         >
                             <CardMedia
@@ -151,40 +169,28 @@ const ProtocolBenefitPage: React.FC = () => {
                                     height: '120px',
                                 }}
                             />
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    width: '100%',
-                                    bgcolor: 'rgba(255, 255, 255, 0.5)',
-                                    // backdropFilter: 'blur(0.1px)',
-                                    padding: 1,
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: { xs: "70px", sm: "80px", md: "80px", lg: "80px" },
-                                }}
-                            >
-                                <Typography
-                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: 'center', fontSize: "12px" }}
-                                >
-                                    {protocolsData?.protocolName}
-                                </Typography>
-                            </Box>
                         </Box>
-                        <CardContent>
+                        <CardContent sx={{ pt: "2px" }}>
+                            <Typography
+                                sx={{ fontWeight: 'bold', color: '#212121', fontSize: "14px" }}
+                            >
+                                {protocolsData?.protocolName}
+                            </Typography>
                             <Typography variant="body2" sx={{ fontSize: '14px', lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, justifyContent: "space-around" }}>
-                                <Typography variant="caption" sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
-                                    <Hourglass style={{ height: "14px" }} /> {protocolsData?.protocolRelativeTimeRating}
-                                </Typography>
-                                <Typography variant="caption" sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
-                                    <FaDollarSign style={{ fontSize: "14px" }} /> {protocolsData?.protocolRelativeCostRating}
-                                </Typography>
-                            </Box>
+                            <Grid container spacing={1} sx={{marginTop:"5px"}}>
+                                <Grid item>
+                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center',justifyContent: "center" }}>
+                                    <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} /> {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
+                                    </Typography>
+                                </Grid>
+                                <Grid item>
+                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
+                                    <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} /> {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
+                                    </Typography>
+                                </Grid>
+                            </Grid>
                         </CardContent>
                     </Box>
                 </Card>

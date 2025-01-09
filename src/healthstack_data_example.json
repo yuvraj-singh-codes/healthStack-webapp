@@ -1,0 +1,2780 @@
+{
+    "claims": [
+        {
+            "claimID": "claim_001",
+            "claimProtocolID": "protocol_001",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Sauna therapy is linked to significant cardiovascular benefits. Regular use may lower the risk of heart disease, supported by growing evidence across various studies.",
+            "claimMechanisms": "Heat exposure induces an increase in heart rate and vascular compliance by promoting vasodilation and improving blood flow. This mimics the cardiovascular effects of light exercise, as the body's core temperature rises, stimulating the autonomic nervous system and enhancing circulation throughout the body.",
+            "claimProtocolInstructions": "1. Hydrate adequately before starting; drink at least 500 ml of water to prevent dehydration.\n2. Begin with 10-minute sessions at a moderate temperature (70–90°C or 158–194°F).\n3. Gradually increase session duration by 5-minute increments and heat intensity, aiming for a maximum of 20 minutes per session as tolerated.\n4. Take breaks between sessions if using multiple rounds to cool down and regulate your body temperature.\n5. Listen to your body; leave the sauna immediately if you feel lightheaded, dizzy, or overheated.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Studies suggest that regular sauna use can lower the risk of heart disease by up to 40%.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "The research is moderately established, with studies spanning several decades.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "While many studies support this, there is moderate variability in the results.",
+            "claimOverallEvidenceRating": 3.7,
+            "claimOverallEvidenceRatingDescription": "This protocol shows promising results, supported by moderate to high-quality evidence.",
+            "claimEasyWinRating": 3.4,
+            "claimSources": [
+                {
+                    "title": "Sauna Use and Cardiovascular Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2021,
+                    "url": "https://example.com/sauna-cardiovascular-health",
+                    "summary": "This study found that regular sauna use significantly reduces cardiovascular risks by improving vascular function."
+                },
+                {
+                    "title": "Heat Therapy and Heart Rate Variability",
+                    "authors": "Nguyen H., Patel K.",
+                    "publisher": "International Journal of Cardiology",
+                    "year": 2020,
+                    "url": "https://example.com/heat-heart-rate",
+                    "summary": "This research highlights how heat exposure from saunas improves heart rate variability, a key marker of cardiovascular health."
+                },
+                {
+                    "title": "Thermal Stress and Vascular Health",
+                    "authors": "Taylor B., Green L.",
+                    "publisher": "Journal of Vascular Research",
+                    "year": 2019,
+                    "url": "https://example.com/thermal-vascular-health",
+                    "summary": "Findings show that repeated heat exposure enhances vascular compliance and promotes endothelial function."
+                },
+                {
+                    "title": "The Cardioprotective Effects of Sauna Therapy",
+                    "authors": "Johnson A., Lee T.",
+                    "publisher": "Cardiovascular Health Review",
+                    "year": 2020,
+                    "url": "https://example.com/cardioprotective-sauna",
+                    "summary": "This article highlights how sauna therapy reduces blood pressure and improves heart health markers."
+                },
+                {
+                    "title": "Sauna Use and All-Cause Mortality",
+                    "authors": "Patel R., Nguyen M.",
+                    "publisher": "Journal of Preventive Medicine",
+                    "year": 2021,
+                    "url": "https://example.com/sauna-mortality",
+                    "summary": "A large-scale study linking regular sauna use to lower all-cause mortality rates, including cardiovascular events."
+                },
+                {
+                    "title": "Physiological Adaptations to Sauna Bathing",
+                    "authors": "Taylor Z., Harris P.",
+                    "publisher": "Physiology Today",
+                    "year": 2018,
+                    "url": "https://example.com/physiological-sauna",
+                    "summary": "This paper explores how regular sauna use promotes vascular health and improves autonomic function."
+                },
+                {
+                    "title": "Heat Exposure as a Preventative Therapy for Cardiovascular Disease",
+                    "authors": "Green L., Taylor B.",
+                    "publisher": "Preventative Medicine Journal",
+                    "year": 2020,
+                    "url": "https://example.com/heat-therapy-cvd",
+                    "summary": "Evidence suggests sauna therapy can serve as a preventative measure against cardiovascular disease through improved vascular compliance."
+                },
+                {
+                    "title": "Sauna Bathing and Blood Pressure Control",
+                    "authors": "Brown K., White T.",
+                    "publisher": "Hypertension Research",
+                    "year": 2019,
+                    "url": "https://example.com/sauna-blood-pressure",
+                    "summary": "A focused review on how sauna bathing significantly lowers blood pressure and improves overall heart function."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_002",
+            "claimProtocolID": "protocol_002",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Zone 2 Cardio significantly improves cardiovascular health by enhancing aerobic capacity and improving heart efficiency. Regular practice reduces the risk of heart disease.",
+            "claimMechanisms": "Zone 2 Cardio focuses on moderate-intensity exercise that optimises fat oxidation and increases mitochondrial efficiency. It enhances blood flow, strengthens the heart muscle, and reduces systemic inflammation, which collectively contribute to improved cardiovascular health.",
+            "claimProtocolInstructions": "1. Determine your Zone 2 heart rate (approximately 60–70% of your maximum heart rate).\n2. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3-4 times per week.\n3. Ensure the intensity allows you to hold a conversation comfortably during exercise.\n4. Gradually increase duration and frequency as fitness improves.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Zone 2 Cardio is highly effective at improving heart efficiency and reducing cardiovascular risks.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research supports the role of moderate-intensity aerobic exercise in promoting cardiovascular health.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Strong agreement exists in the literature regarding the benefits of Zone 2 Cardio for heart health.",
+            "claimOverallEvidenceRating": 5,
+            "claimOverallEvidenceRatingDescription": "Evidence from numerous high-quality studies strongly supports this protocol for improving heart health.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Aerobic Exercise and Cardiovascular Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2020,
+                    "url": "https://example.com/aerobic-heart-health",
+                    "summary": "This study outlines how moderate-intensity aerobic exercise significantly reduces cardiovascular disease risk."
+                },
+                {
+                    "title": "The Science of Zone 2 Cardio",
+                    "authors": "Taylor Z., Harris P.",
+                    "publisher": "Exercise Physiology Journal",
+                    "year": 2021,
+                    "url": "https://example.com/zone2-science",
+                    "summary": "A comprehensive review of how Zone 2 Cardio enhances mitochondrial function and cardiovascular efficiency."
+                },
+                {
+                    "title": "Heart Health and Aerobic Fitness",
+                    "authors": "Nguyen H., Patel K.",
+                    "publisher": "Preventive Cardiology",
+                    "year": 2019,
+                    "url": "https://example.com/heart-aerobic-fitness",
+                    "summary": "This paper discusses the long-term cardiovascular benefits of regular moderate-intensity exercise."
+                },
+                {
+                    "title": "Zone 2 Cardio and Fat Oxidation",
+                    "authors": "Green L., Taylor B.",
+                    "publisher": "Journal of Sports Science",
+                    "year": 2020,
+                    "url": "https://example.com/zone2-fat-oxidation",
+                    "summary": "Research highlights the role of Zone 2 training in improving fat oxidation and reducing heart strain."
+                },
+                {
+                    "title": "Moderate-Intensity Exercise and Longevity",
+                    "authors": "White T., Brown K.",
+                    "publisher": "Longevity Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/moderate-exercise-longevity",
+                    "summary": "Findings show that regular Zone 2 exercise correlates with increased lifespan and lower cardiovascular mortality."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_003",
+            "claimProtocolID": "protocol_003",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "The Mediterranean Diet is strongly associated with improved cardiovascular health, reducing the risk of heart disease by promoting a balanced diet rich in heart-healthy nutrients.",
+            "claimMechanisms": "The Mediterranean Diet emphasises healthy fats from olive oil, omega-3-rich fish, and nuts, combined with high fibre from fruits, vegetables, and whole grains. These components reduce inflammation, lower LDL cholesterol, and improve endothelial function, collectively enhancing cardiovascular health.",
+            "claimProtocolInstructions": "1. Consume a variety of fresh fruits and vegetables daily.\n2. Replace saturated fats with healthy fats like olive oil and nuts.\n3. Include fatty fish such as salmon or mackerel 2-3 times per week.\n4. Incorporate whole grains and legumes into meals.\n5. Limit red meat consumption and opt for lean proteins like poultry and fish.\n6. Use herbs and spices instead of salt to flavour food.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "The Mediterranean Diet has been shown to reduce heart disease risk by 30% in high-risk populations.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Decades of research, including numerous large-scale studies, support the cardiovascular benefits of the Mediterranean Diet.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is near-universal agreement among researchers about the cardiovascular benefits of the Mediterranean Diet.",
+            "claimOverallEvidenceRating": 5,
+            "claimOverallEvidenceRatingDescription": "High-quality evidence strongly supports the Mediterranean Diet's role in improving heart health.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Mediterranean Diet and Cardiovascular Risk Reduction",
+                    "authors": "Johnson A., Patel K.",
+                    "publisher": "Journal of Nutrition",
+                    "year": 2019,
+                    "url": "https://example.com/mediterranean-cardiovascular",
+                    "summary": "This study found that adherence to the Mediterranean Diet significantly reduces cardiovascular risk factors."
+                },
+                {
+                    "title": "Olive Oil and Heart Health",
+                    "authors": "Smith J., Harris T.",
+                    "publisher": "Journal of Heart Health",
+                    "year": 2020,
+                    "url": "https://example.com/olive-oil-heart",
+                    "summary": "Research highlights olive oil's role in reducing inflammation and improving cholesterol profiles."
+                },
+                {
+                    "title": "Impact of Mediterranean Diet on Lipid Levels",
+                    "authors": "Nguyen H., Lee T.",
+                    "publisher": "Preventive Medicine Journal",
+                    "year": 2021,
+                    "url": "https://example.com/med-diet-lipids",
+                    "summary": "This study examines how the Mediterranean Diet improves lipid levels and reduces atherosclerosis."
+                },
+                {
+                    "title": "Mediterranean Diet and Longevity",
+                    "authors": "Taylor B., Green L.",
+                    "publisher": "Longevity Research",
+                    "year": 2018,
+                    "url": "https://example.com/med-diet-longevity",
+                    "summary": "Findings show a strong correlation between the Mediterranean Diet and increased lifespan with reduced heart disease."
+                },
+                {
+                    "title": "Dietary Patterns and Cardiovascular Health",
+                    "authors": "Brown K., White T.",
+                    "publisher": "Cardiology Today",
+                    "year": 2020,
+                    "url": "https://example.com/diet-patterns-cvd",
+                    "summary": "A review of how different dietary patterns, including the Mediterranean Diet, improve cardiovascular outcomes."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_004",
+            "claimProtocolID": "protocol_004",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Quitting smoking significantly reduces the risk of cardiovascular disease by improving blood flow, reducing inflammation, and restoring vascular health.",
+            "claimMechanisms": "Smoking cessation leads to decreased oxidative stress and inflammation, restoring endothelial function and improving vascular elasticity. These changes reduce the buildup of arterial plaques and lower the risk of heart attacks and strokes.",
+            "claimProtocolInstructions": "1. Set a quit date and create a plan to eliminate smoking triggers.\n2. Seek professional help or join a smoking cessation program.\n3. Use nicotine replacement therapies (e.g., patches, gum) if needed.\n4. Avoid environments where smoking is prevalent to reduce temptation.\n5. Engage in regular exercise and stress-reducing activities to manage withdrawal symptoms.\n6. Track progress and reward milestones to stay motivated.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Smoking cessation reduces cardiovascular risk by up to 50% within one year of quitting.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research over decades strongly supports the cardiovascular benefits of quitting smoking.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is near-universal agreement among researchers on the cardiovascular benefits of smoking cessation.",
+            "claimOverallEvidenceRating": 5,
+            "claimOverallEvidenceRatingDescription": "Smoking cessation is widely recognised as one of the most impactful actions for improving heart health.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Cardiovascular Benefits of Smoking Cessation",
+                    "authors": "Johnson A., Taylor Z.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2020,
+                    "url": "https://example.com/smoking-cessation-heart",
+                    "summary": "This study highlights the immediate and long-term cardiovascular improvements seen after quitting smoking."
+                },
+                {
+                    "title": "Smoking and Endothelial Dysfunction",
+                    "authors": "Smith J., Brown K.",
+                    "publisher": "Cardiovascular Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/smoking-endothelial",
+                    "summary": "Research shows how smoking damages endothelial cells and how cessation leads to vascular repair."
+                },
+                {
+                    "title": "Long-Term Cardiovascular Outcomes of Smoking Cessation",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Preventive Cardiology",
+                    "year": 2021,
+                    "url": "https://example.com/longterm-smoking-cessation",
+                    "summary": "A longitudinal study demonstrating reduced cardiovascular events in former smokers compared to active smokers."
+                },
+                {
+                    "title": "Smoking Cessation and Oxidative Stress",
+                    "authors": "Green L., Taylor B.",
+                    "publisher": "Journal of Health Science",
+                    "year": 2020,
+                    "url": "https://example.com/smoking-oxidative",
+                    "summary": "Evidence that quitting smoking reduces oxidative stress markers, directly benefiting cardiovascular health."
+                },
+                {
+                    "title": "Public Health Impact of Smoking Cessation",
+                    "authors": "White T., Harris P.",
+                    "publisher": "Global Health Review",
+                    "year": 2021,
+                    "url": "https://example.com/smoking-public-health",
+                    "summary": "This study reviews global data on how quitting smoking reduces cardiovascular mortality rates."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_005",
+            "claimProtocolID": "protocol_005",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Resistance training improves cardiovascular health by reducing blood pressure, enhancing vascular function, and promoting a healthy body composition.",
+            "claimMechanisms": "Regular resistance training strengthens the heart by improving blood vessel elasticity and lowering systemic inflammation. It also reduces LDL cholesterol and increases HDL cholesterol, contributing to better cardiovascular health.",
+            "claimProtocolInstructions": "1. Perform resistance exercises targeting major muscle groups 2-3 times per week.\n2. Use free weights, machines, or bodyweight exercises like squats, push-ups, and planks.\n3. Start with 8-12 repetitions per set at a moderate weight and gradually increase intensity as strength improves.\n4. Rest for 48 hours between sessions to allow for muscle recovery.\n5. Combine resistance training with proper hydration and a balanced diet to optimise results.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Resistance training has a significant impact on improving vascular health and reducing risk factors for heart disease.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "There is substantial research supporting the cardiovascular benefits of resistance training.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Broad agreement exists in the literature, though some variability remains in specific population studies.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Resistance training shows strong evidence for its role in improving cardiovascular health.",
+            "claimEasyWinRating": 3.8,
+            "claimSources": [
+                {
+                    "title": "Resistance Training and Cardiovascular Risk Factors",
+                    "authors": "Johnson A., Patel K.",
+                    "publisher": "Journal of Sports Medicine",
+                    "year": 2020,
+                    "url": "https://example.com/resistance-cardiovascular",
+                    "summary": "This study examines how resistance training reduces cardiovascular risk factors such as high blood pressure and cholesterol."
+                },
+                {
+                    "title": "Impact of Strength Training on Heart Health",
+                    "authors": "Smith J., Taylor Z.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2021,
+                    "url": "https://example.com/strength-heart-health",
+                    "summary": "Findings highlight how strength training enhances vascular function and lowers systemic inflammation."
+                },
+                {
+                    "title": "Resistance Exercise and Blood Pressure Control",
+                    "authors": "Nguyen H., Brown K.",
+                    "publisher": "Hypertension Research",
+                    "year": 2019,
+                    "url": "https://example.com/resistance-blood-pressure",
+                    "summary": "Research explores how resistance training reduces systolic and diastolic blood pressure over time."
+                },
+                {
+                    "title": "The Role of Resistance Training in HDL Improvement",
+                    "authors": "Green L., White T.",
+                    "publisher": "Preventive Cardiology Journal",
+                    "year": 2020,
+                    "url": "https://example.com/resistance-hdl",
+                    "summary": "This paper details how resistance training increases HDL cholesterol levels and reduces LDL cholesterol."
+                },
+                {
+                    "title": "Strength Training and Cardiovascular Health",
+                    "authors": "Taylor B., Harris P.",
+                    "publisher": "Journal of Sports Science",
+                    "year": 2021,
+                    "url": "https://example.com/strength-cardiovascular",
+                    "summary": "Evidence shows that strength training improves body composition and reduces cardiovascular risk."
+                },
+                {
+                    "title": "The Effects of Resistance Training on Cardiovascular Function",
+                    "authors": "Johnson L., Patel R.",
+                    "publisher": "Journal of Applied Physiology",
+                    "year": 2019,
+                    "url": "https://example.com/resistance-cardiovascular-function",
+                    "summary": "This study demonstrates that regular resistance training improves vascular compliance and cardiac output."
+                },
+                {
+                    "title": "Resistance Training as a Cardioprotective Strategy",
+                    "authors": "Smith T., Harris P.",
+                    "publisher": "Cardiology and Fitness Journal",
+                    "year": 2020,
+                    "url": "https://example.com/cardioprotective-resistance",
+                    "summary": "A review highlighting the cardioprotective benefits of strength training in reducing myocardial stress."
+                },
+                {
+                    "title": "Muscle Strength and Heart Health",
+                    "authors": "Nguyen H., Taylor Z.",
+                    "publisher": "Journal of Cardiac Rehabilitation",
+                    "year": 2021,
+                    "url": "https://example.com/muscle-heart-health",
+                    "summary": "This paper links improved muscle strength through resistance training with enhanced cardiac performance."
+                },
+                {
+                    "title": "Resistance Training Reduces Cardiovascular Mortality",
+                    "authors": "Green M., White L.",
+                    "publisher": "Preventive Medicine Reports",
+                    "year": 2020,
+                    "url": "https://example.com/resistance-mortality",
+                    "summary": "Findings indicate that regular resistance training is associated with lower cardiovascular mortality rates."
+                },
+                {
+                    "title": "The Role of Resistance Training in Reducing Systemic Inflammation",
+                    "authors": "Brown K., Lee A.",
+                    "publisher": "Journal of Inflammation Research",
+                    "year": 2019,
+                    "url": "https://example.com/resistance-inflammation",
+                    "summary": "Evidence shows that resistance training decreases systemic inflammation, which is a key factor in cardiovascular health."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_006",
+            "claimProtocolID": "protocol_006",
+            "claimBenefitID": "benefit_002",
+            "claimDescription": "Omega-3 supplementation enhances immune system function by reducing inflammation and supporting cell-mediated immunity.",
+            "claimMechanisms": "DHA and EPA, key components of omega-3 fatty acids, modulate inflammatory responses and improve the activity of immune cells such as T-cells. These mechanisms contribute to a stronger and more balanced immune response.",
+            "claimProtocolInstructions": "1. Consume 2 servings of fatty fish per week, such as salmon, mackerel, or sardines.\n2. Include plant-based sources like flaxseeds and chia seeds in daily meals.\n3. Take omega-3 supplements as recommended by a healthcare provider if dietary intake is insufficient.\n4. Combine with a diet rich in fruits and vegetables to enhance the immune-boosting effects.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Omega-3 fatty acids are well-documented for their role in reducing inflammation and boosting immune function.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research is robust, with numerous studies confirming the immunological benefits of omega-3s.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Strong consensus exists in both nutritional and immunological research fields regarding the benefits of omega-3s.",
+            "claimOverallEvidenceRating": 4.7,
+            "claimOverallEvidenceRatingDescription": "Highly credible evidence supports omega-3s as a critical nutrient for immune health.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Omega-3s and Immune Resilience",
+                    "authors": "Green M., Patel T.",
+                    "publisher": "Journal of Immunology",
+                    "year": 2021,
+                    "url": "https://example.com/omega-immune",
+                    "summary": "Findings highlight omega-3 fatty acids' role in enhancing cell-mediated immunity."
+                },
+                {
+                    "title": "DHA and EPA in Immune Modulation",
+                    "authors": "Nguyen H., White L.",
+                    "publisher": "Immunity and Nutrition",
+                    "year": 2020,
+                    "url": "https://example.com/dha-immune",
+                    "summary": "This research explores how DHA and EPA reduce inflammatory markers and improve immune response."
+                },
+                {
+                    "title": "Anti-Inflammatory Effects of Omega-3s",
+                    "authors": "Taylor B., Harris J.",
+                    "publisher": "Molecular Health Journal",
+                    "year": 2019,
+                    "url": "https://example.com/anti-inflammatory-omega3",
+                    "summary": "Study shows omega-3s' significant role in reducing inflammation, a key factor in immune resilience."
+                },
+                {
+                    "title": "The Impact of Omega-3 Fatty Acids on Immunity",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Nutrition Research",
+                    "year": 2020,
+                    "url": "https://example.com/omega-3-immunity",
+                    "summary": "This study highlights the importance of omega-3 fatty acids in supporting immune system health."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_007",
+            "claimProtocolID": "protocol_007",
+            "claimBenefitID": "benefit_002",
+            "claimDescription": "Cold showers enhance immune system function by improving circulation, reducing inflammation, and stimulating immune cell activity.",
+            "claimMechanisms": "Exposure to cold water triggers a stress response that increases heart rate and stimulates the production of white blood cells, which play a critical role in immune defense. Additionally, improved blood circulation supports the delivery of oxygen and nutrients to tissues, enhancing overall immune resilience.",
+            "claimProtocolInstructions": "1. Gradually adjust to cold showers by starting with lukewarm water and slowly lowering the temperature over time.\n2. Aim for 30 seconds to 2 minutes of cold exposure per session.\n3. Practice daily for consistent benefits.\n4. Breathe deeply to help regulate the body's response to the cold stimulus.",
+            "claimImpactRating": 3,
+            "claimImpactRatingDescription": "Cold showers provide moderate improvements to immune function through enhanced circulation and immune stimulation.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Research is emerging, with moderate evidence supporting the immune-boosting effects of cold exposure.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Some agreement exists among researchers, but variability in study results and methodologies remains.",
+            "claimOverallEvidenceRating": 3.0,
+            "claimOverallEvidenceRatingDescription": "Evidence suggests that cold showers moderately enhance immune function, but further research is needed for stronger conclusions.",
+            "claimEasyWinRating": 3.5,
+            "claimSources": [
+                {
+                    "title": "Cold Water Exposure and Immune Function",
+                    "authors": "Johnson L., Harris T.",
+                    "publisher": "Journal of Physiology",
+                    "year": 2020,
+                    "url": "https://example.com/cold-water-immune",
+                    "summary": "This study highlights the immune-boosting effects of cold water exposure through increased white blood cell activity."
+                },
+                {
+                    "title": "Cold Showers and Circulatory Health",
+                    "authors": "Nguyen H., White T.",
+                    "publisher": "Journal of Wellness Science",
+                    "year": 2019,
+                    "url": "https://example.com/cold-showers-circulation",
+                    "summary": "Research shows that regular cold showers improve blood flow and support immune system efficiency."
+                },
+                {
+                    "title": "The Stress Response and Immune Function",
+                    "authors": "Green L., Patel K.",
+                    "publisher": "Stress and Health Journal",
+                    "year": 2021,
+                    "url": "https://example.com/stress-immune",
+                    "summary": "This paper explores how controlled stress from cold exposure stimulates immune cell production and activity."
+                },
+                {
+                    "title": "Cold Exposure Therapy: Benefits and Mechanisms",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Journal of Experimental Physiology",
+                    "year": 2020,
+                    "url": "https://example.com/cold-therapy",
+                    "summary": "Findings indicate that cold exposure, such as cold showers, triggers beneficial physiological responses, including enhanced immunity."
+                },
+                {
+                    "title": "Cold Shower Adaptation and Immune Benefits",
+                    "authors": "Taylor B., White M.",
+                    "publisher": "International Journal of Health Research",
+                    "year": 2019,
+                    "url": "https://example.com/cold-shower-immune",
+                    "summary": "Adaptation to regular cold showers was linked to improved immune responses and reduced inflammation."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_008",
+            "claimProtocolID": "protocol_008",
+            "claimBenefitID": "benefit_002",
+            "claimDescription": "Probiotic-rich foods enhance immune function by promoting a healthy gut microbiome, which plays a key role in regulating immune responses.",
+            "claimMechanisms": "Probiotics introduce beneficial bacteria to the gut, which interact with immune cells to reduce inflammation, improve gut barrier function, and modulate immune responses. This leads to increased resistance to infections and overall immune resilience.",
+            "claimProtocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1-2 servings of probiotic-rich foods daily for consistent benefits.\n3. Combine with a diet high in dietary fibre to support gut bacteria growth and activity.\n4. Avoid excessive sugar and processed foods, which can harm the gut microbiome.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Probiotic-rich foods significantly enhance immune function by improving gut health and reducing inflammation.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research on the immune benefits of probiotics is well-established, with numerous high-quality studies available.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is broad agreement among researchers on the positive immune effects of probiotic-rich foods, although individual results may vary.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Substantial evidence supports the role of probiotics in boosting immune system function.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Probiotics and Immune Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Nutrition",
+                    "year": 2020,
+                    "url": "https://example.com/probiotics-immune",
+                    "summary": "This study highlights the role of probiotics in improving immune resilience and reducing the risk of infections."
+                },
+                {
+                    "title": "Gut Microbiome and Immune System Interactions",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Microbiome Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/gut-immune",
+                    "summary": "Research shows how gut bacteria influence immune cell activity and overall immune system health."
+                },
+                {
+                    "title": "The Role of Fermented Foods in Immunity",
+                    "authors": "Taylor Z., Green L.",
+                    "publisher": "Journal of Fermentation Science",
+                    "year": 2021,
+                    "url": "https://example.com/fermented-foods",
+                    "summary": "This paper explores how fermented foods containing probiotics contribute to stronger immune defenses."
+                },
+                {
+                    "title": "Probiotic Consumption and Infection Prevention",
+                    "authors": "White T., Harris P.",
+                    "publisher": "Infection Prevention Journal",
+                    "year": 2020,
+                    "url": "https://example.com/probiotic-infection",
+                    "summary": "Findings indicate that regular probiotic consumption reduces the incidence of common infections."
+                },
+                {
+                    "title": "Dietary Fibre and Probiotic Synergy",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Nutrition and Gut Health Journal",
+                    "year": 2019,
+                    "url": "https://example.com/fibre-probiotic",
+                    "summary": "Combining probiotics with dietary fibre enhances gut health and amplifies immune benefits."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_009",
+            "claimProtocolID": "protocol_009",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Meditation enhances mental clarity by reducing stress, improving focus, and promoting cognitive resilience.",
+            "claimMechanisms": "Meditation helps regulate the autonomic nervous system by reducing cortisol levels and increasing alpha brain wave activity, which are associated with relaxation and improved cognitive function. Regular practice strengthens neural pathways responsible for attention and focus.",
+            "claimProtocolInstructions": "1. Set aside 10 minutes daily for meditation.\n2. Sit comfortably in a quiet space, close your eyes, and focus on your breath.\n3. Use guided meditation apps or mindfulness techniques if needed.\n4. Gradually increase the duration as you become more comfortable with the practice.\n5. Practice consistently to achieve the best results.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Regular meditation is linked to significant improvements in focus and reduction of mental fog.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research over decades supports the cognitive benefits of meditation.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Strong consensus exists among researchers on the positive effects of meditation on mental clarity.",
+            "claimOverallEvidenceRating": 4.7,
+            "claimOverallEvidenceRatingDescription": "Meditation has substantial evidence supporting its role in improving mental clarity and cognitive function.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Meditation and Cognitive Function",
+                    "authors": "Taylor Z., Nguyen H.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2021,
+                    "url": "https://example.com/meditation-cognition",
+                    "summary": "This study shows that meditation improves focus, memory, and overall cognitive performance."
+                },
+                {
+                    "title": "Stress Reduction and Cognitive Benefits of Meditation",
+                    "authors": "Smith J., Patel R.",
+                    "publisher": "Journal of Mindfulness",
+                    "year": 2019,
+                    "url": "https://example.com/stress-meditation",
+                    "summary": "Research highlights how meditation reduces stress and enhances cognitive resilience."
+                },
+                {
+                    "title": "Neuroplasticity and Meditation",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Brain Science Journal",
+                    "year": 2020,
+                    "url": "https://example.com/neuroplasticity-meditation",
+                    "summary": "This study explores how regular meditation strengthens neural pathways associated with attention and focus."
+                },
+                {
+                    "title": "Meditation and Cortisol Reduction",
+                    "authors": "Green M., White T.",
+                    "publisher": "Endocrinology Research",
+                    "year": 2020,
+                    "url": "https://example.com/cortisol-meditation",
+                    "summary": "Evidence shows that meditation significantly reduces cortisol levels, improving mental clarity."
+                },
+                {
+                    "title": "Long-Term Cognitive Benefits of Mindfulness Meditation",
+                    "authors": "Lee T., Taylor B.",
+                    "publisher": "Mind and Brain Journal",
+                    "year": 2021,
+                    "url": "https://example.com/longterm-mindfulness",
+                    "summary": "A longitudinal study demonstrating lasting improvements in mental clarity and focus from mindfulness meditation."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_010",
+            "claimProtocolID": "protocol_006",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Omega-3 supplementation supports mental clarity by improving cognitive function and reducing neuroinflammation.",
+            "claimMechanisms": "DHA and EPA, the primary components of omega-3 fatty acids, improve neural communication, reduce oxidative stress, and decrease neuroinflammation. These mechanisms enhance focus, memory, and overall cognitive function.",
+            "claimProtocolInstructions": "1. Consume 2 servings of fatty fish, such as salmon or mackerel, per week.\n2. Include plant-based sources of omega-3, like flaxseeds, walnuts, or chia seeds, in your daily diet.\n3. Take omega-3 supplements as advised by a healthcare provider if dietary intake is insufficient.\n4. Pair with a balanced diet rich in fruits and vegetables for optimal results.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Omega-3 fatty acids are highly effective at improving cognitive function and focus.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research is well-established but continues to evolve in specific areas of cognitive enhancement.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong consensus among researchers on the cognitive benefits of omega-3 supplementation.",
+            "claimOverallEvidenceRating": 4.7,
+            "claimOverallEvidenceRatingDescription": "High-quality evidence supports the role of omega-3s in enhancing mental clarity and cognitive performance.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Omega-3s and Cognitive Performance",
+                    "authors": "Harris K., Brown J.",
+                    "publisher": "Brain Health Journal",
+                    "year": 2021,
+                    "url": "https://example.com/omega-cognition",
+                    "summary": "DHA and EPA significantly enhance memory and focus in adults."
+                },
+                {
+                    "title": "Dietary Fats and Neuroprotection",
+                    "authors": "Nguyen P., White L.",
+                    "publisher": "Journal of Neurology",
+                    "year": 2020,
+                    "url": "https://example.com/fats-neuroprotection",
+                    "summary": "Omega-3s reduce neuroinflammation, improving cognitive resilience over time."
+                },
+                {
+                    "title": "Fish Consumption and Cognitive Health",
+                    "authors": "Green M., Taylor B.",
+                    "publisher": "Nutrition Science Review",
+                    "year": 2019,
+                    "url": "https://example.com/fish-cognition",
+                    "summary": "Findings suggest regular fish consumption supports mental clarity and reduces brain fog."
+                },
+                {
+                    "title": "The Role of DHA in Cognitive Function",
+                    "authors": "Taylor Z., Harris T.",
+                    "publisher": "Journal of Cognitive Neuroscience",
+                    "year": 2020,
+                    "url": "https://example.com/dha-cognition",
+                    "summary": "This study highlights DHA's critical role in neural signaling and memory enhancement."
+                },
+                {
+                    "title": "Omega-3 Supplementation and Focus",
+                    "authors": "Brown K., White R.",
+                    "publisher": "Cognitive Health Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/omega-focus",
+                    "summary": "Evidence shows that omega-3 supplementation significantly improves attention and focus."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_011",
+            "claimProtocolID": "protocol_008",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Probiotic-rich foods enhance mental clarity by improving gut health and reducing systemic inflammation, which influences brain function.",
+            "claimMechanisms": "The gut-brain axis connects gut microbiota to cognitive processes. Probiotics improve gut microbiome diversity, reduce inflammation, and produce neurotransmitters like serotonin, which enhance mood and cognitive function.",
+            "claimProtocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1-2 servings of probiotic-rich foods daily for consistent benefits.\n3. Pair with a diet rich in fibre to support gut microbiota activity.\n4. Avoid excessive sugar and processed foods, which can harm the gut-brain connection.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Probiotic-rich foods significantly enhance mental clarity through their effects on the gut-brain axis.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research on the gut-brain axis is well-established, with strong evidence supporting the cognitive benefits of probiotics.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is broad agreement among researchers on the cognitive benefits of probiotic-rich foods, though individual results may vary.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Substantial evidence supports the role of probiotics in enhancing mental clarity and reducing cognitive fog.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Probiotics and Cognitive Function",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Cognitive Neuroscience",
+                    "year": 2020,
+                    "url": "https://example.com/probiotics-cognition",
+                    "summary": "This study shows that probiotics improve cognitive function through their effects on the gut-brain axis."
+                },
+                {
+                    "title": "Gut-Brain Axis and Mental Clarity",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Gut-Brain Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/gut-brain-clarity",
+                    "summary": "Research highlights the role of gut health in cognitive clarity and focus."
+                },
+                {
+                    "title": "Probiotic Foods and Cognitive Resilience",
+                    "authors": "Taylor Z., Green L.",
+                    "publisher": "Nutrition and Brain Journal",
+                    "year": 2021,
+                    "url": "https://example.com/probiotic-cognition",
+                    "summary": "Findings show that regular consumption of probiotic foods reduces brain fog and enhances focus."
+                },
+                {
+                    "title": "The Role of Probiotics in Cognitive Health",
+                    "authors": "White T., Harris P.",
+                    "publisher": "International Journal of Nutrition",
+                    "year": 2020,
+                    "url": "https://example.com/probiotics-brain",
+                    "summary": "This paper explores how probiotics contribute to cognitive health through reduced inflammation."
+                },
+                {
+                    "title": "Dietary Probiotics and Brain Function",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Journal of Brain and Nutrition",
+                    "year": 2019,
+                    "url": "https://example.com/probiotics-brain-function",
+                    "summary": "Research demonstrates the connection between probiotics and improved mental clarity."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_012",
+            "claimProtocolID": "protocol_005",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Resistance training enhances mental clarity by improving blood flow to the brain and stimulating the release of brain-derived neurotrophic factor (BDNF), which supports cognitive function.",
+            "claimMechanisms": "Resistance training increases circulation, delivering oxygen and nutrients to the brain. It also stimulates the production of BDNF, a protein that promotes neurogenesis and protects against cognitive decline.",
+            "claimProtocolInstructions": "1. Perform resistance exercises targeting major muscle groups 2-3 times per week.\n2. Use free weights, machines, or bodyweight exercises such as squats, push-ups, and planks.\n3. Begin with moderate intensity and gradually increase as strength improves.\n4. Pair resistance training with adequate hydration and a balanced diet for optimal benefits.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Resistance training is moderately effective at improving cognitive function and mental clarity.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "There is a growing body of research supporting the cognitive benefits of resistance training.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Researchers largely agree on the cognitive benefits of resistance training, though individual responses may vary.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Resistance training shows strong evidence for improving mental clarity and cognitive resilience.",
+            "claimEasyWinRating": 3.8,
+            "claimSources": [
+                {
+                    "title": "Resistance Training and Cognitive Function",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Brain and Exercise",
+                    "year": 2020,
+                    "url": "https://example.com/resistance-cognition",
+                    "summary": "This study highlights how resistance training enhances blood flow and stimulates BDNF production, improving cognition."
+                },
+                {
+                    "title": "The Impact of Strength Training on Brain Health",
+                    "authors": "Nguyen H., Taylor Z.",
+                    "publisher": "Journal of Exercise Neuroscience",
+                    "year": 2019,
+                    "url": "https://example.com/strength-brain",
+                    "summary": "Evidence suggests that strength training improves memory and mental clarity by promoting neurogenesis."
+                },
+                {
+                    "title": "Resistance Exercise and Cognitive Benefits",
+                    "authors": "Green M., White T.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2021,
+                    "url": "https://example.com/resistance-brain",
+                    "summary": "This paper explores how resistance exercises enhance brain function through improved circulation and reduced inflammation."
+                },
+                {
+                    "title": "Strength Training and Cognitive Longevity",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Longevity Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/strength-longevity",
+                    "summary": "Findings indicate that regular strength training reduces cognitive decline and promotes mental sharpness."
+                },
+                {
+                    "title": "The Role of Exercise in Brain Plasticity",
+                    "authors": "Taylor B., Harris P.",
+                    "publisher": "Journal of Neuroplasticity",
+                    "year": 2021,
+                    "url": "https://example.com/exercise-brain-plasticity",
+                    "summary": "This study discusses how resistance training supports brain plasticity and mental clarity."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_013",
+            "claimProtocolID": "protocol_003",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "The Mediterranean Diet supports mental clarity by providing essential nutrients, reducing inflammation, and promoting brain health.",
+            "claimMechanisms": "Rich in omega-3 fatty acids, antioxidants, and vitamins, the Mediterranean Diet reduces oxidative stress and inflammation, supporting neural function and protecting against cognitive decline.",
+            "claimProtocolInstructions": "1. Incorporate fresh fruits, vegetables, and whole grains into meals.\n2. Use olive oil as the primary fat source.\n3. Include fatty fish, such as salmon or mackerel, 2–3 times per week.\n4. Limit processed foods and sugars, focusing on natural, nutrient-dense options.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "The Mediterranean Diet is highly effective in improving cognitive function and reducing mental fog.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Decades of research strongly support the cognitive benefits of the Mediterranean Diet.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is near-universal agreement on the brain health benefits of the Mediterranean Diet.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "The Mediterranean Diet is well-documented for its role in promoting mental clarity and brain health.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Mediterranean Diet and Cognitive Function",
+                    "authors": "Taylor Z., Nguyen H.",
+                    "publisher": "Journal of Nutrition and Brain Health",
+                    "year": 2021,
+                    "url": "https://example.com/mediterranean-cognition",
+                    "summary": "This study highlights the cognitive benefits of the Mediterranean Diet, focusing on reduced inflammation and neural protection."
+                },
+                {
+                    "title": "Omega-3 and Antioxidants in Brain Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Nutrition Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/omega3-brain-health",
+                    "summary": "Research emphasizes the role of omega-3 and antioxidants in improving mental clarity and memory."
+                },
+                {
+                    "title": "Mediterranean Diet and Neuroprotection",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Brain and Nutrition Journal",
+                    "year": 2020,
+                    "url": "https://example.com/med-diet-brain",
+                    "summary": "Findings show that the Mediterranean Diet protects against cognitive decline through anti-inflammatory mechanisms."
+                },
+                {
+                    "title": "The Role of Antioxidants in Mental Clarity",
+                    "authors": "Green M., White T.",
+                    "publisher": "Antioxidant Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/antioxidants-clarity",
+                    "summary": "Antioxidants in the Mediterranean Diet reduce oxidative stress, improving focus and cognitive resilience."
+                },
+                {
+                    "title": "Mediterranean Diet and Brain Longevity",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Longevity Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/med-diet-brain-longevity",
+                    "summary": "Evidence suggests that the Mediterranean Diet contributes to long-term cognitive health and mental clarity."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_014",
+            "claimProtocolID": "protocol_007",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Cold showers improve mental clarity by increasing norepinephrine levels, enhancing focus, and reducing brain fog.",
+            "claimMechanisms": "Exposure to cold water stimulates the release of norepinephrine, a neurotransmitter associated with increased alertness and focus. It also improves blood flow to the brain, delivering oxygen and nutrients essential for cognitive function.",
+            "claimProtocolInstructions": "1. Gradually lower shower temperature until cold, starting with a 10-second exposure.\n2. Increase exposure to 30 seconds to 2 minutes over time.\n3. Practice daily for consistent mental clarity benefits.\n4. Focus on deep, controlled breathing during exposure to help adapt to the cold.",
+            "claimImpactRating": 3,
+            "claimImpactRatingDescription": "Cold showers provide moderate improvements to mental clarity through increased alertness and reduced brain fog.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Research is emerging, with growing evidence supporting the cognitive benefits of cold exposure.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Some agreement exists among researchers, but further studies are needed to confirm findings.",
+            "claimOverallEvidenceRating": 3.0,
+            "claimOverallEvidenceRatingDescription": "Cold showers show potential for enhancing mental clarity but require additional robust research.",
+            "claimEasyWinRating": 3.5,
+            "claimSources": [
+                {
+                    "title": "Cold Water Therapy and Cognitive Benefits",
+                    "authors": "Johnson L., Nguyen H.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2020,
+                    "url": "https://example.com/cold-water-clarity",
+                    "summary": "Findings suggest that cold water exposure increases alertness and improves mental clarity."
+                },
+                {
+                    "title": "Norepinephrine and Cognitive Function",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Neuroscience Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/norepinephrine-focus",
+                    "summary": "This study highlights how norepinephrine levels improve focus and cognitive performance during cold exposure."
+                },
+                {
+                    "title": "Cold Showers and Brain Health",
+                    "authors": "Taylor Z., White T.",
+                    "publisher": "Brain Science Journal",
+                    "year": 2021,
+                    "url": "https://example.com/cold-brain",
+                    "summary": "Evidence shows that regular cold showers enhance brain function and cognitive sharpness."
+                },
+                {
+                    "title": "Improved Circulation from Cold Exposure",
+                    "authors": "Green M., Patel R.",
+                    "publisher": "Journal of Physiology",
+                    "year": 2020,
+                    "url": "https://example.com/cold-circulation",
+                    "summary": "Cold water exposure improves blood flow, supporting cognitive function and mental clarity."
+                },
+                {
+                    "title": "Cold Therapy and Focus Enhancement",
+                    "authors": "Smith J., Lee T.",
+                    "publisher": "Focus and Resilience Journal",
+                    "year": 2019,
+                    "url": "https://example.com/cold-focus",
+                    "summary": "This paper explores the role of cold therapy in improving focus and reducing brain fog."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_015",
+            "claimProtocolID": "protocol_002",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Zone 2 Cardio improves mental clarity by increasing oxygen delivery to the brain and promoting neurogenesis through regular aerobic exercise.",
+            "claimMechanisms": "Moderate-intensity aerobic exercise increases cerebral blood flow, delivering oxygen and nutrients essential for cognitive function. It also stimulates the production of brain-derived neurotrophic factor (BDNF), which supports neural growth and cognitive resilience.",
+            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3–4 times per week.\n2. Maintain a heart rate at 60–70% of your maximum heart rate to stay in Zone 2.\n3. Gradually increase duration and intensity as fitness improves.\n4. Pair exercise with a balanced diet and proper hydration for optimal results.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Zone 2 Cardio is highly effective at enhancing focus and cognitive resilience through improved blood flow and neurogenesis.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research supports the cognitive benefits of moderate-intensity aerobic exercise.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong consensus on the brain health benefits of Zone 2 Cardio among researchers.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "Zone 2 Cardio is well-documented for its role in improving mental clarity and focus.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Aerobic Exercise and Cognitive Function",
+                    "authors": "Smith J., Taylor Z.",
+                    "publisher": "Journal of Exercise Neuroscience",
+                    "year": 2021,
+                    "url": "https://example.com/aerobic-cognition",
+                    "summary": "This study highlights the cognitive benefits of moderate-intensity aerobic exercise, focusing on neurogenesis and blood flow."
+                },
+                {
+                    "title": "Zone 2 Cardio and Brain Health",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Brain Science Journal",
+                    "year": 2020,
+                    "url": "https://example.com/zone2-brain",
+                    "summary": "Findings suggest that Zone 2 Cardio improves focus and reduces cognitive decline through enhanced oxygen delivery."
+                },
+                {
+                    "title": "Exercise-Induced Neurogenesis",
+                    "authors": "Green M., White T.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2019,
+                    "url": "https://example.com/exercise-neurogenesis",
+                    "summary": "This paper explores how aerobic exercise stimulates neurogenesis and enhances cognitive performance."
+                },
+                {
+                    "title": "The Role of Aerobic Fitness in Brain Function",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Journal of Brain and Health",
+                    "year": 2021,
+                    "url": "https://example.com/aerobic-brain-health",
+                    "summary": "Research shows that aerobic fitness correlates with improved memory and focus through increased cerebral blood flow."
+                },
+                {
+                    "title": "Zone 2 Training and Mental Clarity",
+                    "authors": "Taylor B., Lee T.",
+                    "publisher": "Exercise and Cognition Journal",
+                    "year": 2020,
+                    "url": "https://example.com/zone2-clarity",
+                    "summary": "This study highlights the focus-enhancing benefits of Zone 2 Cardio for mental clarity."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_016",
+            "claimProtocolID": "protocol_009",
+            "claimBenefitID": "benefit_004",
+            "claimDescription": "Meditation reduces stress by calming the mind, lowering cortisol levels, and improving emotional resilience.",
+            "claimMechanisms": "Meditation activates the parasympathetic nervous system, reducing the production of stress hormones like cortisol. It also improves focus and emotional regulation by stimulating the prefrontal cortex.",
+            "claimProtocolInstructions": "1. Practice meditation daily for 10–20 minutes.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app.\n4. Gradually increase the duration as you build the habit.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Meditation is highly effective in reducing stress, with consistent benefits shown across studies.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Meditation has been studied extensively over decades, with strong evidence supporting its benefits.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is widespread agreement among researchers on the effectiveness of meditation in stress reduction.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "Meditation is well-documented as one of the most effective ways to reduce stress.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Meditation and Cortisol Reduction",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Stress Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/meditation-cortisol",
+                    "summary": "Meditation significantly reduces cortisol levels, improving emotional regulation and stress resilience."
+                },
+                {
+                    "title": "The Role of Mindfulness in Stress Reduction",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Journal of Mindfulness",
+                    "year": 2021,
+                    "url": "https://example.com/mindfulness-stress",
+                    "summary": "This study highlights how mindfulness practices improve emotional regulation and reduce stress."
+                },
+                {
+                    "title": "Meditation and Emotional Resilience",
+                    "authors": "Green M., Harris P.",
+                    "publisher": "Brain and Behavior Journal",
+                    "year": 2019,
+                    "url": "https://example.com/meditation-resilience",
+                    "summary": "Evidence shows that meditation enhances resilience and focus."
+                },
+                {
+                    "title": "Neuroplasticity and Meditation",
+                    "authors": "Taylor Z., White T.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2021,
+                    "url": "https://example.com/meditation-neuroplasticity",
+                    "summary": "Meditation strengthens neural pathways associated with attention and stress reduction."
+                },
+                {
+                    "title": "The Cognitive Benefits of Meditation",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Journal of Mindfulness",
+                    "year": 2020,
+                    "url": "https://example.com/meditation-benefits",
+                    "summary": "This study explores how meditation enhances cognitive function and reduces stress."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_017",
+            "claimProtocolID": "protocol_010",
+            "claimBenefitID": "benefit_004",
+            "claimDescription": "Gratitude practice reduces stress by improving emotional regulation and fostering a positive mindset.",
+            "claimMechanisms": "Gratitude activates brain regions involved in emotional regulation, such as the prefrontal cortex, and lowers cortisol levels by reducing negative thought patterns.",
+            "claimProtocolInstructions": "1. Spend 5 minutes daily writing down 3 things you are grateful for.\n2. Reflect on why these things are meaningful to you.\n3. Practice consistently to build a habit of gratitude.\n4. Share your gratitude with others for added emotional benefits.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Gratitude practices are moderately effective at reducing stress by enhancing emotional well-being.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research on gratitude and stress reduction is growing, with solid foundational studies available.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Researchers largely agree on the benefits of gratitude practices for stress reduction.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Gratitude practices show strong evidence for reducing stress and improving emotional resilience.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Stress Reduction Through Gratitude",
+                    "authors": "Smith J., Nguyen H.",
+                    "publisher": "Journal of Positive Psychology",
+                    "year": 2020,
+                    "url": "https://example.com/gratitude-stress",
+                    "summary": "Daily gratitude journaling significantly reduces cortisol levels and improves emotional health."
+                },
+                {
+                    "title": "Gratitude Practices and Emotional Regulation",
+                    "authors": "Brown K., Taylor Z.",
+                    "publisher": "Journal of Emotional Health",
+                    "year": 2021,
+                    "url": "https://example.com/gratitude-regulation",
+                    "summary": "Gratitude activates brain regions that enhance emotional regulation and reduce stress."
+                },
+                {
+                    "title": "Cortisol Reduction Through Gratitude",
+                    "authors": "Green M., Harris P.",
+                    "publisher": "Neuropsychology Journal",
+                    "year": 2019,
+                    "url": "https://example.com/gratitude-cortisol",
+                    "summary": "Gratitude practices lower cortisol levels, leading to improved resilience and stress reduction."
+                },
+                {
+                    "title": "The Neurobiology of Gratitude",
+                    "authors": "White T., Lee R.",
+                    "publisher": "Brain and Behavior Journal",
+                    "year": 2020,
+                    "url": "https://example.com/neurobiology-gratitude",
+                    "summary": "This paper explores how gratitude improves mental clarity and reduces stress."
+                },
+                {
+                    "title": "The Role of Gratitude in Emotional Well-Being",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2021,
+                    "url": "https://example.com/gratitude-emotional-health",
+                    "summary": "Gratitude practices enhance emotional health and reduce anxiety."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_018",
+            "claimProtocolID": "protocol_002",
+            "claimBenefitID": "benefit_004",
+            "claimDescription": "Zone 2 Cardio reduces stress by releasing endorphins and lowering cortisol levels.",
+            "claimMechanisms": "Moderate-intensity aerobic exercise promotes the release of endorphins, which are natural mood enhancers. It also helps regulate stress hormones like cortisol.",
+            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 30–45 minutes, 3–4 times per week.\n2. Maintain a heart rate at 60–70% of your maximum heart rate to stay in Zone 2.\n3. Pair exercise with proper hydration and a balanced diet for optimal stress reduction.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Zone 2 Cardio is highly effective in reducing stress and promoting emotional well-being.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research supports the role of aerobic exercise in stress management.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong consensus on the stress-reducing benefits of Zone 2 Cardio among researchers.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "Zone 2 Cardio is a well-documented and effective stress-reduction technique.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "Aerobic Exercise and Stress Reduction",
+                    "authors": "Smith J., Nguyen H.",
+                    "publisher": "Journal of Exercise Neuroscience",
+                    "year": 2021,
+                    "url": "https://example.com/aerobic-stress",
+                    "summary": "This study highlights the benefits of aerobic exercise in reducing cortisol levels and improving mood."
+                },
+                {
+                    "title": "Zone 2 Cardio for Emotional Health",
+                    "authors": "Taylor Z., Brown K.",
+                    "publisher": "Journal of Positive Psychology",
+                    "year": 2020,
+                    "url": "https://example.com/zone2-emotional-health",
+                    "summary": "Zone 2 Cardio enhances endorphin release and promotes emotional resilience."
+                },
+                {
+                    "title": "Cardio Exercise and Hormonal Regulation",
+                    "authors": "Harris P., Green L.",
+                    "publisher": "Stress Research Journal",
+                    "year": 2019,
+                    "url": "https://example.com/cardio-hormones",
+                    "summary": "Regular cardio exercise regulates stress hormones, reducing anxiety and stress."
+                },
+                {
+                    "title": "Exercise and Endorphins",
+                    "authors": "White T., Lee R.",
+                    "publisher": "Brain Science Journal",
+                    "year": 2021,
+                    "url": "https://example.com/exercise-endorphins",
+                    "summary": "This paper explores the link between exercise and endorphin release for stress management."
+                },
+                {
+                    "title": "The Role of Aerobic Exercise in Mental Health",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2020,
+                    "url": "https://example.com/aerobic-mental-health",
+                    "summary": "Findings show that aerobic exercise significantly improves mental and emotional well-being."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_019",
+            "claimProtocolID": "protocol_001",
+            "claimBenefitID": "benefit_004",
+            "claimDescription": "Sauna therapy reduces stress by promoting relaxation, releasing endorphins, and improving emotional well-being.",
+            "claimMechanisms": "Heat exposure in a sauna stimulates the release of endorphins, the body's natural mood enhancers, while relaxing muscles and lowering cortisol levels. Regular sauna use also improves sleep quality, which contributes to reduced stress.",
+            "claimProtocolInstructions": "1. Use a sauna 2–3 times per week for 15–20 minutes per session.\n2. Start at a moderate temperature (70–90°C) and adjust based on comfort.\n3. Stay hydrated by drinking water before and after each session.\n4. Take breaks if needed and avoid overexposure to heat.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Sauna therapy is moderately effective in reducing stress by promoting relaxation and improving mood.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research on the stress-reducing effects of sauna therapy is robust, though still growing in some areas.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is strong agreement on the stress-reducing benefits of sauna therapy, with some variability based on individual tolerance to heat.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Sauna therapy shows strong evidence for its role in reducing stress and promoting relaxation.",
+            "claimEasyWinRating": 3.8,
+            "claimSources": [
+                {
+                    "title": "Heat Therapy and Stress Reduction",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Journal of Thermal Health",
+                    "year": 2020,
+                    "url": "https://example.com/heat-stress",
+                    "summary": "This study highlights the role of heat exposure in saunas for reducing cortisol levels and promoting relaxation."
+                },
+                {
+                    "title": "Endorphins and Sauna Use",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Endocrine Research",
+                    "year": 2019,
+                    "url": "https://example.com/sauna-endorphins",
+                    "summary": "Findings show that sauna use stimulates endorphin release, reducing stress and improving emotional well-being."
+                },
+                {
+                    "title": "Sauna Therapy and Cortisol Reduction",
+                    "authors": "Green M., Harris P.",
+                    "publisher": "Stress Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/sauna-cortisol",
+                    "summary": "Sauna sessions have been shown to significantly lower cortisol levels, aiding in stress management."
+                },
+                {
+                    "title": "The Psychological Benefits of Sauna Use",
+                    "authors": "Taylor Z., White T.",
+                    "publisher": "Journal of Emotional Health",
+                    "year": 2020,
+                    "url": "https://example.com/sauna-psychology",
+                    "summary": "Regular sauna use enhances relaxation and reduces anxiety, contributing to stress reduction."
+                },
+                {
+                    "title": "The Impact of Sauna Therapy on Sleep and Stress",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Journal of Sleep and Wellness",
+                    "year": 2021,
+                    "url": "https://example.com/sauna-sleep",
+                    "summary": "Improved sleep quality from sauna therapy indirectly reduces stress levels."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_020",
+            "claimProtocolID": "protocol_008",
+            "claimBenefitID": "benefit_004",
+            "claimDescription": "Probiotic-rich foods reduce stress by improving gut health and regulating the gut-brain axis.",
+            "claimMechanisms": "Probiotics enhance the gut microbiome, which communicates with the brain via the vagus nerve to regulate mood and stress responses. A balanced gut microbiome reduces inflammation, which is often linked to heightened stress.",
+            "claimProtocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1–2 servings of these foods daily for consistent gut health benefits.\n3. Pair probiotics with a diet rich in dietary fibre to support gut bacteria activity.\n4. Avoid excessive sugar and processed foods, which can harm the gut-brain connection.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Probiotic-rich foods are moderately effective in reducing stress through their effects on the gut-brain axis.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research on the gut-brain axis and stress reduction is well-established, with strong evidence supporting the role of probiotics.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is broad agreement among researchers on the role of probiotics in reducing stress, though individual responses may vary.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Probiotic-rich foods show strong evidence for reducing stress and improving mood through gut health.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Probiotics and Stress Reduction",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Microbiome Health",
+                    "year": 2020,
+                    "url": "https://example.com/probiotics-stress",
+                    "summary": "This study highlights the role of probiotics in improving mood and reducing stress via the gut-brain axis."
+                },
+                {
+                    "title": "Gut-Brain Axis and Emotional Regulation",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Neuropsychology Journal",
+                    "year": 2019,
+                    "url": "https://example.com/gut-brain-emotion",
+                    "summary": "Evidence shows that a healthy gut microbiome regulates stress responses through neural communication."
+                },
+                {
+                    "title": "Probiotic Foods and Cortisol Levels",
+                    "authors": "Taylor Z., Green L.",
+                    "publisher": "Journal of Stress Research",
+                    "year": 2021,
+                    "url": "https://example.com/probiotics-cortisol",
+                    "summary": "Probiotics reduce cortisol levels and enhance emotional resilience."
+                },
+                {
+                    "title": "Gut Microbiota and Mental Health",
+                    "authors": "Green M., Harris P.",
+                    "publisher": "Journal of Cognitive Health",
+                    "year": 2020,
+                    "url": "https://example.com/gut-mental-health",
+                    "summary": "This study explores how gut health influences stress and cognitive function."
+                },
+                {
+                    "title": "The Role of Probiotics in Emotional Well-Being",
+                    "authors": "White T., Lee R.",
+                    "publisher": "Journal of Positive Psychology",
+                    "year": 2021,
+                    "url": "https://example.com/probiotics-emotional-health",
+                    "summary": "Probiotic-rich foods enhance mood and reduce stress by improving gut-brain communication."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_021",
+            "claimProtocolID": "protocol_011",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "A sleep hygiene routine improves sleep quality and duration by creating consistent habits and a conducive sleep environment.",
+            "claimMechanisms": "Establishing a consistent sleep schedule and maintaining a calming bedtime routine helps regulate the circadian rhythm and reduces factors that interfere with sleep quality.",
+            "claimProtocolInstructions": "1. Go to bed and wake up at the same time every day, even on weekends.\n2. Create a bedtime routine such as dimming lights, reading, or meditating.\n3. Avoid screens and bright light for at least 1 hour before bed.\n4. Keep your bedroom quiet, dark, and cool for optimal sleep conditions.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "A sleep hygiene routine is highly effective in improving overall sleep quality when consistently practiced.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Sleep hygiene practices have been studied extensively and are widely recommended.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong agreement on the importance of sleep hygiene for better sleep.",
+            "claimOverallEvidenceRating": 4.3,
+            "claimOverallEvidenceRatingDescription": "A robust body of evidence supports sleep hygiene as a critical strategy for improving sleep quality.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "The Role of Sleep Hygiene in Improving Sleep Quality",
+                    "authors": "Smith J., Taylor Z.",
+                    "publisher": "Journal of Sleep Research",
+                    "year": 2020,
+                    "url": "https://example.com/sleep-hygiene",
+                    "summary": "This study demonstrates the importance of consistent sleep routines and environmental factors for better sleep."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_022",
+            "claimProtocolID": "protocol_012",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Blue light blocking glasses improve sleep quality by reducing evening light exposure, which helps regulate melatonin production.",
+            "claimMechanisms": "Blocking blue light from screens and artificial lighting prevents melatonin suppression, helping the body prepare for sleep naturally.",
+            "claimProtocolInstructions": "1. Wear blue light blocking glasses 2–3 hours before bedtime.\n2. Use the glasses consistently while watching screens or under artificial light.\n3. Combine with dimmed lighting in the home for optimal results.",
+            "claimImpactRating": 3,
+            "claimImpactRatingDescription": "Blue light blocking glasses moderately improve sleep quality, especially for individuals exposed to screens in the evening.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Research on blue light blocking glasses is relatively new but shows promising results.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "There is moderate agreement on the effectiveness of blue light blocking glasses for better sleep.",
+            "claimOverallEvidenceRating": 3.2,
+            "claimOverallEvidenceRatingDescription": "Blue light blocking glasses have emerging evidence supporting their role in improving sleep quality.",
+            "claimEasyWinRating": 3.5,
+            "claimSources": [
+                {
+                    "title": "The Effect of Blue Light on Melatonin and Sleep",
+                    "authors": "Brown P., Green M.",
+                    "publisher": "Journal of Sleep Science",
+                    "year": 2019,
+                    "url": "https://example.com/blue-light-melatonin",
+                    "summary": "This study explores how blue light blocking glasses improve melatonin levels and enhance sleep quality."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_023",
+            "claimProtocolID": "protocol_013",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Drinking chamomile tea before bed promotes relaxation and improves sleep onset.",
+            "claimMechanisms": "Chamomile contains apigenin, a compound that binds to brain receptors and induces relaxation, helping to reduce anxiety and prepare the body for sleep.",
+            "claimProtocolInstructions": "1. Brew one cup of chamomile tea 30–60 minutes before bedtime.\n2. Avoid adding sugar, as it may interfere with sleep.\n3. Pair with other relaxing activities like reading or meditation for better results.",
+            "claimImpactRating": 3,
+            "claimImpactRatingDescription": "Chamomile tea has a moderate impact on sleep onset and relaxation.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Research on chamomile's sleep benefits is still developing but shows promising results.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Researchers generally agree on chamomile's mild sedative effects for improving sleep.",
+            "claimOverallEvidenceRating": 3.3,
+            "claimOverallEvidenceRatingDescription": "Chamomile tea is a simple and effective way to promote better sleep, supported by moderate evidence.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "The Sedative Effects of Chamomile",
+                    "authors": "Smith J., Nguyen H.",
+                    "publisher": "Journal of Natural Remedies",
+                    "year": 2020,
+                    "url": "https://example.com/chamomile-sleep",
+                    "summary": "This study highlights how chamomile tea helps reduce anxiety and promotes sleep onset."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_024",
+            "claimProtocolID": "protocol_014",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Magnesium supplementation improves sleep quality by relaxing muscles and calming the nervous system.",
+            "claimMechanisms": "Magnesium plays a role in regulating neurotransmitters and relaxing the nervous system, reducing stress and improving sleep.",
+            "claimProtocolInstructions": "1. Take 200–400 mg of magnesium citrate or glycinate 1–2 hours before bedtime.\n2. Consult a healthcare professional to determine the appropriate dosage.\n3. Pair supplementation with a healthy diet rich in magnesium-containing foods like nuts and leafy greens.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Magnesium supplementation significantly improves sleep quality, particularly in individuals with deficiencies.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Magnesium's role in sleep regulation is well-documented in research.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is strong agreement on magnesium's benefits for better sleep, especially for individuals with stress-related insomnia.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Magnesium supplementation is supported by robust evidence for its role in improving sleep quality.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Magnesium and Sleep Regulation",
+                    "authors": "Taylor Z., Green M.",
+                    "publisher": "Journal of Sleep Research",
+                    "year": 2021,
+                    "url": "https://example.com/magnesium-sleep",
+                    "summary": "Magnesium supplementation improves relaxation and enhances sleep quality, especially in individuals with deficiencies."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_025",
+            "claimProtocolID": "protocol_015",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Progressive muscle relaxation reduces stress and improves sleep onset by calming the body and mind.",
+            "claimMechanisms": "The systematic tensing and relaxing of muscles lowers heart rate and stimulates the parasympathetic nervous system, preparing the body for sleep.",
+            "claimProtocolInstructions": "1. Set aside 10 minutes before bed to practice progressive muscle relaxation.\n2. Lie down in a quiet space and focus on tensing and relaxing one muscle group at a time, starting from your toes and moving upward.\n3. Breathe deeply throughout the process to maximise relaxation.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Progressive muscle relaxation is highly effective in reducing pre-sleep anxiety and promoting sleep onset.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "This technique has been widely studied and recommended for sleep improvement.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is broad agreement on the effectiveness of progressive muscle relaxation for sleep improvement.",
+            "claimOverallEvidenceRating": 4.1,
+            "claimOverallEvidenceRatingDescription": "Progressive muscle relaxation has strong evidence supporting its role in improving sleep quality and onset.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Progressive Muscle Relaxation for Insomnia",
+                    "authors": "Brown K., Harris P.",
+                    "publisher": "Journal of Cognitive Therapy",
+                    "year": 2019,
+                    "url": "https://example.com/pmr-sleep",
+                    "summary": "This study shows how progressive muscle relaxation helps reduce pre-sleep anxiety and improve sleep onset."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_026",
+            "claimProtocolID": "protocol_009",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Meditation before bed promotes relaxation, reduces stress, and prepares the mind for restful sleep.",
+            "claimMechanisms": "Meditation before bed reduces activity in the sympathetic nervous system and increases alpha brain waves, which are associated with relaxation and calmness, allowing the body to transition into a sleep-ready state.",
+            "claimProtocolInstructions": "1. Set aside 10–15 minutes before bed for meditation.\n2. Sit or lie down comfortably in a quiet, dimly lit space.\n3. Use a guided meditation app or focus on your breath to calm your mind and body.\n4. Ensure all distractions are minimised, such as turning off screens and notifications.\n5. Incorporate this practice into your nightly routine for consistent results.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Meditation before bed is highly effective at improving sleep quality by promoting relaxation and reducing stress.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Meditation has been extensively studied, with significant evidence supporting its effectiveness for sleep improvement.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong consensus on the benefits of meditation for improving sleep when practised consistently.",
+            "claimOverallEvidenceRating": 4.8,
+            "claimOverallEvidenceRatingDescription": "Meditation is a well-documented technique for reducing stress and improving sleep quality.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "The Role of Meditation in Improving Sleep",
+                    "authors": "Smith J., Taylor Z.",
+                    "publisher": "Journal of Sleep Research",
+                    "year": 2020,
+                    "url": "https://example.com/meditation-sleep-benefits",
+                    "summary": "This study highlights the significant impact of mindfulness meditation before bed on improving sleep quality."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_027",
+            "claimProtocolID": "protocol_016",
+            "claimBenefitID": "benefit_005",
+            "claimDescription": "Avoiding caffeine after 2 PM helps improve sleep quality by preventing interference with the body’s natural sleep cycle.",
+            "claimMechanisms": "Caffeine blocks adenosine receptors in the brain, delaying sleep onset and reducing sleep quality. Avoiding caffeine in the afternoon allows the body to naturally prepare for restful sleep.",
+            "claimProtocolInstructions": "1. Avoid consuming coffee, tea, energy drinks, or other caffeine-containing products after 2 PM.\n2. Replace caffeinated beverages with herbal teas or water in the afternoon and evening.\n3. Pay attention to hidden sources of caffeine, such as chocolate or medications.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Limiting caffeine in the afternoon has a significant impact on improving sleep quality for caffeine-sensitive individuals.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "The relationship between caffeine and sleep is extensively studied and well-established.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "There is strong agreement on the negative effects of late-day caffeine consumption on sleep quality.",
+            "claimOverallEvidenceRating": 4.5,
+            "claimOverallEvidenceRatingDescription": "Avoiding caffeine after 2 PM is a simple and well-supported way to enhance sleep quality.",
+            "claimEasyWinRating": 4.8,
+            "claimSources": [
+                {
+                    "title": "Caffeine and Sleep Disturbances",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Journal of Sleep Science",
+                    "year": 2021,
+                    "url": "https://example.com/caffeine-sleep",
+                    "summary": "This study explores how caffeine consumption in the afternoon disrupts sleep patterns and reduces sleep quality."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_028",
+            "claimProtocolID": "protocol_010",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Practicing gratitude daily improves mental clarity by promoting positive thinking and reducing mental clutter.",
+            "claimMechanisms": "Engaging in gratitude practice activates brain regions associated with emotional regulation and cognitive processing, leading to enhanced focus and reduced mental distractions.",
+            "claimProtocolInstructions": "1. Spend 5 minutes daily writing down 3 things you are grateful for.\n2. Reflect on why these things are meaningful to you.\n3. Practice consistently to build a habit.\n4. Share your gratitude with others to deepen its impact if possible.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Gratitude practices have a significant impact on improving mental clarity through fostering focus and positivity.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "The research on gratitude's effects on mental clarity is well-established, supported by numerous studies.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is broad agreement among researchers about the benefits of gratitude practices for cognitive function.",
+            "claimOverallEvidenceRating": 4.2,
+            "claimOverallEvidenceRatingDescription": "Gratitude practices are strongly supported by evidence for their positive effects on mental clarity.",
+            "claimEasyWinRating": 4.5,
+            "claimSources": [
+                {
+                    "title": "The Cognitive Benefits of Gratitude Practice",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Positive Psychology",
+                    "year": 2021,
+                    "url": "https://example.com/gratitude-cognition",
+                    "summary": "This study highlights how gratitude practices enhance mental clarity by reducing stress and improving focus."
+                },
+                {
+                    "title": "Gratitude and Cognitive Function",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Emotion Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/gratitude-focus",
+                    "summary": "Findings suggest that gratitude activates brain regions responsible for cognitive clarity and mental sharpness."
+                },
+                {
+                    "title": "How Gratitude Reduces Mental Clutter",
+                    "authors": "Taylor Z., Harris P.",
+                    "publisher": "Journal of Stress and Cognition",
+                    "year": 2019,
+                    "url": "https://example.com/gratitude-clarity",
+                    "summary": "Gratitude practices significantly reduce mental clutter, enhancing cognitive processing."
+                },
+                {
+                    "title": "The Role of Gratitude in Emotional Regulation and Clarity",
+                    "authors": "Green M., White T.",
+                    "publisher": "Journal of Emotional Health",
+                    "year": 2021,
+                    "url": "https://example.com/gratitude-emotional-clarity",
+                    "summary": "This study explores how gratitude journaling enhances emotional and mental clarity."
+                },
+                {
+                    "title": "Gratitude and Focus: The Cognitive Perspective",
+                    "authors": "Brown K., Lee R.",
+                    "publisher": "Cognitive Psychology Journal",
+                    "year": 2020,
+                    "url": "https://example.com/gratitude-focus-cognition",
+                    "summary": "Research investigates how gratitude improves cognitive focus and reduces distractions."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_029",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_006",
+            "claimDescription": "Intermittent fasting promotes fat loss by improving energy balance and enhancing fat metabolism.",
+            "claimMechanisms": "Fasting increases lipolysis, the breakdown of stored fat for energy, while reducing insulin levels to enhance fat burning.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Highly effective in promoting fat loss with consistent practice.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by extensive research across different populations.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Widely accepted by experts for its efficacy in fat loss.",
+            "claimOverallEvidenceRating": 4.8,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports fasting for fat loss.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Intermittent Fasting and Fat Loss",
+                    "authors": "Taylor Z., Harris P.",
+                    "publisher": "Journal of Metabolic Health",
+                    "year": 2020,
+                    "url": "https://example.com/if-fat-loss",
+                    "summary": "This study highlights fasting's role in enhancing fat metabolism and reducing body weight."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_030",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_007",
+            "claimDescription": "Intermittent fasting improves insulin sensitivity, lowering the risk of type 2 diabetes.",
+            "claimMechanisms": "Fasting lowers circulating insulin levels and enhances glucose uptake efficiency in cells.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Highly effective for managing insulin resistance and reducing diabetes risk.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by well-established evidence.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Broad agreement among researchers on its efficacy.",
+            "claimOverallEvidenceRating": 4.7,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports fasting for improving insulin sensitivity.",
+            "claimEasyWinRating": 4.3,
+            "claimSources": [
+                {
+                    "title": "Fasting and Insulin Sensitivity",
+                    "authors": "Nguyen H., Patel R.",
+                    "publisher": "Diabetes Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/if-insulin-sensitivity",
+                    "summary": "A study outlining fasting's benefits in reducing insulin resistance."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_031",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_008",
+            "claimDescription": "Intermittent fasting enhances metabolic flexibility and reduces blood sugar fluctuations.",
+            "claimMechanisms": "Fasting improves the body's ability to switch between burning carbohydrates and fats, optimizing energy use.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Effective in improving metabolic health markers.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Backed by studies showing improved metabolic outcomes.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Widely supported in metabolic research.",
+            "claimOverallEvidenceRating": 4.5,
+            "claimOverallEvidenceRatingDescription": "Strong evidence for fasting's role in metabolic health.",
+            "claimEasyWinRating": 4.1,
+            "claimSources": [
+                {
+                    "title": "Metabolic Flexibility and Fasting",
+                    "authors": "Green L., Brown K.",
+                    "publisher": "Metabolism Journal",
+                    "year": 2020,
+                    "url": "https://example.com/if-metabolic-health",
+                    "summary": "Findings demonstrate fasting's ability to improve metabolic flexibility and reduce glucose variability."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_032",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_001",
+            "claimDescription": "Intermittent fasting supports heart health by lowering triglycerides, improving cholesterol profiles, and reducing blood pressure.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimMechanisms": "Fasting reduces oxidative stress and optimizes lipid metabolism, improving vascular function.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Provides measurable cardiovascular benefits.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by extensive research.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Broad agreement among researchers.",
+            "claimOverallEvidenceRating": 4.3,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports fasting for cardiovascular health.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Intermittent Fasting and Cardiovascular Health",
+                    "authors": "Smith J., Brown P.",
+                    "publisher": "Journal of Cardiology",
+                    "year": 2021,
+                    "url": "https://example.com/if-heart-health",
+                    "summary": "This study outlines fasting's effects on cholesterol, triglycerides, and blood pressure."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_033",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_009",
+            "claimDescription": "Intermittent fasting supports gut microbiota diversity and digestive health through periodic rest for the digestive system.",
+            "claimMechanisms": "Fasting allows the gut lining to repair and improves the balance of beneficial gut bacteria.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Provides notable benefits for gut health.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by emerging research in microbiome studies.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Agreed upon by researchers in gut health.",
+            "claimOverallEvidenceRating": 4.2,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports fasting's role in gut health.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Fasting and Gut Health",
+                    "authors": "Taylor Z., Nguyen H.",
+                    "publisher": "Microbiome Journal",
+                    "year": 2021,
+                    "url": "https://example.com/if-gut-health",
+                    "summary": "A study highlighting how fasting improves gut microbiota diversity and digestive health."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_034",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_010",
+            "claimDescription": "Intermittent fasting reduces systemic inflammation linked to chronic diseases.",
+            "claimMechanisms": "Fasting reduces pro-inflammatory cytokine levels and oxidative stress, promoting an anti-inflammatory state.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Significant reductions in inflammation markers have been observed.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by research across various inflammatory conditions.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Consensus exists among researchers on its anti-inflammatory effects.",
+            "claimOverallEvidenceRating": 4.4,
+            "claimOverallEvidenceRatingDescription": "Robust evidence supports fasting's anti-inflammatory benefits.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Intermittent Fasting and Inflammation",
+                    "authors": "Green L., Patel K.",
+                    "publisher": "Inflammation Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/if-inflammation",
+                    "summary": "This study outlines the mechanisms by which fasting reduces systemic inflammation."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_035",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_011",
+            "claimDescription": "Intermittent fasting promotes cellular cleanup through autophagy, potentially delaying aging and reducing cancer risks.",
+            "claimMechanisms": "Fasting triggers autophagy, a process where cells remove damaged components and repair themselves.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "A critical mechanism in cellular health and longevity.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Emerging evidence highlights fasting's role in autophagy.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Growing agreement among researchers on its benefits.",
+            "claimOverallEvidenceRating": 4.6,
+            "claimOverallEvidenceRatingDescription": "Strong evidence for fasting-induced autophagy.",
+            "claimEasyWinRating": 3.9,
+            "claimSources": [
+                {
+                    "title": "Fasting and Autophagy",
+                    "authors": "Nguyen M., Taylor B.",
+                    "publisher": "Cellular Biology Journal",
+                    "year": 2021,
+                    "url": "https://example.com/if-autophagy",
+                    "summary": "Research demonstrates how fasting triggers autophagy, promoting cellular repair."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_036",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_012",
+            "claimDescription": "Intermittent fasting supports brain health by reducing oxidative stress and promoting brain-derived neurotrophic factor (BDNF).",
+            "claimMechanisms": "Fasting enhances BDNF levels, which support neuron growth, and reduces oxidative damage in the brain.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Highly beneficial for brain health and cognitive function.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research supports its role in neuroprotection.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Consensus exists on fasting's neuroprotective effects.",
+            "claimOverallEvidenceRating": 4.7,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports fasting's brain health benefits.",
+            "claimEasyWinRating": 4.3,
+            "claimSources": [
+                {
+                    "title": "Fasting and Neuroprotection",
+                    "authors": "Smith J., Lee T.",
+                    "publisher": "Journal of Neuroscience",
+                    "year": 2020,
+                    "url": "https://example.com/if-neuroprotection",
+                    "summary": "This study explores fasting's effects on BDNF levels and brain health."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_037",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_013",
+            "claimDescription": "Intermittent fasting reduces anxiety and stress by regulating cortisol and serotonin levels.",
+            "claimMechanisms": "Fasting optimizes hormonal balance, reducing cortisol spikes and promoting serotonin production.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Effective in improving mood and reducing stress.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Supported by limited studies, but promising.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Growing interest in fasting's mood-regulating effects.",
+            "claimOverallEvidenceRating": 4.0,
+            "claimOverallEvidenceRatingDescription": "Emerging evidence supports its mental health benefits.",
+            "claimEasyWinRating": 3.8,
+            "claimSources": [
+                {
+                    "title": "Fasting and Stress Regulation",
+                    "authors": "Harris P., Brown K.",
+                    "publisher": "Mental Health Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/if-mood",
+                    "summary": "A study on fasting's hormonal effects on stress and anxiety."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_038",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_014",
+            "claimDescription": "Intermittent fasting activates genes linked to increased lifespan and reduces age-related disease risks.",
+            "claimMechanisms": "Fasting induces cellular repair processes and reduces oxidative stress, which are associated with longevity.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Highly effective in promoting longevity and healthy aging.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by research on fasting and aging.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "Growing consensus on fasting's role in longevity.",
+            "claimOverallEvidenceRating": 4.8,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports its longevity benefits.",
+            "claimEasyWinRating": 4.2,
+            "claimSources": [
+                {
+                    "title": "Fasting and Longevity",
+                    "authors": "Taylor B., Green L.",
+                    "publisher": "Aging Research Journal",
+                    "year": 2021,
+                    "url": "https://example.com/if-longevity",
+                    "summary": "Research highlights fasting's role in promoting healthy aging and lifespan extension."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_039",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_003",
+            "claimDescription": "Intermittent fasting stabilizes blood sugar levels, reduces brain fog, and improves focus.",
+            "claimMechanisms": "Fasting promotes glucose regulation and reduces inflammation, which together enhance cognitive function.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Fasting has demonstrated consistent improvements in mental clarity.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Research supports its role in enhancing cognitive function.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is strong agreement among researchers about its benefits for focus and cognition.",
+            "claimOverallEvidenceRating": 4.4,
+            "claimOverallEvidenceRatingDescription": "Well-supported evidence for fasting's cognitive benefits.",
+            "claimEasyWinRating": 4.0,
+            "claimSources": [
+                {
+                    "title": "Fasting and Cognitive Performance",
+                    "authors": "Nguyen H., Patel K.",
+                    "publisher": "Journal of Neuroscience Research",
+                    "year": 2021,
+                    "url": "https://example.com/if-cognition",
+                    "summary": "Research highlights how fasting reduces brain fog and improves mental focus."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_040",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_015",
+            "claimDescription": "Intermittent fasting limits abnormal cell growth by reducing insulin-like growth factor 1 (IGF-1) levels.",
+            "claimMechanisms": "Fasting reduces IGF-1 levels and oxidative stress, which are linked to lower cancer risk.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Fasting has a moderate impact on reducing cancer risk.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Early studies show promising results.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Limited but growing consensus on fasting's role in cancer prevention.",
+            "claimOverallEvidenceRating": 3.9,
+            "claimOverallEvidenceRatingDescription": "Evidence suggests a potential role in reducing cancer risk.",
+            "claimEasyWinRating": 3.5,
+            "claimSources": [
+                {
+                    "title": "Fasting and IGF-1 Reduction",
+                    "authors": "Smith J., Lee T.",
+                    "publisher": "Cancer Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/if-igf1",
+                    "summary": "Study on the effects of fasting on IGF-1 levels and cancer risk."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_041",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_016",
+            "claimDescription": "Intermittent fasting reduces risk factors for diseases like Alzheimer's, Parkinson's, cardiovascular disease, and metabolic syndrome.",
+            "claimMechanisms": "Fasting improves mitochondrial efficiency and reduces oxidative stress, lowering the risk of chronic diseases.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "A highly effective intervention for reducing chronic disease risk.",
+            "claimMaturityRating": 4,
+            "claimMaturityRatingDescription": "Supported by growing research in diverse chronic diseases.",
+            "claimConsensusRating": 4,
+            "claimConsensusRatingDescription": "There is increasing agreement on fasting's role in chronic disease prevention.",
+            "claimOverallEvidenceRating": 4.6,
+            "claimOverallEvidenceRatingDescription": "Strong evidence supports its role in reducing chronic disease risks.",
+            "claimEasyWinRating": 4.3,
+            "claimSources": [
+                {
+                    "title": "Fasting and Chronic Disease Prevention",
+                    "authors": "Harris P., Brown K.",
+                    "publisher": "Journal of Preventive Medicine",
+                    "year": 2021,
+                    "url": "https://example.com/if-chronic-disease",
+                    "summary": "A study on how fasting reduces risk factors for chronic diseases."
+                }
+            ]
+        },
+        {
+            "claimID": "claim_042",
+            "claimProtocolID": "protocol_017",
+            "claimBenefitID": "benefit_017",
+            "claimDescription": "Intermittent fasting optimizes energy use by the body, reducing fatigue.",
+            "claimMechanisms": "Fasting enhances mitochondrial efficiency, leading to better energy production and utilization.",
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Improved energy efficiency can significantly reduce fatigue.",
+            "claimMaturityRating": 3,
+            "claimMaturityRatingDescription": "Emerging research highlights these benefits.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Research is still in its early stages but promising.",
+            "claimOverallEvidenceRating": 4.1,
+            "claimOverallEvidenceRatingDescription": "Moderate evidence supports fasting's role in optimizing energy use.",
+            "claimEasyWinRating": 3.7,
+            "claimSources": [
+                {
+                    "title": "Fasting and Energy Efficiency",
+                    "authors": "Taylor B., Green L.",
+                    "publisher": "Journal of Metabolic Health",
+                    "year": 2020,
+                    "url": "https://example.com/if-energy",
+                    "summary": "Research demonstrates how fasting improves mitochondrial efficiency and reduces fatigue."
+                }
+            ]
+        }  
+            
+    ],
+    "benefits": [
+        {
+            "benefitID": "benefit_001",
+            "benefitName": "Heart Health",
+            "benefitDescription": "Heart disease is the leading cause of death in many countries and should be a priority for overall health.",
+            "benefitImageID": "/images/benefit_001_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_001",
+                "protocol_002",
+                "protocol_003",
+                "protocol_004",
+                "protocol_005",
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "heart health",
+                "cardiovascular wellness",
+                "circulation improvement",
+                "healthy heart",
+                "blood pressure management",
+                "vascular health",
+                "endothelial function",
+                "cardiovascular fitness",
+                "reduce heart disease risk",
+                "improve blood flow",
+                "arterial compliance",
+                "heart rate regulation",
+                "cardiac care",
+                "strengthen cardiovascular system"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_002",
+            "benefitName": "Boost Immune System",
+            "benefitDescription": "Strengthening the body's natural defenses to reduce the risk of infections and illnesses.",
+            "benefitImageID": "/images/benefit_002_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_006",
+                "protocol_007",
+                "protocol_008"                
+            ],
+            "benefitSearchTerms": [
+                "immune system",
+                "immune health",
+                "boost immunity",
+                "reduce infections",
+                "immune defense",
+                "immune support",
+                "natural immunity",
+                "infection prevention",
+                "immune resilience"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_003",
+            "benefitName": "Mental Clarity",
+            "benefitDescription": "Enhancing focus, reducing mental fog, and improving cognitive sharpness.",
+            "benefitImageID": "/images/benefit_003_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_006",
+                "protocol_007",
+                "protocol_008",
+                "protocol_005",
+                "protocol_003",
+                "protocol_002",
+                "protocol_009",
+                "protocol_010",
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "mental clarity",
+                "focus improvement",
+                "reduce brain fog",
+                "cognitive sharpness",
+                "improve concentration",
+                "enhance focus",
+                "mental sharpness",
+                "clear thinking",
+                "boost cognition",
+                "cognitive resilience"
+            ],
+            "benefitCategories": [
+                "Mental Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_004",
+            "benefitName": "Reduce Stress",
+            "benefitDescription": "Lowering physical and emotional stress to improve overall well-being and mental clarity.",
+            "benefitImageID": "/images/benefit_004_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_009",
+                "protocol_010",
+                "protocol_002",
+                "protocol_001",
+                "protocol_008"
+            ],
+            "benefitSearchTerms": [
+                "stress reduction",
+                "reduce stress",
+                "emotional well-being",
+                "lower cortisol",
+                "calm mind",
+                "relaxation",
+                "improve mood",
+                "stress management",
+                "emotional balance",
+                "reduce anxiety"
+            ],
+            "benefitCategories": [
+                "Mental Health",
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_005",
+            "benefitName": "Better Sleep",
+            "benefitDescription": "Improving sleep quality, duration, and overall restfulness to enhance physical and mental well-being.",
+            "benefitImageID": "/images/benefit_005_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_011",
+                "protocol_012",
+                "protocol_013",
+                "protocol_014",
+                "protocol_015",
+                "protocol_009",
+                "protocol_016"
+            ],
+            "benefitSearchTerms": [
+                "better sleep",
+                "improve sleep",
+                "sleep quality",
+                "better rest",
+                "reduce insomnia",
+                "healthy sleep",
+                "deep sleep",
+                "restful nights",
+                "sleep hygiene",
+                "enhance sleep patterns"
+            ],
+            "benefitCategories": [
+                "Physical Health",
+                "Mental Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_006",
+            "benefitName": "Fat Loss",
+            "benefitDescription": "Promotes fat loss and helps maintain a healthy weight by improving energy balance and fat metabolism.",
+            "benefitImageID": "/images/benefit_006_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "fat loss",
+                "weight management",
+                "healthy weight",
+                "improve metabolism",
+                "reduce fat",
+                "burn fat",
+                "caloric balance",
+                "metabolic health",
+                "energy expenditure",
+                "fat metabolism"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_007",
+            "benefitName": "Improved Insulin Sensitivity",
+            "benefitDescription": "Reduces insulin levels and increases insulin sensitivity, lowering the risk of type 2 diabetes.",
+            "benefitImageID": "/images/benefit_007_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "insulin sensitivity",
+                "reduce insulin resistance",
+                "type 2 diabetes prevention",
+                "lower blood sugar",
+                "glucose regulation",
+                "improve metabolism",
+                "reduce diabetes risk",
+                "enhance insulin response",
+                "metabolic health"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_008",
+            "benefitName": "Metabolic Health",
+            "benefitDescription": "Enhances metabolic flexibility and reduces blood sugar fluctuations.",
+            "benefitImageID": "/images/benefit_008_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "metabolic health",
+                "glucose regulation",
+                "reduce blood sugar fluctuations",
+                "metabolic flexibility",
+                "improve energy metabolism",
+                "blood sugar stability",
+                "insulin regulation",
+                "enhance metabolism",
+                "metabolic resilience"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_009",
+            "benefitName": "Gut Health",
+            "benefitDescription": "Supports gut microbiota diversity and digestive health through periodic rest for the digestive system.",
+            "benefitImageID": "/images/benefit_009_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "gut health",
+                "digestive health",
+                "microbiota diversity",
+                "digestive wellness",
+                "improve gut bacteria",
+                "healthy digestion",
+                "digestive resilience",
+                "intestinal health",
+                "balanced gut microbiome"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_010",
+            "benefitName": "Anti-Inflammatory Effects",
+            "benefitDescription": "Reduces systemic inflammation linked to chronic diseases.",
+            "benefitImageID": "/images/benefit_010_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "reduce inflammation",
+                "anti-inflammatory",
+                "chronic disease prevention",
+                "reduce systemic inflammation",
+                "immune health",
+                "lower inflammation",
+                "inflammation markers",
+                "inflammatory resilience"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_011",
+            "benefitName": "Boosted Cellular Repair (Autophagy)",
+            "benefitDescription": "Promotes cellular cleanup by triggering autophagy, which may delay aging and reduce cancer risks.",
+            "benefitImageID": "/images/benefit_011_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "cellular repair",
+                "autophagy",
+                "cell cleanup",
+                "delay aging",
+                "cellular health",
+                "reduce cancer risk",
+                "trigger autophagy",
+                "cell resilience",
+                "longevity"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_012",
+            "benefitName": "Neuroprotection",
+            "benefitDescription": "Supports brain health by reducing oxidative stress and promoting brain-derived neurotrophic factor (BDNF), which is linked to memory and learning.",
+            "benefitImageID": "/images/benefit_012_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "neuroprotection",
+                "brain health",
+                "reduce oxidative stress",
+                "memory enhancement",
+                "BDNF promotion",
+                "brain resilience",
+                "cognitive function",
+                "neural health",
+                "improve learning"
+            ],
+            "benefitCategories": [
+                "Mental Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_013",
+            "benefitName": "Mood Regulation",
+            "benefitDescription": "Reduces anxiety and stress through hormonal regulation, including cortisol and serotonin balance.",
+            "benefitImageID": "/images/benefit_014_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "mood regulation",
+                "reduce anxiety",
+                "stress reduction",
+                "cortisol balance",
+                "serotonin regulation",
+                "emotional well-being",
+                "mental health",
+                "hormonal balance"
+            ],
+            "benefitCategories": [
+                "Mental Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_014",
+            "benefitName": "Longevity",
+            "benefitDescription": "Activates genes linked to increased lifespan and reduces age-related disease risks.",
+            "benefitImageID": "/images/benefit_014_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "longevity",
+                "increase lifespan",
+                "anti-aging",
+                "age-related disease prevention",
+                "healthy aging",
+                "lifespan extension",
+                "aging resilience"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_015",
+            "benefitName": "Cancer Prevention",
+            "benefitDescription": "Limits abnormal cell growth by reducing insulin-like growth factor 1 (IGF-1) levels.",
+            "benefitImageID": "/images/benefit_015_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "cancer prevention",
+                "reduce IGF-1 levels",
+                "cell growth regulation",
+                "anti-cancer",
+                "cancer risk reduction",
+                "prevent cell abnormalities",
+                "oncology prevention"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_016",
+            "benefitName": "Lower Chronic Disease Risk",
+            "benefitDescription": "Reduces risk factors for diseases like Alzheimer's, Parkinson's, cardiovascular disease, and metabolic syndrome.",
+            "benefitImageID": "/images/benefit_016_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "chronic disease prevention",
+                "reduce disease risk",
+                "Alzheimer's prevention",
+                "Parkinson's prevention",
+                "cardiovascular disease prevention",
+                "metabolic syndrome reduction",
+                "healthy aging",
+                "long-term health"
+            ],
+            "benefitCategories": [
+                "Physical Health"
+            ]
+        },
+        {
+            "benefitID": "benefit_017",
+            "benefitName": "Improved Energy Efficiency",
+            "benefitDescription": "Optimizes energy use by the body, reducing fatigue.",
+            "benefitImageID": "/images/benefit_017_image.jpg",
+            "benefitLinkedProtocols": [
+                "protocol_017"
+            ],
+            "benefitSearchTerms": [
+                "energy efficiency",
+                "reduce fatigue",
+                "improve stamina",
+                "optimize energy use",
+                "energy metabolism",
+                "reduce tiredness",
+                "better energy levels",
+                "fatigue reduction"
+            ],
+            "benefitCategories": [
+                "Physical Health",
+                "Mental Health"
+            ]
+        }
+
+    ],
+    "protocols": [
+        {
+            "protocolID": "protocol_001",
+            "protocolName": "Sauna Therapy",
+            "protocolDescription": "A traditional practice involving heat exposure in a controlled environment, often used for relaxation and as part of cultural or wellness traditions.",
+            "protocolInstructions": "Spend 15–20 minutes in a sauna at 70-100°C, 2–3 times per week.",
+            "protocolImageID": "/images/protocol_001_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_001",
+                "benefit_004"
+            ],
+            "protocolSearchTerms": [
+                "heat therapy",
+                "sauna sessions",
+                "thermal therapy",
+                "steam bath",
+                "hot room",
+                "sweat lodge",
+                "dry sauna",
+                "infrared sauna",
+                "steam sauna",
+                "sweat bath",
+                "heat bath",
+                "Finnish sauna",
+                "banya",
+                "hot therapy",
+                "therapeutic heat",
+                "sweating session",
+                "detox sauna",
+                "infrared therapy"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 3,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 3.1
+        },
+        {
+            "protocolID": "protocol_002",
+            "protocolName": "Zone 2 Cardio",
+            "protocolDescription": "Moderate-intensity aerobic exercise aimed at improving metabolic and cardiovascular health.",
+            "protocolInstructions": "Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3–4 times per week. Ensure the intensity allows you to hold a conversation comfortably during exercise.",
+            "protocolImageID": "/images/protocol_002_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_001",
+                "benefit_003",
+                "benefit_004"
+            ],
+            "protocolSearchTerms": [
+                "cardio training",
+                "zone 2 exercise",
+                "steady-state cardio",
+                "moderate-intensity exercise",
+                "aerobic capacity",
+                "fat oxidation",
+                "heart rate zones",
+                "endurance training",
+                "metabolic fitness",
+                "heart health workouts"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 4,
+            "protocolRelativeCostRating": 2,
+            "protocolOverallImpactRating": 4.8
+        },
+        {
+            "protocolID": "protocol_003",
+            "protocolName": "Mediterranean Diet",
+            "protocolDescription": "A dietary patterfrn emphasizing uits, vegetables, whole grains, healthy fats, and lean proteins to promote overall health.",
+            "protocolInstructions": "1. Incorporate fresh fruits and vegetables into each meal.\n2. Use olive oil as the primary fat source.\n3. Eat fatty fish (e.g., salmon, mackerel) 2–3 times per week.\n4. Limit red meat intake, replacing it with poultry or plant-based proteins.\n5. Include whole grains, legumes, and nuts regularly.\n6. Use herbs and spices for seasoning instead of salt.",
+            "protocolImageID": "/images/protocol_003_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_001",
+                "benefit_003"
+            ],
+            "protocolSearchTerms": [
+                "healthy diet",
+                "Mediterranean foods",
+                "heart-healthy diet",
+                "balanced nutrition",
+                "fruits and vegetables",
+                "olive oil benefits",
+                "lean proteins",
+                "whole grains",
+                "anti-inflammatory foods",
+                "omega-3 rich diet"
+            ],
+            "protocolCategories": [
+                "Dietary"
+            ],
+            "protocolRelativeTimeRating": 3,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 5.0
+        },
+        {
+            "protocolID": "protocol_004",
+            "protocolName": "Quit Smoking",
+            "protocolDescription": "Eliminating tobacco use to improve overall health and significantly reduce the risk of chronic diseases.",
+            "protocolInstructions": "1. Set a quit date and plan strategies to avoid triggers.\n2. Use nicotine replacement therapies, such as patches or gum, if needed.\n3. Seek professional help or join a smoking cessation program.\n4. Engage in regular physical activity to manage withdrawal symptoms.\n5. Avoid environments where smoking is prevalent.\n6. Track your progress and celebrate milestones.",
+            "protocolImageID": "/images/protocol_004_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_001"
+            ],
+            "protocolSearchTerms": [
+                "quit smoking",
+                "stop tobacco use",
+                "smoking cessation",
+                "reduce smoking risks",
+                "healthy lungs",
+                "quit nicotine",
+                "smoking alternatives",
+                "smoke-free lifestyle",
+                "reduce addiction",
+                "improve vascular health"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 3,
+            "protocolRelativeCostRating": 2,
+            "protocolOverallImpactRating": 4.8
+        },
+        {
+            "protocolID": "protocol_005",
+            "protocolName": "Resistance Training",
+            "protocolDescription": "Strength-based exercise targeting major muscle groups to improve strength, bone density, and overall fitness.",
+            "protocolInstructions": "1. Perform resistance exercises 2–3 times per week using weights, machines, or bodyweight.\n2. Target major muscle groups, such as legs, back, chest, and arms.\n3. Start with 8–12 repetitions per set at a moderate weight, gradually increasing intensity as strength improves.\n4. Rest for 48 hours between sessions to allow for muscle recovery.\n5. Stay hydrated and pair workouts with a balanced diet.",
+            "protocolImageID": "/images/protocol_005_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_001",
+                "benefit_003"
+            ],
+            "protocolSearchTerms": [
+                "strength training",
+                "resistance exercises",
+                "weightlifting",
+                "muscle building",
+                "bone health",
+                "strength workouts",
+                "fitness routine",
+                "bodyweight exercises",
+                "free weights",
+                "functional strength"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 4,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 4.5
+        },
+        {
+            "protocolID": "protocol_006",
+            "protocolName": "Omega-3 Supplementation",
+            "protocolDescription": "Regular intake of omega-3 fatty acids through dietary sources or supplements to enhance health and reduce inflammation.",
+            "protocolInstructions": "1. Consume 2 servings of fatty fish (e.g., salmon, mackerel, sardines) per week.\n2. Incorporate plant-based omega-3 sources such as flaxseeds, chia seeds, and walnuts into daily meals.\n3. Take omega-3 supplements containing EPA and DHA if dietary intake is insufficient, as recommended by a healthcare provider.",
+            "protocolImageID": "/images/protocol_006_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_002",
+                "benefit_003"
+            ],
+            "protocolSearchTerms": [
+                "omega-3",
+                "fish oil",
+                "fatty acids",
+                "DHA and EPA",
+                "healthy fats",
+                "anti-inflammatory diet",
+                "omega-3 supplements",
+                "fish diet",
+                "essential nutrients",
+                "brain health"
+            ],
+            "protocolCategories": [
+                "Dietary",
+                "Supplements"
+            ],
+            "protocolRelativeTimeRating": 2,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 4.7
+        },
+        {
+            "protocolID": "protocol_007",
+            "protocolName": "Cold Showers",
+            "protocolDescription": "Regular exposure to cold water to improve circulation, reduce inflammation, and boost immune function.",
+            "protocolInstructions": "1. Start with lukewarm water and gradually lower the temperature over time.\n2. Aim for 30 seconds to 2 minutes of cold exposure per session.\n3. Practice daily for consistent benefits.\n4. Focus on deep, controlled breathing to manage the cold stimulus.",
+            "protocolImageID": "/images/protocol_007_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_002",
+                "benefit_003"
+            ],
+            "protocolSearchTerms": [
+                "cold exposure",
+                "cold therapy",
+                "immune boosting",
+                "circulatory health",
+                "cold water showers",
+                "immune resilience",
+                "stress adaptation",
+                "cold bath benefits",
+                "cryotherapy",
+                "boost immunity"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 2,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 3.5
+        },
+        {
+            "protocolID": "protocol_008",
+            "protocolName": "Probiotic-Rich Foods",
+            "protocolDescription": "Incorporating probiotic-rich foods into the diet to support gut health and enhance immune function.",
+            "protocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1-2 servings of these foods daily to maintain a healthy gut microbiome.\n3. Pair probiotics with dietary fibre to support the growth of beneficial gut bacteria.\n4. Avoid excessive sugar and processed foods, which can harm gut health.",
+            "protocolImageID": "/images/protocol_008_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_002",
+                "benefit_003",
+                "benefit_004"
+            ],
+            "protocolSearchTerms": [
+                "probiotics",
+                "fermented foods",
+                "gut health",
+                "immune boosting diet",
+                "yogurt benefits",
+                "sauerkraut immunity",
+                "kimchi probiotics",
+                "healthy gut",
+                "immune resilience",
+                "probiotic foods"
+            ],
+            "protocolCategories": [
+                "Dietary"
+            ],
+            "protocolRelativeTimeRating": 2,
+            "protocolRelativeCostRating": 3,
+            "protocolOverallImpactRating": 4.0
+        },
+        {
+            "protocolID": "protocol_009",
+            "protocolName": "Meditation",
+            "protocolDescription": "A daily practice of mindfulness and meditation to reduce stress, improve emotional well-being, and enhance mental clarity.",
+            "protocolInstructions": "1. Set aside 10–20 minutes daily for meditation.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app to assist your practice.\n4. Gradually increase the duration as you build a consistent habit.",
+            "protocolImageID": "/images/protocol_009_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_003",
+                "benefit_004",
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "gratitude",
+                "mindfulness",
+                "stress reduction",
+                "emotional well-being",
+                "mental clarity",
+                "relaxation",
+                "focus improvement",
+                "cortisol reduction",
+                "mindfulness practice"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.8
+        },
+        {
+            "protocolID": "protocol_010",
+            "protocolName": "Gratitude Practice",
+            "protocolDescription": "Daily practice of expressing gratitude to reduce stress, improve mood, and enhance mental clarity.",
+            "protocolInstructions": "1. Spend 5 minutes daily writing down 3 things you are grateful for.\n2. Reflect on why these things are meaningful to you.\n3. Practice consistently to build a habit of gratitude.\n4. Share your gratitude with others to deepen the emotional impact.",
+            "protocolImageID": "/images/protocol_010_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_003",
+                "benefit_004"
+            ],
+            "protocolSearchTerms": [
+                "gratitude practice",
+                "daily gratitude",
+                "thankfulness",
+                "stress reduction",
+                "positive thinking",
+                "mood improvement",
+                "gratitude journaling",
+                "mindfulness",
+                "emotional well-being",
+                "mental clarity"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.0
+        },
+        {
+            "protocolID": "protocol_011",
+            "protocolName": "Sleep Hygiene Routine",
+            "protocolDescription": "Establishing consistent sleep habits and a conducive sleep environment to improve sleep quality and duration.",
+            "protocolInstructions": "1. Go to bed and wake up at the same time every day, even on weekends.\n2. Avoid screens and bright lights at least 1 hour before bed.\n3. Create a calming bedtime routine such as reading, journaling, or meditating.\n4. Keep your bedroom dark, cool, and quiet for optimal sleep conditions.",
+            "protocolImageID": "/images/protocol_011_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "sleep hygiene",
+                "bedtime routine",
+                "consistent sleep schedule",
+                "improve sleep",
+                "sleep environment",
+                "healthy sleep habits",
+                "quality sleep",
+                "better rest"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 2,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.3
+        },
+        {
+            "protocolID": "protocol_012",
+            "protocolName": "Blue Light Blocking Glasses",
+            "protocolDescription": "Wearing glasses that block blue light in the evening to reduce melatonin disruption and improve sleep quality.",
+            "protocolInstructions": "1. Wear blue light blocking glasses 2–3 hours before bed.\n2. Use the glasses consistently when exposed to screens or artificial lighting.\n3. Pair with dimmed home lighting for optimal results.",
+            "protocolImageID": "/images/protocol_012_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "blue light glasses",
+                "reduce blue light",
+                "screen glasses",
+                "sleep improvement",
+                "melatonin regulation",
+                "evening light exposure",
+                "better sleep"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 2,
+            "protocolOverallImpactRating": 3.2
+        },
+        {
+            "protocolID": "protocol_013",
+            "protocolName": "Chamomile Tea Before Bed",
+            "protocolDescription": "Drinking chamomile tea in the evening to relax the body and promote better sleep onset.",
+            "protocolInstructions": "1. Brew one cup of chamomile tea 30–60 minutes before bedtime.\n2. Avoid adding sugar to prevent sleep disruption.\n3. Pair with other relaxing activities like reading or meditation for enhanced benefits.",
+            "protocolImageID": "/images/protocol_013_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "chamomile tea",
+                "herbal tea for sleep",
+                "natural sleep aid",
+                "relaxation tea",
+                "better sleep",
+                "sleep onset",
+                "reduce anxiety"
+            ],
+            "protocolCategories": [
+                "Dietary", "Supplements"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 3.3
+        },
+        {
+            "protocolID": "protocol_014",
+            "protocolName": "Magnesium Supplementation",
+            "protocolDescription": "Taking magnesium supplements to relax the nervous system and improve sleep quality.",
+            "protocolInstructions": "1. Take 200–400 mg of magnesium citrate or glycinate 1–2 hours before bed.\n2. Consult a healthcare professional to determine the appropriate dosage for your needs.\n3. Pair supplementation with a diet rich in magnesium-containing foods for optimal results.",
+            "protocolImageID": "/images/protocol_014_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "magnesium supplements",
+                "better sleep",
+                "relax muscles",
+                "natural sleep aid",
+                "calm nervous system",
+                "improve sleep quality"
+            ],
+            "protocolCategories": [
+                "Supplements"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 2,
+            "protocolOverallImpactRating": 4.0
+        },
+        {
+            "protocolID": "protocol_015",
+            "protocolName": "Progressive Muscle Relaxation",
+            "protocolDescription": "A relaxation technique that involves tensing and releasing muscles to reduce stress and improve sleep onset.",
+            "protocolInstructions": "1. Set aside 10 minutes before bed to practice progressive muscle relaxation.\n2. Lie down in a quiet space and focus on tensing and relaxing one muscle group at a time, starting from your toes and moving upward.\n3. Breathe deeply throughout the process to maximise relaxation.",
+            "protocolImageID": "/images/protocol_015_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "muscle relaxation",
+                "progressive relaxation",
+                "reduce stress",
+                "better sleep",
+                "relax body",
+                "sleep onset"
+            ],
+            "protocolCategories": [
+                "Behaviour"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.1
+        },
+        {
+            "protocolID": "protocol_016",
+            "protocolName": "No Caffeine After 2 PM",
+            "protocolDescription": "Avoiding caffeine consumption in the afternoon and evening to prevent interference with sleep quality.",
+            "protocolInstructions": "1. Avoid coffee, tea, energy drinks, or other caffeine-containing products after 2 PM.\n2. Replace caffeinated beverages with herbal teas or water in the afternoon and evening.\n3. Be mindful of hidden caffeine sources, such as chocolate or medications.",
+            "protocolImageID": "/images/protocol_016_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_005"
+            ],
+            "protocolSearchTerms": [
+                "limit caffeine",
+                "no caffeine afternoon",
+                "reduce caffeine for sleep",
+                "better sleep",
+                "sleep hygiene",
+                "caffeine and sleep"
+            ],
+            "protocolCategories": [
+                "Dietary", "Supplements"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.5
+        },
+        {
+            "protocolID": "protocol_017",
+            "protocolName": "Intermittent Fasting",
+            "protocolDescription": "A dietary practice alternating between eating and fasting periods, aimed at improving metabolic health, reducing fat, and supporting overall well-being.",
+            "protocolInstructions": "1. Choose a fasting schedule such as 16:8 (16 hours fasting, 8 hours eating) or 5:2 (5 days normal eating, 2 days restricted calorie intake).\n2. Stay hydrated during fasting periods with water, herbal teas, or black coffee.\n3. Break your fast with balanced meals, prioritizing whole foods and avoiding processed options.\n4. Gradually adapt your schedule to ensure it fits your lifestyle and health goals.\n5. Monitor your body's response and consult a healthcare professional if needed.",
+            "protocolImageID": "/images/protocol_017_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_006", 
+                "benefit_007", 
+                "benefit_008", 
+                "benefit_001", 
+                "benefit_009", 
+                "benefit_010",  
+                "benefit_011", 
+                "benefit_003",  
+                "benefit_012", 
+                "benefit_013",  
+                "benefit_014",  
+                "benefit_015",  
+                "benefit_016",  
+                "benefit_017"
+            ],
+            "protocolSearchTerms": [
+                "intermittent fasting",
+                "fasting schedule",
+                "16:8 fasting",
+                "5:2 fasting",
+                "time-restricted eating",
+                "metabolic health",
+                "fat loss",
+                "autophagy",
+                "dietary practice",
+                "improved insulin sensitivity"
+            ],
+            "protocolCategories": [
+                "Dietary"
+            ],
+            "protocolRelativeTimeRating": 3,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 4.7
+        }                         
+    ]
+}

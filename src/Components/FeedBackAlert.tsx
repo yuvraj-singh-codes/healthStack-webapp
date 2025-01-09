@@ -25,13 +25,13 @@ const FeedBackAlert: React.FC<AlertDialogProps> = ({
   handleRatingClick,
   formData,
 }) => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const handleFeedback = () => {
     onClose();
     navigate("/dashboard/feedback");
   };
   return (
-    <Dialog open={open} 
+    <Dialog open={open}
       sx={{ maxWidth: 600, margin: "auto" }} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
       <Box sx={{ display: "flex", justifyContent: "end" }}><IoMdClose onClick={onClose} style={{ marginTop: "10px", marginRight: "10px", cursor: "pointer" }} size={30} /></Box>
       <DialogTitle id="alert-dialog-title" sx={{ fontSize: "18px", color: "#000", textAlign: "center" }}>How’s your experience using HealthStack Early Access so far?</DialogTitle>
@@ -56,23 +56,25 @@ const FeedBackAlert: React.FC<AlertDialogProps> = ({
             Thanks! Can you tell us more?
           </Typography>
         </DialogContentText>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 1 }}>
-          <Button
-            onClick={handleFeedback}
-            sx={{
-              bgcolor: "#D4C89E",
-              border: "1px solid #212121",
-              color: "#212121",
-              textTransform: "capitalize",
-              fontWeight: "bold",
-              width: "219px",
-              height: "40px",
-            }}
-          >
-            Share My Toughts
-            {/* <Link to={'/dashboard/feedback'} style={{textDecoration:"none",color:"#212121"}}>Share My Toughts</Link> */}
-          </Button>
-        </Box>
+        {
+          formData.rating>0 && <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 1 }}>
+            <Button
+              onClick={handleFeedback}
+              sx={{
+                bgcolor: "#D4C89E",
+                border: "1px solid #212121",
+                color: "#212121",
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                width: "219px",
+                height: "40px",
+              }}
+            >
+              Share My Toughts
+            </Button>
+          </Box>
+        }
+
       </DialogContent>
     </Dialog>
   );
