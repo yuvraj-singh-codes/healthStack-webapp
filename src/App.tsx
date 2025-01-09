@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./Components/pages/LandingPage";
 import HomePage from "./Components/pages/Home";
@@ -15,6 +15,7 @@ import { Box } from "@mui/material";
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
+  const [clickCount, setClickCount] = useState<number>(0);
   const [formData, setFormData] = React.useState({
     rating: 0,
     feedbackType: "",
@@ -63,13 +64,32 @@ export default function App() {
     setOpen(false);
   };
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 30000);
-
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    const handleUserClick = () => {
+      setClickCount((prevCount:number) => prevCount + 1);
+    };
+    window.addEventListener("click", handleUserClick);
+    return () => {
+      window.removeEventListener("click", handleUserClick);
+    };
   }, []);
+
+  useEffect(() => {
+    if (clickCount >= 7 && !open) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+      }, 30000); // 30 seconds
+
+      return () => clearTimeout(timer);
+    }
+  }, [clickCount]);
+  // React.useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setOpen(true);
+  //   }, 30000);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <Provider store={store}>

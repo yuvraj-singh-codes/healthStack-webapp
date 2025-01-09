@@ -1,24 +1,35 @@
 import { Box, Typography, List, ListItem, Button } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
+import { IoMdArrowBack } from "react-icons/io";
 
 const About = () => {
-    // const navigate = useNavigate();
+    const handleBack = () => {
+        window.history.back();
+      };
     return (
         <Box
             sx={{
-                p:2,
+                p: 2,
                 maxWidth: 600, margin: "auto",
             }}
         >
-            <Typography sx={{fontSize:"24px",color:"#000",}}>
+            <Box sx={{
+                position: "sticky",
+                top: 0,
+                p: 2,
+                bgcolor: "#fff",
+                zIndex: 100,
+            }}>
+                <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
+            </Box>
+            <Typography sx={{ fontSize: "24px", color: "#000", }}>
                 About HealthStack
             </Typography>
 
             <Box my={4}>
-                <Typography sx={{fontSize:"20px",color:"#000",fontWeight:"600"}}>
+                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
                     Your Health, Simplified
                 </Typography>
-                <Typography sx={{fontSize:"16px",color:"#000"}}>
+                <Typography sx={{ fontSize: "16px", color: "#000" }}>
                     Navigating health and wellness can be overwhelming:
                 </Typography>
                 <List>
@@ -27,7 +38,7 @@ const About = () => {
                         "❌ Forgetting helpful insights.",
                         "❌ Wondering if an action will make a difference.",
                     ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000",pr:0 }} key={index}>
+                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
                             {text}
                         </ListItem>
                     ))}
@@ -38,10 +49,10 @@ const About = () => {
             </Box>
 
             <Box mb={4}>
-                <Typography sx={{fontSize:"20px",color:"#000",fontWeight:"600"}}>
+                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
                     HealthStack is Different
                 </Typography>
-                <Typography sx={{fontSize:"16px",color:"#000",}}>
+                <Typography sx={{ fontSize: "16px", color: "#000", }}>
                     Your easy-to-use health companion, offering:
                 </Typography>
                 <List>
@@ -50,7 +61,7 @@ const About = () => {
                         "✅ A searchable catalogue to stay organized.",
                         "✅ Clear insights on time, cost, and impact.",
                     ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000",pr:0 }} key={index}>
+                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
                             {text}
                         </ListItem>
                     ))}
@@ -58,10 +69,10 @@ const About = () => {
             </Box>
 
             <Box mb={4}>
-                <Typography sx={{fontSize:"20px",color:"#000",fontWeight:"600"}}>
+                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
                     Why Early Access?
                 </Typography>
-                <Typography sx={{fontSize:"16px",color:"#000"}}>
+                <Typography sx={{ fontSize: "16px", color: "#000" }}>
                     This is just the beginning! Your feedback will help us improve
                     HealthStack for everyone.
                 </Typography>
@@ -74,7 +85,7 @@ const About = () => {
                         "💡 Habit-forming tools and notifications",
                         "🧭 Native apps for optimised navigation on Android and iPhone",
                     ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000",pr:0 }} key={index}>
+                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
                             {text}
                         </ListItem>
                     ))}
@@ -82,10 +93,10 @@ const About = () => {
             </Box>
 
             <Box>
-                <Typography sx={{fontSize:"20px",color:"#000",fontWeight:"600"}}>
+                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
                     Help us Improve!
                 </Typography>
-                <Typography sx={{fontSize:"16px",color:"#000"}}>
+                <Typography sx={{ fontSize: "16px", color: "#000" }}>
                     Help us shape the future of HealthStack! Share your feedback, ideas,
                     and suggestions.
                 </Typography>

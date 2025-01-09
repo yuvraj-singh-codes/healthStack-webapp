@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import CommonSelect from "../utils/CommonSelect";
 import CommonTextField from "../utils/CommonTextField";
+import { IoMdArrowBack } from "react-icons/io";
 
 // Define the interface for FeedbackProps
 interface FeedbackProps {
@@ -36,7 +37,9 @@ const Feedback: React.FC<FeedbackProps> = ({
         { value: "feature", label: "Feature Request" },
         { value: "general", label: "General Feedback" },
     ];
-
+    const handleBack = () => {
+        window.history.back();
+      };
     return (
         <Box
             sx={{
@@ -45,6 +48,15 @@ const Feedback: React.FC<FeedbackProps> = ({
                 p: 2,
             }}
         >
+              <Box sx={{
+                    position: "sticky",
+                    top: 0,
+                    p: 2,
+                    bgcolor: "#fff",
+                    zIndex: 100,
+                  }}>
+                    <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
+                  </Box>
             {/* Title */}
             <Typography sx={{ mb: 2, fontSize: "20px", color: "#000", fontWeight: "700" }}>
                 Help Us Improve HealthStack!

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Typography, Grid, Divider, IconButton } from "@mui/material";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp, IoMdArrowBack } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineLike } from "react-icons/ai";
@@ -30,7 +30,7 @@ const ClaimPage = () => {
     (protocolId && claim.claimProtocolID === protocolId)
   );
   const [showText, setShowText] = useState<textType>({
-    text_1: false,
+    text_1: true,
     text_2: false,
     text_3: true,
     text_4: true,
@@ -53,10 +53,21 @@ const ClaimPage = () => {
   const instructionPoints = newClaim[0]?.claimProtocolInstructions
     ?.split("\n")
     ?.map((item) => item.replace(/^\d+\.\s*/, ""));
-    console.log(newClaim[0],"=========newclaim");
-    
+  console.log(newClaim[0], "=========newclaim");
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <>
+      <Box sx={{
+        position: "sticky",
+        top: 0,
+        bgcolor: "#fff",
+        p: 2,
+        zIndex: 100,
+      }}>
+        <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
+      </Box>
       {
         newClaim.length !== 0 ? (
           <Box sx={{ padding: 2, maxWidth: 600, margin: "auto" }}>
@@ -178,7 +189,7 @@ const ClaimPage = () => {
                       sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px" }}
                       onClick={toggleText3}
                     >
-                      Reaearch Insights{" "}
+                      Research Insights{" "}
                       <span style={{ marginTop: "5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                     </Typography>
                     {showText.text_3 && (
@@ -221,7 +232,7 @@ const ClaimPage = () => {
                               This is based on these research-derived metrics :
                             </Typography>
                           </Grid>
-                          {newClaim[0]?.claimImpactRatingDescription && <Grid item xs={12} sm={6} md={6}>
+                          {newClaim[0]?.claimImpactRatingDescription && <Grid item xs={12}>
                             <Box
                               sx={{
                                 display: "flex",
@@ -253,7 +264,7 @@ const ClaimPage = () => {
                               </Box>
                             </Box>
                           </Grid>}
-                          {newClaim[0]?.claimMaturityRatingDescription && <Grid item xs={12} sm={6} md={6} >
+                          {newClaim[0]?.claimMaturityRatingDescription && <Grid item xs={12} >
                             <Box
                               sx={{
                                 display: "flex",
@@ -285,7 +296,7 @@ const ClaimPage = () => {
                               </Box>
                             </Box>
                           </Grid>}
-                          {newClaim[0]?.claimConsensusRatingDescription && <Grid item xs={12} sm={6} md={6}>
+                          {newClaim[0]?.claimConsensusRatingDescription && <Grid item xs={12}>
                             <Box
                               sx={{
                                 display: "flex",
@@ -337,11 +348,11 @@ const ClaimPage = () => {
                               <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700 }}>{index + 1}.</Typography>
                             </Grid>
                             <Grid item xs={11} mt={1}>
-                              <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700,fontStyle:"italic" }}>{item?.title}</Typography>
+                              <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
                               <Box>
                                 <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
-                                <Typography sx={{ fontSize: "15px", color: "#616161",fontWeight:600}}>{item?.publisher}</Typography>
-                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal",bgcolor:"#e4f5f5",py:"1px",px:"4px"  }}>{item?.summary}</Typography>
+                                <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
+                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", bgcolor: "#e4f5f5", py: "1px", px: "4px" }}>{item?.summary}</Typography>
                               </Box>
                             </Grid>
                           </Grid>
@@ -361,7 +372,7 @@ const ClaimPage = () => {
                       showText.text_2 && (instructionPoints?.map((item, index) => (
                         <Grid container key={index}>
                           <Grid item xs={1} >
-                           <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>{index + 1}.</Typography> 
+                            <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>{index + 1}.</Typography>
                           </Grid>
                           <Grid item xs={11} >
                             <Typography sx={{ fontSize: "14px" }}>{item}</Typography>
