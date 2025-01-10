@@ -10,20 +10,27 @@ import { setValue } from '../../features/tabSlice';
 import { RootState } from '../../Store/Store';
 import { setBenefit, setProtocol } from '../../features/allStateSlice';
 import { CommonSearch } from '../utils/CommonSearch';
+import SkeletonLoader from '../utils/Skeleton';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const benefit = useSelector((state: RootState) => state.app.benefit);
+    const benefitLoading = useSelector((state: RootState) => state.app.benefitLoading);
     const protocol = useSelector((state: RootState) => state.app.protocol);
+    const protocolLoading = useSelector((state: RootState) => state.app.protocolLoading);
     const activeTab = useSelector((state: RootState) => state.tabvalue.tab)
+    const search = useSelector((state: RootState) => state.search.search);
     const [searchTerm, setSearchTerm] = useState<string>("");
     const { protocols, benefits } = jsonData;
     const handleTabChange = (value: number) => {
         dispatch(setValue(value))
     };
-
     useEffect(() => {
+        setSearchTerm(search)
+    }, [search])
+    useEffect(() => {
+        setSearchTerm(search)
         dispatch(setBenefit(benefits));
         dispatch(setProtocol(protocols));
     }, [dispatch])
@@ -214,14 +221,14 @@ const HomePage: React.FC = () => {
         }
     }, [activeTab, searchTerm, dispatch]);
 
-    useEffect(() => {
-        setSearchTerm("")
-    }, [activeTab])
+    // useEffect(() => {
+    //     setSearchTerm("")
+    // }, [activeTab])
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>
             {/* Banner */}
-            <CommonSearch onChange={handleSearch} searchTerm={searchTerm} />
+            <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Box
                 sx={{
                     backgroundImage: `url(${mainImg})`,
@@ -242,7 +249,7 @@ const HomePage: React.FC = () => {
                         fontWeight: "bold",
                         color: "#212121",
                         position: "absolute",
-                        mt: 2
+                        mt: 6
                     }}
                 >
                     Empower your health journey with science-backed protocols.
@@ -295,118 +302,126 @@ const HomePage: React.FC = () => {
             {/* Cards Display */}
             {activeTab === 0 ? (
                 <Box sx={{ padding: 2, bgcolor: '#EAF5F6' }}>
-                    <Grid container spacing={2}>
-                        {benefit?.length > 0 ? (benefit?.map((item, index) => (
-                            <Grid item xs={4} sm={4} key={index}>
-                                <Card
-                                    onClick={() => { navigate(`/dashboard/benefit-protocol?id=${item.benefitID}`) }}
-                                    sx={{
-                                        position: 'relative',
-                                        borderRadius: 2,
-                                        overflow: 'hidden',
-                                    }}
-                                >
-                                    <CardMedia
-                                        component="img"
-                                        image={item.benefitImageID}
-                                        alt={item.benefitName}
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
-                                    <Box
-                                        className="scrollbar"
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            left: 0,
-                                            width: '100%',
-                                            bgcolor: 'rgba(255, 255, 255, 0.8)',
-                                            p: 1,
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
-                                            textOverflow: "ellipsis",
-                                            whiteSpace: "wrap",
-                                            overflow: "auto",
-                                            color: "#000"
-                                        }}
-                                    >
-                                        <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto",lineHeight: 'normal' }}
+                    {
+                        benefitLoading ? <SkeletonLoader /> : (
+                            <Grid container spacing={2}>
+                                {benefit?.length > 0 ? (benefit?.map((item, index) => (
+                                    <Grid item xs={4} sm={4} key={index}>
+                                        <Card
+                                            onClick={() => { navigate(`/dashboard/benefit-protocol?id=${item.benefitID}`) }}
+                                            sx={{
+                                                position: 'relative',
+                                                borderRadius: 2,
+                                                overflow: 'hidden',
+                                            }}
                                         >
-                                            {item.benefitName}
-                                        </Typography>
-                                    </Box>
-                                </Card>
+                                            <CardMedia
+                                                component="img"
+                                                image={item.benefitImageID}
+                                                alt={item.benefitName}
+                                                sx={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover',
+                                                }}
+                                            />
+                                            <Box
+                                                className="scrollbar"
+                                                sx={{
+                                                    position: 'absolute',
+                                                    bottom: 0,
+                                                    left: 0,
+                                                    width: '100%',
+                                                    bgcolor: 'rgba(255, 255, 255, 0.8)',
+                                                    p: 1,
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
+                                                    textOverflow: "ellipsis",
+                                                    whiteSpace: "wrap",
+                                                    overflow: "auto",
+                                                    color: "#000"
+                                                }}
+                                            >
+                                                <Typography
+                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                >
+                                                    {item.benefitName}
+                                                </Typography>
+                                            </Box>
+                                        </Card>
+                                    </Grid>
+                                ))) : (
+                                    <Grid item xs={12}>
+                                        <Typography textAlign={'center'}>No Benefit data found</Typography>
+                                    </Grid>
+                                )}
                             </Grid>
-                        ))) : (
-                            <Grid item xs={12}>
-                                <Typography textAlign={'center'}>No Benefit data found!!</Typography>
-                            </Grid>
-                        )}
-                    </Grid>
+                        )
+                    }
                 </Box>
             ) : (
                 <Box sx={{ padding: 2, bgcolor: '#F4F1E6' }}>
-                    <Grid container spacing={2}>
-                        {protocol?.length > 0 ? (protocol?.map((item, index) => (
-                            <Grid item xs={4} sm={4} key={index}>
-                                <Card
-                                    onClick={() => { navigate(`/dashboard/protocol-benefit?id=${item.protocolID}`) }}
-                                    sx={{
-                                        position: 'relative',
-                                        borderRadius: 2,
-                                        overflow: 'hidden',
-                                    }}
-                                >
-                                    <CardMedia
-                                        component="img"
-                                        image={item.protocolImageID}
-                                        alt={item.protocolName}
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
-                                    <Box
-                                        className="scrollbar"
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            left: 0,
-                                            width: '100%',
-                                            bgcolor: 'rgba(255, 255, 255, 0.8)',
-                                            // backdropFilter: 'blur(0.1px)',
-                                            p: 1,
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
-                                            textOverflow: "ellipsis",
-                                            whiteSpace: "wrap",
-                                            overflow: "auto",
-                                            color: "#000"
-                                        }}
-                                    >
-                                        <Typography
-                                            sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto",lineHeight: 'normal' }}
+                    {
+                        protocolLoading ? <SkeletonLoader /> : (
+                            <Grid container spacing={2}>
+                                {protocol?.length > 0 ? (protocol?.map((item, index) => (
+                                    <Grid item xs={4} sm={4} key={index}>
+                                        <Card
+                                            onClick={() => { navigate(`/dashboard/protocol-benefit?id=${item.protocolID}`) }}
+                                            sx={{
+                                                position: 'relative',
+                                                borderRadius: 2,
+                                                overflow: 'hidden',
+                                            }}
                                         >
-                                            {item.protocolName}
-                                        </Typography>
-                                    </Box>
-                                </Card>
+                                            <CardMedia
+                                                component="img"
+                                                image={item.protocolImageID}
+                                                alt={item.protocolName}
+                                                sx={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover',
+                                                }}
+                                            />
+                                            <Box
+                                                className="scrollbar"
+                                                sx={{
+                                                    position: 'absolute',
+                                                    bottom: 0,
+                                                    left: 0,
+                                                    width: '100%',
+                                                    bgcolor: 'rgba(255, 255, 255, 0.8)',
+                                                    // backdropFilter: 'blur(0.1px)',
+                                                    p: 1,
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center',
+                                                    height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
+                                                    textOverflow: "ellipsis",
+                                                    whiteSpace: "wrap",
+                                                    overflow: "auto",
+                                                    color: "#000"
+                                                }}
+                                            >
+                                                <Typography
+                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                >
+                                                    {item.protocolName}
+                                                </Typography>
+                                            </Box>
+                                        </Card>
+                                    </Grid>
+                                ))) : (
+                                    <Grid item xs={12}>
+                                        <Typography textAlign={'center'}>No Protocol data found</Typography>
+                                    </Grid>
+                                )}
                             </Grid>
-                        ))) : (
-                            <Grid item xs={12}>
-                                <Typography textAlign={'center'}>No Protocol data found!!</Typography>
-                            </Grid>
-                        )}
-                    </Grid>
+                        )
+                    }
                 </Box>
             )}
         </Box>

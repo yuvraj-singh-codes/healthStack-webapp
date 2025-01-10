@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, CardMedia, Typography, Box, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Protocol } from './Interface/Interface';
+import { Hourglass } from 'lucide-react';
+import { PiCurrencyDollarSimpleBold } from 'react-icons/pi';
 
 interface BenefitProtocolCardProps {
   benefitId: string | null;
@@ -61,7 +63,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   sx={{
                     textAlign: 'center',
                     fontSize: '14px',
-                    fontWeight: 500,
+                    fontWeight: 600,
                     mt: 1,
                     px: 1,
                     height: "40px",
@@ -91,14 +93,16 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   </Box>
                   {/* Icon 2 */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} />
+                    {/* <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} /> */}
+                    <Hourglass size={16}/>
                     <Typography variant="caption" sx={{ fontSize: '12px' }}>
                       {item?.protocolRelativeTimeRating}
                     </Typography>
                   </Box>
                   {/* Icon 3 */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} />
+                    {/* <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} /> */}
+                    <PiCurrencyDollarSimpleBold size={18} />
                     <Typography variant="caption" sx={{ fontSize: '12px' }}>
                       {item?.protocolRelativeCostRating}
                     </Typography>
@@ -110,7 +114,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
         ))
       ) : (
         <Grid item xs={12}>
-          <Typography textAlign={'center'}>No Protocol data found!!</Typography>
+          <Typography textAlign={'center'}>No Protocol data found</Typography>
         </Grid>
       )}
     </Grid>

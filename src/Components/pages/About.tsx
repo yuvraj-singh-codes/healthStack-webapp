@@ -1,26 +1,16 @@
 import { Box, Typography, List, ListItem, Button } from "@mui/material";
-import { IoMdArrowBack } from "react-icons/io";
+import SearchComponent from "../utils/Search";
 
 const About = () => {
-    const handleBack = () => {
-        window.history.back();
-      };
     return (
+        <>
+        <SearchComponent/>
         <Box
             sx={{
                 p: 2,
                 maxWidth: 600, margin: "auto",
             }}
         >
-            <Box sx={{
-                position: "sticky",
-                top: 0,
-                p: 2,
-                bgcolor: "#fff",
-                zIndex: 100,
-            }}>
-                <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
-            </Box>
             <Typography sx={{ fontSize: "24px", color: "#000", }}>
                 About HealthStack
             </Typography>
@@ -122,6 +112,7 @@ const About = () => {
                 </Button>
             </Box>
         </Box>
+        </>
     );
 };
 

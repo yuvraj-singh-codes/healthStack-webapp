@@ -78,6 +78,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                       mt: 1,
                       height: "40px",
                       overflow: "auto",
+                      fontWeight:600
                     }}
                   >
                     {item.benefitName}
@@ -111,7 +112,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
       ) : (
         <Grid item xs={12}>
           <Typography textAlign={"center"}>
-            No Benefit data found!!
+            No Benefit data found
           </Typography>
         </Grid>
       )}

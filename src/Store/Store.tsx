@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import itemReducer from '../features/slice';
 import tabReducer from '../features/tabSlice';
-import appReducer from '../features/allStateSlice'
+import appReducer from '../features/allStateSlice';
+import searchReducer from '../features/SearchSlice';
 
 export const store = configureStore({
   reducer: {
     items:itemReducer,
     tabvalue:tabReducer,
     app: appReducer,
+    search:searchReducer
   },
 })
 

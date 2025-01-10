@@ -2179,7 +2179,7 @@
             "benefitID": "benefit_013",
             "benefitName": "Mood Regulation",
             "benefitDescription": "Reduces anxiety and stress through hormonal regulation, including cortisol and serotonin balance.",
-            "benefitImageID": "/images/benefit_014_image.jpg",
+            "benefitImageID": "/images/benefit_013_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],

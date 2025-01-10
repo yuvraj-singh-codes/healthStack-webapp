@@ -2,22 +2,29 @@ import React, { FC } from "react";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import { FiSearch } from "react-icons/fi";
 import { IoMdArrowBack } from "react-icons/io";
-
+import { IoMdClose } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../features/SearchSlice";
 interface CommonSearchProps {
-    onChange: (value: string) => void; 
-    searchTerm:string;
+    onChange: (value: string) => void;
+    searchTerm: string;
+    setSearchTerm: (term: string) => void;
 }
 
-export const CommonSearch: FC<CommonSearchProps> = ({ onChange,searchTerm }) => {
+export const CommonSearch: FC<CommonSearchProps> = ({ onChange, searchTerm, setSearchTerm }) => {
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        onChange(value); 
+        onChange(value);
     };
+    const dispatch = useDispatch();
 
     const handleBack = () => {
         window.history.back();
     };
-
+    const handleEmpty = () => {
+        setSearchTerm("")
+        dispatch(setSearch(""))
+    }
     return (
         <Box
             sx={{
@@ -40,7 +47,7 @@ export const CommonSearch: FC<CommonSearchProps> = ({ onChange,searchTerm }) => 
             <TextField
                 size="small"
                 fullWidth
-                value={searchTerm} 
+                value={searchTerm}
                 onChange={handleSearchChange}
                 sx={{
                     color: "#212121",
@@ -58,7 +65,9 @@ export const CommonSearch: FC<CommonSearchProps> = ({ onChange,searchTerm }) => 
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
-                            <FiSearch size={20} color="#888" />
+                            {
+                                searchTerm ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} color="#888" />
+                            }
                         </InputAdornment>
                     ),
                 }}
@@ -66,3 +75,4 @@ export const CommonSearch: FC<CommonSearchProps> = ({ onChange,searchTerm }) => 
         </Box>
     );
 };
+

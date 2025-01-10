@@ -52,9 +52,11 @@ const FeedBackAlert: React.FC<AlertDialogProps> = ({
               </Box>
             ))}
           </Box>
-          <Typography sx={{ textAlign: "center", fontSize: "14px", color: "#000" }}>
+          {
+            formData.rating>0 &&<Typography sx={{ textAlign: "center", fontSize: "14px", color: "#000" }}>
             Thanks! Can you tell us more?
           </Typography>
+          }
         </DialogContentText>
         {
           formData.rating>0 && <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 1 }}>

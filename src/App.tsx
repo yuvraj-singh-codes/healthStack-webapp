@@ -14,6 +14,82 @@ import FeedBackAlert from "./Components/FeedBackAlert";
 import { Box } from "@mui/material";
 
 export default function App() {
+  // const [open, setOpen] = React.useState(false);
+  // const [clickCount, setClickCount] = useState<number>(0);
+  // const [formData, setFormData] = React.useState({
+  //   rating: 0,
+  //   feedbackType: "",
+  //   feedbackText: "",
+  //   name: "",
+  //   email: "",
+  // });
+  // const [errors, setErrors] = React.useState({
+  //   feedbackType: false,
+  //   rating: false,
+  // });
+
+  // const validation = () => {
+  //   let hasError = false;
+
+  //   if (!formData.feedbackType) {
+  //     setErrors((prev) => ({ ...prev, feedbackType: true }));
+  //     hasError = true;
+  //   } else {
+  //     setErrors((prev) => ({ ...prev, feedbackType: false }));
+  //   }
+
+  //   if (formData.rating === 0) {
+  //     setErrors((prev) => ({ ...prev, rating: true }));
+  //     hasError = true;
+  //   } else {
+  //     setErrors((prev) => ({ ...prev, rating: false }));
+  //   }
+
+  //   return hasError;
+  // };
+
+  // const handleRatingClick = (index: number) => {
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     rating: prevFormData.rating === index + 1 ? index : index + 1,
+  //   }));
+  // };
+
+  // const handleSubmit = () => {
+  //   if (!validation()) return;
+  //   console.log("Form Submitted===", formData);
+  //   handleClose();
+  // };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+
+  // useEffect(() => {
+  //   const handleUserClick = () => {
+  //     setClickCount((prevCount:number) => prevCount + 1);
+  //   };
+  //   window.addEventListener("click", handleUserClick);
+  //   return () => {
+  //     window.removeEventListener("click", handleUserClick);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   if (clickCount >= 7 && !open) {
+  //     const timer = setTimeout(() => {
+  //       setOpen(true);
+  //     }, 30000); // 30 seconds
+
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [clickCount]);
+  // React.useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setOpen(true);
+  //   }, 30000);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
   const [open, setOpen] = React.useState(false);
   const [clickCount, setClickCount] = useState<number>(0);
   const [formData, setFormData] = React.useState({
@@ -23,30 +99,6 @@ export default function App() {
     name: "",
     email: "",
   });
-  const [errors, setErrors] = React.useState({
-    feedbackType: false,
-    rating: false,
-  });
-
-  const validation = () => {
-    let hasError = false;
-
-    if (!formData.feedbackType) {
-      setErrors((prev) => ({ ...prev, feedbackType: true }));
-      hasError = true;
-    } else {
-      setErrors((prev) => ({ ...prev, feedbackType: false }));
-    }
-
-    if (formData.rating === 0) {
-      setErrors((prev) => ({ ...prev, rating: true }));
-      hasError = true;
-    } else {
-      setErrors((prev) => ({ ...prev, rating: false }));
-    }
-
-    return hasError;
-  };
 
   const handleRatingClick = (index: number) => {
     setFormData((prevFormData) => ({
@@ -54,19 +106,13 @@ export default function App() {
       rating: prevFormData.rating === index + 1 ? index : index + 1,
     }));
   };
-
-  const handleSubmit = () => {
-    if (!validation()) return;
-    console.log("Form Submitted===", formData);
-    handleClose();
-  };
   const handleClose = () => {
     setOpen(false);
   };
 
   useEffect(() => {
     const handleUserClick = () => {
-      setClickCount((prevCount:number) => prevCount + 1);
+      setClickCount((prevCount) => prevCount + 1);
     };
     window.addEventListener("click", handleUserClick);
     return () => {
@@ -75,22 +121,21 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (clickCount >= 7 && !open) {
-      const timer = setTimeout(() => {
+    const startTime = Date.now();
+    const popupShown = sessionStorage.getItem("popupShown") === "true";
+
+    const checkConditions = () => {
+      const timeSpent = (Date.now() - startTime) / 1000; // Convert to seconds
+      if (clickCount >= 7 && timeSpent >= 30 && !popupShown) {
         setOpen(true);
-      }, 30000); // 30 seconds
+        sessionStorage.setItem("popupShown", "true");
+      }
+    };
 
-      return () => clearTimeout(timer);
-    }
+    const interval = setInterval(checkConditions, 1000); // Check conditions every second
+
+    return () => clearInterval(interval);
   }, [clickCount]);
-  // React.useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setOpen(true);
-  //   }, 30000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -108,8 +153,6 @@ export default function App() {
                     handleRatingClick={handleRatingClick}
                     formData={formData}
                     setFormData={setFormData}
-                    errors={errors}
-                    handleSubmit={handleSubmit}
                   />
                 }
               />
