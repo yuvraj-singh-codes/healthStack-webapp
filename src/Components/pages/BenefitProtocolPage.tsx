@@ -136,12 +136,6 @@ const BenefitProtocolPage: React.FC = () => {
                 )
             );
             dispatch(setProtocol(filtered));
-            //     const filtered = protocol.filter((item) =>
-            //         item.protocolSearchTerms.some((search) =>
-            //             search.toLowerCase().includes(lowerCaseTerm)
-            //         )
-            //     );
-            //     dispatch(setProtocol(filtered));
         }
     }, [searchTerm, dispatch]);
     return (

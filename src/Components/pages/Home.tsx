@@ -106,13 +106,6 @@ const HomePage: React.FC = () => {
     };
     const handleSortChange = (label: string) => {
         if (activeTab === 0) {
-            // setSelectedSortValue((prev) => ({
-            //     ...Object.keys(prev).reduce((acc, key) => {
-            //         acc[key] = false;
-            //         return acc;
-            //     }, {} as Record<string, boolean>),
-            //     [label]: true,
-            // }));
             setSelectedSortValue((prev) => {
                 const isSelected = prev[label];
                 return {
@@ -229,10 +222,6 @@ const HomePage: React.FC = () => {
             }
         }
     }, [activeTab, searchTerm, dispatch]);
-
-    // useEffect(() => {
-    //     setSearchTerm("")
-    // }, [activeTab])
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>
