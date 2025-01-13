@@ -1,119 +1,84 @@
-import { Box, Typography, List, ListItem, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import SearchComponent from "../utils/Search";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+    const navigate = useNavigate();
+    const handleBack = () => {
+        // window.history.back();
+        navigate("/dashboard/home")
+    }
     return (
         <>
-        <SearchComponent/>
-        <Box
-            sx={{
-                p: 2,
-                maxWidth: 600, margin: "auto",
-            }}
-        >
-            <Typography sx={{ fontSize: "24px", color: "#000", }}>
-                About HealthStack
-            </Typography>
-
-            <Box my={4}>
-                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
-                    Your Health, Simplified
-                </Typography>
-                <Typography sx={{ fontSize: "16px", color: "#000" }}>
-                    Navigating health and wellness can be overwhelming:
-                </Typography>
-                <List>
-                    {[
-                        "❌ Conflicting advice everywhere.",
-                        "❌ Forgetting helpful insights.",
-                        "❌ Wondering if an action will make a difference.",
-                    ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
-                            {text}
-                        </ListItem>
-                    ))}
-                </List>
-                <Typography>
-                    HealthStack cuts through the noise with science-backed clarity.
-                </Typography>
+            <SearchComponent />
+            <Box
+                className="bg_landingpage"
+                sx={{
+                    py: 1,
+                    maxWidth: 600,
+                    margin: "auto"
+                }}
+            >
+                <Box px={1} pb={1}>
+                    <Typography
+                        sx={{
+                            fontSize: "16px",
+                            color: "#ffffff",
+                            textAlign: "center"
+                        }}
+                    >
+                        <strong>Today's world</strong> makes staying healthy complicated - we're here to change that.
+                    </Typography>
+                    <Typography
+                        mt={2}
+                        sx={{
+                            fontSize: "16px",
+                            color: "#ffffff",
+                            textAlign: "center"
+                        }}
+                    >
+                        <strong>Our mission</strong> is to make reliable, unbiased, and actionable health knowledge accessible to everyone - for free.
+                    </Typography>
+                </Box>
+                <Box className="family" sx={{ bgcolor: "#fff", textAlign: "center", p: 2}}>
+                    <Box>
+                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                            📚 Powered by Science
+                        </Typography>
+                        <Typography sx={{ fontSize: "14px", color: "#000", }}>
+                            No need to sift through complex studies—we distil the science into actionable steps tailored to your health goals.
+                        </Typography>
+                    </Box>
+                    <Box mt={2}>
+                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                            ✍️ Simplified for You
+                        </Typography>
+                        <Typography sx={{ fontSize: "14px", color: "#000", }}>
+                            Our algorithms draw from over 200 million research publications to provide reliable, evidence-based information.
+                        </Typography>
+                    </Box>
+                    <Box mt={2}>
+                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                            🛡️ Transparent and Unbiased
+                        </Typography>
+                        <Typography sx={{ fontSize: "14px", color: "#000", }}>
+                            Every recommendation highlights the level of evidence without sponsorships or hidden agendas.
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ textAlign: 'center', px: 2, }}>
+                <Button onClick={handleBack} sx={{ color: "#000", border: "1px solid #212121", width: "286px", borderRadius: "30px", bgcolor: "#F4F1E6", textTransform: "capitalize", fontWeight: 600, mt: 2 }}>
+                        Help us improve!
+                    </Button>
+                    <Typography sx={{ fontSize: "14px", color: "#fff", }}>
+                        We’re in Beta - and your voice matters.</Typography>
+                    <Typography sx={{ fontSize: "16px", color: "#fff",fontWeight:500 }}>
+                        This is just the beginning—there’s so much more coming to HealthStack soon.
+                    </Typography>
+                </Box>
             </Box>
-
-            <Box mb={4}>
-                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
-                    HealthStack is Different
-                </Typography>
-                <Typography sx={{ fontSize: "16px", color: "#000", }}>
-                    Your easy-to-use health companion, offering:
-                </Typography>
-                <List>
-                    {[
-                        "✅ Trusted, evidence-based guidance.",
-                        "✅ A searchable catalogue to stay organized.",
-                        "✅ Clear insights on time, cost, and impact.",
-                    ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
-                            {text}
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
-
-            <Box mb={4}>
-                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
-                    Why Early Access?
-                </Typography>
-                <Typography sx={{ fontSize: "16px", color: "#000" }}>
-                    This is just the beginning! Your feedback will help us improve
-                    HealthStack for everyone.
-                </Typography>
-                <Typography>Planned Features:</Typography>
-                <List>
-                    {[
-                        "📚 More Protocols and Benefits",
-                        "🎯 Tailored recommendations and progress tracking",
-                        "🏆 Achievements to keep you motivated",
-                        "💡 Habit-forming tools and notifications",
-                        "🧭 Native apps for optimised navigation on Android and iPhone",
-                    ].map((text, index) => (
-                        <ListItem sx={{ fontSize: "16px", color: "#000", pr: 0 }} key={index}>
-                            {text}
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
-
-            <Box>
-                <Typography sx={{ fontSize: "20px", color: "#000", fontWeight: "600" }}>
-                    Help us Improve!
-                </Typography>
-                <Typography sx={{ fontSize: "16px", color: "#000" }}>
-                    Help us shape the future of HealthStack! Share your feedback, ideas,
-                    and suggestions.
-                </Typography>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 4 }}>
-                <Button
-                    // onClick={() => navigate("/dashboard/home")}
-                    sx={{
-                        bgcolor: "#D4C89E",
-                        border: "1px solid #212121",
-                        color: "#212121",
-                        textTransform: "capitalize",
-                        fontWeight: "bold",
-                        width: "219px",
-                        height: "40px",
-                        "&:hover": {
-                            backgroundColor: "#000",
-                            color: "#fff",
-                        },
-                    }}
-                >
-                    Share My Thoughts
-                </Button>
-            </Box>
-        </Box>
         </>
     );
-};
+}
 
 export default About;

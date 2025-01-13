@@ -1,8 +1,15 @@
-*{
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-  }
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap';
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.family {
+  font-family: "Open Sans", sans-serif;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar::-webkit-scrollbar {
   display: none;
@@ -10,6 +17,39 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
+.logoLandingPage {
+  font-family: Libre Baskerville;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 35px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.bg_landingpage {
+  background: linear-gradient(270deg, #7DD857 0%, #0097B2 100%);
+}
+
+.landing_heading2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 29.96px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: auto;
+  color: #FFFFFF;
+}
+
+.logo_img_landing {
+  width: 64px;
+  height: 77px;
+}
+
+.getStarted {}

@@ -42,24 +42,6 @@ const HomePage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
-    useEffect(() => {
-        if (activeTab === 1) {
-            setSelectedSortValue(
-                protocolFilterOption.reduce((acc, option) => {
-                    acc[option] = false;
-                    return acc;
-                }, {} as Record<string, boolean>)
-            );
-        } else if (activeTab === 0) {
-            setSelectedSortValue(
-                benefitFilterOption.reduce((acc, option) => {
-                    acc[option] = false;
-                    return acc;
-                }, {} as Record<string, boolean>)
-            );
-        }
-    }, [activeTab]);
-
     const uniqueProtocolCategories = Array.from(
         new Set(
             protocols.flatMap(item => item.protocolCategories)
@@ -79,6 +61,23 @@ const HomePage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
+    useEffect(() => {
+        if (activeTab === 1) {
+            setSelectedSortValue(
+                protocolFilterOption.reduce((acc, option) => {
+                    acc[option] = false;
+                    return acc;
+                }, {} as Record<string, boolean>)
+            );
+        } else if (activeTab === 0) {
+            setSelectedSortValue(
+                benefitFilterOption.reduce((acc, option) => {
+                    acc[option] = false;
+                    return acc;
+                }, {} as Record<string, boolean>)
+            );
+        }
+    }, [activeTab]);
 
     useEffect(() => {
         if (activeTab === 1) {
@@ -107,13 +106,23 @@ const HomePage: React.FC = () => {
     };
     const handleSortChange = (label: string) => {
         if (activeTab === 0) {
-            setSelectedSortValue((prev) => ({
-                ...Object.keys(prev).reduce((acc, key) => {
-                    acc[key] = false;
-                    return acc;
-                }, {} as Record<string, boolean>),
-                [label]: true,
-            }));
+            // setSelectedSortValue((prev) => ({
+            //     ...Object.keys(prev).reduce((acc, key) => {
+            //         acc[key] = false;
+            //         return acc;
+            //     }, {} as Record<string, boolean>),
+            //     [label]: true,
+            // }));
+            setSelectedSortValue((prev) => {
+                const isSelected = prev[label];
+                return {
+                    ...Object.keys(prev).reduce((acc, key) => {
+                        acc[key] = false; 
+                        return acc;
+                    }, {} as Record<string, boolean>),
+                    [label]: !isSelected, 
+                };
+            });
         } else if (activeTab === 1) {
             setSelectedSortValue((prev) => {
                 const updated = { ...prev };
@@ -337,7 +346,7 @@ const HomePage: React.FC = () => {
                                                     display: 'flex',
                                                     justifyContent: 'center',
                                                     alignItems: 'center',
-                                                    height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
+                                                    height: { xs: "70px", sm: "70px", md: "100px", lg: "120px" },
                                                     textOverflow: "ellipsis",
                                                     whiteSpace: "wrap",
                                                     overflow: "auto",
@@ -345,7 +354,7 @@ const HomePage: React.FC = () => {
                                                 }}
                                             >
                                                 <Typography
-                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                                 >
                                                     {item.benefitName}
                                                 </Typography>
@@ -399,7 +408,7 @@ const HomePage: React.FC = () => {
                                                     display: 'flex',
                                                     justifyContent: 'center',
                                                     alignItems: 'center',
-                                                    height: { xs: "60px", sm: "70px", md: "100px", lg: "120px" },
+                                                    height: { xs: "70px", sm: "70px", md: "100px", lg: "120px" },
                                                     textOverflow: "ellipsis",
                                                     whiteSpace: "wrap",
                                                     overflow: "auto",
@@ -407,7 +416,7 @@ const HomePage: React.FC = () => {
                                                 }}
                                             >
                                                 <Typography
-                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                    sx={{ fontWeight: 'bold', color: '#212121', textAlign: "center", fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                                 >
                                                     {item.protocolName}
                                                 </Typography>

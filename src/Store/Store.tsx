@@ -3,13 +3,15 @@ import itemReducer from '../features/slice';
 import tabReducer from '../features/tabSlice';
 import appReducer from '../features/allStateSlice';
 import searchReducer from '../features/SearchSlice';
+import filterSortReducer from '../features/filterSortSlice'
 
 export const store = configureStore({
   reducer: {
     items:itemReducer,
     tabvalue:tabReducer,
     app: appReducer,
-    search:searchReducer
+    search:searchReducer,
+    filters:filterSortReducer
   },
 })
 

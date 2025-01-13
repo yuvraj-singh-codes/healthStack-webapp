@@ -1,37 +1,3 @@
-// import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-// import { Benefit, Protocol } from '../Components/Interface/Interface';
-
-// interface AppState {
-//     benefit: Benefit[];
-//     protocol: Protocol[];
-// }
-
-// const initialState: AppState = {
-//     benefit: [],
-//     protocol: [],
-// };
-
-// const appSlice = createSlice({
-//     name: 'app',
-//     initialState,
-//     reducers: {
-//         setBenefit(state, action: PayloadAction<Benefit[]>) {
-//             state.benefit = action.payload;
-//         },
-//         setProtocol(state, action: PayloadAction<Protocol[]>) {
-//             state.protocol = action.payload;
-//         },
-//         resetState(state) {
-//             state.benefit = [];
-//             state.protocol = [];
-//         },
-//     },
-// });
-
-// export const { setBenefit, setProtocol, resetState } = appSlice.actions;
-
-// export default appSlice.reducer;
-
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Benefit, Protocol } from '../Components/Interface/Interface';
 
@@ -40,6 +6,8 @@ interface AppState {
     protocol: Protocol[];
     benefitLoading: boolean;
     protocolLoading: boolean;
+    selectedSortValue: Record<string, boolean>;
+    selectedFilters: Record<string, boolean>;
 }
 
 const initialState: AppState = {
@@ -47,6 +15,8 @@ const initialState: AppState = {
     protocol: [],
     benefitLoading: true,
     protocolLoading: true,
+    selectedSortValue: {},
+    selectedFilters: {},
 };
 
 const appSlice = createSlice({
@@ -59,19 +29,27 @@ const appSlice = createSlice({
         },
         setProtocol(state, action: PayloadAction<Protocol[]>) {
             state.protocol = action.payload;
-            state.protocolLoading = false; 
+            state.protocolLoading = false;
         },
         startBenefitLoading(state) {
-            state.benefitLoading = true; 
+            state.benefitLoading = true;
         },
         startProtocolLoading(state) {
-            state.protocolLoading = true; 
+            state.protocolLoading = true;
+        },
+        setSelectedSortValue(state, action: PayloadAction<Record<string, boolean>>) {
+            state.selectedSortValue = action.payload;
+        },
+        setSelectedFilters(state, action: PayloadAction<Record<string, boolean>>) {
+            state.selectedFilters = action.payload;
         },
         resetState(state) {
             state.benefit = [];
             state.protocol = [];
             state.benefitLoading = false;
             state.protocolLoading = false;
+            state.selectedSortValue = {};
+            state.selectedFilters = {};
         },
     },
 });
@@ -81,6 +59,8 @@ export const {
     setProtocol,
     startBenefitLoading,
     startProtocolLoading,
+    setSelectedSortValue,
+    setSelectedFilters,
     resetState,
 } = appSlice.actions;
 

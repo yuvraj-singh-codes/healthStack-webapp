@@ -26,7 +26,7 @@ const ProtocolBenefitPage: React.FC = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const protocolID = queryParams.get('id');
-    const { protocols, benefits,claims } = jsonData;
+    const { protocols, benefits, claims } = jsonData;
     const protocolsData = protocols.find((val) => val.protocolID === protocolID);
     const uniqueBenefitCategories = Array.from(
         new Set(
@@ -40,7 +40,7 @@ const ProtocolBenefitPage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
-    const benefitFilterOption = ["Evidence Rating","Name (A-Z)", "Name (Z-A)"]
+    const benefitFilterOption = ["Evidence Rating", "Name (A-Z)", "Name (Z-A)"]
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
         () => benefitFilterOption.reduce((acc, option) => {
             acc[option] = false;
@@ -48,13 +48,16 @@ const ProtocolBenefitPage: React.FC = () => {
         }, {} as Record<string, boolean>)
     );
     const handleSortChange = (label: string) => {
-        setSelectedSortValue((prev) => ({
-            ...Object.keys(prev).reduce((acc, key) => {
-                acc[key] = false;
-                return acc;
-            }, {} as Record<string, boolean>),
-            [label]: true,
-        }));
+        setSelectedSortValue((prev) => {
+            const updated = { ...prev };
+            if (label === "Name (A-Z)") {
+                updated["Name (Z-A)"] = false;
+            } else if (label === "Name (Z-A)") {
+                updated["Name (A-Z)"] = false;
+            }
+            updated[label] = !prev[label];
+            return updated;
+        });
     };
     const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
     useEffect(() => {
@@ -84,34 +87,6 @@ const ProtocolBenefitPage: React.FC = () => {
         dispatch(setBenefit(filteredBenefits));
     }, [benefits, linkedBenefitIds, selectedFilters])
 
-    // useEffect(() => {
-    //     const filteredBenefits = benefits
-    //         .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID))
-    //         .map((benefit) => ({
-    //             ...benefit,
-    //             benefitCategories: benefit.benefitCategories.filter((category) =>
-    //                 Object.keys(selectedFilters).some(
-    //                     (key) => selectedFilters[key] && category.includes(key)
-    //                 )
-    //             ),
-    //         }))
-    //         .filter((benefit) => benefit.benefitCategories.length > 0);
-
-    //     if (selectedSortValue["Name (A-Z)"]) {
-    //         const sortedBenefits = [...filteredBenefits].sort((a, b) =>
-    //             a.benefitName.localeCompare(b.benefitName)
-    //         );
-    //         dispatch(setBenefit(sortedBenefits));
-    //     } else if (selectedSortValue["Name (Z-A)"]) {
-    //         const sortedBenefits = [...filteredBenefits].sort((a, b) =>
-    //             b.benefitName.localeCompare(a.benefitName)
-    //         );
-    //         dispatch(setBenefit(sortedBenefits));
-    //     } else {
-    //         dispatch(setBenefit(filteredBenefits));
-    //     }
-    // }, [benefits, linkedBenefitIds, selectedFilters, selectedSortValue]);
-    
     useEffect(() => {
         const filteredBenefits = benefits
             .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID))
@@ -124,7 +99,7 @@ const ProtocolBenefitPage: React.FC = () => {
                 ),
             }))
             .filter((benefit) => benefit.benefitCategories.length > 0);
-    
+
         const sortedBenefits = [...filteredBenefits].sort((a, b) => {
             if (selectedSortValue["Evidence Rating"]) {
                 const evidenceRatingA = claims.find(claim => claim.claimBenefitID === a.benefitID)?.claimOverallEvidenceRating || 0;
@@ -139,10 +114,10 @@ const ProtocolBenefitPage: React.FC = () => {
             }
             return 0;
         });
-    
+
         dispatch(setBenefit(sortedBenefits));
     }, [benefits, linkedBenefitIds, selectedFilters, selectedSortValue, claims]);
-    
+
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
@@ -153,12 +128,19 @@ const ProtocolBenefitPage: React.FC = () => {
             dispatch(setBenefit(filteredBenefits));
         } else {
             const lowerCaseTerm = searchTerm.toLowerCase();
-            const filtered = benefit.filter((item) =>
+            const filtered = benefits.filter((item) =>
                 item.benefitSearchTerms.some((search) =>
                     search.toLowerCase().includes(lowerCaseTerm)
                 )
             );
             dispatch(setBenefit(filtered));
+            // const lowerCaseTerm = searchTerm.toLowerCase();
+            // const filtered = benefit.filter((item) =>
+            //     item.benefitSearchTerms.some((search) =>
+            //         search.toLowerCase().includes(lowerCaseTerm)
+            //     )
+            // );
+            // dispatch(setBenefit(filtered));
         }
     }, [searchTerm, dispatch]);
     const getRatingLabel = (rating?: number): string => {
@@ -181,8 +163,8 @@ const ProtocolBenefitPage: React.FC = () => {
     return (
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <Box sx={{ maxWidth: 600, margin: "auto", p: 2 }}>
-                <Card sx={{ boxShadow: "none" }}>
+            <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
+                <Card sx={{ boxShadow: "none",px:2 }}>
                     <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
@@ -213,17 +195,17 @@ const ProtocolBenefitPage: React.FC = () => {
                             <Typography variant="body2" sx={{ fontSize: '14px', lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
-                            <Grid container spacing={1} sx={{marginTop:"5px"}}>
+                            <Grid container spacing={1} sx={{ marginTop: "5px" }}>
                                 <Grid item>
-                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center',justifyContent: "center" }}>
-                                        <Hourglass size={18}/>
-                                   {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
+                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
+                                        <Hourglass size={18} />
+                                        {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
                                     </Typography>
                                 </Grid>
                                 <Grid item>
                                     <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
-                                    <PiCurrencyDollarSimpleBold size={20} />
-                                   {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
+                                        <PiCurrencyDollarSimpleBold size={20} />
+                                        {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
                                     </Typography>
                                 </Grid>
                             </Grid>
@@ -236,10 +218,12 @@ const ProtocolBenefitPage: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
+                        position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
+                        px:2
                     }}
                 >
                     <Typography variant="h6" sx={{ fontSize: 16 }}>
-                        <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this protocol
+                        <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this Protocol:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center">
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />
@@ -250,7 +234,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         />
                     </Box>
                 </Box>
-                <Box>
+                <Box sx={{ mt: 2,px:2 }}>
                     <ProtocolBenefitCard protocolID={protocolID} data={benefit} />
                 </Box>
             </Box>
