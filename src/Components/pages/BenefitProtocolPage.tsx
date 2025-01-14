@@ -26,21 +26,34 @@ const BenefitProtocolPage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
+    // const handleSortChange = (label: string) => {
+    //     setSelectedSortValue((prev) => {
+    //         const updated = { ...prev };
+    //         if (label === "Name (A-Z)") {
+    //             updated["Name (Z-A)"] = false;
+    //         } else if (label === "Name (Z-A)") {
+    //             updated["Name (A-Z)"] = false;
+    //         }
+    //         updated[label] = !prev[label];
+    //         return updated;
+    //     });
+    // };
     const handleSortChange = (label: string) => {
         setSelectedSortValue((prev) => {
             const updated = { ...prev };
-            if (label === "Name (A-Z)") {
-                updated["Name (Z-A)"] = false;
-            } else if (label === "Name (Z-A)") {
-                updated["Name (A-Z)"] = false;
+            for (const key in updated) {
+                if (updated[key]) {
+                    updated[key] = false;
+                }
             }
             updated[label] = !prev[label];
             return updated;
         });
     };
 
+
     const linkedProtocolIds = benefitData?.benefitLinkedProtocols || [];
-    
+
     useEffect(() => {
         const filteredBenefits = protocols
             .filter((item) => linkedProtocolIds.includes(item.protocolID));
@@ -65,11 +78,81 @@ const BenefitProtocolPage: React.FC = () => {
         }));
     };
 
+    // useEffect(() => {
+    //     // const filteredProtocols = protocols.filter((protocol) =>
+    //     //     linkedProtocolIds.includes(protocol.protocolID));
+
+    //     const filteredProtocols = protocols
+    //         .filter((protocol) => linkedProtocolIds.includes(protocol.protocolID))
+    //         .map((protocol) => ({
+    //             ...protocol,
+    //             benefitCategories: protocol.protocolCategories.filter((category) =>
+    //                 Object.keys(selectedFilters).some(
+    //                     (key) => selectedFilters[key] && category.includes(key)
+    //                 )
+    //             ),
+    //         }))
+    //         .filter((benefit) => benefit.protocolCategories.length > 0);
+    //     const sortedProtocols = [...filteredProtocols].sort((a, b) => {
+    //         if (selectedSortValue["Time"] && selectedSortValue["Cost"]) {
+    //             const timeComparison = a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
+    //             if (timeComparison !== 0) return timeComparison;
+    //             return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
+    //         }
+    //         if (selectedSortValue["Time"]) {
+    //             return a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
+    //         }
+    //         if (selectedSortValue["Cost"]) {
+    //             return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
+    //         }
+    //         if (selectedSortValue["Name (A-Z)"]) {
+    //             return a.protocolName.localeCompare(b.protocolName);
+    //         }
+    //         if (selectedSortValue["Name (Z-A)"]) {
+    //             return b.protocolName.localeCompare(a.protocolName);
+    //         }
+    //         if (selectedSortValue["Easy Wins"]) {
+    //             const claimA = claims.find(claim =>
+    //                 claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+    //             );
+    //             const claimB = claims.find(claim =>
+    //                 claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+    //             );
+    //             const easyWinRatingA = claimA ? claimA.claimEasyWinRating : 0;
+    //             const easyWinRatingB = claimB ? claimB.claimEasyWinRating : 0;
+    //             return easyWinRatingB - easyWinRatingA; //  dec order
+    //         }
+    //         if (selectedSortValue["Evidence Rating"]) {
+    //             const claimA = claims.find(claim =>
+    //                 claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+    //             );
+    //             const claimB = claims.find(claim =>
+    //                 claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+    //             );
+    //             const evidenceRatingA = claimA ? claimA.claimOverallEvidenceRating : 0;
+    //             const evidenceRatingB = claimB ? claimB.claimOverallEvidenceRating : 0;
+    //             return evidenceRatingB - evidenceRatingA; //  dec order
+    //         }
+    //         return 0;
+    //     });
+    //     dispatch(setProtocol(sortedProtocols));
+    // }, [protocols, linkedProtocolIds, selectedSortValue,selectedFilters, claims]);
+   
     useEffect(() => {
-        const filteredProtocols = protocol.filter((protocol) =>
-            linkedProtocolIds.includes(protocol.protocolID)
-        );
+        const filteredProtocols = protocols
+            .filter((protocol) => linkedProtocolIds.includes(protocol.protocolID))
+            .map((protocol) => ({
+                ...protocol,
+                benefitCategories: protocol.protocolCategories.filter((category) =>
+                    Object.keys(selectedFilters).some(
+                        (key) => selectedFilters[key] && category.includes(key)
+                    )
+                ),
+            }))
+            .filter((benefit) => benefit.protocolCategories.length > 0);
+    
         const sortedProtocols = [...filteredProtocols].sort((a, b) => {
+            // Sorting by Time and Cost
             if (selectedSortValue["Time"] && selectedSortValue["Cost"]) {
                 const timeComparison = a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
                 if (timeComparison !== 0) return timeComparison;
@@ -81,43 +164,48 @@ const BenefitProtocolPage: React.FC = () => {
             if (selectedSortValue["Cost"]) {
                 return a.protocolRelativeCostRating - b.protocolRelativeCostRating;
             }
+    
+            // Sorting by Name (A-Z / Z-A)
             if (selectedSortValue["Name (A-Z)"]) {
                 return a.protocolName.localeCompare(b.protocolName);
             }
             if (selectedSortValue["Name (Z-A)"]) {
                 return b.protocolName.localeCompare(a.protocolName);
             }
+    
+            // Sorting by Easy Wins
             if (selectedSortValue["Easy Wins"]) {
-                const easyWinRatingA = claims.find(claim => claim.claimProtocolID === a.protocolID)?.claimEasyWinRating || 0;
-                const easyWinRatingB = claims.find(claim => claim.claimProtocolID === b.protocolID)?.claimEasyWinRating || 0;
-                return easyWinRatingB - easyWinRatingA; //  dec order
+                const claimA = claims.find(claim =>
+                    claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+                );
+                const claimB = claims.find(claim =>
+                    claim.claimProtocolID === b.protocolID && claim.claimBenefitID === benefitId
+                );
+                const easyWinRatingA = claimA ? claimA.claimEasyWinRating : 0;
+                const easyWinRatingB = claimB ? claimB.claimEasyWinRating : 0;
+                return easyWinRatingB - easyWinRatingA; // descending order
             }
+    
+            // Sorting by Evidence Rating
             if (selectedSortValue["Evidence Rating"]) {
-                const evidenceRatingA = claims.find(claim => claim.claimProtocolID === a.protocolID)?.claimOverallEvidenceRating || 0;
-                const evidenceRatingB = claims.find(claim => claim.claimProtocolID === b.protocolID)?.claimOverallEvidenceRating || 0;
-                return evidenceRatingB - evidenceRatingA; //  dec order
+                const claimA = claims.find(claim =>
+                    claim.claimProtocolID === a.protocolID && claim.claimBenefitID === benefitId
+                );
+                const claimB = claims.find(claim =>
+                    claim.claimProtocolID === b.protocolID && claim.claimBenefitID === benefitId
+                );
+                const evidenceRatingA = claimA ? claimA.claimOverallEvidenceRating : 0;
+                const evidenceRatingB = claimB ? claimB.claimOverallEvidenceRating : 0;
+                return evidenceRatingB - evidenceRatingA; // descending order
             }
-            return 0;
+    
+            return 0; // Default return if no sort criteria match
         });
-
+    
         dispatch(setProtocol(sortedProtocols));
-    }, [protocols, linkedProtocolIds, selectedSortValue, claims]);
-  
-    useEffect(() => {
-        // Filter protocols based on linkedProtocolIds
-        const filteredProtocols = protocols.filter(protocol => 
-            linkedProtocolIds.includes(protocol.protocolID)
-        );
-        const sortedProtocols = [...filteredProtocols].sort((a, b) => {
-            if (selectedSortValue["Easy Wins"]) {
-                const easyWinRatingA = claims.find(claim => claim.claimProtocolID === a.protocolID)?.claimEasyWinRating || 0;
-                const easyWinRatingB = claims.find(claim => claim.claimProtocolID === b.protocolID)?.claimEasyWinRating || 0;
-                return easyWinRatingB - easyWinRatingA;
-            }
-            return a.protocolID.localeCompare(b.protocolID);
-        });
-        dispatch(setProtocol(sortedProtocols));
-    }, [protocols, linkedProtocolIds, selectedSortValue, claims, dispatch]);
+    }, [protocols, linkedProtocolIds, selectedSortValue, selectedFilters, claims, benefitId]);
+    
+    console.log(protocol, "========protocol");
 
     const handleSearch = (term: string) => {
         setSearchTerm(term);
@@ -142,7 +230,7 @@ const BenefitProtocolPage: React.FC = () => {
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
-                <Card sx={{ boxShadow: 'none',px:1,py:"2px" }}>
+                <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
                     <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
@@ -165,7 +253,7 @@ const BenefitProtocolPage: React.FC = () => {
                             />
 
                         </Box>
-                        <Box sx={{ pt: "2px",pr:0,pl:1,}}>
+                        <Box sx={{ pt: "2px", pr: 0, pl: 1, }}>
                             <Typography
                                 sx={{
                                     fontWeight: 'bold',
@@ -190,7 +278,7 @@ const BenefitProtocolPage: React.FC = () => {
                         alignItems: 'center',
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
-                        px:2
+                        px: 2
                     }}
                 >
                     <Typography sx={{ fontSize: '16px' }}>
@@ -205,7 +293,7 @@ const BenefitProtocolPage: React.FC = () => {
                         />
                     </Box>
                 </Box>
-                <Box sx={{ mt: 2,px:2 }}>
+                <Box sx={{ mt: 2, px: 2 }}>
                     <BenefitProtocolCard benefitId={benefitId} data={protocol} />
                 </Box>
             </Box>

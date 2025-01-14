@@ -47,18 +47,32 @@ const ProtocolBenefitPage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
+    // const handleSortChange = (label: string) => {
+    //     setSelectedSortValue((prev) => {
+    //         const updated = { ...prev };
+    //         if (label === "Name (A-Z)") {
+    //             updated["Name (Z-A)"] = false;
+    //         } else if (label === "Name (Z-A)") {
+    //             updated["Name (A-Z)"] = false;
+    //         }
+    //         updated[label] = !prev[label];
+    //         return updated;
+    //     });
+    // };
     const handleSortChange = (label: string) => {
         setSelectedSortValue((prev) => {
             const updated = { ...prev };
-            if (label === "Name (A-Z)") {
-                updated["Name (Z-A)"] = false;
-            } else if (label === "Name (Z-A)") {
-                updated["Name (A-Z)"] = false;
+            for (const key in updated) {
+                if (updated[key]) {
+                    updated[key] = false;
+                }
             }
             updated[label] = !prev[label];
             return updated;
         });
     };
+    
+  
     const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
     useEffect(() => {
         const filteredBenefits = benefits
@@ -102,9 +116,15 @@ const ProtocolBenefitPage: React.FC = () => {
 
         const sortedBenefits = [...filteredBenefits].sort((a, b) => {
             if (selectedSortValue["Evidence Rating"]) {
-                const evidenceRatingA = claims.find(claim => claim.claimBenefitID === a.benefitID)?.claimOverallEvidenceRating || 0;
-                const evidenceRatingB = claims.find(claim => claim.claimBenefitID === b.benefitID)?.claimOverallEvidenceRating || 0;
-                return evidenceRatingB - evidenceRatingA; // Descending order
+                const claimA = claims.find(claim =>
+                    claim.claimBenefitID === a.benefitID && claim.claimProtocolID === protocolID
+                );
+                const claimB = claims.find(claim =>
+                    claim.claimBenefitID === b.benefitID && claim.claimProtocolID === protocolID
+                );
+                const evidenceRatingA = claimA ? claimA.claimOverallEvidenceRating : 0;
+                const evidenceRatingB = claimB ? claimB.claimOverallEvidenceRating : 0;
+                return evidenceRatingB - evidenceRatingA;
             }
             if (selectedSortValue["Name (A-Z)"]) {
                 return a.benefitName.localeCompare(b.benefitName);
@@ -114,7 +134,6 @@ const ProtocolBenefitPage: React.FC = () => {
             }
             return 0;
         });
-
         dispatch(setBenefit(sortedBenefits));
     }, [benefits, linkedBenefitIds, selectedFilters, selectedSortValue, claims]);
 
@@ -134,13 +153,6 @@ const ProtocolBenefitPage: React.FC = () => {
                 )
             );
             dispatch(setBenefit(filtered));
-            // const lowerCaseTerm = searchTerm.toLowerCase();
-            // const filtered = benefit.filter((item) =>
-            //     item.benefitSearchTerms.some((search) =>
-            //         search.toLowerCase().includes(lowerCaseTerm)
-            //     )
-            // );
-            // dispatch(setBenefit(filtered));
         }
     }, [searchTerm, dispatch]);
     const getRatingLabel = (rating?: number): string => {
@@ -164,8 +176,8 @@ const ProtocolBenefitPage: React.FC = () => {
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
-                <Card sx={{ boxShadow: "none",px:1,py:"2px"}}>
-                    <Box sx={{ display: 'flex',}}>
+                <Card sx={{ boxShadow: "none", px: 1, py: "2px" }}>
+                    <Box sx={{ display: 'flex', }}>
                         <Box
                             sx={{
                                 background: 'radial-gradient(circle, #D4C89E 20%, #FFFFFF 70%)',
@@ -186,13 +198,13 @@ const ProtocolBenefitPage: React.FC = () => {
                                 }}
                             />
                         </Box>
-                        <Box sx={{pb:0,pr:0,pl:1}}>
+                        <Box sx={{ pb: 0, pr: 0, pl: 1 }}>
                             <Typography
                                 sx={{ fontWeight: 'bold', color: '#212121', fontSize: "14px" }}
                             >
                                 {protocolsData?.protocolName}
                             </Typography>
-                            <Typography variant="body2" sx={{ fontSize: '14px',wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
+                            <Typography variant="body2" sx={{ fontSize: '14px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
                             <Grid container spacing={1}>
@@ -219,7 +231,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         alignItems: 'center',
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
-                        px:2,
+                        px: 2,
                     }}
                 >
                     <Typography variant="h6" sx={{ fontSize: 16 }}>
@@ -234,7 +246,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         />
                     </Box>
                 </Box>
-                <Box sx={{ mt: 2,px:2 }}>
+                <Box sx={{ mt: 2, px: 2 }}>
                     <ProtocolBenefitCard protocolID={protocolID} data={benefit} />
                 </Box>
             </Box>

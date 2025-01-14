@@ -74,9 +74,9 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                     className="scrollbar"
                     sx={{
                       textAlign: "center",
-                      fontSize: "14px",
-                      mt: 1,
-                      height: "40px",
+                      fontSize: "12px",
+                      mt: "2px",
+                      height: "50px",
                       overflow: "auto",
                       fontWeight:600,
                       wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'

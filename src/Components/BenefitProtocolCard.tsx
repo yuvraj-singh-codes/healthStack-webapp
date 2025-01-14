@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Protocol } from './Interface/Interface';
 import { Hourglass } from 'lucide-react';
 import { PiCurrencyDollarSimpleBold } from 'react-icons/pi';
-
+import jsonData from "../healthstack_data_example.json";
 interface BenefitProtocolCardProps {
   benefitId: string | null;
   data: Protocol[];
@@ -12,11 +12,23 @@ interface BenefitProtocolCardProps {
 
 const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, data }) => {
   const navigate = useNavigate();
-
+const {claims}=jsonData;
   return (
     <Grid container spacing={1}>
       {data.length > 0 ? (
-        data.map((item) => (
+        data.map((item) =>{
+          const matchedClaim = claims.find(
+            (claim) =>
+              claim.claimProtocolID === item.protocolID &&
+              claim.claimBenefitID === benefitId
+          );
+          const overallEvidenceRating = matchedClaim
+            ? matchedClaim.claimOverallEvidenceRating
+            : "0";
+            const ezywins = matchedClaim
+            ? matchedClaim.claimEasyWinRating
+            : "0";
+          return (
           <Grid item xs={4} sm={4} md={4} key={item?.protocolID}>
             <Card
               onClick={() =>
@@ -41,6 +53,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   borderTopRightRadius: '10px',
                   pt: 1,
                   px: 1,
+                  pb:1,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -62,11 +75,11 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   className='scrollbar'
                   sx={{
                     textAlign: 'center',
-                    fontSize: '14px',
+                    fontSize: '12px',
                     fontWeight: 600,
-                    mt: 1,
-                    px: 1,
-                    height: "40px",
+                    mt: "2px",
+                    px: 0,
+                    height: "50px",
                     overflow: 'auto',
                     wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'
                   }}
@@ -112,7 +125,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
               </Box>
             </Card>
           </Grid>
-        ))
+        )})
       ) : (
         <Grid item xs={12}>
           <Typography textAlign={'center'}>No Protocol data found</Typography>

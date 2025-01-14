@@ -24,12 +24,17 @@ export default function App() {
     email: "",
   });
 
+  // Retrieve or generate the session ID
+  const sessionID = sessionStorage.getItem("sessionID") || Date.now().toString(); // Use the current time as a fallback session ID
+  sessionStorage.setItem("sessionID", sessionID); // Store the session ID in sessionStorage
+
   const handleRatingClick = (index: number) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       rating: prevFormData.rating === index + 1 ? index : index + 1,
     }));
   };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -38,6 +43,7 @@ export default function App() {
     const handleUserClick = () => {
       setClickCount((prevCount) => prevCount + 1);
     };
+
     window.addEventListener("click", handleUserClick);
     return () => {
       window.removeEventListener("click", handleUserClick);
@@ -57,7 +63,6 @@ export default function App() {
     };
 
     const interval = setInterval(checkConditions, 1000); // Check conditions every second
-
     return () => clearInterval(interval);
   }, [clickCount]);
   return (

@@ -110,22 +110,21 @@ const ClaimPage = () => {
                     height={120}
                     style={{ objectFit: 'cover', boxShadow: "1px 4px 5px gray", borderRadius: "5px" }}
                   />
-
-                  <Box
-                    sx={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                      padding: '8px',
-                      position: 'absolute',
-                      bottom: 0,
-                      textAlign: 'center',
-                      width: "100%",
-                      wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'
-                    }}
-                  >
-                    <Typography variant="body2" fontWeight="600" fontSize="14px">
-                      {singleProtocol?.protocolName}
-                    </Typography>
-                  </Box>
+                  <Typography className="scrollbar" variant="body2" fontWeight="600" fontSize="12px" sx={{
+                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', overflow: "auto", bgcolor: "red",
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    padding: '8px',
+                    position: 'absolute',
+                    bottom: 0,
+                    textAlign: 'center',
+                    width: "100%",
+                    px: "1px",
+                    // height:"65px",
+                    borderBottomRightRadius:"5px",
+                    borderBottomLeftRadius:"5px"
+                  }}>
+                    {singleProtocol?.protocolName}
+                  </Typography>
                 </Box>
               </Box>
 
@@ -161,21 +160,21 @@ const ClaimPage = () => {
                     height={120}
                     style={{ objectFit: 'cover', boxShadow: "1px 4px 5px gray", borderRadius: "5px" }}
                   />
-                  <Box
-                    sx={{
-                      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                      padding: '8px',
-                      position: 'absolute',
-                      bottom: 0,
-                      textAlign: 'center',
-                      width: "100%",
-                      wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'
-                    }}
-                  >
-                    <Typography variant="body2" fontWeight="600" fontSize="14px">
-                      {singleBenefit?.benefitName}
-                    </Typography>
-                  </Box>
+                  <Typography className="scrollbar" variant="body2" fontWeight="600" fontSize="12px" sx={{
+                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', overflow: "auto", bgcolor: "red",
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    padding: '8px',
+                    position: 'absolute',
+                    bottom: 0,
+                    textAlign: 'center',
+                    width: "100%",
+                    px: "1px",
+                    // height:"65px",
+                    borderBottomRightRadius:"5px",
+                    borderBottomLeftRadius:"5px"
+                  }}>
+                    {singleBenefit?.benefitName}
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -187,10 +186,10 @@ const ClaimPage = () => {
               <Box sx={{ mt: 2 }}>
                 <Typography
                   sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-                  
+
                 >
                   Research Insights{" "}
-                 <IconButton onClick={toggleText3} size="small" sx={{ color: "#000", fontSize: "24px",mt:"5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
+                  <IconButton onClick={toggleText3} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {showText.text_3 && (
                   <>
@@ -371,7 +370,7 @@ const ClaimPage = () => {
               <Box>
                 <Typography
                   sx={{ fontSize: "22px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-                  
+
                 >
                   Instructions
                   <IconButton onClick={toggleText2} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
@@ -394,8 +393,8 @@ const ClaimPage = () => {
                 }
                 <Box sx={{ marginBottom: 2 }}>
                   <Typography
-                    sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px",fontWeight: 600 }}
-                    
+                    sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+
                   >
                     Publications Consulted
                     <IconButton onClick={toggleText4} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
