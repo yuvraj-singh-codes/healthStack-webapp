@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Grid, Divider } from "@mui/material";
+import { Box, Typography, Grid, Divider, IconButton } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp, } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
@@ -32,8 +32,8 @@ const ClaimPage = () => {
   const [showText, setShowText] = useState<textType>({
     text_1: true,
     text_2: false,
-    text_3: true,
-    text_4: true,
+    text_3: false,
+    text_4: false,
   });
 
   const toggleText2 = () => {
@@ -71,7 +71,7 @@ const ClaimPage = () => {
 
   return (
     <>
-     <SearchComponent />
+      <SearchComponent />
       {
         newClaim.length !== 0 ? (
           <Box sx={{ padding: 2, maxWidth: 600, margin: "auto" }}>
@@ -184,13 +184,13 @@ const ClaimPage = () => {
               <Typography variant="body2" sx={{ marginTop: 1 }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
-              <Box sx={{ marginBottom: 2 }}>
+              <Box sx={{ mt: 2 }}>
                 <Typography
                   sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-                  onClick={toggleText3}
+                  
                 >
                   Research Insights{" "}
-                  <span style={{ marginTop: "5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+                 <IconButton onClick={toggleText3} size="small" sx={{ color: "#000", fontSize: "24px",mt:"5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {showText.text_3 && (
                   <>
@@ -371,57 +371,55 @@ const ClaimPage = () => {
               <Box>
                 <Typography
                   sx={{ fontSize: "22px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-                  onClick={toggleText2}
+                  
                 >
                   Instructions
-                  {showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  <IconButton onClick={toggleText2} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {
                   showText.text_2 && (
-                    <>
+                    <Grid container>
                       {
                         instructionPoints?.map((item, index) => (
-                          <Grid container key={index}>
-                            <Grid item xs={1} >
+                          <Grid item xs={12} key={index} >
+                            <Box sx={{ display: "flex", gap: "5px" }}>
                               <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>{index + 1}.</Typography>
-                            </Grid>
-                            <Grid item xs={11} >
                               <Typography sx={{ fontSize: "14px" }}>{item}</Typography>
-                            </Grid>
+                            </Box>
                           </Grid>
                         ))
                       }
-                      <Box sx={{ marginBottom: 2 }}>
-                        <Typography
-                          sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px" }}
-                          onClick={toggleText4}
-                        >
-                          Publications Consulted
-                          {showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                        </Typography>
-                        {showText.text_4 && (
-                          <Box sx={{ marginTop: 1 }}>
-                            {newClaim[0]?.claimSources.map((item, index) => (
-                              <Grid container key={index}>
-                                <Grid item xs={1} mt={1}>
-                                  <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700 }}>{index + 1}.</Typography>
-                                </Grid>
-                                <Grid item xs={11} mt={1}>
-                                  <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
-                                  <Box>
-                                    <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
-                                    <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
-                                    <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", px: "4px" }}><span style={{ color: "#000", fontWeight: "600" }}>Summary : </span>{item?.summary}</Typography>
-                                  </Box>
-                                </Grid>
-                              </Grid>
-                            ))}
-                          </Box>
-                        )}
-                      </Box>
-                    </>
+                    </Grid>
                   )
                 }
+                <Box sx={{ marginBottom: 2 }}>
+                  <Typography
+                    sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px",fontWeight: 600 }}
+                    
+                  >
+                    Publications Consulted
+                    <IconButton onClick={toggleText4} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
+                  </Typography>
+                  {showText.text_4 && (
+                    <Box sx={{ marginTop: 1 }}>
+                      <Grid container >
+                        {newClaim[0]?.claimSources.map((item, index) => (
+                          <Grid item xs={12} mt={1} key={index}>
+                            <Box sx={{ display: "flex", gap: "5px" }}>
+                              <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700 }}>{index + 1}.</Typography>
+                              <Box>
+                                <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
+                                <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
+                                <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
+                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#000", fontWeight: "600" }}>Summary : </span>{item?.summary}</Typography>
+                              </Box>
+                            </Box>
+                          </Grid>
+                        ))}
+                      </Grid>
+                    </Box>
+                  )}
+                </Box>
               </Box>
             </Box>
           </Box>

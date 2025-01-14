@@ -52,4 +52,6 @@
   height: 77px;
 }
 
-.getStarted {}
+.css-obwovb-MuiCardContent-root:last-child{
+  padding-bottom: 0px;
+}

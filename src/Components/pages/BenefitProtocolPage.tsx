@@ -66,10 +66,9 @@ const BenefitProtocolPage: React.FC = () => {
     };
 
     useEffect(() => {
-        const filteredProtocols = protocols.filter((protocol) =>
+        const filteredProtocols = protocol.filter((protocol) =>
             linkedProtocolIds.includes(protocol.protocolID)
         );
-
         const sortedProtocols = [...filteredProtocols].sort((a, b) => {
             if (selectedSortValue["Time"] && selectedSortValue["Cost"]) {
                 const timeComparison = a.protocolRelativeTimeRating - b.protocolRelativeTimeRating;
@@ -103,6 +102,7 @@ const BenefitProtocolPage: React.FC = () => {
 
         dispatch(setProtocol(sortedProtocols));
     }, [protocols, linkedProtocolIds, selectedSortValue, claims]);
+  
     useEffect(() => {
         // Filter protocols based on linkedProtocolIds
         const filteredProtocols = protocols.filter(protocol => 
@@ -142,7 +142,7 @@ const BenefitProtocolPage: React.FC = () => {
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
-                <Card sx={{ boxShadow: 'none',px:2 }}>
+                <Card sx={{ boxShadow: 'none',px:1,py:"2px" }}>
                     <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
@@ -165,7 +165,7 @@ const BenefitProtocolPage: React.FC = () => {
                             />
 
                         </Box>
-                        <CardContent sx={{ pt: "2px" }}>
+                        <Box sx={{ pt: "2px",pr:0,pl:1,}}>
                             <Typography
                                 sx={{
                                     fontWeight: 'bold',
@@ -177,11 +177,11 @@ const BenefitProtocolPage: React.FC = () => {
                             </Typography>
                             <Typography
                                 variant="body2"
-                                sx={{ fontSize: '14px', lineHeight: 'normal' }}
+                                sx={{ fontSize: '14px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
                                 {benefitData?.benefitDescription}
                             </Typography>
-                        </CardContent>
+                        </Box>
                     </Box>
                 </Card>
                 <Box

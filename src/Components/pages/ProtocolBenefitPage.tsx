@@ -164,8 +164,8 @@ const ProtocolBenefitPage: React.FC = () => {
         <>
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
-                <Card sx={{ boxShadow: "none",px:2 }}>
-                    <Box sx={{ display: 'flex' }}>
+                <Card sx={{ boxShadow: "none",px:1,py:"2px"}}>
+                    <Box sx={{ display: 'flex',}}>
                         <Box
                             sx={{
                                 background: 'radial-gradient(circle, #D4C89E 20%, #FFFFFF 70%)',
@@ -186,16 +186,16 @@ const ProtocolBenefitPage: React.FC = () => {
                                 }}
                             />
                         </Box>
-                        <CardContent sx={{ pt: "2px" }}>
+                        <Box sx={{pb:0,pr:0,pl:1}}>
                             <Typography
                                 sx={{ fontWeight: 'bold', color: '#212121', fontSize: "14px" }}
                             >
                                 {protocolsData?.protocolName}
                             </Typography>
-                            <Typography variant="body2" sx={{ fontSize: '14px', lineHeight: 'normal' }}>
+                            <Typography variant="body2" sx={{ fontSize: '14px',wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
-                            <Grid container spacing={1} sx={{ marginTop: "5px" }}>
+                            <Grid container spacing={1}>
                                 <Grid item>
                                     <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
                                         <Hourglass size={18} />
@@ -209,7 +209,7 @@ const ProtocolBenefitPage: React.FC = () => {
                                     </Typography>
                                 </Grid>
                             </Grid>
-                        </CardContent>
+                        </Box>
                     </Box>
                 </Card>
                 {/* Filter Section */}
@@ -219,7 +219,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         alignItems: 'center',
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
-                        px:2
+                        px:2,
                     }}
                 >
                     <Typography variant="h6" sx={{ fontSize: 16 }}>
