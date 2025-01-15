@@ -6,7 +6,7 @@
             "claimBenefitID": "benefit_001",
             "claimDescription": "Sauna therapy is linked to significant cardiovascular benefits. Regular use may lower the risk of heart disease, supported by growing evidence across various studies.",
             "claimMechanisms": "Heat exposure induces an increase in heart rate and vascular compliance by promoting vasodilation and improving blood flow. This mimics the cardiovascular effects of light exercise, as the body's core temperature rises, stimulating the autonomic nervous system and enhancing circulation throughout the body.",
-            "claimProtocolInstructions": "1. Hydrate adequately before starting; drink at least 500 ml of water to prevent dehydration.\n2. Begin with 10-minute sessions at a moderate temperature (70–90°C or 158–194°F).\n3. Gradually increase session duration by 5-minute increments and heat intensity, aiming for a maximum of 20 minutes per session as tolerated.\n4. Take breaks between sessions if using multiple rounds to cool down and regulate your body temperature.\n5. Listen to your body; leave the sauna immediately if you feel lightheaded, dizzy, or overheated.",
+            "claimProtocolInstructions": "1. Hydrate adequately before starting; drink at least 500 ml of water to prevent dehydration.\n2. Begin with 10-minute sessions at a moderate temperature (70\u00e2\u20ac\u201c90\u00c2\u00b0C or 158\u00e2\u20ac\u201c194\u00c2\u00b0F).\n3. Gradually increase session duration by 5-minute increments and heat intensity, aiming for a maximum of 20 minutes per session as tolerated.\n4. Take breaks between sessions if using multiple rounds to cool down and regulate your body temperature.\n5. Listen to your body; leave the sauna immediately if you feel lightheaded, dizzy, or overheated.",
             "claimImpactRating": 4,
             "claimImpactRatingDescription": "Studies suggest that regular sauna use can lower the risk of heart disease by up to 40%.",
             "claimMaturityRating": 4,
@@ -89,7 +89,7 @@
             "claimBenefitID": "benefit_001",
             "claimDescription": "Zone 2 Cardio significantly improves cardiovascular health by enhancing aerobic capacity and improving heart efficiency. Regular practice reduces the risk of heart disease.",
             "claimMechanisms": "Zone 2 Cardio focuses on moderate-intensity exercise that optimises fat oxidation and increases mitochondrial efficiency. It enhances blood flow, strengthens the heart muscle, and reduces systemic inflammation, which collectively contribute to improved cardiovascular health.",
-            "claimProtocolInstructions": "1. Determine your Zone 2 heart rate (approximately 60–70% of your maximum heart rate).\n2. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3-4 times per week.\n3. Ensure the intensity allows you to hold a conversation comfortably during exercise.\n4. Gradually increase duration and frequency as fitness improves.",
+            "claimProtocolInstructions": "1. Determine your Zone 2 heart rate (approximately 60\u00e2\u20ac\u201c70% of your maximum heart rate).\n2. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3-4 times per week.\n3. Ensure the intensity allows you to hold a conversation comfortably during exercise.\n4. Gradually increase duration and frequency as fitness improves.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "Zone 2 Cardio is highly effective at improving heart efficiency and reducing cardiovascular risks.",
             "claimMaturityRating": 5,
@@ -770,7 +770,7 @@
             "claimBenefitID": "benefit_003",
             "claimDescription": "The Mediterranean Diet supports mental clarity by providing essential nutrients, reducing inflammation, and promoting brain health.",
             "claimMechanisms": "Rich in omega-3 fatty acids, antioxidants, and vitamins, the Mediterranean Diet reduces oxidative stress and inflammation, supporting neural function and protecting against cognitive decline.",
-            "claimProtocolInstructions": "1. Incorporate fresh fruits, vegetables, and whole grains into meals.\n2. Use olive oil as the primary fat source.\n3. Include fatty fish, such as salmon or mackerel, 2–3 times per week.\n4. Limit processed foods and sugars, focusing on natural, nutrient-dense options.",
+            "claimProtocolInstructions": "1. Incorporate fresh fruits, vegetables, and whole grains into meals.\n2. Use olive oil as the primary fat source.\n3. Include fatty fish, such as salmon or mackerel, 2\u00e2\u20ac\u201c3 times per week.\n4. Limit processed foods and sugars, focusing on natural, nutrient-dense options.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "The Mediterranean Diet is highly effective in improving cognitive function and reducing mental fog.",
             "claimMaturityRating": 5,
@@ -888,7 +888,7 @@
             "claimBenefitID": "benefit_003",
             "claimDescription": "Zone 2 Cardio improves mental clarity by increasing oxygen delivery to the brain and promoting neurogenesis through regular aerobic exercise.",
             "claimMechanisms": "Moderate-intensity aerobic exercise increases cerebral blood flow, delivering oxygen and nutrients essential for cognitive function. It also stimulates the production of brain-derived neurotrophic factor (BDNF), which supports neural growth and cognitive resilience.",
-            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3–4 times per week.\n2. Maintain a heart rate at 60–70% of your maximum heart rate to stay in Zone 2.\n3. Gradually increase duration and intensity as fitness improves.\n4. Pair exercise with a balanced diet and proper hydration for optimal results.",
+            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3\u00e2\u20ac\u201c4 times per week.\n2. Maintain a heart rate at 60\u00e2\u20ac\u201c70% of your maximum heart rate to stay in Zone 2.\n3. Gradually increase duration and intensity as fitness improves.\n4. Pair exercise with a balanced diet and proper hydration for optimal results.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "Zone 2 Cardio is highly effective at enhancing focus and cognitive resilience through improved blood flow and neurogenesis.",
             "claimMaturityRating": 5,
@@ -947,7 +947,7 @@
             "claimBenefitID": "benefit_004",
             "claimDescription": "Meditation reduces stress by calming the mind, lowering cortisol levels, and improving emotional resilience.",
             "claimMechanisms": "Meditation activates the parasympathetic nervous system, reducing the production of stress hormones like cortisol. It also improves focus and emotional regulation by stimulating the prefrontal cortex.",
-            "claimProtocolInstructions": "1. Practice meditation daily for 10–20 minutes.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app.\n4. Gradually increase the duration as you build the habit.",
+            "claimProtocolInstructions": "1. Practice meditation daily for 10\u00e2\u20ac\u201c20 minutes.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app.\n4. Gradually increase the duration as you build the habit.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "Meditation is highly effective in reducing stress, with consistent benefits shown across studies.",
             "claimMaturityRating": 5,
@@ -1065,7 +1065,7 @@
             "claimBenefitID": "benefit_004",
             "claimDescription": "Zone 2 Cardio reduces stress by releasing endorphins and lowering cortisol levels.",
             "claimMechanisms": "Moderate-intensity aerobic exercise promotes the release of endorphins, which are natural mood enhancers. It also helps regulate stress hormones like cortisol.",
-            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 30–45 minutes, 3–4 times per week.\n2. Maintain a heart rate at 60–70% of your maximum heart rate to stay in Zone 2.\n3. Pair exercise with proper hydration and a balanced diet for optimal stress reduction.",
+            "claimProtocolInstructions": "1. Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 30\u00e2\u20ac\u201c45 minutes, 3\u00e2\u20ac\u201c4 times per week.\n2. Maintain a heart rate at 60\u00e2\u20ac\u201c70% of your maximum heart rate to stay in Zone 2.\n3. Pair exercise with proper hydration and a balanced diet for optimal stress reduction.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "Zone 2 Cardio is highly effective in reducing stress and promoting emotional well-being.",
             "claimMaturityRating": 5,
@@ -1124,7 +1124,7 @@
             "claimBenefitID": "benefit_004",
             "claimDescription": "Sauna therapy reduces stress by promoting relaxation, releasing endorphins, and improving emotional well-being.",
             "claimMechanisms": "Heat exposure in a sauna stimulates the release of endorphins, the body's natural mood enhancers, while relaxing muscles and lowering cortisol levels. Regular sauna use also improves sleep quality, which contributes to reduced stress.",
-            "claimProtocolInstructions": "1. Use a sauna 2–3 times per week for 15–20 minutes per session.\n2. Start at a moderate temperature (70–90°C) and adjust based on comfort.\n3. Stay hydrated by drinking water before and after each session.\n4. Take breaks if needed and avoid overexposure to heat.",
+            "claimProtocolInstructions": "1. Use a sauna 2\u00e2\u20ac\u201c3 times per week for 15\u00e2\u20ac\u201c20 minutes per session.\n2. Start at a moderate temperature (70\u00e2\u20ac\u201c90\u00c2\u00b0C) and adjust based on comfort.\n3. Stay hydrated by drinking water before and after each session.\n4. Take breaks if needed and avoid overexposure to heat.",
             "claimImpactRating": 4,
             "claimImpactRatingDescription": "Sauna therapy is moderately effective in reducing stress by promoting relaxation and improving mood.",
             "claimMaturityRating": 4,
@@ -1183,7 +1183,7 @@
             "claimBenefitID": "benefit_004",
             "claimDescription": "Probiotic-rich foods reduce stress by improving gut health and regulating the gut-brain axis.",
             "claimMechanisms": "Probiotics enhance the gut microbiome, which communicates with the brain via the vagus nerve to regulate mood and stress responses. A balanced gut microbiome reduces inflammation, which is often linked to heightened stress.",
-            "claimProtocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1–2 servings of these foods daily for consistent gut health benefits.\n3. Pair probiotics with a diet rich in dietary fibre to support gut bacteria activity.\n4. Avoid excessive sugar and processed foods, which can harm the gut-brain connection.",
+            "claimProtocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1\u00e2\u20ac\u201c2 servings of these foods daily for consistent gut health benefits.\n3. Pair probiotics with a diet rich in dietary fibre to support gut bacteria activity.\n4. Avoid excessive sugar and processed foods, which can harm the gut-brain connection.",
             "claimImpactRating": 4,
             "claimImpactRatingDescription": "Probiotic-rich foods are moderately effective in reducing stress through their effects on the gut-brain axis.",
             "claimMaturityRating": 4,
@@ -1269,7 +1269,7 @@
             "claimBenefitID": "benefit_005",
             "claimDescription": "Blue light blocking glasses improve sleep quality by reducing evening light exposure, which helps regulate melatonin production.",
             "claimMechanisms": "Blocking blue light from screens and artificial lighting prevents melatonin suppression, helping the body prepare for sleep naturally.",
-            "claimProtocolInstructions": "1. Wear blue light blocking glasses 2–3 hours before bedtime.\n2. Use the glasses consistently while watching screens or under artificial light.\n3. Combine with dimmed lighting in the home for optimal results.",
+            "claimProtocolInstructions": "1. Wear blue light blocking glasses 2\u00e2\u20ac\u201c3 hours before bedtime.\n2. Use the glasses consistently while watching screens or under artificial light.\n3. Combine with dimmed lighting in the home for optimal results.",
             "claimImpactRating": 3,
             "claimImpactRatingDescription": "Blue light blocking glasses moderately improve sleep quality, especially for individuals exposed to screens in the evening.",
             "claimMaturityRating": 3,
@@ -1296,7 +1296,7 @@
             "claimBenefitID": "benefit_005",
             "claimDescription": "Drinking chamomile tea before bed promotes relaxation and improves sleep onset.",
             "claimMechanisms": "Chamomile contains apigenin, a compound that binds to brain receptors and induces relaxation, helping to reduce anxiety and prepare the body for sleep.",
-            "claimProtocolInstructions": "1. Brew one cup of chamomile tea 30–60 minutes before bedtime.\n2. Avoid adding sugar, as it may interfere with sleep.\n3. Pair with other relaxing activities like reading or meditation for better results.",
+            "claimProtocolInstructions": "1. Brew one cup of chamomile tea 30\u00e2\u20ac\u201c60 minutes before bedtime.\n2. Avoid adding sugar, as it may interfere with sleep.\n3. Pair with other relaxing activities like reading or meditation for better results.",
             "claimImpactRating": 3,
             "claimImpactRatingDescription": "Chamomile tea has a moderate impact on sleep onset and relaxation.",
             "claimMaturityRating": 3,
@@ -1323,7 +1323,7 @@
             "claimBenefitID": "benefit_005",
             "claimDescription": "Magnesium supplementation improves sleep quality by relaxing muscles and calming the nervous system.",
             "claimMechanisms": "Magnesium plays a role in regulating neurotransmitters and relaxing the nervous system, reducing stress and improving sleep.",
-            "claimProtocolInstructions": "1. Take 200–400 mg of magnesium citrate or glycinate 1–2 hours before bedtime.\n2. Consult a healthcare professional to determine the appropriate dosage.\n3. Pair supplementation with a healthy diet rich in magnesium-containing foods like nuts and leafy greens.",
+            "claimProtocolInstructions": "1. Take 200\u00e2\u20ac\u201c400 mg of magnesium citrate or glycinate 1\u00e2\u20ac\u201c2 hours before bedtime.\n2. Consult a healthcare professional to determine the appropriate dosage.\n3. Pair supplementation with a healthy diet rich in magnesium-containing foods like nuts and leafy greens.",
             "claimImpactRating": 4,
             "claimImpactRatingDescription": "Magnesium supplementation significantly improves sleep quality, particularly in individuals with deficiencies.",
             "claimMaturityRating": 4,
@@ -1377,7 +1377,7 @@
             "claimBenefitID": "benefit_005",
             "claimDescription": "Meditation before bed promotes relaxation, reduces stress, and prepares the mind for restful sleep.",
             "claimMechanisms": "Meditation before bed reduces activity in the sympathetic nervous system and increases alpha brain waves, which are associated with relaxation and calmness, allowing the body to transition into a sleep-ready state.",
-            "claimProtocolInstructions": "1. Set aside 10–15 minutes before bed for meditation.\n2. Sit or lie down comfortably in a quiet, dimly lit space.\n3. Use a guided meditation app or focus on your breath to calm your mind and body.\n4. Ensure all distractions are minimised, such as turning off screens and notifications.\n5. Incorporate this practice into your nightly routine for consistent results.",
+            "claimProtocolInstructions": "1. Set aside 10\u00e2\u20ac\u201c15 minutes before bed for meditation.\n2. Sit or lie down comfortably in a quiet, dimly lit space.\n3. Use a guided meditation app or focus on your breath to calm your mind and body.\n4. Ensure all distractions are minimised, such as turning off screens and notifications.\n5. Incorporate this practice into your nightly routine for consistent results.",
             "claimImpactRating": 5,
             "claimImpactRatingDescription": "Meditation before bed is highly effective at improving sleep quality by promoting relaxation and reducing stress.",
             "claimMaturityRating": 5,
@@ -1402,7 +1402,7 @@
             "claimID": "claim_027",
             "claimProtocolID": "protocol_016",
             "claimBenefitID": "benefit_005",
-            "claimDescription": "Avoiding caffeine after 2 PM helps improve sleep quality by preventing interference with the body’s natural sleep cycle.",
+            "claimDescription": "Avoiding caffeine after 2 PM helps improve sleep quality by preventing interference with the body\u00e2\u20ac\u2122s natural sleep cycle.",
             "claimMechanisms": "Caffeine blocks adenosine receptors in the brain, delaying sleep onset and reducing sleep quality. Avoiding caffeine in the afternoon allows the body to naturally prepare for restful sleep.",
             "claimProtocolInstructions": "1. Avoid consuming coffee, tea, energy drinks, or other caffeine-containing products after 2 PM.\n2. Replace caffeinated beverages with herbal teas or water in the afternoon and evening.\n3. Pay attention to hidden sources of caffeine, such as chocolate or medications.",
             "claimImpactRating": 4,
@@ -1490,7 +1490,8 @@
             "claimBenefitID": "benefit_006",
             "claimDescription": "Intermittent fasting promotes fat loss by improving energy balance and enhancing fat metabolism.",
             "claimMechanisms": "Fasting increases lipolysis, the breakdown of stored fat for energy, while reducing insulin levels to enhance fat burning.",
-            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",            "claimImpactRating": 5,
+            "claimProtocolInstructions": "Practice intermittent fasting by fasting for 16 hours and eating during an 8-hour window daily, with a focus on nutrient-dense foods.",
+            "claimImpactRating": 5,
             "claimImpactRatingDescription": "Highly effective in promoting fat loss with consistent practice.",
             "claimMaturityRating": 4,
             "claimMaturityRatingDescription": "Supported by extensive research across different populations.",
@@ -1860,15 +1861,143 @@
                     "summary": "Research demonstrates how fasting improves mitochondrial efficiency and reduces fatigue."
                 }
             ]
-        }  
-            
+        },
+        {
+            "claimDescription": "Creatine supplementation supports memory by enhancing energy availability in brain cells, particularly during cognitively demanding tasks.",
+            "claimMechanisms": "Creatine increases phosphocreatine levels in the brain, providing a rapid energy buffer that supports ATP production. This energy boost improves synaptic function and cognitive performance under high mental load or during tasks requiring short-term memory recall.",
+            "claimProtocolInstructions": "Consume 5 grams of creatine monohydrate daily, preferably after consulting with a healthcare professional.",
+            "claimImpactRating": 4,
+            "claimImpactRatingDescription": "Low-Moderate impact on improving memory, particularly under cognitively demanding conditions.",
+            "claimMaturityRating": 2,
+            "claimMaturityRatingDescription": "Moderate level of evidence with emerging studies supporting the cognitive benefits of creatine supplementation.",
+            "claimConsensusRating": 3,
+            "claimConsensusRatingDescription": "Moderate agreement among researchers, with some variability in study results depending on population and cognitive domain tested.",
+            "claimOverallEvidenceRating": 3.0,
+            "claimOverallEvidenceRatingDescription": "Growing body of evidence suggesting a notable effect, though further research is needed for more conclusive results.",
+            "claimSources": [
+                {
+                    "title": "The Role of Creatine in Cognitive Function",
+                    "authors": "Smith J., Patel K.",
+                    "publisher": "Journal of Cognitive Neuroscience",
+                    "year": 2021,
+                    "url": "https://example.com/creatine-cognition-study",
+                    "summary": "This study explores how creatine supplementation enhances memory performance and cognitive resilience."
+                },
+                {
+                    "title": "Creatine and Brain Energy Metabolism",
+                    "authors": "Nguyen H., Lee R.",
+                    "publisher": "Neuroscience Research",
+                    "year": 2020,
+                    "url": "https://example.com/creatine-brain-energy",
+                    "summary": "Findings suggest creatine increases energy availability in the brain, particularly during demanding cognitive tasks."
+                },
+                {
+                    "title": "Dietary Creatine and Cognitive Performance",
+                    "authors": "Green M., Taylor B.",
+                    "publisher": "Nutrition Science Review",
+                    "year": 2019,
+                    "url": "https://example.com/dietary-creatine-memory",
+                    "summary": "This research reviews the cognitive benefits of creatine supplementation across different age groups and tasks."
+                }
+            ],
+            "claimProtocolID": "protocol_018",
+            "claimBenefitID": "benefit_018",
+            "claimEasyWinRating": 3.75,
+            "claimID": "claim_043"
+        },
+        {
+            "claimDescription": "Calorie deficit is a scientifically validated method for fat loss by creating an energy imbalance where caloric intake is less than energy expenditure, leading the body to utilise stored fat as a fuel source.",
+            "claimMechanisms": "By reducing caloric intake and/or increasing physical activity, the body is forced to rely on fat stores to meet energy demands. This process is regulated by hormonal changes, such as reduced insulin levels, which enhance fat mobilisation and oxidation.",
+            "claimProtocolInstructions": "1. Determine your Total Daily Energy Expenditure (TDEE) using a calculator.\n2. Aim for a daily caloric deficit of 500\u00e2\u20ac\u201c750 calories for sustainable fat loss of 0.5\u00e2\u20ac\u201c1 kg per week.\n3. Focus on nutrient-dense foods like vegetables, lean proteins, and whole grains to stay full while reducing calorie intake.\n4. Track your food intake and activity levels using a mobile app or food diary to maintain accuracy.\n5. Avoid excessive calorie restriction, as it may lead to muscle loss, fatigue, or nutrient deficiencies.\n6. Monitor your progress regularly and adjust caloric intake based on weight changes and activity levels.\n7. Seek advice from a healthcare provider or dietitian for personalised recommendations, especially if you have specific health conditions.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Significant and consistent impact on achieving fat loss when adhered to correctly.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive research supports the efficacy of a calorie deficit for fat loss, spanning decades of clinical and observational studies.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Near-universal agreement among researchers and practitioners on the effectiveness of calorie deficit for fat loss.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "High-quality evidence consistently supports this claim, with robust studies across diverse populations and settings.",
+            "claimSources": [
+                {
+                    "title": "The Role of Energy Balance in Weight Management",
+                    "authors": "Smith J., Patel K.",
+                    "publisher": "Journal of Nutrition and Metabolism",
+                    "year": 2021,
+                    "url": "https://example.com/energy-balance-weight-management",
+                    "summary": "This study highlights the importance of maintaining an energy deficit for effective fat loss."
+                },
+                {
+                    "title": "Caloric Restriction and Fat Loss: A Meta-Analysis",
+                    "authors": "Nguyen H., Lee R.",
+                    "publisher": "Obesity Research Journal",
+                    "year": 2020,
+                    "url": "https://example.com/caloric-restriction-fat-loss",
+                    "summary": "A meta-analysis of clinical trials demonstrating the efficacy of caloric restriction in reducing body fat."
+                },
+                {
+                    "title": "Behavioral Strategies for Sustainable Fat Loss",
+                    "authors": "Green M., Taylor B.",
+                    "publisher": "International Journal of Behavioral Nutrition",
+                    "year": 2019,
+                    "url": "https://example.com/behavioral-strategies-fat-loss",
+                    "summary": "Research supports the implementation of calorie deficits alongside behavioral strategies for long-term fat loss."
+                }
+            ],
+            "claimProtocolID": "protocol_019",
+            "claimBenefitID": "benefit_006",
+            "claimEasyWinRating": 4.75,
+            "claimID": "claim_044"
+        },
+        {
+            "claimDescription": "Resistance training is a foundational method for building strength by using exercises that apply external or body weight resistance to target and develop muscle force production.",
+            "claimMechanisms": "Resistance training promotes strength gains by recruiting and adapting fast-twitch muscle fibres and improving neuromuscular efficiency. This process is driven by the principle of progressive overload, where the resistance is systematically increased to challenge the muscles and stimulate maximal force production.",
+            "claimProtocolInstructions": "1. Perform resistance training exercises 2\u00e2\u20ac\u201c4 times per week, targeting major muscle groups.\n2. Use heavy resistance to complete sets of 1\u00e2\u20ac\u201c6 repetitions, with an ideal target of 3 reps per set for maximal strength development.\n3. Incorporate compound movements such as squats, deadlifts, bench presses, and overhead presses to engage multiple muscle groups.\n4. Rest for at least 2 minutes between sets, with an optimal rest range of 3\u00e2\u20ac\u201c5 minutes to ensure recovery and maintain high effort.\n5. Focus on proper form and controlled movements to avoid injury and maximise effectiveness.\n6. Gradually increase the resistance over time to ensure progressive overload.\n7. Avoid excessive volume and focus on intensity, performing 3\u00e2\u20ac\u201c5 sets per exercise.\n8. Consult a fitness professional if you are new to resistance training or have pre-existing conditions or injuries.",
+            "claimImpactRating": 5,
+            "claimImpactRatingDescription": "Highly effective for increasing maximal strength when performed correctly and with sufficient intensity.",
+            "claimMaturityRating": 5,
+            "claimMaturityRatingDescription": "Extensive and well-established evidence supports resistance training as the primary approach for building maximal strength.",
+            "claimConsensusRating": 5,
+            "claimConsensusRatingDescription": "Near-universal agreement among experts on the efficacy of resistance training for building strength.",
+            "claimOverallEvidenceRating": 5.0,
+            "claimOverallEvidenceRatingDescription": "Strong, conclusive evidence from decades of research across diverse populations and training protocols.",
+            "claimSources": [
+                {
+                    "title": "Optimising Resistance Training for Strength Gains",
+                    "authors": "Smith J., Patel K.",
+                    "publisher": "Journal of Strength and Conditioning Research",
+                    "year": 2021,
+                    "url": "https://example.com/strength-optimisation",
+                    "summary": "This study explores how varying rest periods and rep ranges impact strength development."
+                },
+                {
+                    "title": "The Science of Progressive Overload",
+                    "authors": "Nguyen H., Taylor B.",
+                    "publisher": "Sports Medicine Journal",
+                    "year": 2020,
+                    "url": "https://example.com/progressive-overload",
+                    "summary": "A comprehensive review of how progressive overload enhances maximal strength and neuromuscular efficiency."
+                },
+                {
+                    "title": "Resistance Training Guidelines for Strength",
+                    "authors": "Green M., Lee R.",
+                    "publisher": "International Journal of Sports Science",
+                    "year": 2019,
+                    "url": "https://example.com/resistance-training-strength",
+                    "summary": "Guidelines for designing resistance training programs to optimise strength gains while minimising injury risk."
+                }
+            ],
+            "claimProtocolID": "protocol_005",
+            "claimBenefitID": "benefit_019",
+            "claimEasyWinRating": 3.75,
+            "claimID": "claim_045"
+        }
     ],
     "benefits": [
         {
             "benefitID": "benefit_001",
             "benefitName": "Heart Health",
             "benefitDescription": "Heart disease is the leading cause of death in many countries and should be a priority for overall health.",
-            "benefitImageID": "/images/benefit_001_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_001_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_001",
                 "protocol_002",
@@ -1901,11 +2030,11 @@
             "benefitID": "benefit_002",
             "benefitName": "Boost Immune System",
             "benefitDescription": "Strengthening the body's natural defenses to reduce the risk of infections and illnesses.",
-            "benefitImageID": "/images/benefit_002_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_002_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_006",
                 "protocol_007",
-                "protocol_008"                
+                "protocol_008"
             ],
             "benefitSearchTerms": [
                 "immune system",
@@ -1926,7 +2055,7 @@
             "benefitID": "benefit_003",
             "benefitName": "Mental Clarity",
             "benefitDescription": "Enhancing focus, reducing mental fog, and improving cognitive sharpness.",
-            "benefitImageID": "/images/benefit_003_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_003_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_006",
                 "protocol_007",
@@ -1951,14 +2080,14 @@
                 "cognitive resilience"
             ],
             "benefitCategories": [
-                "Mental Health"
+                "Psychological Health"
             ]
         },
         {
             "benefitID": "benefit_004",
-            "benefitName": "Reduce Stress",
+            "benefitName": "Manage Stress",
             "benefitDescription": "Lowering physical and emotional stress to improve overall well-being and mental clarity.",
-            "benefitImageID": "/images/benefit_004_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_004_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_009",
                 "protocol_010",
@@ -1979,7 +2108,7 @@
                 "reduce anxiety"
             ],
             "benefitCategories": [
-                "Mental Health",
+                "Psychological Health",
                 "Physical Health"
             ]
         },
@@ -1987,7 +2116,7 @@
             "benefitID": "benefit_005",
             "benefitName": "Better Sleep",
             "benefitDescription": "Improving sleep quality, duration, and overall restfulness to enhance physical and mental well-being.",
-            "benefitImageID": "/images/benefit_005_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_005_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_011",
                 "protocol_012",
@@ -2011,16 +2140,17 @@
             ],
             "benefitCategories": [
                 "Physical Health",
-                "Mental Health"
+                "Psychological Health"
             ]
         },
         {
             "benefitID": "benefit_006",
             "benefitName": "Fat Loss",
             "benefitDescription": "Promotes fat loss and helps maintain a healthy weight by improving energy balance and fat metabolism.",
-            "benefitImageID": "/images/benefit_006_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_006_image.jpg",
             "benefitLinkedProtocols": [
-                "protocol_017"
+                "protocol_017",
+                "protocol_019"
             ],
             "benefitSearchTerms": [
                 "fat loss",
@@ -2035,14 +2165,14 @@
                 "fat metabolism"
             ],
             "benefitCategories": [
-                "Physical Health"
+                "Physical Health", "Body Aesthetics"
             ]
         },
         {
             "benefitID": "benefit_007",
             "benefitName": "Improved Insulin Sensitivity",
             "benefitDescription": "Reduces insulin levels and increases insulin sensitivity, lowering the risk of type 2 diabetes.",
-            "benefitImageID": "/images/benefit_007_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_007_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2065,7 +2195,7 @@
             "benefitID": "benefit_008",
             "benefitName": "Metabolic Health",
             "benefitDescription": "Enhances metabolic flexibility and reduces blood sugar fluctuations.",
-            "benefitImageID": "/images/benefit_008_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_008_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2088,7 +2218,7 @@
             "benefitID": "benefit_009",
             "benefitName": "Gut Health",
             "benefitDescription": "Supports gut microbiota diversity and digestive health through periodic rest for the digestive system.",
-            "benefitImageID": "/images/benefit_009_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_009_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2111,7 +2241,7 @@
             "benefitID": "benefit_010",
             "benefitName": "Anti-Inflammatory Effects",
             "benefitDescription": "Reduces systemic inflammation linked to chronic diseases.",
-            "benefitImageID": "/images/benefit_010_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_010_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2133,7 +2263,7 @@
             "benefitID": "benefit_011",
             "benefitName": "Boosted Cellular Repair (Autophagy)",
             "benefitDescription": "Promotes cellular cleanup by triggering autophagy, which may delay aging and reduce cancer risks.",
-            "benefitImageID": "/images/benefit_011_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_011_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2156,7 +2286,7 @@
             "benefitID": "benefit_012",
             "benefitName": "Neuroprotection",
             "benefitDescription": "Supports brain health by reducing oxidative stress and promoting brain-derived neurotrophic factor (BDNF), which is linked to memory and learning.",
-            "benefitImageID": "/images/benefit_012_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_012_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2172,14 +2302,14 @@
                 "improve learning"
             ],
             "benefitCategories": [
-                "Mental Health"
+                "Psychological Health"
             ]
         },
         {
             "benefitID": "benefit_013",
             "benefitName": "Mood Regulation",
             "benefitDescription": "Reduces anxiety and stress through hormonal regulation, including cortisol and serotonin balance.",
-            "benefitImageID": "/images/benefit_013_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_013_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2194,14 +2324,14 @@
                 "hormonal balance"
             ],
             "benefitCategories": [
-                "Mental Health"
+                "Psychological Health"
             ]
         },
         {
             "benefitID": "benefit_014",
             "benefitName": "Longevity",
             "benefitDescription": "Activates genes linked to increased lifespan and reduces age-related disease risks.",
-            "benefitImageID": "/images/benefit_014_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_014_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2222,7 +2352,7 @@
             "benefitID": "benefit_015",
             "benefitName": "Cancer Prevention",
             "benefitDescription": "Limits abnormal cell growth by reducing insulin-like growth factor 1 (IGF-1) levels.",
-            "benefitImageID": "/images/benefit_015_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_015_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2243,7 +2373,7 @@
             "benefitID": "benefit_016",
             "benefitName": "Lower Chronic Disease Risk",
             "benefitDescription": "Reduces risk factors for diseases like Alzheimer's, Parkinson's, cardiovascular disease, and metabolic syndrome.",
-            "benefitImageID": "/images/benefit_016_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_016_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2265,7 +2395,7 @@
             "benefitID": "benefit_017",
             "benefitName": "Improved Energy Efficiency",
             "benefitDescription": "Optimizes energy use by the body, reducing fatigue.",
-            "benefitImageID": "/images/benefit_017_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/benefit_017_image.jpg",
             "benefitLinkedProtocols": [
                 "protocol_017"
             ],
@@ -2281,18 +2411,57 @@
             ],
             "benefitCategories": [
                 "Physical Health",
-                "Mental Health"
+                "Psychological Health"
+            ]
+        },
+        {
+            "benefitName": "Improve Memory",
+            "benefitDescription": "Memory is an essential cognitive function that underpins learning, problem-solving, and decision-making. Strong memory abilities allow individuals to retain important information, adapt to new challenges, and recall past experiences, making it a cornerstone for both personal growth and professional success. Beyond practical advantages, a sharp memory supports mental well-being, as it fosters confidence, independence, and effective social interactions.",
+            "benefitImageID": "/protocolbenefitImages/benefit_018_image.jpg",
+            "benefitCategories": [
+                "Psychological Health"
+            ],
+            "benefitSearchTerms": [
+                "memory",
+                "cognitive function",
+                "learning",
+                "recall",
+                "mental clarity"
+            ],
+            "benefitID": "benefit_018",
+            "benefitLinkedProtocols": [
+                "protocol_018"
+            ]
+        },
+        {
+            "benefitName": "Build Strength",
+            "benefitDescription": "Building strength is a cornerstone of overall health, enhancing physical performance, resilience, and metabolic health. Strength training improves muscle and bone density, supports joint stability, and reduces the risk of injury, contributing to better physical capabilities and long-term vitality. By fostering energy expenditure, it aids in weight management and overall vitality. Beyond these benefits, building strength is linked to increased longevity and sustained independence, making it a vital component of a balanced and healthy lifestyle.",
+            "benefitImageID": "/protocolbenefitImages/benefit_001_image.jpg",
+            "benefitCategories": [
+                "Physical Health"
+            ],
+            "benefitSearchTerms": [
+                "strength",
+                "muscle strength",
+                "strong",
+                "physical performance",
+                "longevity",
+                "hypertrophy",
+                "gains"
+            ],
+            "benefitID": "benefit_019",
+            "benefitLinkedProtocols": [
+                "protocol_005"
             ]
         }
-
     ],
     "protocols": [
         {
             "protocolID": "protocol_001",
             "protocolName": "Sauna Therapy",
             "protocolDescription": "A traditional practice involving heat exposure in a controlled environment, often used for relaxation and as part of cultural or wellness traditions.",
-            "protocolInstructions": "Spend 15–20 minutes in a sauna at 70-100°C, 2–3 times per week.",
-            "protocolImageID": "/images/protocol_001_image.jpg",
+            "protocolInstructions": "Spend 15\u00e2\u20ac\u201c20 minutes in a sauna at 70-100\u00c2\u00b0C, 2\u00e2\u20ac\u201c3 times per week.",
+            "protocolImageID": "/protocolbenefitImages/protocol_001_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_001",
                 "benefit_004"
@@ -2318,7 +2487,7 @@
                 "infrared therapy"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 3,
             "protocolRelativeCostRating": 3,
@@ -2328,8 +2497,8 @@
             "protocolID": "protocol_002",
             "protocolName": "Zone 2 Cardio",
             "protocolDescription": "Moderate-intensity aerobic exercise aimed at improving metabolic and cardiovascular health.",
-            "protocolInstructions": "Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3–4 times per week. Ensure the intensity allows you to hold a conversation comfortably during exercise.",
-            "protocolImageID": "/images/protocol_002_image.jpg",
+            "protocolInstructions": "Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3\u00e2\u20ac\u201c4 times per week. Ensure the intensity allows you to hold a conversation comfortably during exercise.",
+            "protocolImageID": "/protocolbenefitImages/protocol_002_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_001",
                 "benefit_003",
@@ -2348,7 +2517,7 @@
                 "heart health workouts"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 4,
             "protocolRelativeCostRating": 2,
@@ -2358,8 +2527,8 @@
             "protocolID": "protocol_003",
             "protocolName": "Mediterranean Diet",
             "protocolDescription": "A dietary patterfrn emphasizing uits, vegetables, whole grains, healthy fats, and lean proteins to promote overall health.",
-            "protocolInstructions": "1. Incorporate fresh fruits and vegetables into each meal.\n2. Use olive oil as the primary fat source.\n3. Eat fatty fish (e.g., salmon, mackerel) 2–3 times per week.\n4. Limit red meat intake, replacing it with poultry or plant-based proteins.\n5. Include whole grains, legumes, and nuts regularly.\n6. Use herbs and spices for seasoning instead of salt.",
-            "protocolImageID": "/images/protocol_003_image.jpg",
+            "protocolInstructions": "1. Incorporate fresh fruits and vegetables into each meal.\n2. Use olive oil as the primary fat source.\n3. Eat fatty fish (e.g., salmon, mackerel) 2\u00e2\u20ac\u201c3 times per week.\n4. Limit red meat intake, replacing it with poultry or plant-based proteins.\n5. Include whole grains, legumes, and nuts regularly.\n6. Use herbs and spices for seasoning instead of salt.",
+            "protocolImageID": "/protocolbenefitImages/protocol_003_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_001",
                 "benefit_003"
@@ -2388,7 +2557,7 @@
             "protocolName": "Quit Smoking",
             "protocolDescription": "Eliminating tobacco use to improve overall health and significantly reduce the risk of chronic diseases.",
             "protocolInstructions": "1. Set a quit date and plan strategies to avoid triggers.\n2. Use nicotine replacement therapies, such as patches or gum, if needed.\n3. Seek professional help or join a smoking cessation program.\n4. Engage in regular physical activity to manage withdrawal symptoms.\n5. Avoid environments where smoking is prevalent.\n6. Track your progress and celebrate milestones.",
-            "protocolImageID": "/images/protocol_004_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_004_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_001"
             ],
@@ -2405,7 +2574,7 @@
                 "improve vascular health"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 3,
             "protocolRelativeCostRating": 2,
@@ -2415,11 +2584,12 @@
             "protocolID": "protocol_005",
             "protocolName": "Resistance Training",
             "protocolDescription": "Strength-based exercise targeting major muscle groups to improve strength, bone density, and overall fitness.",
-            "protocolInstructions": "1. Perform resistance exercises 2–3 times per week using weights, machines, or bodyweight.\n2. Target major muscle groups, such as legs, back, chest, and arms.\n3. Start with 8–12 repetitions per set at a moderate weight, gradually increasing intensity as strength improves.\n4. Rest for 48 hours between sessions to allow for muscle recovery.\n5. Stay hydrated and pair workouts with a balanced diet.",
-            "protocolImageID": "/images/protocol_005_image.jpg",
+            "protocolInstructions": "1. Perform resistance exercises 2\u00e2\u20ac\u201c3 times per week using weights, machines, or bodyweight.\n2. Target major muscle groups, such as legs, back, chest, and arms.\n3. Start with 8\u00e2\u20ac\u201c12 repetitions per set at a moderate weight, gradually increasing intensity as strength improves.\n4. Rest for 48 hours between sessions to allow for muscle recovery.\n5. Stay hydrated and pair workouts with a balanced diet.",
+            "protocolImageID": "/protocolbenefitImages/protocol_005_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_001",
-                "benefit_003"
+                "benefit_003",
+                "benefit_019"
             ],
             "protocolSearchTerms": [
                 "strength training",
@@ -2434,7 +2604,7 @@
                 "functional strength"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 4,
             "protocolRelativeCostRating": 3,
@@ -2445,7 +2615,7 @@
             "protocolName": "Omega-3 Supplementation",
             "protocolDescription": "Regular intake of omega-3 fatty acids through dietary sources or supplements to enhance health and reduce inflammation.",
             "protocolInstructions": "1. Consume 2 servings of fatty fish (e.g., salmon, mackerel, sardines) per week.\n2. Incorporate plant-based omega-3 sources such as flaxseeds, chia seeds, and walnuts into daily meals.\n3. Take omega-3 supplements containing EPA and DHA if dietary intake is insufficient, as recommended by a healthcare provider.",
-            "protocolImageID": "/images/protocol_006_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_006_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_002",
                 "benefit_003"
@@ -2475,7 +2645,7 @@
             "protocolName": "Cold Showers",
             "protocolDescription": "Regular exposure to cold water to improve circulation, reduce inflammation, and boost immune function.",
             "protocolInstructions": "1. Start with lukewarm water and gradually lower the temperature over time.\n2. Aim for 30 seconds to 2 minutes of cold exposure per session.\n3. Practice daily for consistent benefits.\n4. Focus on deep, controlled breathing to manage the cold stimulus.",
-            "protocolImageID": "/images/protocol_007_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_007_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_002",
                 "benefit_003"
@@ -2493,7 +2663,7 @@
                 "boost immunity"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 2,
             "protocolRelativeCostRating": 1,
@@ -2504,7 +2674,7 @@
             "protocolName": "Probiotic-Rich Foods",
             "protocolDescription": "Incorporating probiotic-rich foods into the diet to support gut health and enhance immune function.",
             "protocolInstructions": "1. Include probiotic-rich foods such as yogurt, kefir, sauerkraut, kimchi, and miso in your daily diet.\n2. Consume 1-2 servings of these foods daily to maintain a healthy gut microbiome.\n3. Pair probiotics with dietary fibre to support the growth of beneficial gut bacteria.\n4. Avoid excessive sugar and processed foods, which can harm gut health.",
-            "protocolImageID": "/images/protocol_008_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_008_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_002",
                 "benefit_003",
@@ -2533,8 +2703,8 @@
             "protocolID": "protocol_009",
             "protocolName": "Meditation",
             "protocolDescription": "A daily practice of mindfulness and meditation to reduce stress, improve emotional well-being, and enhance mental clarity.",
-            "protocolInstructions": "1. Set aside 10–20 minutes daily for meditation.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app to assist your practice.\n4. Gradually increase the duration as you build a consistent habit.",
-            "protocolImageID": "/images/protocol_009_image.jpg",
+            "protocolInstructions": "1. Set aside 10\u00e2\u20ac\u201c20 minutes daily for meditation.\n2. Find a quiet space where you can sit comfortably without distractions.\n3. Focus on your breath or use a guided meditation app to assist your practice.\n4. Gradually increase the duration as you build a consistent habit.",
+            "protocolImageID": "/protocolbenefitImages/protocol_009_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_003",
                 "benefit_004",
@@ -2552,7 +2722,7 @@
                 "mindfulness practice"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 1,
@@ -2563,7 +2733,7 @@
             "protocolName": "Gratitude Practice",
             "protocolDescription": "Daily practice of expressing gratitude to reduce stress, improve mood, and enhance mental clarity.",
             "protocolInstructions": "1. Spend 5 minutes daily writing down 3 things you are grateful for.\n2. Reflect on why these things are meaningful to you.\n3. Practice consistently to build a habit of gratitude.\n4. Share your gratitude with others to deepen the emotional impact.",
-            "protocolImageID": "/images/protocol_010_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_010_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_003",
                 "benefit_004"
@@ -2581,7 +2751,7 @@
                 "mental clarity"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 1,
@@ -2592,7 +2762,7 @@
             "protocolName": "Sleep Hygiene Routine",
             "protocolDescription": "Establishing consistent sleep habits and a conducive sleep environment to improve sleep quality and duration.",
             "protocolInstructions": "1. Go to bed and wake up at the same time every day, even on weekends.\n2. Avoid screens and bright lights at least 1 hour before bed.\n3. Create a calming bedtime routine such as reading, journaling, or meditating.\n4. Keep your bedroom dark, cool, and quiet for optimal sleep conditions.",
-            "protocolImageID": "/images/protocol_011_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_011_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2607,7 +2777,7 @@
                 "better rest"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 2,
             "protocolRelativeCostRating": 1,
@@ -2617,8 +2787,8 @@
             "protocolID": "protocol_012",
             "protocolName": "Blue Light Blocking Glasses",
             "protocolDescription": "Wearing glasses that block blue light in the evening to reduce melatonin disruption and improve sleep quality.",
-            "protocolInstructions": "1. Wear blue light blocking glasses 2–3 hours before bed.\n2. Use the glasses consistently when exposed to screens or artificial lighting.\n3. Pair with dimmed home lighting for optimal results.",
-            "protocolImageID": "/images/protocol_012_image.jpg",
+            "protocolInstructions": "1. Wear blue light blocking glasses 2\u00e2\u20ac\u201c3 hours before bed.\n2. Use the glasses consistently when exposed to screens or artificial lighting.\n3. Pair with dimmed home lighting for optimal results.",
+            "protocolImageID": "/protocolbenefitImages/protocol_012_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2632,7 +2802,7 @@
                 "better sleep"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 2,
@@ -2642,8 +2812,8 @@
             "protocolID": "protocol_013",
             "protocolName": "Chamomile Tea Before Bed",
             "protocolDescription": "Drinking chamomile tea in the evening to relax the body and promote better sleep onset.",
-            "protocolInstructions": "1. Brew one cup of chamomile tea 30–60 minutes before bedtime.\n2. Avoid adding sugar to prevent sleep disruption.\n3. Pair with other relaxing activities like reading or meditation for enhanced benefits.",
-            "protocolImageID": "/images/protocol_013_image.jpg",
+            "protocolInstructions": "1. Brew one cup of chamomile tea 30\u00e2\u20ac\u201c60 minutes before bedtime.\n2. Avoid adding sugar to prevent sleep disruption.\n3. Pair with other relaxing activities like reading or meditation for enhanced benefits.",
+            "protocolImageID": "/protocolbenefitImages/protocol_013_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2657,7 +2827,8 @@
                 "reduce anxiety"
             ],
             "protocolCategories": [
-                "Dietary", "Supplements"
+                "Dietary",
+                "Supplements"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 1,
@@ -2667,8 +2838,8 @@
             "protocolID": "protocol_014",
             "protocolName": "Magnesium Supplementation",
             "protocolDescription": "Taking magnesium supplements to relax the nervous system and improve sleep quality.",
-            "protocolInstructions": "1. Take 200–400 mg of magnesium citrate or glycinate 1–2 hours before bed.\n2. Consult a healthcare professional to determine the appropriate dosage for your needs.\n3. Pair supplementation with a diet rich in magnesium-containing foods for optimal results.",
-            "protocolImageID": "/images/protocol_014_image.jpg",
+            "protocolInstructions": "1. Take 200\u00e2\u20ac\u201c400 mg of magnesium citrate or glycinate 1\u00e2\u20ac\u201c2 hours before bed.\n2. Consult a healthcare professional to determine the appropriate dosage for your needs.\n3. Pair supplementation with a diet rich in magnesium-containing foods for optimal results.",
+            "protocolImageID": "/protocolbenefitImages/protocol_014_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2692,7 +2863,7 @@
             "protocolName": "Progressive Muscle Relaxation",
             "protocolDescription": "A relaxation technique that involves tensing and releasing muscles to reduce stress and improve sleep onset.",
             "protocolInstructions": "1. Set aside 10 minutes before bed to practice progressive muscle relaxation.\n2. Lie down in a quiet space and focus on tensing and relaxing one muscle group at a time, starting from your toes and moving upward.\n3. Breathe deeply throughout the process to maximise relaxation.",
-            "protocolImageID": "/images/protocol_015_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_015_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2705,7 +2876,7 @@
                 "sleep onset"
             ],
             "protocolCategories": [
-                "Behaviour"
+                "Behaviours"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 1,
@@ -2716,7 +2887,7 @@
             "protocolName": "No Caffeine After 2 PM",
             "protocolDescription": "Avoiding caffeine consumption in the afternoon and evening to prevent interference with sleep quality.",
             "protocolInstructions": "1. Avoid coffee, tea, energy drinks, or other caffeine-containing products after 2 PM.\n2. Replace caffeinated beverages with herbal teas or water in the afternoon and evening.\n3. Be mindful of hidden caffeine sources, such as chocolate or medications.",
-            "protocolImageID": "/images/protocol_016_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_016_image.jpg",
             "protocolLinkedBenefits": [
                 "benefit_005"
             ],
@@ -2729,7 +2900,8 @@
                 "caffeine and sleep"
             ],
             "protocolCategories": [
-                "Dietary", "Supplements"
+                "Dietary",
+                "Supplements"
             ],
             "protocolRelativeTimeRating": 1,
             "protocolRelativeCostRating": 1,
@@ -2740,21 +2912,21 @@
             "protocolName": "Intermittent Fasting",
             "protocolDescription": "A dietary practice alternating between eating and fasting periods, aimed at improving metabolic health, reducing fat, and supporting overall well-being.",
             "protocolInstructions": "1. Choose a fasting schedule such as 16:8 (16 hours fasting, 8 hours eating) or 5:2 (5 days normal eating, 2 days restricted calorie intake).\n2. Stay hydrated during fasting periods with water, herbal teas, or black coffee.\n3. Break your fast with balanced meals, prioritizing whole foods and avoiding processed options.\n4. Gradually adapt your schedule to ensure it fits your lifestyle and health goals.\n5. Monitor your body's response and consult a healthcare professional if needed.",
-            "protocolImageID": "/images/protocol_017_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/protocol_017_image.jpg",
             "protocolLinkedBenefits": [
-                "benefit_006", 
-                "benefit_007", 
-                "benefit_008", 
-                "benefit_001", 
-                "benefit_009", 
-                "benefit_010",  
-                "benefit_011", 
-                "benefit_003",  
-                "benefit_012", 
-                "benefit_013",  
-                "benefit_014",  
-                "benefit_015",  
-                "benefit_016",  
+                "benefit_006",
+                "benefit_007",
+                "benefit_008",
+                "benefit_001",
+                "benefit_009",
+                "benefit_010",
+                "benefit_011",
+                "benefit_003",
+                "benefit_012",
+                "benefit_013",
+                "benefit_014",
+                "benefit_015",
+                "benefit_016",
                 "benefit_017"
             ],
             "protocolSearchTerms": [
@@ -2775,6 +2947,51 @@
             "protocolRelativeTimeRating": 3,
             "protocolRelativeCostRating": 1,
             "protocolOverallImpactRating": 4.7
-        }                         
+        },
+        {
+            "protocolName": "Creatine",
+            "protocolDescription": "Creatine supplementation involves the use of a naturally occurring compound that plays a crucial role in energy production, particularly during high-intensity, short-duration activities. It is widely utilised in athletic and fitness contexts and increasingly studied for potential benefits to cognitive and overall cellular function.",
+            "protocolInstructions": "protocol instructions test",
+            "protocolCategories": [
+                "Supplements"
+            ],
+            "protocolSearchTerms": [
+                "creatine",
+                "energy production",
+                "muscle energy",
+                "cellular energy"
+            ],
+            "protocolRelativeTimeRating": 1,
+            "protocolRelativeCostRating": 2,
+            "protocolOverallImpactRating": 2,
+            "protocolID": "protocol_018",
+            "protocolImageID": "/protocolbenefitImages/protocol_018_image.jpg",
+            "protocolLinkedBenefits": [
+                "benefit_018"
+            ]
+        },
+        {
+            "protocolName": "Calorie Deficit",
+            "protocolDescription": "Calorie deficit involves regulating energy intake by consuming fewer calories than the body expends, typically achieved through dietary adjustments and physical activity. It is a widely recognised approach used in managing energy balance and altering body composition.",
+            "protocolInstructions": "1. Determine your daily caloric needs using a Total Daily Energy Expenditure (TDEE) calculator.\n2. Aim for a daily deficit of 500\u00e2\u20ac\u201c750 calories, which typically supports sustainable weight loss of 0.5\u00e2\u20ac\u201c1 kg per week.\n3. Focus on nutrient-dense, low-calorie foods like vegetables, lean protein, and whole grains to stay satiated while maintaining a deficit.\n4. Track caloric intake using a food diary or mobile app to maintain accuracy.\n5. Avoid extreme calorie restriction, as it can lead to nutritional deficiencies, fatigue, or loss of muscle mass.\n6. Monitor progress weekly and adjust caloric intake as needed to account for changes in weight or activity levels.\n7. Consult a healthcare provider or dietitian before starting, especially if you have underlying medical conditions or specific dietary requirements.",
+            "protocolImageID": "/protocolbenefitImages/protocol_019_image.jpg",
+            "protocolCategories": [
+                "Behaviours"
+            ],
+            "protocolSearchTerms": [
+                "calorie deficit",
+                "energy balance",
+                "diet regulation",
+                "nutrition",
+                "weight control"
+            ],
+            "protocolRelativeTimeRating": 2,
+            "protocolRelativeCostRating": 1,
+            "protocolOverallImpactRating": 3.0,
+            "protocolID": "protocol_019",
+            "protocolLinkedBenefits": [
+                "benefit_006"
+            ]
+        }
     ]
 }
