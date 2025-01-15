@@ -32,7 +32,7 @@ const data: dataTypes[] = [
         icon: "💪",
         text: "Build Strength",
         color: "#F6E7FB",
-        linkTo: ""
+        linkTo: "benefit_019"
     },
     {
         icon: "🧘‍♂️",
@@ -91,9 +91,10 @@ const LandingPage = () => {
                                     if (index === 5) {
                                         navigate(item.linkTo);
                                     } else {
-                                        if (index !== 3) {
-                                            navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
-                                        }
+                                        navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
+                                        // if (index !== 3) {
+                                        //     navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
+                                        // }
                                     }
                                 }}
                                     sx={{ bgcolor: item.color, height: "50px", border: "1px solid #212121", borderRadius: "50px", color: "#212121", display: "flex", alignItems: "center", justifyContent: "space-between" }} size='small' fullWidth

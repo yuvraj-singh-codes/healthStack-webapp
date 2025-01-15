@@ -28,9 +28,12 @@ const ProtocolBenefitPage: React.FC = () => {
     const protocolID = queryParams.get('id');
     const { protocols, benefits, claims } = jsonData;
     const protocolsData = protocols.find((val) => val.protocolID === protocolID);
+    const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
+    const option = benefits
+        .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID));
     const uniqueBenefitCategories = Array.from(
         new Set(
-            benefits.flatMap(item => item.benefitCategories)
+            option.flatMap(item => item.benefitCategories)
         )
     );
     const filterOptionsData = uniqueBenefitCategories;
@@ -41,12 +44,6 @@ const ProtocolBenefitPage: React.FC = () => {
         }, {} as Record<string, boolean>)
     );
     const benefitFilterOption = ["Evidence Rating", "Name (A-Z)", "Name (Z-A)"]
-    // const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
-    //     () => benefitFilterOption.reduce((acc, option) => {
-    //         acc[option] = false;
-    //         return acc;
-    //     }, {} as Record<string, boolean>)
-    // );
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
         () => benefitFilterOption.reduce((acc, option, index) => {
             acc[option] = index === 0;
@@ -67,7 +64,7 @@ const ProtocolBenefitPage: React.FC = () => {
         });
     };
 
-    const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
+
     useEffect(() => {
         const filteredBenefits = benefits
             .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID));
@@ -129,7 +126,6 @@ const ProtocolBenefitPage: React.FC = () => {
             const filteredBenefits = benefits
                 .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID));
             // dispatch(setBenefit(filteredBenefits));
-            setBenefit(filteredBenefits)
         } else {
             const lowerCaseTerm = searchTerm.toLowerCase();
             const filtered = benefits.filter((item) =>
@@ -138,7 +134,6 @@ const ProtocolBenefitPage: React.FC = () => {
                 )
             );
             // dispatch(setBenefit(filtered));
-            setBenefit(filtered)
         }
     }, [searchTerm, dispatch]);
     const getRatingLabel = (rating?: number): string => {
@@ -195,17 +190,17 @@ const ProtocolBenefitPage: React.FC = () => {
                                 {protocolsData?.protocolDescription}
                             </Typography>
                             <Grid container spacing={1}>
-                                <Grid item>
-                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
-                                        <Hourglass size={18} />
-                                        {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <Typography sx={{ fontSize: 14, display: "flex", alignItems: 'center', justifyContent: "center" }}>
-                                        <PiCurrencyDollarSimpleBold size={20} />
-                                        {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
-                                    </Typography>
+                                <Grid item xs={12}>
+                                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", flexWrap: "wrap", py: "2px" }}>
+                                        <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
+                                            <Hourglass size={14} />
+                                            {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
+                                        </Typography>
+                                        <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
+                                            <PiCurrencyDollarSimpleBold size={16} />
+                                            {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
+                                        </Typography>
+                                    </Box>
                                 </Grid>
                             </Grid>
                         </Box>
@@ -219,9 +214,10 @@ const ProtocolBenefitPage: React.FC = () => {
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
                         px: 2,
+                        pt: 1
                     }}
                 >
-                    <Typography variant="h6" sx={{ fontSize: 16 }}>
+                    <Typography variant="h6" sx={{ fontSize: 18 }}>
                         <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this Protocol:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center">
