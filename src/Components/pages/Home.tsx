@@ -31,8 +31,8 @@ const HomePage: React.FC = () => {
     }, [search])
     useEffect(() => {
         setSearchTerm(search)
-        dispatch(setBenefit(benefits));
-        dispatch(setProtocol(protocols));
+        // dispatch(setBenefit(benefits));
+        // dispatch(setProtocol(protocols));
     }, [dispatch])
     const benefitFilterOption = ["Name (A-Z)", "Name (Z-A)"]
     const protocolFilterOption = ["Time", "Cost", "Name (A-Z)", "Name (Z-A)"]
@@ -98,13 +98,14 @@ const HomePage: React.FC = () => {
     }, [activeTab]);
 
     const handleFilterChange = (label: string) => {
-
+        setSearchTerm("");
         setSelectedFilters((prev) => ({
             ...prev,
             [label]: !prev[label],
         }));
     };
     const handleSortChange = (label: string) => {
+        setSearchTerm("");
         if (activeTab === 0) {
             setSelectedSortValue((prev) => {
                 const isSelected = prev[label];
@@ -142,7 +143,10 @@ const HomePage: React.FC = () => {
             }))
             .filter((protocol) => protocol.protocolCategories?.length > 0);
         dispatch(setProtocol(filterProtocols));
-    }, [protocols, selectedFilters])
+        if(searchTerm.trim()!==""){
+            searchItems();
+        }
+    }, [selectedFilters])
 
     useEffect(() => {
         const filteredBenefits = benefits
@@ -156,7 +160,10 @@ const HomePage: React.FC = () => {
             }))
             .filter((benefit) => benefit.benefitCategories?.length > 0);
         dispatch(setBenefit(filteredBenefits));
-    }, [benefits, selectedFilters])
+        if(searchTerm.trim()!==""){
+            searchItems();
+        }
+    }, [selectedFilters])
 
     useEffect(() => {
         if (selectedSortValue["Name (A-Z)"]) {
@@ -168,7 +175,10 @@ const HomePage: React.FC = () => {
         } else {
             dispatch(setBenefit(benefits));
         }
-    }, [benefits, selectedSortValue]);
+        if(searchTerm.trim()!==""){
+            searchItems();
+        }
+    }, [selectedSortValue]);
 
     useEffect(() => {
         const sorted = [...protocols].sort((a, b) => {
@@ -193,35 +203,41 @@ const HomePage: React.FC = () => {
             return 0;
         });
         dispatch(setProtocol(sorted));
-    }, [protocols, selectedSortValue]);
+        if(searchTerm.trim()!==""){
+            searchItems();
+        }
+    }, [selectedSortValue]);
 
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
-
-    useEffect(() => {
-        if (searchTerm.trim() === "") {
-            dispatch(setBenefit(benefits));
-            dispatch(setProtocol(protocols));
+const searchItems=()=>{
+    if (searchTerm.trim() === "") {
+        dispatch(setBenefit(benefits));
+        dispatch(setProtocol(protocols));
+    } else {
+        const lowerCaseTerm = searchTerm.toLowerCase();
+        if (activeTab === 0) {
+            const filtered = benefits.filter((item) =>
+                item.benefitSearchTerms.some((search) =>
+                    search.toLowerCase().includes(lowerCaseTerm)
+                )
+            );
+            dispatch(setBenefit(filtered));
         } else {
-            const lowerCaseTerm = searchTerm.toLowerCase();
-            if (activeTab === 0) {
-                const filtered = benefit.filter((item) =>
-                    item.benefitSearchTerms.some((search) =>
-                        search.toLowerCase().includes(lowerCaseTerm)
-                    )
-                );
-                dispatch(setBenefit(filtered));
-            } else {
-                const filtered = protocol.filter((item) =>
-                    item.protocolSearchTerms.some((search) =>
-                        search.toLowerCase().includes(lowerCaseTerm)
-                    )
-                );
-                dispatch(setProtocol(filtered));
-            }
+            const filtered = protocols.filter((item) =>
+                item.protocolSearchTerms.some((search) =>
+                    search.toLowerCase().includes(lowerCaseTerm)
+                )
+            );
+            dispatch(setProtocol(filtered));
         }
-    }, [activeTab, searchTerm, dispatch]);
+    }
+}
+    useEffect(() => {
+        searchItems();
+    }, [activeTab, searchTerm,dispatch]);
+console.log(searchTerm,"term=====");
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>

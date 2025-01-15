@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
 import { CommonSearch } from '../utils/CommonSearch';
+import SearchComponent from '../utils/Search';
 
 const BenefitProtocolPage: React.FC = () => {
     const dispatch = useDispatch();
@@ -228,7 +229,8 @@ const BenefitProtocolPage: React.FC = () => {
     }, [searchTerm, dispatch]);
     return (
         <>
-            <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            {/* <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
+            <SearchComponent />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
                 <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
                     <Box sx={{ display: 'flex' }}>

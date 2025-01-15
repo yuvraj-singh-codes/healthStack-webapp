@@ -79,7 +79,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                       height: "50px",
                       overflow: "auto",
                       fontWeight:600,
-                      wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'
+                      wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal',
+                       display:"flex",justifyContent:"center",alignItems:"center"
                     }}
                   >
                     {item.benefitName}

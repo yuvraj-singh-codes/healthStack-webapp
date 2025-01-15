@@ -4,7 +4,6 @@ import {
     Typography,
     CardMedia,
     Card,
-    CardContent,
     Grid,
 } from '@mui/material';
 import ProtocolBenefitCard from '../ProtocolBenefitCard';
@@ -18,6 +17,7 @@ import { setBenefit } from '../../features/allStateSlice';
 import { CommonSearch } from '../utils/CommonSearch';
 import { Hourglass } from 'lucide-react';
 import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
+import SearchComponent from '../utils/Search';
 
 const ProtocolBenefitPage: React.FC = () => {
     const dispatch = useDispatch();
@@ -41,24 +41,19 @@ const ProtocolBenefitPage: React.FC = () => {
         }, {} as Record<string, boolean>)
     );
     const benefitFilterOption = ["Evidence Rating", "Name (A-Z)", "Name (Z-A)"]
+    // const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
+    //     () => benefitFilterOption.reduce((acc, option) => {
+    //         acc[option] = false;
+    //         return acc;
+    //     }, {} as Record<string, boolean>)
+    // );
     const [selectedSortValue, setSelectedSortValue] = useState<Record<string, boolean>>(
-        () => benefitFilterOption.reduce((acc, option) => {
-            acc[option] = false;
+        () => benefitFilterOption.reduce((acc, option, index) => {
+            acc[option] = index === 0;
             return acc;
         }, {} as Record<string, boolean>)
     );
-    // const handleSortChange = (label: string) => {
-    //     setSelectedSortValue((prev) => {
-    //         const updated = { ...prev };
-    //         if (label === "Name (A-Z)") {
-    //             updated["Name (Z-A)"] = false;
-    //         } else if (label === "Name (Z-A)") {
-    //             updated["Name (A-Z)"] = false;
-    //         }
-    //         updated[label] = !prev[label];
-    //         return updated;
-    //     });
-    // };
+
     const handleSortChange = (label: string) => {
         setSelectedSortValue((prev) => {
             const updated = { ...prev };
@@ -71,8 +66,7 @@ const ProtocolBenefitPage: React.FC = () => {
             return updated;
         });
     };
-    
-  
+
     const linkedBenefitIds = protocolsData?.protocolLinkedBenefits || [];
     useEffect(() => {
         const filteredBenefits = benefits
@@ -99,21 +93,12 @@ const ProtocolBenefitPage: React.FC = () => {
             }))
             .filter((benefit) => benefit.benefitCategories.length > 0);
         dispatch(setBenefit(filteredBenefits));
-    }, [benefits, linkedBenefitIds, selectedFilters])
+    }, [benefits, linkedBenefitIds, selectedFilters, selectedSortValue, claims])
 
     useEffect(() => {
         const filteredBenefits = benefits
-            .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID))
-            .map((benefit) => ({
-                ...benefit,
-                benefitCategories: benefit.benefitCategories.filter((category) =>
-                    Object.keys(selectedFilters).some(
-                        (key) => selectedFilters[key] && category.includes(key)
-                    )
-                ),
-            }))
-            .filter((benefit) => benefit.benefitCategories.length > 0);
-
+            .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID));
+        dispatch(setBenefit(filteredBenefits));
         const sortedBenefits = [...filteredBenefits].sort((a, b) => {
             if (selectedSortValue["Evidence Rating"]) {
                 const claimA = claims.find(claim =>
@@ -135,8 +120,7 @@ const ProtocolBenefitPage: React.FC = () => {
             return 0;
         });
         dispatch(setBenefit(sortedBenefits));
-    }, [benefits, linkedBenefitIds, selectedFilters, selectedSortValue, claims]);
-
+    }, [selectedSortValue, claims, protocolID, benefits]);
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
@@ -144,7 +128,8 @@ const ProtocolBenefitPage: React.FC = () => {
         if (searchTerm.trim() === "") {
             const filteredBenefits = benefits
                 .filter((benefit) => linkedBenefitIds.includes(benefit.benefitID));
-            dispatch(setBenefit(filteredBenefits));
+            // dispatch(setBenefit(filteredBenefits));
+            setBenefit(filteredBenefits)
         } else {
             const lowerCaseTerm = searchTerm.toLowerCase();
             const filtered = benefits.filter((item) =>
@@ -152,7 +137,8 @@ const ProtocolBenefitPage: React.FC = () => {
                     search.toLowerCase().includes(lowerCaseTerm)
                 )
             );
-            dispatch(setBenefit(filtered));
+            // dispatch(setBenefit(filtered));
+            setBenefit(filtered)
         }
     }, [searchTerm, dispatch]);
     const getRatingLabel = (rating?: number): string => {
@@ -174,7 +160,8 @@ const ProtocolBenefitPage: React.FC = () => {
 
     return (
         <>
-            <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            {/* <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
+            <SearchComponent />
             <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
                 <Card sx={{ boxShadow: "none", px: 1, py: "2px" }}>
                     <Box sx={{ display: 'flex', }}>

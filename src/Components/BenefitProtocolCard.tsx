@@ -81,7 +81,8 @@ const {claims}=jsonData;
                     px: 0,
                     height: "50px",
                     overflow: 'auto',
-                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'
+                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal',
+                    display:"flex",justifyContent:"center",alignItems:"center"
                   }}
                 >
                   {item.protocolName}
@@ -102,7 +103,8 @@ const {claims}=jsonData;
                   <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
                     <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                      {item?.protocolOverallImpactRating}
+                      {/* {item?.protocolOverallImpactRating} */}
+                      {overallEvidenceRating}
                     </Typography>
                   </Box>
                   {/* Icon 2 */}

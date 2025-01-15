@@ -5,6 +5,12 @@
   margin: 0px;
   padding: 0px;
 }
+body{
+    user-select: none; 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
 .family {
   font-family: "Open Sans", sans-serif;

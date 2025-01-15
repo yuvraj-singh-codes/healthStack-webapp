@@ -185,7 +185,7 @@ const ClaimPage = () => {
               </Typography>
               <Box sx={{ mt: 2 }}>
                 <Typography
-                  sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                  sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
 
                 >
                   Research Insights{" "}
@@ -369,7 +369,7 @@ const ClaimPage = () => {
               </Box>
               <Box>
                 <Typography
-                  sx={{ fontSize: "22px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                  sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
 
                 >
                   Instructions
@@ -393,7 +393,7 @@ const ClaimPage = () => {
                 }
                 <Box sx={{ marginBottom: 2 }}>
                   <Typography
-                    sx={{ fontSize: "20px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                    sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
 
                   >
                     Publications Consulted
