@@ -8,6 +8,7 @@ interface SelectFieldProps {
   placeholder: string;
   error: boolean;
   helperText: string;
+  name: string;
 }
 
 const CommonSelect: React.FC<SelectFieldProps> = ({
@@ -17,10 +18,12 @@ const CommonSelect: React.FC<SelectFieldProps> = ({
   placeholder,
   error,
   helperText,
+  name
 }) => {
   return (
     <FormControl fullWidth size="small" error={error} sx={{ mb: 2 }}>
       <Select
+        name={name}
         value={value}
         onChange={onChange}
         displayEmpty

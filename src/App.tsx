@@ -50,21 +50,21 @@ export default function App() {
     };
   }, []);
 
-  useEffect(() => {
-    const startTime = Date.now();
-    const popupShown = sessionStorage.getItem("popupShown") === "true";
+  // useEffect(() => {
+  //   const startTime = Date.now();
+  //   const popupShown = sessionStorage.getItem("popupShown") === "true";
 
-    const checkConditions = () => {
-      const timeSpent = (Date.now() - startTime) / 1000; // Convert to seconds
-      if (clickCount >= 7 && timeSpent >= 30 && !popupShown) {
-        setOpen(true);
-        sessionStorage.setItem("popupShown", "true");
-      }
-    };
+  //   const checkConditions = () => {
+  //     const timeSpent = (Date.now() - startTime) / 1000; // Convert to seconds
+  //     if (clickCount >= 7 && timeSpent >= 30 && !popupShown) {
+  //       setOpen(true);
+  //       sessionStorage.setItem("popupShown", "true");
+  //     }
+  //   };
 
-    const interval = setInterval(checkConditions, 1000); // Check conditions every second
-    return () => clearInterval(interval);
-  }, [clickCount]);
+  //   const interval = setInterval(checkConditions, 1000); // Check conditions every second
+  //   return () => clearInterval(interval);
+  // }, [clickCount]);
   return (
     <Provider store={store}>
       <BrowserRouter>

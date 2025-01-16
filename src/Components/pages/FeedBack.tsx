@@ -1,9 +1,10 @@
-import { Box, Button, Dialog, DialogContent, Typography } from "@mui/material";
+import { Alert, Box, Button, Dialog, DialogContent, Snackbar, Typography } from "@mui/material";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import CommonSelect from "../utils/CommonSelect";
 import CommonTextField from "../utils/CommonTextField";
 import { useState } from "react";
 import SearchComponent from "../utils/Search";
+import emailjs from 'emailjs-com'
 interface formdata {
     rating: number;
     feedbackType: string;
@@ -30,6 +31,8 @@ const Feedback: React.FC<FeedbackProps> = ({
     handleRatingClick,
 }) => {
     const [popup, setPopup] = useState<boolean>(false)
+    const [loading, setLoading] = useState(false);
+    const [openSnackbar, setOpenSnackbar] = useState({ open: false, message: "" });
     const [errors, setErrors] = useState<errortype>({
         feedbackType: false,
         rating: false,
@@ -57,18 +60,46 @@ const Feedback: React.FC<FeedbackProps> = ({
 
         return hasError;
     };
+
     const handleSubmit = () => {
         if (validation()) return;
-        console.log("Form Submitted===", formData);
+
+        const templateParams = {
+            name: formData.name,           // Maps to {{name}}
+            email: formData.email,         // Maps to {{email}}
+            rating: formData.rating,       // Maps to {{rating}}
+            feedbacktype: formData.feedbackType, // Maps to {{feedbacktype}}
+            feedbackText: formData.feedbackText, // Maps to {{feedbackText}}
+        };
+        setLoading(true);
+        emailjs
+            .send(
+                "service_n6grtv5", // Replace with your EmailJS Service ID
+                "template_healthstack", // Replace with your EmailJS Template ID
+                templateParams,
+                "tJi_u4CerqirAz-N9" // Replace with your EmailJS Public Key/User ID
+            )
+            .then(
+                (response) => {
+                    console.log("Email sent successfully!", response.status, response.text);
+                    setPopup(true);
+                    setFormData({
+                        rating: 0,
+                        feedbackType: "",
+                        feedbackText: "",
+                        name: "",
+                        email: "",
+                    });
+                },
+                (error) => {
+                    console.error("Failed to send email.", error);
+                    setOpenSnackbar({ open: true, message: "Failed to send email. Please try again later." });
+                }
+            ).finally(() => {
+                setLoading(false);
+                setOpen(false);
+            });
         setOpen(false);
-        setPopup(true)
-        setFormData({
-            rating: 0,
-            feedbackType: "",
-            feedbackText: "",
-            name: "",
-            email: "",
-        })
     };
 
     return (
@@ -109,6 +140,7 @@ const Feedback: React.FC<FeedbackProps> = ({
 
                 {/* Feedback Type */}
                 <CommonSelect
+                    name={"feedbackType"}
                     value={formData.feedbackType}
                     onChange={(e) => {
                         setFormData({
@@ -125,6 +157,7 @@ const Feedback: React.FC<FeedbackProps> = ({
 
                 {/* Feedback Text */}
                 <CommonTextField
+                    name={"feedbackText"}
                     value={formData.feedbackText}
                     onChange={(e) =>
                         setFormData({
@@ -141,6 +174,7 @@ const Feedback: React.FC<FeedbackProps> = ({
 
                 {/* Name Field (Optional) */}
                 <CommonTextField
+                    name={"name"}
                     value={formData.name}
                     onChange={(e) =>
                         setFormData({
@@ -155,6 +189,7 @@ const Feedback: React.FC<FeedbackProps> = ({
 
                 {/* Email Field (Optional) */}
                 <CommonTextField
+                    name={"email"}
                     value={formData.email}
                     onChange={(e) =>
                         setFormData({
@@ -186,7 +221,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                             },
                         }}
                     >
-                        Send Feedback
+                        {loading ? "Send Feedback..." : "Send Feedback"}
                     </Button>
                 </Box>
 
@@ -213,6 +248,16 @@ const Feedback: React.FC<FeedbackProps> = ({
                     </Box>
                 </Dialog>
             </Box>
+            <Snackbar
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                open={openSnackbar.open}
+                autoHideDuration={3000}
+                onClose={() => { setOpenSnackbar({ open: false, message: "" }) }}
+            >
+                <Alert onClose={() => { setOpenSnackbar({ open: false, message: "" }) }} severity="error">
+                    {openSnackbar.message}
+                </Alert>
+            </Snackbar>
         </>
     );
 };

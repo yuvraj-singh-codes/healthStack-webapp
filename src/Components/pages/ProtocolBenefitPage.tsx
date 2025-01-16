@@ -180,16 +180,16 @@ const ProtocolBenefitPage: React.FC = () => {
                                 }}
                             />
                         </Box>
-                        <Box sx={{ pb: 0, pr: 0, pl: 1 }}>
+                        <Box sx={{ pb: 0, pr: 0, pl: 1, }}>
                             <Typography
-                                sx={{ fontWeight: 'bold', color: '#212121', fontSize: "14px" }}
+                                sx={{ fontWeight: 'bold', color: '#212121', fontSize: "18px",mt:"-6px" }}
                             >
                                 {protocolsData?.protocolName}
                             </Typography>
                             <Typography variant="body2" sx={{ fontSize: '14px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
-                            <Grid container spacing={1}>
+                            <Grid container spacing={1} mt={"2px"}>
                                 <Grid item xs={12}>
                                     <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", flexWrap: "wrap", py: "2px" }}>
                                         <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
@@ -218,7 +218,7 @@ const ProtocolBenefitPage: React.FC = () => {
                     }}
                 >
                     <Typography variant="h6" sx={{ fontSize: 18 }}>
-                        <span style={{ fontWeight: 'bold' }}> Health Benefits</span> of this Protocol:
+                        <span style={{ fontWeight: 'bold' }}>Benefits</span> of this Protocol:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center">
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />

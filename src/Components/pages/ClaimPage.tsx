@@ -120,8 +120,8 @@ const ClaimPage = () => {
                     width: "100%",
                     px: "1px",
                     // height:"65px",
-                    borderBottomRightRadius:"5px",
-                    borderBottomLeftRadius:"5px"
+                    borderBottomRightRadius: "5px",
+                    borderBottomLeftRadius: "5px"
                   }}>
                     {singleProtocol?.protocolName}
                   </Typography>
@@ -170,8 +170,8 @@ const ClaimPage = () => {
                     width: "100%",
                     px: "1px",
                     // height:"65px",
-                    borderBottomRightRadius:"5px",
-                    borderBottomLeftRadius:"5px"
+                    borderBottomRightRadius: "5px",
+                    borderBottomLeftRadius: "5px"
                   }}>
                     {singleBenefit?.benefitName}
                   </Typography>
@@ -237,7 +237,7 @@ const ClaimPage = () => {
                       )}
                       <Grid item xs={12}>
                         <Typography variant="body2" sx={{ marginTop: 1 }}>
-                          This is based on these research-derived metrics
+                          This Overall Evidence Rating is calculated from these research-derived metrics:
                         </Typography>
                       </Grid>
                       {newClaim[0]?.claimImpactRating && (

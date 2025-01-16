@@ -70,8 +70,8 @@ const About = () => {
                 <Button onClick={handleBack} sx={{ color: "#000", border: "1px solid #212121", width: "286px", borderRadius: "30px", bgcolor: "#F4F1E6", textTransform: "capitalize", fontWeight: 600, mt: 2 }}>
                         Help us improve!
                     </Button>
-                    <Typography sx={{ fontSize: "14px", color: "#fff", mt:1}}>
-                        <span style={{fontSize:"11px",fontWeight:600}}>We’re in Beta</span> - and your voice matters.</Typography>
+                    <Typography sx={{ fontSize: "11px", color: "#fff",fontWeight:600}}>
+                        <span style={{fontWeight:600}}>We’re in Beta</span> - and your voice matters.</Typography>
                     <Typography sx={{ fontSize: "16px", color: "#fff",fontWeight:500,mt:1 }}>
                         This is just the beginning—there’s so much more coming to HealthStack soon.
                     </Typography>

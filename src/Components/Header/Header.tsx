@@ -18,7 +18,7 @@ function Header() {
                 }}>
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent:"start", px: 2,pt:2 }}>
                     <img
-                     onClick={() => navigate("/dashboard/home")}
+                     onClick={() => navigate("/")}
                         src={logo}
                         alt="HealthStack Logo"
                         style={{ height: "35px",cursor:"pointer" }}

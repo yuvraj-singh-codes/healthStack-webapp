@@ -188,12 +188,13 @@ const BenefitProtocolPage: React.FC = () => {
                             />
 
                         </Box>
-                        <Box sx={{ pt: "2px", pr: 0, pl: 1, }}>
+                        <Box sx={{pr: 0, pl: 1 }}>
                             <Typography
                                 sx={{
                                     fontWeight: 'bold',
                                     color: '#212121',
-                                    fontSize: '14px',
+                                    fontSize: '18px',
+                                    mt:"-6px"
                                 }}
                             >
                                 {benefitData?.benefitName}
@@ -218,7 +219,7 @@ const BenefitProtocolPage: React.FC = () => {
                     }}
                 >
                     <Typography sx={{ fontSize: 18 }}>
-                        <span style={{ fontWeight: 700 }}>Protocols</span> to achieve this Benefit:
+                        <span style={{ fontWeight: 700 }}>Protocols</span> for this Benefit:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center">
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={protocolFilterOption} />

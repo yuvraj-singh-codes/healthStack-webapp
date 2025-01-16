@@ -9,6 +9,7 @@ interface TextFieldComponentProps {
   helperText: string;
   multiline?: boolean;
   rows?: number;
+  name:string;
 }
 
 const CommonTextField: React.FC<TextFieldComponentProps> = ({
@@ -19,11 +20,13 @@ const CommonTextField: React.FC<TextFieldComponentProps> = ({
   helperText,
   multiline = false,
   rows = 4,
+  name
 }) => {
   return (
     <TextField
       fullWidth
       size="small"
+      name={name}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
