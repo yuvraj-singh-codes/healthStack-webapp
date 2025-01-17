@@ -25,9 +25,6 @@ const {claims}=jsonData;
           const overallEvidenceRating = matchedClaim
             ? matchedClaim.claimOverallEvidenceRating
             : "0";
-            const ezywins = matchedClaim
-            ? matchedClaim.claimEasyWinRating
-            : "0";
           return (
           <Grid item xs={4} sm={4} md={4} key={item?.protocolID}>
             <Card

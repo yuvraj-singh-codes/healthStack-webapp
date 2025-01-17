@@ -80,7 +80,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                 "tJi_u4CerqirAz-N9" // Replace with your EmailJS Public Key/User ID
             )
             .then(
-                (response) => {
+                (response: { status: number; text: string; }) => {
                     console.log("Email sent successfully!", response.status, response.text);
                     setPopup(true);
                     setFormData({
@@ -91,7 +91,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                         email: "",
                     });
                 },
-                (error) => {
+                (error: { text: string }) => {
                     console.error("Failed to send email.", error);
                     setOpenSnackbar({ open: true, message: "Failed to send email. Please try again later." });
                 }

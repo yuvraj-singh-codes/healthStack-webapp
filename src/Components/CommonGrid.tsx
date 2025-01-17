@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -57,7 +56,7 @@ export default function CommonGrid() {
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 {
                     data.map((item, index) => (
-                        <Grid item xs={6}>
+                        <Grid item xs={6} key={index}>
                             <Item>{item.text}</Item>
                         </Grid>
                     ))

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./Components/pages/LandingPage";
 import HomePage from "./Components/pages/Home";
@@ -15,7 +15,7 @@ import { Box } from "@mui/material";
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
-  const [clickCount, setClickCount] = useState<number>(0);
+  // const [clickCount, setClickCount] = useState<number>(0);
   const [formData, setFormData] = React.useState({
     rating: 0,
     feedbackType: "",
@@ -39,16 +39,16 @@ export default function App() {
     setOpen(false);
   };
 
-  useEffect(() => {
-    const handleUserClick = () => {
-      setClickCount((prevCount) => prevCount + 1);
-    };
+  // useEffect(() => {
+  //   const handleUserClick = () => {
+  //     setClickCount((prevCount) => prevCount + 1);
+  //   };
 
-    window.addEventListener("click", handleUserClick);
-    return () => {
-      window.removeEventListener("click", handleUserClick);
-    };
-  }, []);
+  //   window.addEventListener("click", handleUserClick);
+  //   return () => {
+  //     window.removeEventListener("click", handleUserClick);
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //   const startTime = Date.now();

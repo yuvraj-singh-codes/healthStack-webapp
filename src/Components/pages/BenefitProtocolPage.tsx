@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import { Box, Typography, Card, CardMedia } from '@mui/material';
 import BenefitProtocolCard from '../BenefitProtocolCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
@@ -8,16 +8,16 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
-import { CommonSearch } from '../utils/CommonSearch';
+// import { CommonSearch } from '../utils/CommonSearch';
 import SearchComponent from '../utils/Search';
-import { Protocol } from '../Interface/Interface';
+// import { Protocol } from '../Interface/Interface';
 
 const BenefitProtocolPage: React.FC = () => {
     const dispatch = useDispatch();
     const protocol = useSelector((state: RootState) => state.app.protocol);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    // const [searchTerm, setSearchTerm] = useState<string>("");
     const benefitId = queryParams.get('id');
     const { benefits, protocols, claims } = jsonData;
     const benefitData = benefits.find((val) => val.benefitID === benefitId);
@@ -28,7 +28,6 @@ const BenefitProtocolPage: React.FC = () => {
             return acc;
         }, {} as Record<string, boolean>)
     );
-    const [data,setData]=useState<Protocol[]>([])
     const handleSortChange = (label: string) => {
         setSelectedSortValue((prev) => {
             const updated = { ...prev };
@@ -137,29 +136,28 @@ const BenefitProtocolPage: React.FC = () => {
             return 0; 
         });
         dispatch(setProtocol(sortedProtocols));
-        setData(sortedProtocols)
     }, [selectedSortValue, claims, benefitId,protocols]);
    
 
-    const handleSearch = (term: string) => {
-        setSearchTerm(term);
-    };
+    // const handleSearch = (term: string) => {
+    //     setSearchTerm(term);
+    // };
 
-    useEffect(() => {
-        if (searchTerm.trim() !== "") {
-            const lowerCaseTerm = searchTerm.toLowerCase();
-            const filtered = protocols.filter((item) =>
-                item.protocolSearchTerms.some((search) =>
-                    search.toLowerCase().includes(lowerCaseTerm)
-                )
-            );
-            //  dispatch(setProtocol(filtered));
-        } else {
-            const filteredBenefits = protocols
-                .filter((item) => linkedProtocolIds.includes(item.protocolID));
-            // dispatch(setProtocol(filteredBenefits));
-        }
-    }, [searchTerm, dispatch]);
+    // useEffect(() => {
+    //     if (searchTerm.trim() !== "") {
+    //         const lowerCaseTerm = searchTerm.toLowerCase();
+    //         const filtered = protocols.filter((item) =>
+    //             item.protocolSearchTerms.some((search) =>
+    //                 search.toLowerCase().includes(lowerCaseTerm)
+    //             )
+    //         );
+    //         //  dispatch(setProtocol(filtered));
+    //     } else {
+    //         const filteredBenefits = protocols
+    //             .filter((item) => linkedProtocolIds.includes(item.protocolID));
+    //         // dispatch(setProtocol(filteredBenefits));
+    //     }
+    // }, [searchTerm, dispatch]);
     return (
         <>
             {/* <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
