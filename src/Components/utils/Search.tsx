@@ -85,7 +85,7 @@ const SearchComponent: React.FC = () => {
                             <InputAdornment position="end">
                                 {/* <FiSearch size={20} style={{ color: search ? "#000" : "#888" }} /> */}
                                 {
-                                    search ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} style={{ color: "#888" }} />
+                                    search ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} style={{ color: "#00C853" }} />
                                 }
                             </InputAdornment>
                         ),

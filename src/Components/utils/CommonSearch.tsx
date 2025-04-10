@@ -43,7 +43,7 @@ export const CommonSearch: FC<CommonSearchProps> = ({ onChange, searchTerm, setS
                 margin: "auto",
             }}
         >
-            <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
+            <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer",color:"#1D1B20" }} />
             <TextField
                 size="small"
                 fullWidth
@@ -66,7 +66,7 @@ export const CommonSearch: FC<CommonSearchProps> = ({ onChange, searchTerm, setS
                     endAdornment: (
                         <InputAdornment position="end">
                             {
-                                searchTerm ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} color="#888" />
+                                searchTerm ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} color="#00C853" />
                             }
                         </InputAdornment>
                     ),

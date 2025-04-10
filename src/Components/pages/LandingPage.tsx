@@ -2,7 +2,11 @@ import { Typography, Button, Grid, IconButton } from '@mui/material';
 import { Box } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
-import logo from '../../assets/Group _70.svg'
+import Logo from "../../assets/images/landingpageLogo.png";
+import buildStrenght from "../../assets/images/buildStrength.png";
+import boostImmunity from "../../assets/images/boostImmunity.png";
+import browsAll from "../../assets/images/browseAll.png";
+import improveSleep from "../../assets/images/improveSleep.png";
 interface dataTypes {
     icon: string;
     text: string;
@@ -11,39 +15,27 @@ interface dataTypes {
 }
 const data: dataTypes[] = [
     {
-        icon: "💤",
-        text: "Improve Your Sleep",
-        color: "#D6F4E6",
-        linkTo: "benefit_005"
-    },
-    {
-        icon: "🛡️",
-        text: "Boost Your Immune System",
-        color: "#E5F0F7",
-        linkTo: "benefit_002"
-    },
-    {
-        icon: "🔥",
-        text: "Burn Fat",
-        color: "#EAFBF6",
-        linkTo: "benefit_006"
-    },
-    {
-        icon: "💪",
+        icon: buildStrenght,
         text: "Build Strength",
-        color: "#F6E7FB",
+        color: "#226296",
         linkTo: "benefit_019"
     },
     {
-        icon: "🧘‍♂️",
-        text: "Manage Stress",
-        color: "#CDEFFB",
-        linkTo: "benefit_004"
+        icon: boostImmunity,
+        text: "Boost your immunity",
+        color: "#226296",
+        linkTo: "benefit_002"
     },
     {
-        icon: "🔍",
-        text: "Explore All...",
-        color: "#F4F1E6",
+        icon: improveSleep,
+        text: "Improve Your Sleep",
+        color: "#226296",
+        linkTo: "benefit_005"
+    },
+    {
+        icon: browsAll,
+        text: "Browse All",
+        color: "#226296",
         linkTo: "/dashboard/home"
     },
 ]
@@ -54,101 +46,66 @@ const LandingPage = () => {
     }
 
     return (
-        <Box className="bg_landingpage family" sx={{ maxWidth: 600, margin: "auto", py: 4, textAlign: 'center' }}>
-            {/* <p className='logoLandingPage' style={{ color: "#FFFFFF", textAlign: "center", position: "relative" }}>
-                HealthStack <sup style={{ color: "#FFDD5C", fontSize: "14px", fontWeight: 700, position: "absolute", top: "-10px", marginLeft: "5px" }}>Beta</sup>
-            </p> */}
+        <Box className="bg-[#FFFFFF] family" sx={{ maxWidth: 600, margin: "auto", py: 4, textAlign: 'center' }}>
             <Box>
                 <img
                     onClick={() => navigate("/dashboard/home")}
-                    src={logo}
+                    src={Logo}
                     alt="HealthStack Logo"
-                    style={{ height: "35px", cursor: "pointer", marginLeft: "30px" }}
+                    style={{ height: "auto", width: "auto", cursor: "pointer" }}
                 />
             </Box>
-            <Typography className='landing_heading2' textAlign={'center'}>
-                Science-Backed Health Made Simple.
-            </Typography>
-            <Box>
-                <img className='logo_img_landing' src='/images/heading.png' alt='' />
-            </Box>
-
-            <Button onClick={handleRedirect} sx={{ color: "#000", border: "1px solid #212121", width: "286px", borderRadius: "30px", bgcolor: "#F4F1E6", textTransform: "capitalize", fontWeight: 600, mt: 2 }}>
+            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, mt: 2, fontSize: "24px" }}>
                 Get Started
             </Button>
-            <Typography mt={2} sx={{ color: "#ffffff", fontSize: "14px", fontWeight: 400 }}>
-                Discover health habits that work for you.
+            <Typography mt={2} sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>
+                Discover natural health habits that work for you.
             </Typography>
-            <Typography sx={{ color: "#ffffff", fontSize: "14px", fontWeight: 400 }}>
-                Backed by over <strong>200 million research publications</strong>.
+            <Typography sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>
+                Backed by over  <strong>200 million research publications.</strong>
             </Typography>
-            <Box sx={{ width: '100%', p: 1, bgcolor: "#fff", mt: 2 }}>
+            <Box sx={{ width: '100%', px: 4, py: 2, bgcolor: "#F0EFEF", mt: 2 }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     {
                         data.map((item, index) => (
-                            <Grid item xs={6} key={index} >
-                                <Button onClick={() => {
-                                    if (index === 5) {
-                                        navigate(item.linkTo);
-                                    } else {
-                                        navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
-                                        // if (index !== 3) {
-                                        //     navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
-                                        // }
-                                    }
-                                }}
-                                    sx={{ bgcolor: item.color, height: "50px", border: "1px solid #212121", borderRadius: "50px", color: "#212121", display: "flex", alignItems: "center", justifyContent: "space-between" }} size='small' fullWidth
+                            <Grid item xs={12} key={index} >
+                                <Button
+                                    size='small' fullWidth
+                                    onClick={() => {
+                                        if (index === 3) {
+                                            navigate(item.linkTo);
+                                        } else {
+                                            navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
+                                        }
+                                    }}
+                                    sx={{ bgcolor: item.text === "Browse All" ? "#226296" : "#ffffff", height: "50px", border: item.text === "Browse All" ? "1px solid #226296" : "1px solid #A8A8A8", borderRadius: "50px", color: "#212121", display: "flex", alignItems: "center", justifyContent: "space-between", pr: 0, pl: 2, mt: item.text === "Browse All" ? 2 : 0,":hover":{bgcolor:"none",color:"none"} }}
                                 >
-                                    <Typography fontSize={14} ml={'5px'}>
-                                        {item.icon}
-                                    </Typography>
-                                    <Typography sx={{ textTransform: "capitalize", fontWeight: 700, fontSize: 12, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
+                                    <img
+                                        src={item.icon}
+                                        alt={item.text}
+                                        style={{ height: "40px", width: "40px" }}
+                                    />
+                                    <Typography sx={{ textTransform: "capitalize", fontWeight: 700, fontSize: 14, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', color: item.text === "Browse All" ? "#ffffff" : item.color }}>
                                         {item.text}
                                     </Typography>
-                                    <IconButton size='small' sx={{ color: "black" }}>
-                                        <IoIosArrowForward size={18} />
+                                    <IconButton size='small' sx={{ color: item.text === "Browse All" ? "#226296" : "#fff", bgcolor: item.text === "Browse All" ? "#ffffff" : "#226296", height: "49px", width: "50px" }}>
+                                        <IoIosArrowForward size={40} />
                                     </IconButton>
                                 </Button>
-                                {/* <Box onClick={() => {
-                                    if (index === 5) {
-                                        handleRedirect();
-                                    }
-                                }} bgcolor={item.color} sx={{ border: "1px solid #212121", borderRadius: "100px", display: "flex", justifyContent: "space-between", alignItems: "center", py: 1,px:"2px",height:"50px" }}>
-                                    <Typography fontSize={14} ml={'5px'}>
-                                        {item.icon}
-                                    </Typography>
-                                    <Typography sx={{ textTransform: "capitalize", fontWeight: 700, fontSize: 12, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal'}}>
-                                        {item.text}
-                                    </Typography>
-                                    <IconButton size='small' sx={{color:"black"}}>
-                                    <IoIosArrowForward size={18} />
-                                    </IconButton>
-                                </Box> */}
                             </Grid>
                         ))
                     }
                 </Grid>
             </Box>
-            <Typography sx={{ marginTop: '1rem', color: "#fff", fontSize: "20px" }}>
-                Finally, Health Advice You Can Trust
+            <Typography sx={{ marginTop: '1rem', color: "#333333", fontSize: "20px",fontWeight:700,px:8 }}>
+                Finally, Health Advice You Can Trust.
             </Typography>
-            <Typography sx={{ mt: 1, color: "#fff", fontSize: "28px" }}>
-                COMPLETELY FREE.
-            </Typography>
-            <Button onClick={handleRedirect} sx={{ color: "#000", border: "1px solid #212121", width: "286px", borderRadius: "30px", bgcolor: "#F4F1E6", textTransform: "capitalize", fontWeight: 600, mt: 2 }}>
+            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, mt: 2, fontSize: "24px" }}>
                 Try it for yourself
             </Button>
-            <Typography sx={{ mt: 1, color: "#fff", fontSize: "14px" }}>
-                No Sign-up. No Sponsors. No Fads.
+            <Typography sx={{ mt: 1, color: "#333333", fontSize: "14px" }}>
+                No sponsors. No gimmicks. Just science.
             </Typography>
-            <Box sx={{ textAlign: "justify", p: 2 }}>
-                <Typography sx={{ color: "#000", fontSize: "16px", fontWeight: "bold" }}>
-                    We’re testing things out.
-                </Typography>
-                <Typography sx={{ color: "#000", fontSize: "12px" }}>
-                    HealthStack is in Beta and may not always provide fully accurate or comprehensive information. Please consult a qualified health professional before making any lifestyle changes.
-                </Typography>
-            </Box>
         </Box>
     );
 };

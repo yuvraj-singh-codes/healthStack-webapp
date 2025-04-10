@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Box, Grid, Card, CardMedia, Button } from '@mui/material';
-import mainImg from '../../assets/mainUIImage.svg'
+import { Typography, Box, Grid, Card, Button } from '@mui/material';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
 import jsonData from '../../healthstack_data_example.json'
@@ -104,6 +103,15 @@ const HomePage: React.FC = () => {
             [label]: !prev[label],
         }));
     };
+    const handleSelectAll = () => {
+        const options = activeTab === 1 ? filterOptionsProtocol : filterOptionsBenefit;
+        const allSelected = options.every((option) => selectedFilters[option]);
+        const newState = options.reduce((acc, option) => {
+            acc[option] = !allSelected;
+            return acc;
+        }, {} as Record<string, boolean>);
+        setSelectedFilters(newState);
+    };
     const handleSortChange = (label: string) => {
         setSearchTerm("");
         if (activeTab === 0) {
@@ -111,10 +119,10 @@ const HomePage: React.FC = () => {
                 const isSelected = prev[label];
                 return {
                     ...Object.keys(prev).reduce((acc, key) => {
-                        acc[key] = false; 
+                        acc[key] = false;
                         return acc;
                     }, {} as Record<string, boolean>),
-                    [label]: !isSelected, 
+                    [label]: !isSelected,
                 };
             });
         } else if (activeTab === 1) {
@@ -143,7 +151,7 @@ const HomePage: React.FC = () => {
             }))
             .filter((protocol) => protocol.protocolCategories?.length > 0);
         dispatch(setProtocol(filterProtocols));
-        if(searchTerm.trim()!==""){
+        if (searchTerm.trim() !== "") {
             searchItems();
         }
     }, [selectedFilters])
@@ -160,7 +168,7 @@ const HomePage: React.FC = () => {
             }))
             .filter((benefit) => benefit.benefitCategories?.length > 0);
         dispatch(setBenefit(filteredBenefits));
-        if(searchTerm.trim()!==""){
+        if (searchTerm.trim() !== "") {
             searchItems();
         }
     }, [selectedFilters])
@@ -175,7 +183,7 @@ const HomePage: React.FC = () => {
         } else {
             dispatch(setBenefit(benefits));
         }
-        if(searchTerm.trim()!==""){
+        if (searchTerm.trim() !== "") {
             searchItems();
         }
     }, [selectedSortValue]);
@@ -203,7 +211,7 @@ const HomePage: React.FC = () => {
             return 0;
         });
         dispatch(setProtocol(sorted));
-        if(searchTerm.trim()!==""){
+        if (searchTerm.trim() !== "") {
             searchItems();
         }
     }, [selectedSortValue]);
@@ -211,39 +219,38 @@ const HomePage: React.FC = () => {
     const handleSearch = (term: string) => {
         setSearchTerm(term);
     };
-const searchItems=()=>{
-    if (searchTerm.trim() === "") {
-        dispatch(setBenefit(benefits));
-        dispatch(setProtocol(protocols));
-    } else {
-        const lowerCaseTerm = searchTerm.toLowerCase();
-        if (activeTab === 0) {
-            const filtered = benefits.filter((item) =>
-                item.benefitSearchTerms.some((search) =>
-                    search.toLowerCase().includes(lowerCaseTerm)
-                )
-            );
-            dispatch(setBenefit(filtered));
+    const searchItems = () => {
+        if (searchTerm.trim() === "") {
+            dispatch(setBenefit(benefits));
+            dispatch(setProtocol(protocols));
         } else {
-            const filtered = protocols.filter((item) =>
-                item.protocolSearchTerms.some((search) =>
-                    search.toLowerCase().includes(lowerCaseTerm)
-                )
-            );
-            dispatch(setProtocol(filtered));
+            const lowerCaseTerm = searchTerm.toLowerCase();
+            if (activeTab === 0) {
+                const filtered = benefits.filter((item) =>
+                    item.benefitSearchTerms.some((search) =>
+                        search.toLowerCase().includes(lowerCaseTerm)
+                    )
+                );
+                dispatch(setBenefit(filtered));
+            } else {
+                const filtered = protocols.filter((item) =>
+                    item.protocolSearchTerms.some((search) =>
+                        search.toLowerCase().includes(lowerCaseTerm)
+                    )
+                );
+                dispatch(setProtocol(filtered));
+            }
         }
     }
-}
     useEffect(() => {
         searchItems();
-    }, [activeTab, searchTerm,dispatch]);
-console.log(searchTerm,"term=====");
+    }, [activeTab, searchTerm, dispatch]);
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>
             {/* Banner */}
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <Box
+            {/* <Box
                 sx={{
                     backgroundImage: `url(${mainImg})`,
                     backgroundSize: "cover",
@@ -268,54 +275,62 @@ console.log(searchTerm,"term=====");
                 >
                     Empower your health journey with science-backed protocols.
                 </Typography>
-            </Box>
+            </Box> */}
 
             {/* Tabs */}
-            <Box display="flex" alignItems="center" p={1} sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff" }}>
-                <Box sx={{ border: '1px solid #94a5bd', borderRadius: "50px" }}>
-                    <Button
-                        onClick={() => handleTabChange(0)}
-                        sx={{
-                            bgcolor: activeTab === 0 ? "#49454F" : "#fff",
-                            borderRadius: "50px",
-                            color: activeTab === 0 ? "#fff" : "#212121",
-                            fontWeight: activeTab === 0 ? "bold" : "",
-                            textTransform: "capitalize",
-                            px: 2,
-                            "&:hover": { bgcolor: activeTab === 0 ? "#3d3a42" : "#f0f0f0" },
-                        }}
-                    >
-                        Benefits
-                    </Button>
-                    <Button
-                        onClick={() => handleTabChange(1)}
-                        sx={{
-                            bgcolor: activeTab === 1 ? "#49454F" : "#fff",
-                            borderRadius: "50px",
-                            color: activeTab === 1 ? "#fff" : "#212121",
-                            fontWeight: activeTab === 1 ? "bold" : "",
-                            textTransform: "capitalize",
-                            px: 2,
-                            "&:hover": { bgcolor: activeTab === 1 ? "#3d3a42" : "#f0f0f0" },
-                        }}
-                    >
-                        Protocols
-                    </Button>
+            <Box sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff", }}>
+                <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
+                    <Box sx={{ border: '1px solid #A8A8A8', borderRadius: "50px" }}>
+                        <Button
+                            onClick={() => handleTabChange(0)}
+                            sx={{
+                                bgcolor: activeTab === 0 ? "#00C853" : "#fff",
+                                border: activeTab === 0 ? "1px solid #333333" : "",
+                                borderRadius: "50px",
+                                color: activeTab === 0 ? "#fff" : "#A8A8A8",
+                                fontWeight: activeTab === 0 ? "bold" : "",
+                                textTransform: "capitalize",
+                                px: 4,
+                                "&:hover": { bgcolor: activeTab === 0 ? "#00B44A" : "#f0f0f0" },
+                            }}
+                        >
+                            Benefits
+                        </Button>
+                        <Button
+                            onClick={() => handleTabChange(1)}
+                            sx={{
+                                bgcolor: activeTab === 1 ? "#226296" : "#fff",
+                                border: activeTab === 1 ? "1px solid #226296" : "",
+                                borderRadius: "50px",
+                                color: activeTab === 1 ? "#fff" : "#A8A8A8",
+                                fontWeight: activeTab === 1 ? "bold" : "",
+                                textTransform: "capitalize",
+                                px: 4,
+                                "&:hover": { bgcolor: activeTab === 1 ? "#347AB5" : "#f0f0f0" },
+                            }}
+                        >
+                            Protocols
+                        </Button>
+                    </Box>
                 </Box>
+                <Box marginLeft="auto" pl={2} py={1}>
+                    <Typography sx={{ fontSize: "20px", fontWeight: 700, color: "#333333" }}>Select a <span style={{ color:activeTab===0? "#00C853":"#226296" }}>{activeTab===0? "Health Benefit:":"Health Protocol:"}</span></Typography>
+                    <Box sx={{ display: "flex", gap: 2 }}>
+                        <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
+                        <FilterMenu
+                            options={activeTab === 1 ? filterOptionsProtocol : filterOptionsBenefit}
+                            onChange={handleFilterChange}
+                            selectedFilters={selectedFilters}
+                            onSelectAll={handleSelectAll}
+                        />
+                    </Box>
 
-                <Box marginLeft="auto" display="flex" alignItems="center">
-                    <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
-                    <FilterMenu
-                        options={activeTab === 1 ? filterOptionsProtocol : filterOptionsBenefit}
-                        onChange={handleFilterChange}
-                        selectedFilters={selectedFilters}
-                    />
                 </Box>
             </Box>
 
             {/* Cards Display */}
             {activeTab === 0 ? (
-                <Box sx={{ padding: 2, bgcolor: '#EAF5F6' }}>
+                <Box sx={{ padding: 2, bgcolor: '#fff' }}>
                     {
                         benefitLoading ? <SkeletonLoader /> : (
                             <Grid container spacing={2}>
@@ -327,19 +342,35 @@ console.log(searchTerm,"term=====");
                                                 position: 'relative',
                                                 borderRadius: 2,
                                                 overflow: 'hidden',
+                                                border: "1px solid #E8E5E5",
+                                                p: 1,
+                                                boxShadow: "none"
                                             }}
                                         >
-                                            <CardMedia
-                                                component="img"
-                                                image={item.benefitImageID}
-                                                alt={item.benefitName}
-                                                sx={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'cover',
-                                                }}
-                                            />
-                                            <Box
+                                            <Box sx={{ width: "100%", height: "65px" }}>
+                                                <img
+                                                    src={item.benefitImageID}
+                                                    alt={item.benefitName}
+                                                    style={{
+                                                        borderRadius: "10px",
+                                                        objectFit: "fill",
+                                                        width: "100%",
+                                                        height: "100%"
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                            >
+                                                {item.benefitName}
+                                            </Typography>
+                                            <Typography
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                            >
+                                                {""}
+                                            </Typography>
+
+                                            {/* <Box
                                                 className="scrollbar"
                                                 sx={{
                                                     position: 'absolute',
@@ -363,7 +394,7 @@ console.log(searchTerm,"term=====");
                                                 >
                                                     {item.benefitName}
                                                 </Typography>
-                                            </Box>
+                                            </Box> */}
                                         </Card>
                                     </Grid>
                                 ))) : (
@@ -388,19 +419,34 @@ console.log(searchTerm,"term=====");
                                                 position: 'relative',
                                                 borderRadius: 2,
                                                 overflow: 'hidden',
+                                                border: "1px solid #E8E5E5",
+                                                p: 1,
+                                                boxShadow: "none"
                                             }}
                                         >
-                                            <CardMedia
-                                                component="img"
-                                                image={item.protocolImageID}
-                                                alt={item.protocolName}
-                                                sx={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'cover',
-                                                }}
-                                            />
-                                            <Box
+                                            <Box sx={{ width: "100%", height: "65px" }}>
+                                                <img
+                                                    src={item.protocolImageID}
+                                                    alt={item.protocolName}
+                                                    style={{
+                                                        borderRadius: "10px",
+                                                        objectFit: "fill",
+                                                        width: "100%",
+                                                        height: "100%"
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                            >
+                                                {item.protocolName}
+                                            </Typography>
+                                            <Typography
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                            >
+                                                {""}
+                                            </Typography>
+                                            {/* <Box
                                                 className="scrollbar"
                                                 sx={{
                                                     position: 'absolute',
@@ -425,7 +471,7 @@ console.log(searchTerm,"term=====");
                                                 >
                                                     {item.protocolName}
                                                 </Typography>
-                                            </Box>
+                                            </Box> */}
                                         </Card>
                                     </Grid>
                                 ))) : (

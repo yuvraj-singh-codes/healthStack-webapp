@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Card, CardMedia } from '@mui/material';
+import { Box, Typography, Card, Button } from '@mui/material';
 import BenefitProtocolCard from '../BenefitProtocolCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
 import jsonData from '../../healthstack_data_example.json'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
-// import { CommonSearch } from '../utils/CommonSearch';
 import SearchComponent from '../utils/Search';
+import { MdKeyboardArrowRight } from "react-icons/md";
 // import { Protocol } from '../Interface/Interface';
 
 const BenefitProtocolPage: React.FC = () => {
+    const nevigate = useNavigate();
     const dispatch = useDispatch();
     const protocol = useSelector((state: RootState) => state.app.protocol);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    // const [searchTerm, setSearchTerm] = useState<string>("");
     const benefitId = queryParams.get('id');
     const { benefits, protocols, claims } = jsonData;
     const benefitData = benefits.find((val) => val.benefitID === benefitId);
@@ -48,7 +48,7 @@ const BenefitProtocolPage: React.FC = () => {
         dispatch(setProtocol(filteredProtocols));
     }, [protocols, linkedProtocolIds])
     const option = protocols
-            .filter((item) => linkedProtocolIds.includes(item.protocolID));
+        .filter((item) => linkedProtocolIds.includes(item.protocolID));
     const uniqueProtocolCategories = Array.from(
         new Set(
             option.flatMap(item => item.protocolCategories)
@@ -67,6 +67,16 @@ const BenefitProtocolPage: React.FC = () => {
             ...prev,
             [label]: !prev[label],
         }));
+    };
+
+    const handleSelectAll = () => {
+        const options = filterOptionsData;
+        const allSelected = options.every((option) => selectedFilters[option]);
+        const newState = options.reduce((acc, option) => {
+            acc[option] = !allSelected;
+            return acc;
+        }, {} as Record<string, boolean>);
+        setSelectedFilters(newState);
     };
 
     useEffect(() => {
@@ -130,14 +140,14 @@ const BenefitProtocolPage: React.FC = () => {
                 );
                 const evidenceRatingA = claimA ? claimA.claimOverallEvidenceRating : 0;
                 const evidenceRatingB = claimB ? claimB.claimOverallEvidenceRating : 0;
-                return evidenceRatingB - evidenceRatingA; 
+                return evidenceRatingB - evidenceRatingA;
             }
 
-            return 0; 
+            return 0;
         });
         dispatch(setProtocol(sortedProtocols));
-    }, [selectedSortValue, claims, benefitId,protocols]);
-   
+    }, [selectedSortValue, claims, benefitId, protocols]);
+
 
     // const handleSearch = (term: string) => {
     //     setSearchTerm(term);
@@ -160,71 +170,68 @@ const BenefitProtocolPage: React.FC = () => {
     // }, [searchTerm, dispatch]);
     return (
         <>
-            {/* <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
             <SearchComponent />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
                 <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
                     <Box sx={{ display: 'flex' }}>
-                        <Box
-                            sx={{
-                                background: 'radial-gradient(circle, #ABD8DB 20%, #FFFFFF 70%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: '120px',
-                                height: '120px',
-                            }}
-                        >
-                            <CardMedia
-                                component="img"
-                                image={benefitData?.benefitImageID}
-                                alt=""
-                                sx={{
-                                    width: '120px',
-                                    height: '120px',
-                                }}
-                            />
-
-                        </Box>
-                        <Box sx={{pr: 0, pl: 1 }}>
+                        <Box sx={{ pr: 0, pl: 1 }}>
                             <Typography
                                 sx={{
-                                    fontWeight: 'bold',
-                                    color: '#212121',
-                                    fontSize: '18px',
-                                    mt:"-6px"
+                                    fontWeight: 700,
+                                    color: '#00C853',
+                                    fontSize: '24px',
+                                    mt: "-6px",
                                 }}
                             >
                                 {benefitData?.benefitName}
                             </Typography>
                             <Typography
+                                sx={{ fontWeight: 400, color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                            >
+                                {""}
+                            </Typography>
+                            <Typography
                                 variant="body2"
-                                sx={{ fontSize: '14px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
                                 {benefitData?.benefitDescription}
                             </Typography>
+                        </Box>
+                        <Box sx={{ width:{xs:"200px",sm:"150px",md:"120px"}, height: "auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                            <img
+                                src={benefitData?.benefitImageID}
+                                alt={benefitData?.benefitName}
+                                style={{
+                                    borderRadius: "10px",
+                                    objectFit: "fill",
+                                    width: "100%",
+                                    height: "65px"
+                                }}
+                            />
+                            <Button onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
                         </Box>
                     </Box>
                 </Card>
                 <Box
                     sx={{
-                        display: 'flex',
-                        alignItems: 'center',
+                        // display: 'flex',
+                        // alignItems: 'center',
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
                         px: 2,
-                        pt:1
+                        pt: 1
                     }}
                 >
-                    <Typography sx={{ fontSize: 18 }}>
-                        <span style={{ fontWeight: 700 }}>Protocols</span> for this Benefit:
+                    <Typography sx={{ fontSize: "20px", color: "#333333" }}>
+                        <span style={{ fontWeight: 700 }}>Protocols</span> linked to Heart Health:
                     </Typography>
-                    <Box marginLeft="auto" display="flex" alignItems="center">
+                    <Box marginLeft="auto" display="flex" alignItems="center" gap={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={protocolFilterOption} />
                         <FilterMenu
                             options={filterOptionsData}
                             onChange={handleFilterChange}
                             selectedFilters={selectedFilters}
+                            onSelectAll={handleSelectAll}
                         />
                     </Box>
                 </Box>

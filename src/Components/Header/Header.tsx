@@ -1,7 +1,8 @@
 import {
     Box,
+    Typography,
 } from "@mui/material";
-import logo from '../../assets/Group_171.svg';
+import logo from '../../assets/images/PagesLogo.png';
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -16,13 +17,14 @@ function Header() {
                     WebkitBackdropFilter: "blur(5px)",
                     maxWidth: 600, margin: "auto",
                 }}>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent:"start", px: 2,pt:2 }}>
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent:"space-between", px: 2,pt:2 }}>
                     <img
                      onClick={() => navigate("/")}
                         src={logo}
                         alt="HealthStack Logo"
-                        style={{ height: "35px",cursor:"pointer" }}
+                        style={{ height: "auto",cursor:"pointer" }}
                     /> 
+                    <Typography sx={{color:"#333333",fontSize:"14px",fontWeight:700,mt:1}}>Early access version</Typography>
                 </Box>
             </Box>
     );
