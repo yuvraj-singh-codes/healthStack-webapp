@@ -2,24 +2,26 @@ import React, { useEffect, useState } from 'react';
 import {
     Box,
     Typography,
-    CardMedia,
     Card,
     Grid,
+    Button,
 } from '@mui/material';
 import ProtocolBenefitCard from '../ProtocolBenefitCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import jsonData from '../../healthstack_data_example.json'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setBenefit } from '../../features/allStateSlice';
-// import { CommonSearch } from '../utils/CommonSearch';
 import { Hourglass } from 'lucide-react';
 import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import SearchComponent from '../utils/Search';
+import { MdKeyboardArrowRight } from "react-icons/md";
+import StatusIndicator from '../utils/StatusIndicator';
 
 const ProtocolBenefitPage: React.FC = () => {
+    const nevigate = useNavigate();
     const dispatch = useDispatch();
     const benefit = useSelector((state: RootState) => state.app.benefit);
     // const [searchTerm, setSearchTerm] = useState<string>("");
@@ -75,6 +77,15 @@ const ProtocolBenefitPage: React.FC = () => {
             ...prev,
             [label]: !prev[label],
         }));
+    };
+    const handleSelectAll = () => {
+        const options = filterOptionsData;
+        const allSelected = options.every((option) => selectedFilters[option]);
+        const newState = options.reduce((acc, option) => {
+            acc[option] = !allSelected;
+            return acc;
+        }, {} as Record<string, boolean>);
+        setSelectedFilters(newState);
     };
 
     useEffect(() => {
@@ -136,96 +147,102 @@ const ProtocolBenefitPage: React.FC = () => {
     //         // dispatch(setBenefit(filtered));
     //     }
     // }, [searchTerm, dispatch]);
-    const getRatingLabel = (rating?: number): string => {
-        switch (rating) {
-            case 1:
-                return 'Low';
-            case 2:
-                return 'Low/Moderate';
-            case 3:
-                return 'Moderate';
-            case 4:
-                return 'Moderate/High';
-            case 5:
-                return 'High';
-            default:
-                return '';
-        }
-    };
+    // const getRatingLabel = (rating?: number): string => {
+    //     switch (rating) {
+    //         case 1:
+    //             return 'Low';
+    //         case 2:
+    //             return 'Low/Moderate';
+    //         case 3:
+    //             return 'Moderate';
+    //         case 4:
+    //             return 'Moderate/High';
+    //         case 5:
+    //             return 'High';
+    //         default:
+    //             return '';
+    //     }
+    // };
 
     return (
         <>
-            {/* <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
             <SearchComponent />
             <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
                 <Card sx={{ boxShadow: "none", px: 1, py: "2px" }}>
-                    <Box sx={{ display: 'flex', }}>
-                        <Box
-                            sx={{
-                                background: 'radial-gradient(circle, #D4C89E 20%, #FFFFFF 70%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                width: "120px",
-                                height: '120px',
-                            }}
-                        >
-                            <CardMedia
-                                component="img"
-                                image={protocolsData?.protocolImageID}
-                                alt=""
-                                sx={{
-                                    width: "120px",
-                                    height: '120px',
-                                }}
-                            />
-                        </Box>
-                        <Box sx={{ pb: 0, pr: 0, pl: 1, }}>
+                    <Grid container>
+                        <Grid item xs={8} >
                             <Typography
-                                sx={{ fontWeight: 'bold', color: '#212121', fontSize: "18px",mt:"-6px" }}
+                                sx={{
+                                    fontWeight: 700,
+                                    color: '#226296',
+                                    fontSize: '24px',
+                                    mt: "-6px",
+                                }}
                             >
                                 {protocolsData?.protocolName}
                             </Typography>
-                            <Typography variant="body2" sx={{ fontSize: '14px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
+                            <Typography
+                                sx={{ fontWeight: 400, color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                            >
+                                {""}
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
-                            <Grid container spacing={1} mt={"2px"}>
-                                <Grid item xs={12}>
-                                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", flexWrap: "wrap", py: "2px" }}>
-                                        <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                            <Hourglass size={14} />
-                                            {getRatingLabel(protocolsData?.protocolRelativeTimeRating)}
-                                        </Typography>
-                                        <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                            <PiCurrencyDollarSimpleBold size={16} />
-                                            {getRatingLabel(protocolsData?.protocolRelativeCostRating)}
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Box>
+
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                                <img
+                                    src={protocolsData?.protocolImageID}
+                                    alt={protocolsData?.protocolName}
+                                    style={{
+                                        borderRadius: "10px",
+                                        objectFit: "fill",
+                                        width: "100%",
+                                        height: "65px"
+                                    }}
+                                />
+                                <Button fullWidth onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                    <Grid container spacing={1}>
+                        <Grid item xs={12}>
+                            <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
+                                <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
+                                    <Hourglass size={16} />  <StatusIndicator />
+                                    {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
+                                </Typography>
+                                <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
+                                    <PiCurrencyDollarSimpleBold size={16} />  <StatusIndicator />
+                                    {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </Card>
                 {/* Filter Section */}
                 <Box
                     sx={{
-                        display: 'flex',
-                        alignItems: 'center',
+                        // display: 'flex',
+                        // alignItems: 'center',
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
                         px: 2,
                         pt: 1
                     }}
                 >
-                    <Typography variant="h6" sx={{ fontSize: 18 }}>
-                        <span style={{ fontWeight: 'bold' }}>Benefits</span> of this Protocol:
+                    <Typography sx={{ fontSize: "20px", color: "#333333" }}>
+                        <span style={{ fontWeight: 700 }}>Health Benefit</span> linked to {protocolsData?.protocolName}:
                     </Typography>
-                    <Box marginLeft="auto" display="flex" alignItems="center">
+                    <Box marginLeft="auto" display="flex" alignItems="center" gap={2}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />
                         <FilterMenu
                             options={filterOptionsData}
                             onChange={handleFilterChange}
                             selectedFilters={selectedFilters}
+                            onSelectAll={handleSelectAll}
                         />
                     </Box>
                 </Box>

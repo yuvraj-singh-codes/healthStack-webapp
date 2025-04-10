@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Card, Button } from '@mui/material';
+import { Box, Typography, Card, Button, Grid } from '@mui/material';
 import BenefitProtocolCard from '../BenefitProtocolCard';
 import { SortMenu } from '../utils/SortMenu';
 import { FilterMenu } from '../utils/FilterMenu';
@@ -173,8 +173,8 @@ const BenefitProtocolPage: React.FC = () => {
             <SearchComponent />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
                 <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
-                    <Box sx={{ display: 'flex' }}>
-                        <Box sx={{ pr: 0, pl: 1 }}>
+                    <Grid container>
+                        <Grid item xs={8}>
                             <Typography
                                 sx={{
                                     fontWeight: 700,
@@ -196,8 +196,9 @@ const BenefitProtocolPage: React.FC = () => {
                             >
                                 {benefitData?.benefitDescription}
                             </Typography>
-                        </Box>
-                        <Box sx={{ width:{xs:"200px",sm:"150px",md:"120px"}, height: "auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",gap:1}}>
                             <img
                                 src={benefitData?.benefitImageID}
                                 alt={benefitData?.benefitName}
@@ -208,9 +209,10 @@ const BenefitProtocolPage: React.FC = () => {
                                     height: "65px"
                                 }}
                             />
-                            <Button onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
-                        </Box>
-                    </Box>
+                            <Button fullWidth onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </Card>
                 <Box
                     sx={{
@@ -223,7 +225,7 @@ const BenefitProtocolPage: React.FC = () => {
                     }}
                 >
                     <Typography sx={{ fontSize: "20px", color: "#333333" }}>
-                        <span style={{ fontWeight: 700 }}>Protocols</span> linked to Heart Health:
+                        <span style={{ fontWeight: 700 }}>Protocols</span> linked to {benefitData?.benefitName}:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={protocolFilterOption} />

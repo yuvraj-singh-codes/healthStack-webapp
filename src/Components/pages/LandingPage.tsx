@@ -2,7 +2,7 @@ import { Typography, Button, Grid, IconButton } from '@mui/material';
 import { Box } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
-import Logo from "../../assets/images/landingpageLogo.png";
+import Logo from "../../assets/images/landingPageLogo.svg";
 import buildStrenght from "../../assets/images/buildStrength.png";
 import boostImmunity from "../../assets/images/boostImmunity.png";
 import browsAll from "../../assets/images/browseAll.png";
@@ -55,7 +55,7 @@ const LandingPage = () => {
                     style={{ height: "auto", width: "auto", cursor: "pointer" }}
                 />
             </Box>
-            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, mt: 2, fontSize: "24px" }}>
+            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, fontSize: "24px" }}>
                 Get Started
             </Button>
             <Typography mt={2} sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>

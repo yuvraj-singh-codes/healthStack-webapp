@@ -2,7 +2,7 @@ import {
     Box,
     Typography,
 } from "@mui/material";
-import logo from '../../assets/images/PagesLogo.png';
+import logo from '../../assets/images/homePageLogo.svg';
 import { useNavigate } from "react-router-dom";
 
 function Header() {
