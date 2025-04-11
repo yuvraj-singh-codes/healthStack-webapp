@@ -1,10 +1,10 @@
 import { Alert, Box, Button, Dialog, DialogContent, Snackbar, Typography } from "@mui/material";
-import { FaStar, FaRegStar } from "react-icons/fa";
 import CommonSelect from "../utils/CommonSelect";
 import CommonTextField from "../utils/CommonTextField";
 import { useState } from "react";
 import SearchComponent from "../utils/Search";
 import emailjs from 'emailjs-com'
+import { IoIosStarOutline,IoIosStar } from "react-icons/io";
 interface formdata {
     rating: number;
     feedbackType: string;
@@ -129,9 +129,9 @@ const Feedback: React.FC<FeedbackProps> = ({
                             onClick={() => handleRatingClick(index)}
                         >
                             {index < formData.rating ? (
-                                <FaStar style={{ color: "#ABD8DB", fontSize: "48px" }} />
+                                <IoIosStar style={{ color: "#00C853", fontSize: "48px" }} />
                             ) : (
-                                <FaRegStar style={{ color: "#000", fontSize: "48px" }} />
+                                <IoIosStarOutline style={{ color: "#A8A8A8", fontSize: "48px" }} />
                             )}
                         </Box>
                     ))}
@@ -207,39 +207,36 @@ const Feedback: React.FC<FeedbackProps> = ({
                     <Button
                         onClick={handleSubmit}
                         sx={{
-                            mt: 2,
-                            bgcolor: "#D4C89E",
-                            border: "1px solid #212121",
-                            color: "#212121",
+                            color: "#fff",
+                            width: "286px",
+                            borderRadius: "30px",
+                            bgcolor: "#00C853",
                             textTransform: "capitalize",
-                            fontWeight: "bold",
-                            width: "219px",
-                            height: "40px",
-                            "&:hover": {
-                                backgroundColor: "#000",
-                                color: "#fff",
-                            },
+                            fontWeight: 600,
+                            mt: 2,
+                            ":hover": { bgcolor: "#00B44A" }
                         }}
                     >
-                        {loading ? "Send Feedback..." : "Send Feedback"}
+                        {loading ? "Sending..." : "Send"}
                     </Button>
                 </Box>
 
                 {/* Disclaimer */}
-                <Typography sx={{ textAlign: "center", color: "#000", fontSize: "12px" }}>
-                    All feedback submitted is collected for testing purposes only and will not be shared with third parties.
+                <Typography sx={{ textAlign: "center", color: "#333333", fontSize: "12px" }}>
+                    Your information is kept strictly confidential and will never be shared with third parties.
                 </Typography>
                 <Dialog sx={{ maxWidth: 600, margin: "auto" }} open={popup} onClose={() => setPopup(false)}>
                     <DialogContent>
-                        <Typography sx={{ p: 2, fontWeight: "bold" }}>Thank you, your feedback was submitted</Typography>
+                        <Typography sx={{ p: 2, fontWeight: "bold",color:"#333333" }}>Thank you, your feedback was submitted</Typography>
                     </DialogContent>
                     <Box sx={{ display: "flex", justifyContent: "center", pb: 2 }}>
                         <Button sx={{
-                            bgcolor: "#D4C89E",
-                            border: "1px solid #212121",
-                            color: "#212121",
+                            color: "#fff",
+                            borderRadius: "30px",
+                            bgcolor: "#00C853",
                             textTransform: "capitalize",
-                            fontWeight: "bold",
+                            fontWeight: 600,
+                            ":hover": { bgcolor: "#00B44A" },
                             width: "219px",
                             height: "40px",
                         }} onClick={() => setPopup(false)}>

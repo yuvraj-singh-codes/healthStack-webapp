@@ -1,18 +1,22 @@
-import { useState } from "react";
-import { Box, Typography, Grid, Divider, IconButton } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Box, Typography, Grid, IconButton, Button } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp, } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineLike } from "react-icons/ai";
 import SearchComponent from "../utils/Search";
+import { FaArrowRight } from "react-icons/fa";
+import { MdKeyboardArrowRight } from "react-icons/md";
 interface textType {
   text_1: boolean;
   text_2: boolean;
   text_3: boolean;
   text_4: boolean;
 }
-
-const ClaimPage = () => {
+interface FeedbackProps {
+  setOpen: (value: boolean) => void;
+}
+const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
   const navigate = useNavigate();
   const { claims, protocols, benefits } = jsonData;
   const location = useLocation();
@@ -36,6 +40,17 @@ const ClaimPage = () => {
     text_4: false,
   });
 
+  useEffect(() => {
+    const hasSeenModal = localStorage.getItem('hasSeenFeedbackModal');
+    if (!hasSeenModal) {
+      const timer = setTimeout(() => {
+        setOpen(true);
+        localStorage.setItem('hasSeenFeedbackModal', 'true');
+      }, 1000); // 1 second delay
+
+      return () => clearTimeout(timer); // Cleanup on unmount
+    }
+  }, []);
   const toggleText2 = () => {
     setShowText((prevState) => ({ ...prevState, text_2: !prevState.text_2 }));
   };
@@ -76,119 +91,57 @@ const ClaimPage = () => {
         newClaim.length !== 0 ? (
           <Box sx={{ padding: 2, maxWidth: 600, margin: "auto" }}>
             <Typography
-              sx={{ fontSize: "20px", color: "#000", fontWeight: "600", pb: 2 }}
+              sx={{ fontSize: "20px", color: "#333333", fontWeight: 700, pb: 2 }}
             >
-              What does the Research Say?{" "}
+              {singleProtocol?.protocolName} for {singleBenefit?.benefitName}
             </Typography>
-            <Box
-              sx={{
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: { xs: 10, sm: 15, md: 20, lg: 20 },
-                mt: { xs: 0, sm: 1, md: 2, lg: 2 },
-              }}
-            >
-              {/* Left side div - Sauna Therapy */}
-              <Box
-                sx={{
-                  width: '150px',
-                  height: '150px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  background: 'radial-gradient(circle, #D4C89E 20%, #FFFFFF 70%)',
-                  borderRadius: '50%',
-                }}
-              >
-                <Box onClick={() => navigate(`/dashboard/protocol-benefit?id=${protocolId}`)} sx={{ width: '120px', height: '120px', position: 'relative', zIndex: 10 }}>
-                  <img
-                    src={singleProtocol?.protocolImageID}
-                    alt={singleProtocol?.protocolName}
-                    width={120}
-                    height={120}
-                    style={{ objectFit: 'cover', boxShadow: "1px 4px 5px gray", borderRadius: "5px" }}
-                  />
-                  <Typography className="scrollbar" variant="body2" fontWeight="600" fontSize="12px" sx={{
-                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', overflow: "auto", bgcolor: "red",
-                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                    padding: '8px',
-                    position: 'absolute',
-                    bottom: 0,
-                    textAlign: 'center',
-                    width: "100%",
-                    px: "1px",
-                    // height:"65px",
-                    borderBottomRightRadius: "5px",
-                    borderBottomLeftRadius: "5px"
-                  }}>
-                    {singleProtocol?.protocolName}
-                  </Typography>
+
+            <Grid container spacing={2}>
+              <Grid item xs={8}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <Box sx={{ width: "100%", height: "65px" }}>
+                    <img
+                      src={singleProtocol?.protocolImageID}
+                      alt={singleProtocol?.protocolName}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "fill",
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    />
+                  </Box>
+                  <FaArrowRight size={40} style={{ color: "#00C853" }} />
+                  <Box sx={{ width: "100%", height: "65px" }}>
+                    <img
+                      src={singleBenefit?.benefitImageID}
+                      alt={singleBenefit?.benefitName}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "fill",
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    />
+                  </Box>
                 </Box>
-              </Box>
-
-              {/* Connection Line (Oval Shape) */}
-              <Box
-                sx={{
-                  width: { xs: '310px', sm: '350px', md: '370px', lg: '370px' },
-                  height: { xs: '170px', sm: "180px", md: "200px", lg: "200px" },
-                  borderRadius: '70%',
-                  position: 'absolute',
-                  // top: "2px",
-                  border: '2px solid #666666',
-                }}
-              />
-
-              {/* Right side div - Heart Health */}
-              <Box
-                sx={{
-                  width: '150px',
-                  height: '150px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  background: 'radial-gradient(circle, #ABD8DB 20%, #FFFFFF 70%)',
-                  borderRadius: '50%',
-                }}
-              >
-                <Box onClick={() => { navigate(`/dashboard/benefit-protocol?id=${benefitId}`) }} sx={{ width: '120px', height: '120px', position: 'relative', zIndex: 10 }}>
-                  <img
-                    src={singleBenefit?.benefitImageID}
-                    alt={singleBenefit?.benefitName}
-                    width={120}
-                    height={120}
-                    style={{ objectFit: 'cover', boxShadow: "1px 4px 5px gray", borderRadius: "5px" }}
-                  />
-                  <Typography className="scrollbar" variant="body2" fontWeight="600" fontSize="12px" sx={{
-                    wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', overflow: "auto", bgcolor: "red",
-                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                    padding: '8px',
-                    position: 'absolute',
-                    bottom: 0,
-                    textAlign: 'center',
-                    width: "100%",
-                    px: "1px",
-                    // height:"65px",
-                    borderBottomRightRadius: "5px",
-                    borderBottomLeftRadius: "5px"
-                  }}>
-                    {singleBenefit?.benefitName}
-                  </Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                  <Button fullWidth onClick={() => { navigate(`/dashboard/benefit-protocol?id=${benefitId}`) }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
+                  <Button fullWidth onClick={() => navigate(`/dashboard/protocol-benefit?id=${protocolId}`)} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
                 </Box>
-              </Box>
-            </Box>
-
+              </Grid>
+            </Grid>
             <Box sx={{ mt: { xs: 4, md: 6 } }}>
-              <Typography variant="body2" sx={{ marginTop: 1 }}>
+              <Typography sx={{ marginTop: 1, color: "#333333", fontSize: "13px" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
               <Box sx={{ mt: 2 }}>
                 <Typography
-                  sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-
+                  sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 700 }}
                 >
-                  Research Insights{" "}
+                  What does the Research Say?{" "}
                   <IconButton onClick={toggleText3} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {showText.text_3 && (
@@ -198,37 +151,33 @@ const ClaimPage = () => {
                         <Grid item xs={12}>
                           <Box
                             sx={{
-                              display: "flex",
-                              border: "2px solid #ABD8DB",
+                              border: "3px solid #00C853",
                               borderRadius: "5px",
-                              bgcolor: "#EAF5F6",
+                              bgcolor: "#ffffff",
                             }}
                           >
-                            <Box
-                              sx={{
-                                mr: 2,
-                                color: "#000",
-                                mt: 1,
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                gap: "5px",
-                                pl: 1,
-                              }}
-                            >
-                              <img src="/images/Star_Badge.svg" alt="" height={"20px"} width={"auto"} />
-                              <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimOverallEvidenceRating}/5`}</p>
-                            </Box>
-                            <Box sx={{ p: 0 }}>
-                              <Typography variant="subtitle1" fontWeight="normal">
-                                Overall Evidence Rating:
-                                <Typography component="span" color="#000" fontWeight="bold">
-                                  {" "}
-                                  {getTextualDescription(newClaim[0]?.claimOverallEvidenceRating)}
+                            <Box p={1}>
+                              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", }}>
+                                <Typography sx={{ color: "#333333", fontSize: "16px" }}>
+                                  Overall Evidence Rating:
+                                  <Typography component="span" sx={{ color: "#333333", fontSize: "16px", fontWeight: 700 }}>
+                                    {" "}
+                                    {getTextualDescription(newClaim[0]?.claimOverallEvidenceRating)}
+                                  </Typography>
                                 </Typography>
-                              </Typography>
-                              <Divider />
-                              <Typography variant="body2" color="#000">
+                                <Box
+                                  sx={{
+                                    color: "#333333",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                  }}
+                                >
+                                  <img src="/images/Star_Badge.svg" alt="" height={"20px"} width={"auto"} />
+                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimOverallEvidenceRating}/5`}</p>
+                                </Box>
+                              </Box>
+                              <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
                                 {newClaim[0]?.claimOverallEvidenceRatingDescription}
                               </Typography>
                             </Box>
@@ -244,37 +193,33 @@ const ClaimPage = () => {
                         <Grid item xs={12}>
                           <Box
                             sx={{
-                              display: "flex",
-                              border: "2px solid #F0EFEF",
-                              borderRadius: "5px",
-                              bgcolor: "#F7F7F7",
+                              border: "1px solid #A8A8A8",
+                              borderRadius: "10px",
+                              bgcolor: "#ffffff"
                             }}
                           >
-                            <Box
-                              sx={{
-                                mr: 2,
-                                color: "#000",
-                                mt: 1,
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                gap: "5px",
-                                pl: 1,
-                              }}
-                            >
-                              <AiOutlineLike size={24} />
-                              <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimImpactRating}/5`}</p>
-                            </Box>
-                            <Box sx={{ p: 0 }}>
-                              <Typography variant="subtitle1" fontWeight="normal">
-                                Impact:
-                                <Typography component="span" color="#000" fontWeight="bold">
-                                  {" "}
-                                  {getTextualDescription(newClaim[0]?.claimImpactRating)}
+                            <Box p={1}>
+                              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", }}>
+                                <Typography sx={{ color: "#333333", fontSize: "16px" }}>
+                                  Impact:
+                                  <Typography component="span" sx={{ color: "#333333", fontSize: "16px", fontWeight: 700 }}>
+                                    {" "}
+                                    {getTextualDescription(newClaim[0]?.claimImpactRating)}
+                                  </Typography>
                                 </Typography>
-                              </Typography>
-                              <Divider />
-                              <Typography variant="body2" color="#000">
+                                <Box
+                                  sx={{
+                                    color: "#333333",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                  }}
+                                >
+                                  <AiOutlineLike size={24} style={{ color: "#333333" }} />
+                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimImpactRating}/5`}</p>
+                                </Box>
+                              </Box>
+                              <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
                                 {newClaim[0]?.claimImpactRatingDescription}
                               </Typography>
                             </Box>
@@ -285,37 +230,33 @@ const ClaimPage = () => {
                         <Grid item xs={12}>
                           <Box
                             sx={{
-                              display: "flex",
-                              border: "2px solid #F0EFEF",
-                              borderRadius: "5px",
-                              bgcolor: "#F7F7F7",
+                              border: "1px solid #A8A8A8",
+                              borderRadius: "10px",
+                              bgcolor: "#ffffff"
                             }}
                           >
-                            <Box
-                              sx={{
-                                mr: 2,
-                                color: "#000",
-                                mt: 1,
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                gap: "5px",
-                                pl: 1,
-                              }}
-                            >
-                              <img src="/images/Potted_Flower_Tulip.svg" alt="" height={"auto"} width={"auto"} />
-                              <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimMaturityRating}/5`}</p>
-                            </Box>
-                            <Box sx={{ p: 0 }}>
-                              <Typography variant="subtitle1" fontWeight="normal">
-                                Maturity:
-                                <Typography component="span" color="#000" fontWeight="bold">
-                                  {" "}
-                                  {getTextualDescription(newClaim[0]?.claimMaturityRating)}
+                            <Box p={1} >
+                              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", }}>
+                                <Typography sx={{ color: "#333333", fontSize: "16px" }}>
+                                  Maturity:
+                                  <Typography component="span" sx={{ color: "#333333", fontSize: "16px", fontWeight: 700 }}>
+                                    {" "}
+                                    {getTextualDescription(newClaim[0]?.claimMaturityRating)}
+                                  </Typography>
                                 </Typography>
-                              </Typography>
-                              <Divider />
-                              <Typography variant="body2" color="#000">
+                                <Box
+                                  sx={{
+                                    color: "#333333",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                  }}
+                                >
+                                  <img src="/images/Potted_Flower_Tulip.svg" alt="" height={"auto"} width={"auto"} />
+                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimMaturityRating}/5`}</p>
+                                </Box>
+                              </Box>
+                              <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
                                 {newClaim[0]?.claimMaturityRatingDescription}
                               </Typography>
                             </Box>
@@ -326,37 +267,33 @@ const ClaimPage = () => {
                         <Grid item xs={12}>
                           <Box
                             sx={{
-                              display: "flex",
-                              border: "2px solid #F0EFEF",
-                              borderRadius: "5px",
-                              bgcolor: "#F7F7F7",
+                              border: "1px solid #A8A8A8",
+                              borderRadius: "10px",
+                              bgcolor: "#ffffff"
                             }}
                           >
-                            <Box
-                              sx={{
-                                mr: 2,
-                                color: "#000",
-                                mt: 1,
-                                display: "flex",
-                                flexDirection: "column",
-                                alignItems: "center",
-                                gap: "5px",
-                                pl: 1,
-                              }}
-                            >
-                              <img src="/images/gmail_groups.svg" alt="" height={"auto"} width={"auto"} />
-                              <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimConsensusRating}/5`}</p>
-                            </Box>
-                            <Box sx={{ p: 0 }}>
-                              <Typography variant="subtitle1" fontWeight="normal">
-                                Consensus:
-                                <Typography component="span" color="#000" fontWeight="bold">
-                                  {" "}
-                                  {getTextualDescription(newClaim[0]?.claimConsensusRating)}
+                            <Box p={1} >
+                              <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", }}>
+                                <Typography sx={{ color: "#333333", fontSize: "16px" }}>
+                                  Consensus:
+                                  <Typography component="span" sx={{ color: "#333333", fontSize: "16px", fontWeight: 700 }}>
+                                    {" "}
+                                    {getTextualDescription(newClaim[0]?.claimConsensusRating)}
+                                  </Typography>
                                 </Typography>
-                              </Typography>
-                              <Divider />
-                              <Typography variant="body2" color="#000">
+                                <Box
+                                  sx={{
+                                    color: "#333333",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                  }}
+                                >
+                                  <img src="/images/gmail_groups.svg" alt="" height={"auto"} width={"auto"} />
+                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimConsensusRating}/5`}</p>
+                                </Box>
+                              </Box>
+                              <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
                                 {newClaim[0]?.claimConsensusRatingDescription}
                               </Typography>
                             </Box>
@@ -367,13 +304,17 @@ const ClaimPage = () => {
                   </>
                 )}
               </Box>
+              <Typography
+                sx={{ fontSize: "16px", color: "#333333", fontWeight: 500 }}>
+                References:
+              </Typography>
               <Box>
                 <Typography
-                  sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                  sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
 
                 >
                   Instructions
-                  <IconButton onClick={toggleText2} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
+                  <IconButton onClick={toggleText2} size="small" sx={{ color: "#333333", fontSize: "24px", mt: "5px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {
                   showText.text_2 && (
@@ -382,8 +323,8 @@ const ClaimPage = () => {
                         instructionPoints?.map((item, index) => (
                           <Grid item xs={12} key={index} >
                             <Box sx={{ display: "flex", gap: "5px" }}>
-                              <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>{index + 1}.</Typography>
-                              <Typography sx={{ fontSize: "14px" }}>{item}</Typography>
+                              <Typography sx={{ fontSize: "14px", fontWeight: "bold", color: "#333333" }}>{index + 1}.</Typography>
+                              <Typography sx={{ fontSize: "14px", color: "#333333" }}>{item}</Typography>
                             </Box>
                           </Grid>
                         ))
@@ -393,11 +334,11 @@ const ClaimPage = () => {
                 }
                 <Box sx={{ marginBottom: 2 }}>
                   <Typography
-                    sx={{ fontSize: "16px", color: "#000", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                    sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
 
                   >
                     Publications Consulted
-                    <IconButton onClick={toggleText4} size="small" sx={{ color: "#000", fontSize: "24px", mt: "5px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
+                    <IconButton onClick={toggleText4} size="small" sx={{ color: "#333333", fontSize: "24px", mt: "5px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                   </Typography>
                   {showText.text_4 && (
                     <Box sx={{ marginTop: 1 }}>
@@ -405,12 +346,12 @@ const ClaimPage = () => {
                         {newClaim[0]?.claimSources.map((item, index) => (
                           <Grid item xs={12} mt={1} key={index}>
                             <Box sx={{ display: "flex", gap: "5px" }}>
-                              <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700 }}>{index + 1}.</Typography>
+                              <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>{index + 1}.</Typography>
                               <Box>
-                                <Typography sx={{ fontSize: "16px", color: "#000", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
+                                <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
                                 <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
                                 <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
-                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#000", fontWeight: "600" }}>Summary : </span>{item?.summary}</Typography>
+                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#333333", fontWeight: 600 }}>Summary : </span>{item?.summary}</Typography>
                               </Box>
                             </Box>
                           </Grid>
@@ -424,7 +365,7 @@ const ClaimPage = () => {
           </Box>
         ) : (
           <Box sx={{ display: "flex", justifyContent: "center", p: 4, maxWidth: 600, margin: "auto" }}>
-            <Typography sx={{ color: "#000", fontSize: "20px", fontWeight: "bold" }}>No claim found</Typography>
+            <Typography sx={{ color: "#333333", fontSize: "20px", fontWeight: "bold" }}>No claim found</Typography>
           </Box>
         )
       }

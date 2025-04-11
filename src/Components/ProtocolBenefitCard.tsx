@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardMedia, Typography, Grid } from "@mui/material";
+import { Box, Card, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Benefit } from "./Interface/Interface";
 import jsonData from "../healthstack_data_example.json";
@@ -29,61 +29,50 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
             ? matchedClaim.claimOverallEvidenceRating
             : "0";
           return (
-            <Grid item key={item.benefitID} xs={4} sm={4} md={4} lg={4}>
+            <Grid item key={item.benefitID} xs={4}>
               <Card
-                onClick={() =>
-                  navigate(
-                    `/dashboard/claim?benefitId=${item.benefitID}&&protocolId=${protocolID}`
-                  )
-                }
                 sx={{
                   borderRadius: "10px",
-                  border: "1px solid #e0e0e0",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
-                  cursor: "pointer",
+                  border: "1px solid #E8E5E5",
+                  p: 1,
+                  boxShadow: "none"
                 }}
               >
                 {/* Top Section with Background */}
                 <Box
                   sx={{
                     width: "100%",
-                    backgroundColor: "#EAF5F6",
+                    backgroundColor: "#ffffff",
                     borderRadius: "10px 10px 0 0",
-                    pt: 1,
-                    px: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+
                   }}
                 >
                   {/* Image */}
-                  <CardMedia
-                    component="img"
-                    image={item.benefitImageID}
-                    alt={item.benefitName}
-                    sx={{
-                      borderRadius: "10px",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <Box sx={{ width: "100%", height: "65px" }}>
+                    <img
+                      src={item.benefitImageID}
+                      alt={item.benefitName}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "fill",
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    />
+                  </Box>
+
                   {/* Title */}
                   <Typography
-                    variant="subtitle2"
-                    className="scrollbar"
-                    sx={{
-                      textAlign: "center",
-                      fontSize: "12px",
-                      mt: "2px",
-                      height: "50px",
-                      overflow: "auto",
-                      fontWeight:600,
-                      wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal',
-                       display:"flex",justifyContent:"center",alignItems:"center"
-                    }}
+                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item.benefitName}
+                  </Typography>
+                  <Typography
+                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                  >
+                    {""}
                   </Typography>
                 </Box>
                 {/* Icons Section */}
@@ -98,8 +87,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                     <img
                       src="/images/Star_Badge.svg"
                       alt=""
-                      height={"auto"}
-                      width={"auto"}
+                      height={"16px"}
+                      width={"16px"}
                     />
                     {/* Display Evidence Rating */}
                     <Typography variant="caption" sx={{ fontSize: "14px" }}>
@@ -107,6 +96,11 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                     </Typography>
                   </Box>
                 </Box>
+                <Button fullWidth onClick={() =>
+                  navigate(
+                    `/dashboard/claim?benefitId=${item.benefitID}&&protocolId=${protocolID}`
+                  )
+                } size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px",borderRadius:"50px" }} >View</Button>
               </Card>
             </Grid>
           );

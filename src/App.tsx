@@ -94,7 +94,7 @@ export default function App() {
                 path="/dashboard/protocol-benefit"
                 element={<ProtocolBenefitPage />}
               />
-              <Route path="/dashboard/claim" element={<ClaimPage />} />
+              <Route path="/dashboard/claim" element={<ClaimPage setOpen={setOpen} />} />
             </Route>
           </Routes>
 
