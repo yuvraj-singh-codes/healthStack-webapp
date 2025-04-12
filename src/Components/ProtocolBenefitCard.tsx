@@ -3,6 +3,9 @@ import { Box, Card, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { Benefit } from "./Interface/Interface";
 import jsonData from "../healthstack_data_example.json";
+import StatusIndicator from "./utils/StatusIndicator";
+import { EvidenceColorBoxes } from "./utils/StatusColor";
+import medalIcon from "../assets/images/medal.svg";
 
 interface BenefitProtocolCardProps {
   protocolID: string | null;
@@ -27,7 +30,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
           );
           const overallEvidenceRating = matchedClaim
             ? matchedClaim.claimOverallEvidenceRating
-            : "0";
+            : 0;
           return (
             <Grid item key={item.benefitID} xs={4}>
               <Card
@@ -76,25 +79,11 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                   </Typography>
                 </Box>
                 {/* Icons Section */}
-                <Box sx={{ py: 1, px: 2, width: "100%" }}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <img
-                      src="/images/Star_Badge.svg"
-                      alt=""
-                      height={"16px"}
-                      width={"16px"}
-                    />
-                    {/* Display Evidence Rating */}
-                    <Typography variant="caption" sx={{ fontSize: "14px" }}>
-                      {overallEvidenceRating}/5
-                    </Typography>
-                  </Box>
+                <Box sx={{ py: "8px", width: "100%" }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
+                      <img src={medalIcon} alt='' height={'17px'} width={'16px'} />
+                      <StatusIndicator size={17} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                    </Box>
                 </Box>
                 <Button fullWidth onClick={() =>
                   navigate(

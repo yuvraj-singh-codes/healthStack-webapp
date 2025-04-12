@@ -182,7 +182,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                             name: e.target.value,
                         })
                     }
-                    placeholder="First Name (Optional) - How should we address you?"
+                    placeholder="First Name (Optional)"
                     error={false}
                     helperText=""
                 />

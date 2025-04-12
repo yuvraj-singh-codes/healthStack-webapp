@@ -8,6 +8,7 @@ interface AppState {
     protocolLoading: boolean;
     selectedSortValue: Record<string, boolean>;
     selectedFilters: Record<string, boolean>;
+    isTourOpen: boolean;
 }
 
 const initialState: AppState = {
@@ -17,6 +18,7 @@ const initialState: AppState = {
     protocolLoading: true,
     selectedSortValue: {},
     selectedFilters: {},
+    isTourOpen: false
 };
 
 const appSlice = createSlice({
@@ -51,6 +53,9 @@ const appSlice = createSlice({
             state.selectedSortValue = {};
             state.selectedFilters = {};
         },
+        setIsTourOpen(state, action: PayloadAction<boolean>) {
+            state.isTourOpen = action.payload;
+          }
     },
 });
 
@@ -62,6 +67,7 @@ export const {
     setSelectedSortValue,
     setSelectedFilters,
     resetState,
+    setIsTourOpen
 } = appSlice.actions;
 
 export default appSlice.reducer;

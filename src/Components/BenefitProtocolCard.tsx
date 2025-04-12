@@ -2,9 +2,12 @@ import React from 'react';
 import { Card, Typography, Box, Grid, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Protocol } from './Interface/Interface';
-import { Hourglass } from 'lucide-react';
-import { PiCurrencyDollarSimpleBold } from 'react-icons/pi';
 import jsonData from "../healthstack_data_example.json";
+import medalIcon from "../assets/images/medal.svg";
+import dollerIcon from "../assets/images/dollar.svg";
+import timerIcon from "../assets/images/timer.svg";
+import StatusIndicator from './utils/StatusIndicator';
+import { colorBoxes, EvidenceColorBoxes } from './utils/StatusColor';
 interface BenefitProtocolCardProps {
   benefitId: string | null;
   data: Protocol[];
@@ -24,7 +27,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
           );
           const overallEvidenceRating = matchedClaim
             ? matchedClaim.claimOverallEvidenceRating
-            : "0";
+            : 0;
           return (
             <Grid item xs={4} sm={4} md={4} key={item?.protocolID}>
               <Card
@@ -74,37 +77,25 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
 
                 {/* Icons Section */}
                 <Box
-                  sx={{ py: 1, px: 2, width: "100%" }}
+                  sx={{ py: 1, width: "100%" }}
                 >
                   <Box sx={{
                     display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: '15px',
+                    flexDirection:"column",
+                    
+                    gap: '5px',
                   }}>
-                    {/* Icon 1 */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <img src='/images/Star_Badge.svg' alt='' height={'auto'} width={'auto'} />
-                      <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                        {/* {item?.protocolOverallImpactRating} */}
-                        {overallEvidenceRating}
-                      </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
+                      <img src={timerIcon} alt='' height={'14px'} width={'14px'} />
+                      <StatusIndicator size={14} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                     </Box>
-                    {/* Icon 2 */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      {/* <img src='/images/Timer.svg' alt='' height={'auto'} width={'auto'} /> */}
-                      <Hourglass size={16} />
-                      <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                        {item?.protocolRelativeTimeRating}
-                      </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
+                      <img src={dollerIcon} alt='' height={'14px'} width={'14px'} />
+                      <StatusIndicator size={14} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                     </Box>
-                    {/* Icon 3 */}
-                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      {/* <img src='/images/Currency_Dollar.svg' alt='' height={'auto'} width={'auto'} /> */}
-                      <PiCurrencyDollarSimpleBold size={18} />
-                      <Typography variant="caption" sx={{ fontSize: '12px' }}>
-                        {item?.protocolRelativeCostRating}
-                      </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
+                      <img src={medalIcon} alt='' height={'17px'} width={'16px'} />
+                      <StatusIndicator size={17} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                   </Box>
                 </Box>

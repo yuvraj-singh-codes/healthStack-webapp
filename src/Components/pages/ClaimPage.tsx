@@ -3,10 +3,19 @@ import { Box, Typography, Grid, IconButton, Button } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp, } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
-import { AiOutlineLike } from "react-icons/ai";
 import SearchComponent from "../utils/Search";
 import { FaArrowRight } from "react-icons/fa";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import ClaimModal from "../utils/ClaimModal";
+import ConfirmTourModal from "../utils/ConfirmTourModal";
+import { setValue } from "../../features/tabSlice";
+import { useDispatch } from "react-redux";
+import StatusIndicator from "../utils/StatusIndicator";
+import { EvidenceColorBoxes } from "../utils/StatusColor";
+import medalIcon from "../../assets/images/medal.svg";
+import targetIcon from "../../assets/images/target.svg";
+import booksIcon from "../../assets/images/books.svg";
+import handShakeIcon from "../../assets/images/handshake.svg";
 interface textType {
   text_1: boolean;
   text_2: boolean;
@@ -17,12 +26,14 @@ interface FeedbackProps {
   setOpen: (value: boolean) => void;
 }
 const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { claims, protocols, benefits } = jsonData;
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const benefitId = queryParams.get('benefitId');
   const protocolId = queryParams.get('protocolId');
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const singleProtocol = protocols.find(protocol =>
     (protocol.protocolID === protocolId)
   );
@@ -41,16 +52,30 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
   });
 
   useEffect(() => {
-    const hasSeenModal = localStorage.getItem('hasSeenFeedbackModal');
-    if (!hasSeenModal) {
-      const timer = setTimeout(() => {
+    const visits = parseInt(localStorage.getItem("page_visits") || "0", 10);
+    const modalShown = localStorage.getItem("getFeedBack") === "true";
+    if (!modalShown) {
+      const newVisits = visits + 1;
+      localStorage.setItem("page_visits", newVisits.toString());
+      if (newVisits >= 3) {
         setOpen(true);
-        localStorage.setItem('hasSeenFeedbackModal', 'true');
+        localStorage.setItem("getFeedBack", "true");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const hasClaimTourModal = localStorage.getItem('isClaimTourModal');
+    if (!hasClaimTourModal) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        localStorage.setItem('isClaimTourModal', 'true');
       }, 1000); // 1 second delay
 
       return () => clearTimeout(timer); // Cleanup on unmount
     }
   }, []);
+
   const toggleText2 = () => {
     setShowText((prevState) => ({ ...prevState, text_2: !prevState.text_2 }));
   };
@@ -87,6 +112,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
   return (
     <>
       <SearchComponent />
+      <ClaimModal isOpen={isOpen} onClose={setIsOpen} />
+      <ConfirmTourModal onClose={setIsOpen} />
       {
         newClaim.length !== 0 ? (
           <Box sx={{ padding: 2, maxWidth: 600, margin: "auto" }}>
@@ -111,7 +138,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       }}
                     />
                   </Box>
-                  <FaArrowRight size={40} style={{ color: "#00C853" }} />
+                  <FaArrowRight size={40} style={{ color: "#333333f" }} />
                   <Box sx={{ width: "100%", height: "65px" }}>
                     <img
                       src={singleBenefit?.benefitImageID}
@@ -128,8 +155,14 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
               <Grid item xs={4}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
-                  <Button fullWidth onClick={() => { navigate(`/dashboard/benefit-protocol?id=${benefitId}`) }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
-                  <Button fullWidth onClick={() => navigate(`/dashboard/protocol-benefit?id=${protocolId}`)} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                  <Button fullWidth onClick={() => {
+                    dispatch(setValue(0));
+                    navigate("/dashboard/home");
+                  }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
+                  <Button fullWidth onClick={() => {
+                    dispatch(setValue(1));
+                    navigate("/dashboard/home");
+                  }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
                 </Box>
               </Grid>
             </Grid>
@@ -173,8 +206,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <img src="/images/Star_Badge.svg" alt="" height={"20px"} width={"auto"} />
-                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimOverallEvidenceRating}/5`}</p>
+                                  <img src={medalIcon} alt="" height={"17px"} width={"16px"} />
+                                  <StatusIndicator size={16} value={newClaim[0]?.claimOverallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
@@ -215,8 +248,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <AiOutlineLike size={24} style={{ color: "#333333" }} />
-                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimImpactRating}/5`}</p>
+                                  <img src={targetIcon} alt="" height={"17px"} width={"16px"} />
+                                  <StatusIndicator size={16} value={newClaim[0]?.claimImpactRating} colorBoxes={EvidenceColorBoxes} />
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
@@ -252,8 +285,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <img src="/images/Potted_Flower_Tulip.svg" alt="" height={"auto"} width={"auto"} />
-                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimMaturityRating}/5`}</p>
+                                  <img src={booksIcon} alt="" height={"17px"} width={"16px"} />
+                                  <StatusIndicator size={16} value={newClaim[0]?.claimMaturityRating} colorBoxes={EvidenceColorBoxes} />
+
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
@@ -289,8 +323,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <img src="/images/gmail_groups.svg" alt="" height={"auto"} width={"auto"} />
-                                  <p style={{ fontSize: "12px" }}>{`${newClaim[0]?.claimConsensusRating}/5`}</p>
+                                  <img src={handShakeIcon} alt="" height={"17px"} width={"16px"} />
+                                  <StatusIndicator size={16} value={newClaim[0]?.claimConsensusRating} colorBoxes={EvidenceColorBoxes} />
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>

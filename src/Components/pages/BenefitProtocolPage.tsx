@@ -10,11 +10,15 @@ import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
 import SearchComponent from '../utils/Search';
 import { MdKeyboardArrowRight } from "react-icons/md";
+import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
+import ConfirmTourModal from '../utils/ConfirmTourModal';
+import { setValue } from '../../features/tabSlice';
 // import { Protocol } from '../Interface/Interface';
 
 const BenefitProtocolPage: React.FC = () => {
     const nevigate = useNavigate();
     const dispatch = useDispatch();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const protocol = useSelector((state: RootState) => state.app.protocol);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -168,9 +172,23 @@ const BenefitProtocolPage: React.FC = () => {
     //         // dispatch(setProtocol(filteredBenefits));
     //     }
     // }, [searchTerm, dispatch]);
+
+    useEffect(() => {
+        const hasProtocolBenefitTour = localStorage.getItem('isProtocolBenefitTour');
+        if (!hasProtocolBenefitTour) {
+            const timer = setTimeout(() => {
+                setIsOpen(true);
+                localStorage.setItem('isProtocolBenefitTour', 'true');
+            }, 1000); // 1 second delay
+
+            return () => clearTimeout(timer); // Cleanup on unmount
+        }
+    }, []);
     return (
         <>
             <SearchComponent />
+            <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
+            <ConfirmTourModal onClose={setIsOpen} />
             <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
                 <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
                     <Grid container>
@@ -198,18 +216,21 @@ const BenefitProtocolPage: React.FC = () => {
                             </Typography>
                         </Grid>
                         <Grid item xs={4}>
-                            <Box sx={{display:"flex",flexDirection:"column",alignItems:"center",gap:1}}>
-                            <img
-                                src={benefitData?.benefitImageID}
-                                alt={benefitData?.benefitName}
-                                style={{
-                                    borderRadius: "10px",
-                                    objectFit: "fill",
-                                    width: "100%",
-                                    height: "65px"
-                                }}
-                            />
-                            <Button fullWidth onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                                <img
+                                    src={benefitData?.benefitImageID}
+                                    alt={benefitData?.benefitName}
+                                    style={{
+                                        borderRadius: "10px",
+                                        objectFit: "fill",
+                                        width: "100%",
+                                        height: "65px"
+                                    }}
+                                />
+                                <Button fullWidth onClick={() => {
+                                    dispatch(setValue(0));
+                                    nevigate("/dashboard/home");
+                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
                             </Box>
                         </Grid>
                     </Grid>

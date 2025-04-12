@@ -10,6 +10,8 @@ import { RootState } from '../../Store/Store';
 import { setBenefit, setProtocol } from '../../features/allStateSlice';
 import { CommonSearch } from '../utils/CommonSearch';
 import SkeletonLoader from '../utils/Skeleton';
+import HomePageModal from '../utils/HomePageModal';
+import ConfirmTourModal from '../utils/ConfirmTourModal';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
@@ -21,6 +23,7 @@ const HomePage: React.FC = () => {
     const activeTab = useSelector((state: RootState) => state.tabvalue.tab)
     const search = useSelector((state: RootState) => state.search.search);
     const [searchTerm, setSearchTerm] = useState<string>("");
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const { protocols, benefits } = jsonData;
     const handleTabChange = (value: number) => {
         dispatch(setValue(value))
@@ -245,11 +248,25 @@ const HomePage: React.FC = () => {
     useEffect(() => {
         searchItems();
     }, [activeTab, searchTerm, dispatch]);
+    
+    useEffect(() => {
+        const hasHomeTour = localStorage.getItem('isHomeModalTour');
+        if (!hasHomeTour) {
+            const timer = setTimeout(() => {
+                setIsOpen(true);
+                localStorage.setItem('isHomeModalTour', 'true');
+            }, 1000); // 1 second delay
+
+            return () => clearTimeout(timer); // Cleanup on unmount
+        }
+    }, []);
 
     return (
         <Box sx={{ maxWidth: 600, margin: "auto" }}>
             {/* Banner */}
             <CommonSearch onChange={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <HomePageModal isOpen={isOpen} onClose={setIsOpen} />
+            <ConfirmTourModal onClose={setIsOpen} />
             {/* Tabs */}
             <Box sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff", }}>
                 <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
@@ -287,7 +304,7 @@ const HomePage: React.FC = () => {
                     </Box>
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
-                    <Typography sx={{ fontSize: "20px", fontWeight: 700, color: "#333333" }}>Select a <span style={{ color:activeTab===0? "#00C853":"#226296" }}>{activeTab===0? "Health Benefit:":"Health Protocol:"}</span></Typography>
+                    <Typography sx={{ fontSize: "20px", fontWeight: 700, color: "#333333" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
                     <Box sx={{ display: "flex", gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu

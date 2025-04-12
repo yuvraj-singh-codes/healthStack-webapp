@@ -19,10 +19,14 @@ import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import SearchComponent from '../utils/Search';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import StatusIndicator from '../utils/StatusIndicator';
+import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
+import { setValue } from '../../features/tabSlice';
+import { colorBoxes } from '../utils/StatusColor';
 
 const ProtocolBenefitPage: React.FC = () => {
     const nevigate = useNavigate();
     const dispatch = useDispatch();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
     const benefit = useSelector((state: RootState) => state.app.benefit);
     // const [searchTerm, setSearchTerm] = useState<string>("");
     const location = useLocation();
@@ -167,6 +171,7 @@ const ProtocolBenefitPage: React.FC = () => {
     return (
         <>
             <SearchComponent />
+            <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
             <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
                 <Card sx={{ boxShadow: "none", px: 1, py: "2px" }}>
                     <Grid container>
@@ -203,7 +208,10 @@ const ProtocolBenefitPage: React.FC = () => {
                                         height: "65px"
                                     }}
                                 />
-                                <Button fullWidth onClick={() => nevigate("/dashboard/home")} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                                <Button fullWidth onClick={() => {
+                                    dispatch(setValue(1));
+                                    nevigate("/dashboard/home");
+                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
                             </Box>
                         </Grid>
                     </Grid>
@@ -211,11 +219,11 @@ const ProtocolBenefitPage: React.FC = () => {
                         <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                    <Hourglass size={16} />  <StatusIndicator />
+                                    <Hourglass size={16} />  <StatusIndicator size={16} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                    <PiCurrencyDollarSimpleBold size={16} />  <StatusIndicator />
+                                    <PiCurrencyDollarSimpleBold size={16} />  <StatusIndicator size={16} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>
