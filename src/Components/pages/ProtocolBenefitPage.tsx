@@ -22,6 +22,8 @@ import StatusIndicator from '../utils/StatusIndicator';
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import { setValue } from '../../features/tabSlice';
 import { colorBoxes } from '../utils/StatusColor';
+import timerIcon from "../../assets/images/timer.svg";
+import dollarIcon from "../../assets/images/dollar.svg"
 
 const ProtocolBenefitPage: React.FC = () => {
     const nevigate = useNavigate();
@@ -219,11 +221,11 @@ const ProtocolBenefitPage: React.FC = () => {
                         <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                    <Hourglass size={16} />  <StatusIndicator size={16} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                <img src={timerIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                    <PiCurrencyDollarSimpleBold size={16} />  <StatusIndicator size={16} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                <img src={dollarIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>

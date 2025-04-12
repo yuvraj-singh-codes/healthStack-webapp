@@ -81,8 +81,8 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                 {/* Icons Section */}
                 <Box sx={{ py: "8px", width: "100%" }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'17px'} width={'16px'} />
-                      <StatusIndicator size={17} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <img src={medalIcon} alt='' height={'15px'} width={'14px'} />
+                      <StatusIndicator size={14} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                 </Box>
                 <Button fullWidth onClick={() =>

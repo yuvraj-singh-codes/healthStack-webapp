@@ -86,16 +86,16 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                     gap: '5px',
                   }}>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={timerIcon} alt='' height={'14px'} width={'14px'} />
-                      <StatusIndicator size={14} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                      <img src={timerIcon} alt='' height={'12px'} width={'12px'} />
+                      <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={dollerIcon} alt='' height={'14px'} width={'14px'} />
-                      <StatusIndicator size={14} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                      <img src={dollerIcon} alt='' height={'12px'} width={'12px'} />
+                      <StatusIndicator size={12} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'17px'} width={'16px'} />
-                      <StatusIndicator size={17} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <img src={medalIcon} alt='' height={'15px'} width={'14px'} />
+                      <StatusIndicator size={14} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                   </Box>
                 </Box>
