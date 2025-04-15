@@ -174,8 +174,8 @@ const ProtocolBenefitPage: React.FC = () => {
         <>
             <SearchComponent />
             <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
-            <Box sx={{ maxWidth: 600, margin: "auto", py: 2 }}>
-                <Card sx={{ boxShadow: "none", px: 1, py: "2px" }}>
+            <Box sx={{ maxWidth: 600, margin: "auto", p: 1.5 }}>
+                <Card sx={{ boxShadow: "none", py: "2px", bgcolor: "#F0EFEF" }}>
                     <Grid container>
                         <Grid item xs={8} >
                             <Typography
@@ -189,9 +189,9 @@ const ProtocolBenefitPage: React.FC = () => {
                                 {protocolsData?.protocolName}
                             </Typography>
                             <Typography
-                                sx={{ fontWeight: 400, color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"5px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
-                                {""}
+                                {protocolsData?.protocolCategory ? protocolsData?.protocolCategory : "Supplements"}
                             </Typography>
                             <Typography variant="body2" sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
@@ -199,7 +199,7 @@ const ProtocolBenefitPage: React.FC = () => {
 
                         </Grid>
                         <Grid item xs={4}>
-                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1, ml: 2 }}>
                                 <img
                                     src={protocolsData?.protocolImageID}
                                     alt={protocolsData?.protocolName}
@@ -217,15 +217,15 @@ const ProtocolBenefitPage: React.FC = () => {
                             </Box>
                         </Grid>
                     </Grid>
-                    <Grid container spacing={1}>
+                    <Grid container spacing={1} marginY={1}>
                         <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                <img src={timerIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                    <img src={timerIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
                                 <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold" }}>
-                                <img src={dollarIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                    <img src={dollarIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>
@@ -235,15 +235,14 @@ const ProtocolBenefitPage: React.FC = () => {
                 {/* Filter Section */}
                 <Box
                     sx={{
-                        // display: 'flex',
-                        // alignItems: 'center',
+                        bgcolor: "#F0EFEF",
                         gap: 2,
-                        position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
-                        px: 2,
+                        position: "sticky", top: "57px", zIndex: 100,
+                        px: 0,
                         pt: 1
                     }}
                 >
-                    <Typography sx={{ fontSize: "20px", color: "#333333" }}>
+                    <Typography sx={{ fontSize: "20px", color: "#333333", marginBottom: 1 }}>
                         <span style={{ fontWeight: 700 }}>Health Benefit</span> linked to {protocolsData?.protocolName}:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={2}>
@@ -256,7 +255,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         />
                     </Box>
                 </Box>
-                <Box sx={{ mt: 2, px: 2 }}>
+                <Box sx={{ mt: 2 }}>
                     <ProtocolBenefitCard protocolID={protocolID} data={benefit} />
                 </Box>
             </Box>

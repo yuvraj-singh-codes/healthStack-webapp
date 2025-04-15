@@ -248,7 +248,7 @@ const HomePage: React.FC = () => {
     useEffect(() => {
         searchItems();
     }, [activeTab, searchTerm, dispatch]);
-    
+
     useEffect(() => {
         const hasHomeTour = localStorage.getItem('isHomeModalTour');
         if (!hasHomeTour) {
@@ -268,13 +268,13 @@ const HomePage: React.FC = () => {
             <HomePageModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
             {/* Tabs */}
-            <Box sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff", }}>
+            <Box sx={{ position: "sticky", top: "57px", zIndex: 100,bgcolor:"#F0EFEF"}}>
                 <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
                     <Box sx={{ border: '1px solid #A8A8A8', borderRadius: "50px" }}>
                         <Button
                             onClick={() => handleTabChange(0)}
                             sx={{
-                                bgcolor: activeTab === 0 ? "#00C853" : "#fff",
+                                bgcolor: activeTab === 0 ? "#00C853" : "",
                                 border: activeTab === 0 ? "1px solid #333333" : "",
                                 borderRadius: "50px",
                                 color: activeTab === 0 ? "#fff" : "#A8A8A8",
@@ -289,7 +289,7 @@ const HomePage: React.FC = () => {
                         <Button
                             onClick={() => handleTabChange(1)}
                             sx={{
-                                bgcolor: activeTab === 1 ? "#226296" : "#fff",
+                                bgcolor: activeTab === 1 ? "#226296" : "",
                                 border: activeTab === 1 ? "1px solid #226296" : "",
                                 borderRadius: "50px",
                                 color: activeTab === 1 ? "#fff" : "#A8A8A8",
@@ -305,7 +305,7 @@ const HomePage: React.FC = () => {
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
                     <Typography sx={{ fontSize: "20px", fontWeight: 700, color: "#333333" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
-                    <Box sx={{ display: "flex", gap: 2 }}>
+                    <Box sx={{ display: "flex",mt:1, gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu
                             options={activeTab === 1 ? filterOptionsProtocol : filterOptionsBenefit}
@@ -320,7 +320,7 @@ const HomePage: React.FC = () => {
 
             {/* Cards Display */}
             {activeTab === 0 ? (
-                <Box sx={{ padding: 2, bgcolor: '#fff' }}>
+                <Box sx={{ padding: 2 }}>
                     {
                         benefitLoading ? <SkeletonLoader /> : (
                             <Grid container spacing={1}>
@@ -332,7 +332,8 @@ const HomePage: React.FC = () => {
                                                 position: 'relative',
                                                 borderRadius: 2,
                                                 overflow: 'hidden',
-                                                border: "1px solid #E8E5E5",
+                                                border: "1.6px solid #A8A8A8",
+                                                backgroundColor:'#E8E5E5',
                                                 p: 1,
                                                 boxShadow: "none"
                                             }}
@@ -350,14 +351,14 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                             >
                                                 {item.benefitName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                             >
-                                                {""}
+                                                {item?.benefitCategory?item?.benefitCategory:"Physical health"}
                                             </Typography>
                                         </Card>
                                     </Grid>
@@ -371,7 +372,7 @@ const HomePage: React.FC = () => {
                     }
                 </Box>
             ) : (
-                <Box sx={{ padding: 2, bgcolor: '#ffffff' }}>
+                <Box sx={{ padding: 2 }}>
                     {
                         protocolLoading ? <SkeletonLoader /> : (
                             <Grid container spacing={1}>
@@ -383,7 +384,8 @@ const HomePage: React.FC = () => {
                                                 position: 'relative',
                                                 borderRadius: 2,
                                                 overflow: 'hidden',
-                                                border: "1px solid #E8E5E5",
+                                                border: "1.6px solid #A8A8A8",
+                                                backgroundColor:'#E8E5E5',
                                                 p: 1,
                                                 boxShadow: "none"
                                             }}
@@ -401,14 +403,14 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                             >
                                                 {item.protocolName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                                             >
-                                                {""}
+                                                {item?.protocolCategory?item?.protocolCategory:"Behaviour"}
                                             </Typography>
                                         </Card>
                                     </Grid>

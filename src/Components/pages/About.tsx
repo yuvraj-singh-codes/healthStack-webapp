@@ -52,26 +52,26 @@ const About = () => {
 
                 <Box sx={{ bgcolor: "#F0EFEF", textAlign: "center", p: 2 }}>
                     <Box>
-                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                        <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             📚 Powered by Science
                         </Typography>
-                        <Typography sx={{ fontSize: "14px", color: "#000" }}>
+                        <Typography sx={{ fontSize: "14px", color: "#333333" }}>
                             Our algorithms draw from over 200 million research publications to provide reliable, evidence-based information.
                         </Typography>
                     </Box>
                     <Box mt={2}>
-                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                        <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             ✍️ Simplified for You
                         </Typography>
-                        <Typography sx={{ fontSize: "14px", color: "#000" }}>
+                        <Typography sx={{ fontSize: "14px", color: "#333333" }}>
                             No need to sift through complex studies—we distill the science into actionable steps tailored to your health goals.
                         </Typography>
                     </Box>
                     <Box mt={2}>
-                        <Typography sx={{ fontSize: "18px", color: "#000", fontWeight: 700 }}>
+                        <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             🛡️ Transparent and Unbiased
                         </Typography>
-                        <Typography sx={{ fontSize: "14px", color: "#000" }}>
+                        <Typography sx={{ fontSize: "14px", color: "#333333" }}>
                             Every protocol includes a clear summary of the supporting evidence—free from sponsorships or hidden agendas.
                         </Typography>
                     </Box>

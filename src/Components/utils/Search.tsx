@@ -34,7 +34,7 @@ const SearchComponent: React.FC = () => {
             setOpenSnackbar(true);
         }
     };
-    
+
 
     const handleBack = () => {
         window.history.back();
@@ -52,7 +52,7 @@ const SearchComponent: React.FC = () => {
                 pb: 1,
                 position: "sticky",
                 top: 0,
-                bgcolor: "#fff",
+                bgcolor: "#F0EFEF",
                 py: 1,
                 zIndex: 100,
                 borderBottom: "2px solid lightgray",
@@ -60,7 +60,7 @@ const SearchComponent: React.FC = () => {
                 margin: "auto",
             }}
         >
-            <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer" }} />
+            <IoMdArrowBack onClick={handleBack} size={24} style={{ cursor: "pointer",color:"#333333" }} />
             <form onSubmit={handleSearch} style={{ flexGrow: 1 }}>
                 <TextField
                     size="small"
@@ -85,7 +85,7 @@ const SearchComponent: React.FC = () => {
                             <InputAdornment position="end">
                                 {/* <FiSearch size={20} style={{ color: search ? "#000" : "#888" }} /> */}
                                 {
-                                    search ? <IoMdClose onClick={handleEmpty} size={20} color="#000" cursor={'pointer'} /> : <FiSearch size={20} style={{ color: "#00C853" }} />
+                                    search ? <IoMdClose onClick={handleEmpty} size={20} color="#333333" cursor={'pointer'} /> : <FiSearch size={20} style={{ color: "#00C853" }} />
                                 }
                             </InputAdornment>
                         ),

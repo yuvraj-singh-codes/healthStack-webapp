@@ -34,11 +34,17 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
           return (
             <Grid item key={item.benefitID} xs={4}>
               <Card
+                onClick={() =>
+                  navigate(
+                    `/dashboard/claim?benefitId=${item.benefitID}&&protocolId=${protocolID}`
+                  )
+                }
                 sx={{
                   borderRadius: "10px",
                   display: "flex",
                   flexDirection: "column",
-                  border: "1px solid #E8E5E5",
+                  border: "1.6px solid #A8A8A8",
+                  backgroundColor:'#E8E5E5',
                   p: 1,
                   boxShadow: "none"
                 }}
@@ -47,7 +53,6 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                 <Box
                   sx={{
                     width: "100%",
-                    backgroundColor: "#ffffff",
                     borderRadius: "10px 10px 0 0",
 
                   }}
@@ -68,21 +73,21 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
 
                   {/* Title */}
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item.benefitName}
                   </Typography>
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
-                    {""}
+                    {item?.benefitCategory?item?.benefitCategory:"Supplements"}
                   </Typography>
                 </Box>
                 {/* Icons Section */}
                 <Box sx={{ py: "8px", width: "100%" }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'15px'} width={'14px'} />
-                      <StatusIndicator size={14} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <img src={medalIcon} alt='' height={'14px'} width={'12px'} />
+                      <StatusIndicator size={12} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                 </Box>
                 <Button fullWidth onClick={() =>

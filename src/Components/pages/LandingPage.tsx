@@ -2,11 +2,15 @@ import { Typography, Button, Grid, IconButton } from '@mui/material';
 import { Box } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
-import Logo from "../../assets/images/landingPageLogo.svg";
-import buildStrenght from "../../assets/images/buildStrength.png";
-import boostImmunity from "../../assets/images/boostImmunity.png";
+// import Logo from "../../assets/images/landingPageLogo.svg";
+import Logo from "../../assets/images/HealthStack_updated_logo.svg"
+// import buildStrenght from "../../assets/images/buildStrength.png";
+// import boostImmunity from "../../assets/images/boostImmunity.png";
+import buildStrenght from "../../assets/images/updated_buildStrength.svg";
+import boostImmunity from "../../assets/images/updated_boostImmunity.svg";
 import browsAll from "../../assets/images/browseAll.png";
-import improveSleep from "../../assets/images/improveSleep.png";
+// import improveSleep from "../../assets/images/improveSleep.png";
+import improveSleep from "../../assets/images/updated_improveSleep.svg";
 import LandingPageModal from '../utils/LandingPageModal';
 import { useEffect, useState } from 'react';
 interface dataTypes {
@@ -70,30 +74,30 @@ const LandingPage = () => {
                     style={{ height: "auto", width: "auto", cursor: "pointer" }}
                 />
             </Box>
-            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, fontSize: "24px",":hover":{bgcolor: "#00C865"} }}>
+            <Typography sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>
+                Discover <strong style={{color:"#00C853"}}>health habits</strong> <br/> that work for you.
+            </Typography>
+            <Button onClick={handleRedirect} sx={{ color: "#fff", my:1, width: "256px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, fontSize: "22px",":hover":{bgcolor: "#00C865"} }}>
                 Get Started
             </Button>
-            <Typography mt={2} sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>
-                Discover natural health habits that work for you.
-            </Typography>
             <Typography sx={{ color: "#333333", fontSize: "14px", fontWeight: 400 }}>
                 Backed by over  <strong>200 million research publications.</strong>
             </Typography>
-            <Box sx={{ width: '100%', px: 4, py: 2, bgcolor: "#F0EFEF", mt: 2 }}>
+            <Box sx={{ width: '100%', px: 4, py: 2, bgcolor: "#F0EFEF", my: 1 }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     {
                         data.map((item, index) => (
                             <Grid item xs={12} key={index} >
                                 <Button
                                     size='small' fullWidth
-                                    sx={{ bgcolor: item.text === "Browse All" ? "#226296" : "#ffffff", height: "50px", border: item.text === "Browse All" ? "1px solid #226296" : "1px solid #A8A8A8", borderRadius: "50px", color: "#212121", display: "flex", alignItems: "center", justifyContent: "space-between", pr: 0, pl: 2, mt: item.text === "Browse All" ? 2 : 0, ":hover": {  bgcolor: item.text === "Browse All" ? "#226296" : "#ffffff", color: "#212121" } }}
+                                    sx={{ bgcolor: item.text === "Browse All" ? "#226296" : "#ffffff", height: "50px", border: item.text === "Browse All" ? "1px solid #226296" : "1px solid #A8A8A8", borderRadius: "50px", color: "#212121", display: "flex", alignItems: "center", justifyContent: "space-between", pr: 0, pl: 2, mt: 0, ":hover": {  bgcolor: item.text === "Browse All" ? "#226296" : "#ffffff", color: "#212121" } }}
                                 >
                                     <img
                                         src={item.icon}
                                         alt={item.text}
                                         style={{ height: "40px", width: "40px" }}
                                     />
-                                    <Typography sx={{ textTransform: "capitalize", fontWeight: 700, fontSize: 14, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', color: item.text === "Browse All" ? "#ffffff" : item.color }}>
+                                    <Typography sx={{ textTransform: "capitalize", fontWeight: 700, fontSize: 16, wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', color: item.text === "Browse All" ? "#ffffff" : item.color }}>
                                         {item.text}
                                     </Typography>
                                     <IconButton onClick={() => {
@@ -102,7 +106,7 @@ const LandingPage = () => {
                                         } else {
                                             navigate(`/dashboard/benefit-protocol?id=${item.linkTo}`);
                                         }
-                                    }} size='small' sx={{ color: item.text === "Browse All" ? "#226296" : "#fff", bgcolor: item.text === "Browse All" ? "#ffffff" : "#226296", height: "49px", width: "50px",":hover":{ color: item.text === "Browse All" ? "#226296" : "#fff", bgcolor: item.text === "Browse All" ? "#ffffff" : "#226296"} }}>
+                                    }} size='small' sx={{color: item.text === "Browse All" ? "#226296" : "#fff", bgcolor: item.text === "Browse All" ? "#ffffff" : "#226296", height: "49px", width: "50px",":hover":{ color: item.text === "Browse All" ? "#226296" : "#fff", bgcolor: item.text === "Browse All" ? "#ffffff" : "#226296"} }}>
                                         <IoIosArrowForward size={40} />
                                     </IconButton>
                                 </Button>
@@ -114,11 +118,11 @@ const LandingPage = () => {
             <Typography sx={{ marginTop: '1rem', color: "#333333", fontSize: "20px", fontWeight: 700, px: 8 }}>
                 Finally, Health Advice You Can Trust.
             </Typography>
-            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "286px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, mt: 2, fontSize: "24px" ,":hover":{bgcolor: "#00C865"}}}>
+            <Button onClick={handleRedirect} sx={{ color: "#fff", width: "256px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, my: 1, fontSize: "22px" ,":hover":{bgcolor: "#00C865"}}}>
                 Try it for yourself
             </Button>
-            <Typography sx={{ mt: 1, color: "#333333", fontSize: "14px" }}>
-                No sponsors. No gimmicks. Just science.
+            <Typography sx={{ color: "#333333", fontSize: "14px" }}>
+            No sponsors. No fads. Just science.
             </Typography>
         </Box>
     );

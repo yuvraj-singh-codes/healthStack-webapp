@@ -113,10 +113,10 @@ const Feedback: React.FC<FeedbackProps> = ({
                 }}
             >
                 {/* Title */}
-                <Typography sx={{ mb: 2, fontSize: "20px", color: "#000", fontWeight: "700" }}>
+                <Typography sx={{ fontSize: "20px", color: "#333333", fontWeight: "700" }}>
                     Help Us Improve HealthStack!
                 </Typography>
-                <Typography sx={{ mb: 3, color: "#000", fontSize: "14px" }}>
+                <Typography sx={{ mt:1, color: "#333333", fontSize: "14px" }}>
                     Thank you for trying out HealthStack Early Access! Your feedback will help us improve.
                 </Typography>
 
@@ -131,7 +131,7 @@ const Feedback: React.FC<FeedbackProps> = ({
                             {index < formData.rating ? (
                                 <IoIosStar style={{ color: "#00C853", fontSize: "48px" }} />
                             ) : (
-                                <IoIosStarOutline style={{ color: "#A8A8A8", fontSize: "48px" }} />
+                                <IoIosStarOutline style={{ color: "#333333", fontSize: "48px" }} />
                             )}
                         </Box>
                     ))}

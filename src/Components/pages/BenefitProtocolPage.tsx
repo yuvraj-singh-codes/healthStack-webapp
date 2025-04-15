@@ -189,8 +189,8 @@ const BenefitProtocolPage: React.FC = () => {
             <SearchComponent />
             <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
-            <Box sx={{ maxWidth: 600, margin: 'auto', py: 2 }}>
-                <Card sx={{ boxShadow: 'none', px: 1, py: "2px" }}>
+            <Box sx={{ maxWidth: 600, margin: 'auto', p: 1.5 }}>
+                <Card sx={{ boxShadow: 'none', py: "2px", bgcolor: "#F0EFEF" }}>
                     <Grid container>
                         <Grid item xs={8}>
                             <Typography
@@ -204,9 +204,9 @@ const BenefitProtocolPage: React.FC = () => {
                                 {benefitData?.benefitName}
                             </Typography>
                             <Typography
-                                sx={{ fontWeight: 400, color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"5px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
-                                {""}
+                                {benefitData?.benefitCategory ? benefitData?.benefitCategory : "Physical health"}
                             </Typography>
                             <Typography
                                 variant="body2"
@@ -216,7 +216,7 @@ const BenefitProtocolPage: React.FC = () => {
                             </Typography>
                         </Grid>
                         <Grid item xs={4}>
-                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1, ml: 2 }}>
                                 <img
                                     src={benefitData?.benefitImageID}
                                     alt={benefitData?.benefitName}
@@ -237,15 +237,15 @@ const BenefitProtocolPage: React.FC = () => {
                 </Card>
                 <Box
                     sx={{
-                        // display: 'flex',
-                        // alignItems: 'center',
+                        bgcolor: "#F0EFEF",
                         gap: 2,
-                        position: "sticky", top: "57px", zIndex: 100, bgcolor: "#fff",
-                        px: 2,
-                        pt: 1
+                        position: "sticky", top: "57px", zIndex: 100,
+                        px: 0,
+                        pt: 1,
+                        mt: 1
                     }}
                 >
-                    <Typography sx={{ fontSize: "20px", color: "#333333" }}>
+                    <Typography sx={{ fontSize: "20px", color: "#333333", marginBottom: 1 }}>
                         <span style={{ fontWeight: 700 }}>Protocols</span> linked to {benefitData?.benefitName}:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={1}>
@@ -258,7 +258,7 @@ const BenefitProtocolPage: React.FC = () => {
                         />
                     </Box>
                 </Box>
-                <Box sx={{ mt: 2, px: 2 }}>
+                <Box sx={{ mt: 2 }}>
                     <BenefitProtocolCard benefitId={benefitId} data={protocol} />
                 </Box>
             </Box>

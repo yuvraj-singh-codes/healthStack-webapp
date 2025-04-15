@@ -31,11 +31,15 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
           return (
             <Grid item xs={4} sm={4} md={4} key={item?.protocolID}>
               <Card
+                onClick={() =>
+                  navigate(`/dashboard/claim?protocolId=${item?.protocolID}&&benefitId=${benefitId}`)
+                }
                 sx={{
                   borderRadius: "10px",
                   display: "flex",
                   flexDirection: "column",
-                  border: "1px solid #E8E5E5",
+                  border: "1.6px solid #A8A8A8",
+                  backgroundColor:'#E8E5E5',
                   p: 1,
                   boxShadow: "none"
                 }}
@@ -44,7 +48,6 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                 <Box
                   sx={{
                     width: "100%",
-                    backgroundColor: "#ffffff",
                     borderRadius: "10px 10px 0 0",
                   }}
                 >
@@ -64,14 +67,14 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   {/* Title */}
                   {/* Title */}
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item.protocolName}
                   </Typography>
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
-                    {""}
+                    {item?.protocolCategory?item?.protocolCategory:"Supplements"}
                   </Typography>
                 </Box>
 
@@ -82,20 +85,20 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   <Box sx={{
                     display: 'flex',
                     flexDirection:"column",
-                    
+
                     gap: '5px',
                   }}>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={timerIcon} alt='' height={'12px'} width={'12px'} />
-                      <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                      <img src={timerIcon} alt='' height={'10px'} width={'10px'} />
+                      <StatusIndicator size={10} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={dollerIcon} alt='' height={'12px'} width={'12px'} />
-                      <StatusIndicator size={12} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                      <img src={dollerIcon} alt='' height={'10px'} width={'10px'} />
+                      <StatusIndicator size={10} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'15px'} width={'14px'} />
-                      <StatusIndicator size={14} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <img src={medalIcon} alt='' height={'14px'} width={'12px'} />
+                      <StatusIndicator size={12} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                   </Box>
                 </Box>

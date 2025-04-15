@@ -75,11 +75,12 @@ export const FilterMenu = ({
             // border: "1px solid #212121",
             borderRadius: 0,
             minWidth: "200px",
-            boxShadow: "none"
+            boxShadow: "none",
+            bgcolor: "#F0EFEF"
           },
         }}
       >
-        <MenuItem sx={{ border: "1px solid #333333", fontSize: "16px", fontWeight: 700, color: "#000000" }}>Filter</MenuItem>
+        <MenuItem sx={{ border: "1px solid #333333", fontSize: "16px", fontWeight: 700, color: "#333333" }}>Filter</MenuItem>
 
         <MenuItem
           disableRipple
@@ -113,10 +114,10 @@ export const FilterMenu = ({
                   position: "relative",
                 }}
               >
-                <BsCheckLg size={16} style={{color:"#fff"}} />
+                <BsCheckLg size={16} style={{ color: "#fff" }} />
               </span>
             }
-            sx={{ px:1 }}
+            sx={{ px: 1 }}
           />
         </MenuItem>
 
@@ -134,7 +135,7 @@ export const FilterMenu = ({
               variant="body2"
               sx={{
                 fontSize: "14px",
-                color: "#000000",
+                color: "#333333",
               }}
             >
               {option}
@@ -164,7 +165,7 @@ export const FilterMenu = ({
                     position: "relative",
                   }}
                 >
-                  <BsCheckLg size={16} style={{color:"#fff"}} />
+                  <BsCheckLg size={16} style={{ color: "#fff" }} />
                 </span>
               }
               sx={{ padding: 1 }}

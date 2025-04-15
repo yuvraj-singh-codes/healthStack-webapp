@@ -1997,7 +1997,7 @@
             "benefitID": "benefit_001",
             "benefitName": "Heart Health",
             "benefitDescription": "Heart disease is the leading cause of death in many countries and should be a priority for overall health.",
-            "benefitImageID": "/protocolbenefitImages/benefit_001_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/updated_benefit_001_image.svg",
             "benefitLinkedProtocols": [
                 "protocol_001",
                 "protocol_002",
@@ -2030,7 +2030,7 @@
             "benefitID": "benefit_002",
             "benefitName": "Boost Immune System",
             "benefitDescription": "Strengthening the body's natural defenses to reduce the risk of infections and illnesses.",
-            "benefitImageID": "/protocolbenefitImages/benefit_002_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/updated_benefit_002_image.svg",
             "benefitLinkedProtocols": [
                 "protocol_006",
                 "protocol_007",
@@ -2055,7 +2055,7 @@
             "benefitID": "benefit_003",
             "benefitName": "Mental Clarity",
             "benefitDescription": "Enhancing focus, reducing mental fog, and improving cognitive sharpness.",
-            "benefitImageID": "/protocolbenefitImages/benefit_003_image.jpg",
+            "benefitImageID": "/protocolbenefitImages/updated_benefit_003_image.svg",
             "benefitLinkedProtocols": [
                 "protocol_006",
                 "protocol_007",
@@ -2461,7 +2461,7 @@
             "protocolName": "Sauna Therapy",
             "protocolDescription": "A traditional practice involving heat exposure in a controlled environment, often used for relaxation and as part of cultural or wellness traditions.",
             "protocolInstructions": "Spend 15\u00e2\u20ac\u201c20 minutes in a sauna at 70-100\u00c2\u00b0C, 2\u00e2\u20ac\u201c3 times per week.",
-            "protocolImageID": "/protocolbenefitImages/protocol_001_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/updated_protocol_001_image.svg",
             "protocolLinkedBenefits": [
                 "benefit_001",
                 "benefit_004"
@@ -2498,7 +2498,7 @@
             "protocolName": "Zone 2 Cardio",
             "protocolDescription": "Moderate-intensity aerobic exercise aimed at improving metabolic and cardiovascular health.",
             "protocolInstructions": "Perform steady-state cardio activities, such as jogging, cycling, or brisk walking, for 45 minutes, 3\u00e2\u20ac\u201c4 times per week. Ensure the intensity allows you to hold a conversation comfortably during exercise.",
-            "protocolImageID": "/protocolbenefitImages/protocol_002_image.jpg",
+            "protocolImageID": "/protocolbenefitImages/updated_protocol_002_image.svg",
             "protocolLinkedBenefits": [
                 "benefit_001",
                 "benefit_003",

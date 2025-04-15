@@ -36,7 +36,7 @@ const CommonTextField: React.FC<TextFieldComponentProps> = ({
       rows={rows}
       sx={{
         mb: 2,
-        // border: "1px solid #000",
+        border: "1px solid #333333",
         borderRadius: "5px",
         fontStyle: "italic",
       }}

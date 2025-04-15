@@ -67,11 +67,12 @@ export const SortMenu = ({
             borderRadius: 0,
             padding: 0,
             minWidth: "200px",
-            boxShadow: "none"
+            boxShadow: "none",
+            bgcolor:"#F0EFEF"
           },
         }}
       >
-        <MenuItem sx={{ border: "1px solid #333333", fontSize: "16px", fontWeight: 700, color: "#000000" }}>Sort</MenuItem>
+        <MenuItem sx={{ border: "1px solid #333333", fontSize: "16px", fontWeight: 700, color: "#333333" }}>Sort</MenuItem>
         {options.map((option, index) => (
           <MenuItem
             key={index}
@@ -86,7 +87,7 @@ export const SortMenu = ({
               variant="body2"
               sx={{
                 fontSize: "14px",
-                color: "#000000",
+                color: "#333333",
               }}
             >
               {option}

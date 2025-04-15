@@ -26,7 +26,7 @@ function BottomNav() {
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         console.log(event);
-        
+
         if (newValue === 0) {
             navigate("/dashboard/home");
         } else if (newValue === 1) {
@@ -55,7 +55,7 @@ function BottomNav() {
                     fontSize: "8px",
                     borderTop: navValue === 0 ? "5px solid #000" : "none",
                     "& .MuiBottomNavigationAction-label": {
-                        color: "#000", // Set label color to black
+                        color: "#333333", // Set label color to black
                     },
                 }}
                 label="Home"
@@ -66,7 +66,7 @@ function BottomNav() {
                     fontSize: "8px",
                     borderTop: navValue === 1 ? "5px solid #000" : "none",
                     "& .MuiBottomNavigationAction-label": {
-                        color: "#000", // Set label color to black
+                        color: "#333333", // Set label color to black
                     },
                 }}
                 label="Send us Feedback"
@@ -77,7 +77,7 @@ function BottomNav() {
                     fontSize: "8px",
                     borderTop: navValue === 2 ? "5px solid #000" : "none",
                     "& .MuiBottomNavigationAction-label": {
-                        color: "#000", // Set label color to black
+                        color: "#333333", // Set label color to black
                     },
                 }}
                 label="About"

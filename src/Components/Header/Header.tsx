@@ -2,7 +2,8 @@ import {
     Box,
     Typography,
 } from "@mui/material";
-import logo from '../../assets/images/homePageLogo.svg';
+// import logo from '../../assets/images/homePageLogo.svg';
+import logo from "../../assets/images/HealthStack_updated_navbar_logo.svg"
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -23,8 +24,8 @@ function Header() {
                         src={logo}
                         alt="HealthStack Logo"
                         style={{ height: "auto",cursor:"pointer" }}
-                    /> 
-                    <Typography sx={{color:"#333333",fontSize:"14px",fontWeight:700,mt:1}}>Early access version</Typography>
+                    />
+                    <Typography sx={{color:"#333333",fontSize:"16px",fontWeight:700,mt:1}}>Early Access</Typography>
                 </Box>
             </Box>
     );

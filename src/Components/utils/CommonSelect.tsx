@@ -31,6 +31,7 @@ const CommonSelect: React.FC<SelectFieldProps> = ({
           color: "gray",
           borderRadius: "5px",
           fontStyle: "italic",
+          border:"1px solid #333333"
         }}
       >
         <MenuItem value="" disabled>
