@@ -45,26 +45,28 @@ export const FilterMenu = ({
     <>
       <IconButton
         onClick={handleFilterClick}
+        size="small"
         sx={{
           border: "1px solid #212121",
           borderRadius: "6px",
           px: 2,
           color: "#212121",
+           bgcolor:"#ffffff",
+           ":hover":{ bgcolor:"#ffffff"}
         }}
       >
-        <Box
-          component="span"
+        <Typography
           sx={{
             display: "flex",
             alignItems: "center",
             gap: 1,
             fontSize: "14px",
-            fontWeight: 500,
+            fontWeight: "bold",
             color: "#333333"
           }}
         >
-          Filter {open ? <IoIosArrowUp size={16} /> : <IoIosArrowDown size={16} />}
-        </Box>
+          Filter {open ? <IoIosArrowUp size={16} style={{fontWeight:"bold"}}  /> : <IoIosArrowDown size={16} style={{fontWeight:"bold"}}  />}
+        </Typography>
       </IconButton>
       <Menu
         anchorEl={anchorFilter}

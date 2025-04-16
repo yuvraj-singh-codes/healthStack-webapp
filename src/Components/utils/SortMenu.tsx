@@ -36,26 +36,28 @@ export const SortMenu = ({
     <>
       <IconButton
         onClick={handleSortClick}
+        size="small"
         sx={{
           border: "1px solid #212121",
           borderRadius: "6px",
           px: 2,
           color: "#212121",
+          bgcolor: "#ffffff",
+          ":hover": { bgcolor: "#ffffff" }
         }}
       >
-        <Box
-          component="span"
+        <Typography
           sx={{
             display: "flex",
             alignItems: "center",
             gap: 1,
             fontSize: "14px",
-            fontWeight: 500,
-            color: "#333333"
+            fontWeight: "bold",
+            color: "#333333",
           }}
         >
-          Sort {open ? <IoIosArrowUp size={16} /> : <IoIosArrowDown size={16} />}
-        </Box>
+          Sort {open ? <IoIosArrowUp style={{fontWeight:"bold"}} size={16} /> : <IoIosArrowDown size={16} style={{fontWeight:"bold"}}  />}
+        </Typography>
       </IconButton>
       <Menu
         anchorEl={anchorSort}
@@ -68,7 +70,7 @@ export const SortMenu = ({
             padding: 0,
             minWidth: "200px",
             boxShadow: "none",
-            bgcolor:"#F0EFEF"
+            bgcolor: "#F0EFEF"
           },
         }}
       >

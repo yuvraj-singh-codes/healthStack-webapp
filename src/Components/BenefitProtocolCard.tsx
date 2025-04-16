@@ -17,7 +17,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
   const navigate = useNavigate();
   const { claims } = jsonData;
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={"5px"}>
       {data.length > 0 ? (
         data.map((item) => {
           const matchedClaim = claims.find(
@@ -38,9 +38,9 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   borderRadius: "10px",
                   display: "flex",
                   flexDirection: "column",
-                  border: "1.6px solid #A8A8A8",
-                  backgroundColor:'#E8E5E5',
-                  p: 1,
+                  border: "1.6px solid #e5e5e5",
+                  backgroundColor:'#f9f9f9',
+                  p: "5px",
                   boxShadow: "none"
                 }}
               >
@@ -90,15 +90,15 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   }}>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
                       <img src={timerIcon} alt='' height={'10px'} width={'10px'} />
-                      <StatusIndicator size={10} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                      <StatusIndicator size={8} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
                       <img src={dollerIcon} alt='' height={'10px'} width={'10px'} />
-                      <StatusIndicator size={10} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                      <StatusIndicator size={8} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: "2px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'14px'} width={'12px'} />
-                      <StatusIndicator size={12} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: "5px",mt:"2px" }}>
+                      <img src={medalIcon} alt='' height={'13px'} width={'11px'} />
+                      <StatusIndicator size={13} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                   </Box>
                 </Box>

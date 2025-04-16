@@ -189,8 +189,8 @@ const BenefitProtocolPage: React.FC = () => {
             <SearchComponent />
             <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
-            <Box sx={{ maxWidth: 600, margin: 'auto', p: 1.5 }}>
-                <Card sx={{ boxShadow: 'none', py: "2px", bgcolor: "#F0EFEF" }}>
+            <Box sx={{ maxWidth: 600, margin: 'auto', p: 1 }}>
+                <Card sx={{ boxShadow: 'none', py: "2px", bgcolor: "#ffffff" }}>
                     <Grid container>
                         <Grid item xs={8}>
                             <Typography
@@ -199,12 +199,13 @@ const BenefitProtocolPage: React.FC = () => {
                                     color: '#00C853',
                                     fontSize: '24px',
                                     mt: "-6px",
+                                    lineHeight: "1.1" 
                                 }}
                             >
                                 {benefitData?.benefitName}
                             </Typography>
                             <Typography
-                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"5px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"2px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
                                 {benefitData?.benefitCategory ? benefitData?.benefitCategory : "Physical health"}
                             </Typography>
@@ -237,18 +238,19 @@ const BenefitProtocolPage: React.FC = () => {
                 </Card>
                 <Box
                     sx={{
-                        bgcolor: "#F0EFEF",
+                        bgcolor: "#ffffff",
                         gap: 2,
                         position: "sticky", top: "57px", zIndex: 100,
                         px: 0,
                         pt: 1,
-                        mt: 1
+                        mt: 1,
+                        pb:1
                     }}
                 >
-                    <Typography sx={{ fontSize: "20px", color: "#333333", marginBottom: 1 }}>
-                        <span style={{ fontWeight: 700 }}>Protocols</span> linked to {benefitData?.benefitName}:
+                    <Typography sx={{ fontSize: "20px", color: "#333333",fontWeight:"bold",lineHeight: "1.1" }}>
+                        <span style={{ fontWeight: "bold" }}>Protocols</span> linked to {benefitData?.benefitName}:
                     </Typography>
-                    <Box marginLeft="auto" display="flex" alignItems="center" gap={1}>
+                    <Box marginLeft="auto" display="flex" alignItems="center" gap={1} mt={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={protocolFilterOption} />
                         <FilterMenu
                             options={filterOptionsData}

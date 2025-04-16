@@ -9,7 +9,7 @@ function Dashboard() {
     return (
         <Box
             sx={{
-                bgcolor: "#F0EFEF",
+                bgcolor: "#ffffff",
                 height: "100vh",
                 alignItems: "center",
                 position:"relative",

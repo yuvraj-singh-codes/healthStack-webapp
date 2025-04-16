@@ -60,17 +60,19 @@ interface StatusIndicatorProps {
   value?: number;
   size?: number;
   colorBoxes: string[]; // Each color defines an indicator
+  gap?:string;
 }
 
 const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   value = 0,
   size,
   colorBoxes,
+  gap="4px"
 }) => {
   const roundedValue = Math.round(value);
 
   return (
-    <Box display="flex" alignItems="center" gap="4px">
+    <Box display="flex" alignItems="center" gap={gap}>
       {colorBoxes.map((color, index) => {
         const isFilled = index < roundedValue;
 

@@ -52,7 +52,7 @@ const SearchComponent: React.FC = () => {
                 pb: 1,
                 position: "sticky",
                 top: 0,
-                bgcolor: "#F0EFEF",
+                bgcolor: "#ffffff",
                 py: 1,
                 zIndex: 100,
                 borderBottom: "2px solid lightgray",

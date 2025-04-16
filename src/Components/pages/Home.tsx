@@ -268,7 +268,7 @@ const HomePage: React.FC = () => {
             <HomePageModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
             {/* Tabs */}
-            <Box sx={{ position: "sticky", top: "57px", zIndex: 100,bgcolor:"#F0EFEF"}}>
+            <Box sx={{ position: "sticky", top: "57px", zIndex: 100,bgcolor:"#ffffff"}}>
                 <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
                     <Box sx={{ border: '1px solid #A8A8A8', borderRadius: "50px" }}>
                         <Button
@@ -304,7 +304,7 @@ const HomePage: React.FC = () => {
                     </Box>
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
-                    <Typography sx={{ fontSize: "20px", fontWeight: 700, color: "#333333" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
+                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333",fontFamily:"open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
                     <Box sx={{ display: "flex",mt:1, gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu
@@ -330,11 +330,11 @@ const HomePage: React.FC = () => {
                                             onClick={() => { navigate(`/dashboard/benefit-protocol?id=${item.benefitID}`) }}
                                             sx={{
                                                 position: 'relative',
-                                                borderRadius: 2,
+                                                borderRadius: "10px",
                                                 overflow: 'hidden',
-                                                border: "1.6px solid #A8A8A8",
-                                                backgroundColor:'#E8E5E5',
-                                                p: 1,
+                                                border: "1.6px solid #e5e5e5",
+                                                backgroundColor:'#f9f9f9',
+                                                p: "5px",
                                                 boxShadow: "none"
                                             }}
                                         >
@@ -351,12 +351,12 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item.benefitName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item?.benefitCategory?item?.benefitCategory:"Physical health"}
                                             </Typography>
@@ -382,11 +382,11 @@ const HomePage: React.FC = () => {
                                             onClick={() => { navigate(`/dashboard/protocol-benefit?id=${item.protocolID}`) }}
                                             sx={{
                                                 position: 'relative',
-                                                borderRadius: 2,
+                                                borderRadius: "10px",
                                                 overflow: 'hidden',
-                                                border: "1.6px solid #A8A8A8",
-                                                backgroundColor:'#E8E5E5',
-                                                p: 1,
+                                                border: "1.6px solid #e5e5e5",
+                                                backgroundColor:'#f9f9f9',
+                                                p: "5px",
                                                 boxShadow: "none"
                                             }}
                                         >
@@ -403,12 +403,12 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item.protocolName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item?.protocolCategory?item?.protocolCategory:"Behaviour"}
                                             </Typography>
