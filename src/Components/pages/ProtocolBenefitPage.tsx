@@ -192,7 +192,7 @@ const ProtocolBenefitPage: React.FC = () => {
                             <Typography
                                 sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"2px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
-                                {protocolsData?.protocolCategory ? protocolsData?.protocolCategory : "Supplements"}
+                                {protocolsData?.protocolCategories[0]}
                             </Typography>
                             <Typography variant="body2" sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}

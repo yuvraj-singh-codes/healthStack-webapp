@@ -74,7 +74,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   <Typography
                     sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
-                    {item?.protocolCategory?item?.protocolCategory:"Supplements"}
+                    {item?.protocolCategories[0]}
                   </Typography>
                 </Box>
 

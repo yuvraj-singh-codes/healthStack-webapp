@@ -207,7 +207,7 @@ const BenefitProtocolPage: React.FC = () => {
                             <Typography
                                 sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"2px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
-                                {benefitData?.benefitCategory ? benefitData?.benefitCategory : "Physical health"}
+                                {benefitData?.benefitCategories[0]}
                             </Typography>
                             <Typography
                                 variant="body2"

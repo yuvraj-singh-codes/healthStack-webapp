@@ -358,7 +358,7 @@ const HomePage: React.FC = () => {
                                             <Typography
                                                 sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
-                                                {item?.benefitCategory?item?.benefitCategory:"Physical health"}
+                                                {item?.benefitCategories[0]}
                                             </Typography>
                                         </Card>
                                     </Grid>
@@ -410,7 +410,7 @@ const HomePage: React.FC = () => {
                                             <Typography
                                                 sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
-                                                {item?.protocolCategory?item?.protocolCategory:"Behaviour"}
+                                                {item?.protocolCategories[0]}
                                             </Typography>
                                         </Card>
                                     </Grid>
