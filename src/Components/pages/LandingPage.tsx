@@ -71,7 +71,7 @@ const LandingPage = () => {
                     onClick={() => navigate("/dashboard/home")}
                     src={Logo}
                     alt="HealthStack Logo"
-                    style={{ height: "auto", width: "auto", cursor: "pointer" }}
+                    style={{ height: "90px", width: "auto", cursor: "pointer" }}
                 />
             </Box>
             <Typography sx={{ color: "#333333", fontSize: "24px", fontWeight: 600 }}>

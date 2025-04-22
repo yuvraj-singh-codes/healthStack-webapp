@@ -79,6 +79,7 @@ export const SortMenu = ({
           <MenuItem
             key={index}
             disableRipple
+            onClick={() => onChange(option)}
             sx={{
               display: "flex",
               justifyContent: "space-between",

@@ -50,7 +50,7 @@ const About = () => {
                     </Typography>
                 </Box>
 
-                <Box sx={{ bgcolor: "#F0EFEF", textAlign: "center", p: 2 }}>
+                <Box sx={{ bgcolor: "#F0EFEF", textAlign: "center", px: 2,pt:1 }}>
                     <Box>
                         <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             📚 Powered by Science
@@ -59,7 +59,7 @@ const About = () => {
                             Our algorithms draw from over 200 million research publications to provide reliable, evidence-based information.
                         </Typography>
                     </Box>
-                    <Box mt={2}>
+                    <Box mt={1}>
                         <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             ✍️ Simplified for You
                         </Typography>
@@ -67,7 +67,7 @@ const About = () => {
                             No need to sift through complex studies—we distill the science into actionable steps tailored to your health goals.
                         </Typography>
                     </Box>
-                    <Box mt={2}>
+                    <Box mt={1}>
                         <Typography sx={{ fontSize: "18px", color: "#333333", fontWeight: 700 }}>
                             🛡️ Transparent and Unbiased
                         </Typography>

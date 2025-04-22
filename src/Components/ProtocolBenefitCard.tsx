@@ -58,12 +58,12 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                   }}
                 >
                   {/* Image */}
-                  <Box sx={{ width: "100%", height: "65px" }}>
+                  <Box sx={{ width: "100%", height: "65px",mb:1 }}>
                     <img
                       src={item.benefitImageID}
                       alt={item.benefitName}
                       style={{
-                        borderRadius: "10px",
+                        borderRadius: "5px",
                         objectFit: "fill",
                         width: "100%",
                         height: "100%"

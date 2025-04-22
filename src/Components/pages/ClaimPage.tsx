@@ -109,7 +109,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
         return "Unknown";
     }
   };
-  console.log(newClaim[0], "===========newclaim");
+  const handleBack = () => {
+    window.history.back();
+  };
 
   return (
     <>
@@ -130,6 +132,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                   <Box sx={{ width: "100%", height: "65px" }}>
                     <img
+                      onClick={handleBack}
                       src={singleProtocol?.protocolImageID}
                       alt={singleProtocol?.protocolName}
                       style={{
@@ -143,6 +146,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                   <FaArrowRight size={40} style={{ color: "#333333f" }} />
                   <Box sx={{ width: "100%", height: "65px" }}>
                     <img
+                      onClick={handleBack}
                       src={singleBenefit?.benefitImageID}
                       alt={singleBenefit?.benefitName}
                       style={{
@@ -169,7 +173,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Typography sx={{ color: "#333333", fontSize: "13px", wordBreak: "break-word", hyphens: "auto", overflowWrap: "break-word"}}>
+              <Typography sx={{ color: "#333333", fontSize: "13px", wordBreak: "break-word", hyphens: "auto", overflowWrap: "break-word" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
               <Box sx={{ mt: 1 }}>

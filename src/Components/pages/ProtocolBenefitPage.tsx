@@ -14,8 +14,6 @@ import jsonData from '../../healthstack_data_example.json'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setBenefit } from '../../features/allStateSlice';
-import { Hourglass } from 'lucide-react';
-import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import SearchComponent from '../utils/Search';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import StatusIndicator from '../utils/StatusIndicator';
@@ -245,7 +243,7 @@ const ProtocolBenefitPage: React.FC = () => {
                     }}
                 >
                     <Typography sx={{ fontSize: "20px", color: "#333333",fontWeight:"bold",lineHeight: "1.1", }}>
-                        <span style={{ fontWeight: "bold" }}>Health Benefit</span> linked to {protocolsData?.protocolName}:
+                        <span style={{ fontWeight: "bold" }}>Health Benefits</span> linked to {protocolsData?.protocolName}:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={2} mt={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />

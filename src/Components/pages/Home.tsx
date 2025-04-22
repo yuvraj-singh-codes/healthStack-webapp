@@ -12,6 +12,10 @@ import { CommonSearch } from '../utils/CommonSearch';
 import SkeletonLoader from '../utils/Skeleton';
 import HomePageModal from '../utils/HomePageModal';
 import ConfirmTourModal from '../utils/ConfirmTourModal';
+import timerIcon from "../../assets/images/timer.svg";
+import dollarIcon from "../../assets/images/dollar.svg"
+import StatusIndicator from '../utils/StatusIndicator';
+import { colorBoxes } from '../utils/StatusColor';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
@@ -268,7 +272,7 @@ const HomePage: React.FC = () => {
             <HomePageModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
             {/* Tabs */}
-            <Box sx={{ position: "sticky", top: "57px", zIndex: 100,bgcolor:"#ffffff"}}>
+            <Box sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#ffffff" }}>
                 <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
                     <Box sx={{ border: '1px solid #A8A8A8', borderRadius: "50px" }}>
                         <Button
@@ -304,8 +308,8 @@ const HomePage: React.FC = () => {
                     </Box>
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
-                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333",fontFamily:"open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
-                    <Box sx={{ display: "flex",mt:1, gap: 2 }}>
+                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333", fontFamily: "open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
+                    <Box sx={{ display: "flex", mt: 1, gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu
                             options={activeTab === 1 ? filterOptionsProtocol : filterOptionsBenefit}
@@ -333,17 +337,17 @@ const HomePage: React.FC = () => {
                                                 borderRadius: "10px",
                                                 overflow: 'hidden',
                                                 border: "1.6px solid #e5e5e5",
-                                                backgroundColor:'#f9f9f9',
+                                                backgroundColor: '#f9f9f9',
                                                 p: "5px",
                                                 boxShadow: "none"
                                             }}
                                         >
-                                            <Box sx={{ width: "100%", height: "65px" }}>
+                                            <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
                                                 <img
                                                     src={item.benefitImageID}
                                                     alt={item.benefitName}
                                                     style={{
-                                                        borderRadius: "10px",
+                                                        borderRadius: "5px",
                                                         objectFit: "fill",
                                                         width: "100%",
                                                         height: "100%"
@@ -356,7 +360,7 @@ const HomePage: React.FC = () => {
                                                 {item.benefitName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.benefitCategories[0]}
                                             </Typography>
@@ -385,17 +389,17 @@ const HomePage: React.FC = () => {
                                                 borderRadius: "10px",
                                                 overflow: 'hidden',
                                                 border: "1.6px solid #e5e5e5",
-                                                backgroundColor:'#f9f9f9',
+                                                backgroundColor: '#f9f9f9',
                                                 p: "5px",
                                                 boxShadow: "none"
                                             }}
                                         >
-                                            <Box sx={{ width: "100%", height: "65px" }}>
+                                            <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
                                                 <img
                                                     src={item.protocolImageID}
                                                     alt={item.protocolName}
                                                     style={{
-                                                        borderRadius: "10px",
+                                                        borderRadius: "5px",
                                                         objectFit: "fill",
                                                         width: "100%",
                                                         height: "100%"
@@ -403,14 +407,22 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '.9', }}
                                             >
                                                 {item.protocolName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.protocolCategories[0]}
+                                            </Typography>
+                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "10px",mt:1 }}>
+                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                                {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
+                                            </Typography>
+                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "10px",mt:"5px" }}>
+                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                                {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                             </Typography>
                                         </Card>
                                     </Grid>

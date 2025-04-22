@@ -25,7 +25,7 @@ function Header() {
                         alt="HealthStack Logo"
                         style={{ height: "auto",cursor:"pointer" }}
                     />
-                    <Typography sx={{color:"#333333",fontSize:"16px",fontWeight:700,mt:1}}>Early Access</Typography>
+                    <Typography sx={{color:"#333333",fontSize:"16px",fontWeight:700}}>Early Access</Typography>
                 </Box>
             </Box>
     );

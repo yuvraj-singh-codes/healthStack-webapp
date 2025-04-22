@@ -86,6 +86,7 @@ export const FilterMenu = ({
 
         <MenuItem
           disableRipple
+          onClick={() => onSelectAll(!allSelected)}
           sx={{ display: "flex", justifyContent: "space-between", padding: "4px 10px" }}
         >
           <Typography variant="body2" sx={{ fontSize: "14px", color: "#212121" }}>
@@ -127,6 +128,7 @@ export const FilterMenu = ({
           <MenuItem
             key={index}
             disableRipple
+            onClick={() => onChange(option)}
             sx={{
               display: "flex",
               justifyContent: "space-between",

@@ -52,12 +52,12 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   }}
                 >
                   {/* Centered Image */}
-                  <Box sx={{ width: "100%", height: "65px" }}>
+                  <Box sx={{ width: "100%", height: "65px",mb:1 }}>
                     <img
                       src={item.protocolImageID}
                       alt={item.protocolName}
                       style={{
-                        borderRadius: "10px",
+                        borderRadius: "5px",
                         objectFit: "fill",
                         width: "100%",
                         height: "100%"
@@ -88,17 +88,17 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
 
                     gap: '5px',
                   }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={timerIcon} alt='' height={'10px'} width={'10px'} />
-                      <StatusIndicator size={8} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} gap={"3px"} />
+                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "5px" }}>
+                      <img src={timerIcon} alt='' height={'13px'} width={'12px'} />
+                      <StatusIndicator size={13} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "2px" }}>
-                      <img src={dollerIcon} alt='' height={'10px'} width={'10px'} />
-                      <StatusIndicator size={8} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} gap={"3px"} />
+                    <Box sx={{ display: 'flex', alignItems: 'center',gap: "5px" }}>
+                      <img src={dollerIcon} alt='' height={'13px'} width={'12px'} />
+                      <StatusIndicator size={13} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: "5px",mt:"2px" }}>
-                      <img src={medalIcon} alt='' height={'13px'} width={'11px'} />
-                      <StatusIndicator size={13} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <img src={medalIcon} alt='' height={'13px'} width={'12px'} />
+                      <StatusIndicator size={13} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} gap={"3px"} />
                     </Box>
                   </Box>
                 </Box>
