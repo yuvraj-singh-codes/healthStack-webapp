@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./Components/pages/LandingPage";
 import HomePage from "./Components/pages/Home";
 import Dashboard from "./Components/pages/Dashboard";
@@ -12,6 +12,18 @@ import { Provider } from "react-redux";
 import { store } from "./Store/Store";
 import FeedBackAlert from "./Components/FeedBackAlert";
 import { Box } from "@mui/material";
+import ReactGA from 'react-ga4';
+import PrivacyPolicy from "./Components/pages/PrivacyPolicy";
+import CookieConsent from 'react-cookie-consent';
+
+
+function TrackPageViews() {
+  const location = useLocation();
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: location.pathname + location.search });
+  }, [location]);
+  return null;
+}
 
 export default function App() {
   const [open, setOpen] = React.useState(false);
@@ -39,38 +51,17 @@ export default function App() {
     setOpen(false);
   };
 
-  // useEffect(() => {
-  //   const handleUserClick = () => {
-  //     setClickCount((prevCount) => prevCount + 1);
-  //   };
-
-  //   window.addEventListener("click", handleUserClick);
-  //   return () => {
-  //     window.removeEventListener("click", handleUserClick);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const startTime = Date.now();
-  //   const popupShown = sessionStorage.getItem("popupShown") === "true";
-
-  //   const checkConditions = () => {
-  //     const timeSpent = (Date.now() - startTime) / 1000; // Convert to seconds
-  //     if (clickCount >= 7 && timeSpent >= 30 && !popupShown) {
-  //       setOpen(true);
-  //       sessionStorage.setItem("popupShown", "true");
-  //     }
-  //   };
-
-  //   const interval = setInterval(checkConditions, 1000); // Check conditions every second
-  //   return () => clearInterval(interval);
-  // }, [clickCount]);
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Box>
+          <TrackPageViews />
+          <CookieConsent buttonText="Accept" onAccept={() => ReactGA.initialize('G-KDDY2YF56F')}>
+            Analytics improve our site. No personal data. <a href="/privacy-policy">More</a>
+          </CookieConsent>
           {/* Routes for the main application */}
           <Routes>
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/home" element={<HomePage />} />
@@ -96,6 +87,7 @@ export default function App() {
               />
               <Route path="/dashboard/claim" element={<ClaimPage setOpen={setOpen} />} />
             </Route>
+
           </Routes>
 
           <FeedBackAlert

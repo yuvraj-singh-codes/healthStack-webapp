@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Box, Typography, Grid, IconButton, Button } from "@mui/material";
+import { Box, Typography, Grid, IconButton, Button, Divider, Stack } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp, } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchComponent from "../utils/Search";
-import { FaArrowRight } from "react-icons/fa";
-import { MdKeyboardArrowRight } from "react-icons/md";
+// import { FaArrowRight } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa6";
 import ClaimModal from "../utils/ClaimModal";
 import ConfirmTourModal from "../utils/ConfirmTourModal";
 import { setValue } from "../../features/tabSlice";
@@ -17,6 +17,10 @@ import targetIcon from "../../assets/images/target.svg";
 import booksIcon from "../../assets/images/books.svg";
 import handShakeIcon from "../../assets/images/handshake.svg";
 import LaunchIcon from '@mui/icons-material/Launch';
+import bgGradImage from '../../assets/images/bgGrad.png'
+import { MdOutlineKeyboardArrowUp, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import Paragraph from "../utils/Paragraph";
+
 interface textType {
   text_1: boolean;
   text_2: boolean;
@@ -29,6 +33,7 @@ interface FeedbackProps {
 const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [expanded, setExpanded] = useState<boolean>(false);
   const { claims, protocols, benefits } = jsonData;
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -113,6 +118,11 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
     window.history.back();
   };
 
+  const toggleExpand = () => setExpanded((prev) => !prev);
+
+  const paragraphs = newClaim[0]?.claimMechanisms?.split("\n").filter(Boolean) || [];
+
+
   return (
     <>
       <SearchComponent />
@@ -128,8 +138,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
             </Typography>
 
             <Grid container spacing={2}>
-              <Grid item xs={8}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <Grid item xs={12}>
+                {/* <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                   <Box sx={{ width: "100%", height: "65px" }}>
                     <img
                       onClick={handleBack}
@@ -157,31 +167,90 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       }}
                     />
                   </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={4}>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: .5 }}>
-                  <Button fullWidth onClick={() => {
-                    dispatch(setValue(0));
-                    navigate("/dashboard/home");
-                  }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
-                  <Button fullWidth onClick={() => {
-                    dispatch(setValue(1));
-                    navigate("/dashboard/home");
-                  }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                </Box> */}
+                <Box sx={{ position: "relative", display: "flex", alignItems: "center", gap: 2, justifyContent: "space-evenly" }}>
+
+                  {/* Yellow background image */}
+                  <Box
+                    component="img"
+                    src={bgGradImage}
+                    alt="background"
+                    sx={{
+                      position: "absolute",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: "202px",
+                      height: "80px",
+                      zIndex: 1,
+                    }}
+                  />
+
+                  {/* First Image */}
+                  <Box sx={{ width: "127px", height: "65px", position: "relative", zIndex: 2 }}>
+                    <img
+                      onClick={handleBack}
+                      src={singleProtocol?.protocolImageID}
+                      alt={singleProtocol?.protocolName}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "cover", // 'cover' will make it look better
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    />
+                  </Box>
+
+                  {/* Second Image */}
+                  <Box sx={{ width: "127px", height: "65px", position: "relative", zIndex: 2 }}>
+                    <img
+                      onClick={handleBack}
+                      src={singleBenefit?.benefitImageID}
+                      alt={singleBenefit?.benefitName}
+                      style={{
+                        borderRadius: "10px",
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    />
+                  </Box>
                 </Box>
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Typography sx={{ color: "#333333", fontSize: "13px", wordBreak: "break-word", hyphens: "auto", overflowWrap: "break-word" }}>
-                {newClaim[0]?.claimMechanisms}
-              </Typography>
+              <Box sx={{ position: "relative" }}>
+                <Box
+                  sx={{
+                    maxHeight: expanded ? "none" : "100px",
+                    overflow: "hidden",
+                    color: "#333333",
+                    fontSize: "13px",
+                    wordBreak: "break-word",
+                    hyphens: "auto",
+                    overflowWrap: "break-word",
+                  }}
+                >
+                  {paragraphs.map((para, index) => (
+                    <Typography key={index} paragraph sx={{ color: "#333333", fontSize: "13px", wordBreak: "break-word", hyphens: "auto", overflowWrap: "break-word" }}>
+                      {para}
+                    </Typography>
+                  ))}
+                </Box>
+
+                <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
+                  <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1 }}>
+                    {expanded ? "Read less" : "Read more"}
+                    {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
+                  </Button>
+                </Box>
+              </Box>
+              <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
               <Box sx={{ mt: 1 }}>
                 <Typography
                   onClick={toggleText3}
-                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "10px", fontWeight: 700 }}
+                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 700, justifyContent: "space-between" }}
                 >
-                  What does the Research Say?{" "}
+                  What the Science Says{" "}
                   <IconButton size="small" sx={{ color: "#000", fontSize: "24px", mt: "3px" }}> {showText.text_3 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
 
@@ -358,7 +427,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     <Box sx={{ marginY: 1 }}>
                       <Typography
                         onClick={toggleText4}
-                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex-inline", alignItems: "center", gap: "10px", fontWeight: 600 }}
+                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600,justifyContent:"space-between" }}
                       >
                         References
                         <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
@@ -390,12 +459,13 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 )}
 
               </Box>
+              <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
               <Box mt={1}>
                 <Typography
                   onClick={toggleText2}
-                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "10px", fontWeight: 600, width: "auto" }}
+                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, width: "auto", justifyContent: "space-between" }}
                 >
-                  Instructions
+                  How to do it
                   <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                 </Typography>
                 {
@@ -414,35 +484,42 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     </Grid>
                   )
                 }
-                {/* <Box sx={{ marginBottom: 2 }}>
-                  <Typography
-                    sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600 }}
-
-                  >
-                    Publications Consulted
-                    <IconButton onClick={toggleText4} size="small" sx={{ color: "#333333", fontSize: "24px", mt: "5px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
-                  </Typography>
-                  {showText.text_4 && (
-                    <Box sx={{ marginTop: 1 }}>
-                      <Grid container >
-                        {newClaim[0]?.claimSources.map((item, index) => (
-                          <Grid item xs={12} mt={1} key={index}>
-                            <Box sx={{ display: "flex", gap: "5px" }}>
-                              <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>{index + 1}.</Typography>
-                              <Box>
-                                <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title}</Typography>
-                                <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
-                                <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
-                                <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#333333", fontWeight: 600 }}>Summary : </span>{item?.summary}</Typography>
-                              </Box>
-                            </Box>
-                          </Grid>
-                        ))}
-                      </Grid>
-                    </Box>
-                  )}
-                </Box> */}
               </Box>
+              <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
+              <Stack spacing={2} mt={2}>
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                  <Button onClick={() => {
+                    dispatch(setValue(0));
+                    navigate("/dashboard/home");
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px", width: "256px", position: "relative" }} >  <Box
+                    sx={{
+                      position: 'absolute',
+                      left: 10,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                      <FaChevronLeft size={16} />
+                    </Box>All Health Goals </Button>
+                  <Button onClick={() => {
+                    dispatch(setValue(1));
+                    navigate("/dashboard/home");
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px", width: "256px", position: "relative" }} > <Box
+                    sx={{
+                      position: 'absolute',
+                      left: 10,
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                      <FaChevronLeft size={16} />
+                    </Box> All Protocols </Button>
+                </Box>
+              </Stack>
             </Box>
           </Box>
         ) : (
@@ -451,6 +528,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
           </Box>
         )
       }
+       <Paragraph/>
     </>
   );
 };

@@ -5,6 +5,7 @@ import { useState } from "react";
 import SearchComponent from "../utils/Search";
 import emailjs from 'emailjs-com'
 import { IoIosStarOutline,IoIosStar } from "react-icons/io";
+import ReactGA from 'react-ga4';
 interface formdata {
     rating: number;
     feedbackType: string;
@@ -63,21 +64,22 @@ const Feedback: React.FC<FeedbackProps> = ({
 
     const handleSubmit = () => {
         if (validation()) return;
-
+    
         const templateParams = {
-            name: formData.name,           // Maps to {{name}}
-            email: formData.email,         // Maps to {{email}}
-            rating: formData.rating,       // Maps to {{rating}}
-            feedbacktype: formData.feedbackType, // Maps to {{feedbacktype}}
-            feedbackText: formData.feedbackText, // Maps to {{feedbackText}}
+            name: formData.name,
+            email: formData.email,
+            rating: formData.rating,
+            feedbacktype: formData.feedbackType,
+            feedbackText: formData.feedbackText,
         };
+    
         setLoading(true);
         emailjs
             .send(
-                "service_n6grtv5", // Replace with your EmailJS Service ID
-                "template_healthstack", // Replace with your EmailJS Template ID
+                "service_n6grtv5", 
+                "template_healthstack", 
                 templateParams,
-                "tJi_u4CerqirAz-N9" // Replace with your EmailJS Public Key/User ID
+                "tJi_u4CerqirAz-N9" 
             )
             .then(
                 (response: { status: number; text: string; }) => {
@@ -90,6 +92,13 @@ const Feedback: React.FC<FeedbackProps> = ({
                         name: "",
                         email: "",
                     });
+    
+                    // 👉 ADD THIS TRACKING HERE AFTER SUCCESS
+                    ReactGA.event({
+                        category: 'Feedback',
+                        action: 'feedback_submitted',
+                        label: 'Submit Button'
+                    });
                 },
                 (error: { text: string }) => {
                     console.error("Failed to send email.", error);
@@ -99,8 +108,48 @@ const Feedback: React.FC<FeedbackProps> = ({
                 setLoading(false);
                 setOpen(false);
             });
-        setOpen(false);
     };
+    
+    // const handleSubmit = () => {
+    //     if (validation()) return;
+
+    //     const templateParams = {
+    //         name: formData.name,           // Maps to {{name}}
+    //         email: formData.email,         // Maps to {{email}}
+    //         rating: formData.rating,       // Maps to {{rating}}
+    //         feedbacktype: formData.feedbackType, // Maps to {{feedbacktype}}
+    //         feedbackText: formData.feedbackText, // Maps to {{feedbackText}}
+    //     };
+    //     setLoading(true);
+    //     emailjs
+    //         .send(
+    //             "service_n6grtv5", // Replace with your EmailJS Service ID
+    //             "template_healthstack", // Replace with your EmailJS Template ID
+    //             templateParams,
+    //             "tJi_u4CerqirAz-N9" // Replace with your EmailJS Public Key/User ID
+    //         )
+    //         .then(
+    //             (response: { status: number; text: string; }) => {
+    //                 console.log("Email sent successfully!", response.status, response.text);
+    //                 setPopup(true);
+    //                 setFormData({
+    //                     rating: 0,
+    //                     feedbackType: "",
+    //                     feedbackText: "",
+    //                     name: "",
+    //                     email: "",
+    //                 });
+    //             },
+    //             (error: { text: string }) => {
+    //                 console.error("Failed to send email.", error);
+    //                 setOpenSnackbar({ open: true, message: "Failed to send email. Please try again later." });
+    //             }
+    //         ).finally(() => {
+    //             setLoading(false);
+    //             setOpen(false);
+    //         });
+    //     setOpen(false);
+    // };
 
     return (
         <>

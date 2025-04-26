@@ -13,6 +13,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import ConfirmTourModal from '../utils/ConfirmTourModal';
 import { setValue } from '../../features/tabSlice';
+import Paragraph from '../utils/Paragraph';
 // import { Protocol } from '../Interface/Interface';
 
 const BenefitProtocolPage: React.FC = () => {
@@ -264,6 +265,7 @@ const BenefitProtocolPage: React.FC = () => {
                     <BenefitProtocolCard benefitId={benefitId} data={protocol} />
                 </Box>
             </Box>
+            <Paragraph/>
         </>
     );
 };
