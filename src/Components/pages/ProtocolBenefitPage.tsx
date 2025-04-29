@@ -22,7 +22,6 @@ import { setValue } from '../../features/tabSlice';
 import { colorBoxes } from '../utils/StatusColor';
 import timerIcon from "../../assets/images/timer.svg";
 import dollarIcon from "../../assets/images/dollar.svg"
-import Paragraph from '../utils/Paragraph';
 
 const ProtocolBenefitPage: React.FC = () => {
     const nevigate = useNavigate();
@@ -260,7 +259,6 @@ const ProtocolBenefitPage: React.FC = () => {
                     <ProtocolBenefitCard protocolID={protocolID} data={benefit} />
                 </Box>
             </Box>
-            <Paragraph/>
         </>
     );
 };

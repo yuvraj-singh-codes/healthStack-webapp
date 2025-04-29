@@ -416,11 +416,11 @@ const HomePage: React.FC = () => {
                                             >
                                                 {item?.protocolCategories[0]}
                                             </Typography>
-                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "10px",mt:1 }}>
+                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "5px",mt:1 }}>
                                                 <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                             </Typography>
-                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "10px",mt:"5px" }}>
+                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "5px",mt:"5px" }}>
                                                 <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                             </Typography>

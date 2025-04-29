@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./Components/pages/LandingPage";
 import HomePage from "./Components/pages/Home";
 import Dashboard from "./Components/pages/Dashboard";
@@ -62,7 +62,9 @@ export default function App() {
           {/* Routes for the main application */}
           <Routes>
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Navigate to="/landingPage" replace />} />
+            <Route path="/landingPage" element={<LandingPage />} />
+            {/* <Route path="/" element={<LandingPage />} /> */}
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/home" element={<HomePage />} />
               <Route

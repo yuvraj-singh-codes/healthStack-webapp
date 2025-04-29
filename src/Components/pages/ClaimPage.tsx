@@ -4,8 +4,6 @@ import { IoIosArrowDown, IoIosArrowUp, } from "react-icons/io";
 import jsonData from '../../healthstack_data_example.json'
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchComponent from "../utils/Search";
-// import { FaArrowRight } from "react-icons/fa";
-import { FaChevronLeft } from "react-icons/fa6";
 import ClaimModal from "../utils/ClaimModal";
 import ConfirmTourModal from "../utils/ConfirmTourModal";
 import { setValue } from "../../features/tabSlice";
@@ -19,7 +17,6 @@ import handShakeIcon from "../../assets/images/handshake.svg";
 import LaunchIcon from '@mui/icons-material/Launch';
 import bgGradImage from '../../assets/images/bgGrad.png'
 import { MdOutlineKeyboardArrowUp, MdOutlineKeyboardArrowDown } from "react-icons/md";
-import Paragraph from "../utils/Paragraph";
 
 interface textType {
   text_1: boolean;
@@ -120,8 +117,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
 
   const toggleExpand = () => setExpanded((prev) => !prev);
 
-  const paragraphs = newClaim[0]?.claimMechanisms?.split("\n").filter(Boolean) || [];
-
+  const paragraphs = newClaim[0]?.claimOverallEvidenceRatingDescription
+    ?.split("\n")
+    .filter(Boolean) || [];
 
   return (
     <>
@@ -139,36 +137,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
 
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                {/* <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Box sx={{ width: "100%", height: "65px" }}>
-                    <img
-                      onClick={handleBack}
-                      src={singleProtocol?.protocolImageID}
-                      alt={singleProtocol?.protocolName}
-                      style={{
-                        borderRadius: "10px",
-                        objectFit: "fill",
-                        width: "100%",
-                        height: "100%"
-                      }}
-                    />
-                  </Box>
-                  <FaArrowRight size={40} style={{ color: "#333333f" }} />
-                  <Box sx={{ width: "100%", height: "65px" }}>
-                    <img
-                      onClick={handleBack}
-                      src={singleBenefit?.benefitImageID}
-                      alt={singleBenefit?.benefitName}
-                      style={{
-                        borderRadius: "10px",
-                        objectFit: "fill",
-                        width: "100%",
-                        height: "100%"
-                      }}
-                    />
-                  </Box>
-                </Box> */}
-                <Box sx={{ position: "relative", display: "flex", alignItems: "center", gap: 2, justifyContent: "space-evenly" }}>
+                <Box sx={{ position: "relative", display: "flex", alignItems: "center", gap: 4, justifyContent: "space-evenly" }}>
 
                   {/* Yellow background image */}
                   <Box
@@ -184,31 +153,38 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       zIndex: 1,
                     }}
                   />
-
                   {/* First Image */}
-                  <Box sx={{ width: "127px", height: "65px", position: "relative", zIndex: 2 }}>
+                  <Box
+                    sx={{
+                      width: "130px",
+                      height: "80px",
+                      zIndex: 2,
+                      borderRadius: "10px",
+                    }}
+                  >
                     <img
                       onClick={handleBack}
                       src={singleProtocol?.protocolImageID}
                       alt={singleProtocol?.protocolName}
                       style={{
                         borderRadius: "10px",
-                        objectFit: "cover", // 'cover' will make it look better
+                        objectFit: "fill",
                         width: "100%",
-                        height: "100%"
+                        height: "100%",
                       }}
                     />
                   </Box>
 
+
                   {/* Second Image */}
-                  <Box sx={{ width: "127px", height: "65px", position: "relative", zIndex: 2 }}>
+                  <Box sx={{ width: "130px", height: "80px", position: "relative", zIndex: 2, borderRadius: "10px", }}>
                     <img
                       onClick={handleBack}
                       src={singleBenefit?.benefitImageID}
                       alt={singleBenefit?.benefitName}
                       style={{
                         borderRadius: "10px",
-                        objectFit: "cover",
+                        objectFit: "fill",
                         width: "100%",
                         height: "100%"
                       }}
@@ -218,32 +194,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Box sx={{ position: "relative" }}>
-                <Box
-                  sx={{
-                    maxHeight: expanded ? "none" : "100px",
-                    overflow: "hidden",
-                    color: "#333333",
-                    fontSize: "13px",
-                    wordBreak: "break-word",
-                    hyphens: "auto",
-                    overflowWrap: "break-word",
-                  }}
-                >
-                  {paragraphs.map((para, index) => (
-                    <Typography key={index} paragraph sx={{ color: "#333333", fontSize: "13px", wordBreak: "break-word", hyphens: "auto", overflowWrap: "break-word" }}>
-                      {para}
-                    </Typography>
-                  ))}
-                </Box>
-
-                <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
-                  <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1 }}>
-                    {expanded ? "Read less" : "Read more"}
-                    {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
-                  </Button>
-                </Box>
-              </Box>
+              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px" }}>
+                {newClaim[0]?.claimMechanisms}
+              </Typography>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
               <Box sx={{ mt: 1 }}>
                 <Typography
@@ -257,9 +210,6 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 {showText.text_3 && (
                   <>
                     <Grid container spacing={1}>
-                      <Grid item xs={12}>
-                        <Typography sx={{ fontSize: "13px", color: "#333333", fontWeight: 500, mb: "5px" }}>Our algorithms can make mistakes. Check important info.</Typography>
-                      </Grid>
                       {newClaim[0]?.claimOverallEvidenceRating && (
                         <Grid item xs={12}>
                           <Box
@@ -307,9 +257,43 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         </Grid>
                       )}
                       <Grid item xs={12}>
-                        <Typography variant="body2" sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto" }}>
-                          {newClaim[0]?.claimDescription}
-                        </Typography>
+                        <Box sx={{ position: "relative" }}>
+                          <Box
+                            sx={{
+                              maxHeight: expanded ? "none" : "100px",
+                              overflow: "hidden",
+                              color: "#333333",
+                              fontSize: "13px",
+                              wordBreak: "break-word",
+                              hyphens: "auto",
+                              overflowWrap: "break-word",
+                            }}
+                          >
+                            {paragraphs.map((para, index) => (
+                              <Typography
+                                key={index}
+                                paragraph
+                                sx={{
+                                  color: "#333333",
+                                  fontSize: "13px",
+                                  wordBreak: "break-word",
+                                  hyphens: "auto",
+                                  overflowWrap: "break-word",
+                                }}
+                                dangerouslySetInnerHTML={{
+                                  __html: para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
+                                }}
+                              />
+                            ))}
+                          </Box>
+                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
+                            <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1 }}>
+                              {expanded ? "Read less" : "Read more"}
+                              {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
+                            </Button>
+                          </Box>
+                        </Box>
+
                       </Grid>
                       {newClaim[0]?.claimImpactRating && (
                         <Grid item xs={12}>
@@ -427,9 +411,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     <Box sx={{ marginY: 1 }}>
                       <Typography
                         onClick={toggleText4}
-                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600,justifyContent:"space-between" }}
+                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, justifyContent: "space-between" }}
                       >
-                        References
+                        Sources
                         <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
                       </Typography>
                       {showText.text_4 && (
@@ -440,7 +424,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                 <Box sx={{ display: "flex", gap: "5px" }}>
                                   <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>{index + 1}.</Typography>
                                   <Box>
-                                    <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} <IconButton component="a"
+                                    <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} <IconButton component="a"
                                       href={item?.url}
                                       target="_blank"
                                       rel="noopener noreferrer" sx={{ color: "#333333", ":hover": { color: "#226296" } }}><LaunchIcon sx={{ fontSize: "18px" }} /></IconButton></Typography>
@@ -491,33 +475,11 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                   <Button onClick={() => {
                     dispatch(setValue(0));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px", width: "256px", position: "relative" }} >  <Box
-                    sx={{
-                      position: 'absolute',
-                      left: 10,
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                  >
-                      <FaChevronLeft size={16} />
-                    </Box>All Health Goals </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "16px", borderRadius: "50px", width: "300px",py:1.2 }} >  All Health Goals </Button>
                   <Button onClick={() => {
                     dispatch(setValue(1));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px", width: "256px", position: "relative" }} > <Box
-                    sx={{
-                      position: 'absolute',
-                      left: 10,
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                    }}
-                  >
-                      <FaChevronLeft size={16} />
-                    </Box> All Protocols </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "16px", borderRadius: "50px", width: "300px",py:1.2 }} >  All Protocols </Button>
                 </Box>
               </Stack>
             </Box>
@@ -528,7 +490,6 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
           </Box>
         )
       }
-       <Paragraph/>
     </>
   );
 };
