@@ -475,11 +475,11 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                   <Button onClick={() => {
                     dispatch(setValue(0));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "16px", borderRadius: "50px", width: "300px",py:1.2 }} >  All Health Goals </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "20px", borderRadius: "50px", width: "300px",py:1 }} >  All Health Goals </Button>
                   <Button onClick={() => {
                     dispatch(setValue(1));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "16px", borderRadius: "50px", width: "300px",py:1.2 }} >  All Protocols </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "20px", borderRadius: "50px", width: "300px",py:1 }} >  All Protocols </Button>
                 </Box>
               </Stack>
             </Box>
