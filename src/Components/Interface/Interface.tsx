@@ -1,7 +1,7 @@
 export interface Protocol {
   protocolID: string;
   protocolName: string;
-  protocolCategory:string;
+  // protocolCategory:string;
   protocolDescription: string;
   protocolInstructions: string;
   protocolImageID: string;
@@ -17,7 +17,7 @@ export interface Protocol {
 export interface Benefit {
   benefitID: string;
   benefitName: string; // Change from `name`
-  benefitCategory:string;
+  // benefitCategory:string;
   benefitDescription: string;
   benefitImageID: string; // Change from `imageId`
   benefitLinkedProtocols: string[];

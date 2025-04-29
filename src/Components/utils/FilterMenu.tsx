@@ -5,7 +5,6 @@ import {
   MenuItem,
   Checkbox,
   Typography,
-  Box,
 } from "@mui/material";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsCheckLg } from "react-icons/bs";
