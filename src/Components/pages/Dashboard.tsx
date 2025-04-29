@@ -26,14 +26,14 @@ function Dashboard() {
             <div className="family" style={{ overflow: "auto", height: "85vh", alignItems: "center", position: "relative", fontFamily: "Open Sans" }}>
                 <Header />
                 <Outlet />
-            </div>
-            {
+                {
                 path.includes("/dashboard/benefit-protocol") || path.includes("/dashboard/protocol-benefit") || path.includes("/dashboard/claim") ?
-                    <Box sx={{ height: "5vh", width: "100%", bgcolor: "#ffffff", px: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <Box sx={{width: "100%", bgcolor: "#ffffff", px: 1, display: "flex", justifyContent: "center", alignItems: "center",position:"fixed",left:"0px",bottom:"10vh",zIndex:1000 }}>
                         <Paragraph />
                     </Box> : ""
-
             }
+            </div>
+           
             {/* Bottom Navigation */}
             <Box sx={{ position: "fixed", bottom: "0px", left: "0px", width: "100%" }}>
                 <BottomNav />

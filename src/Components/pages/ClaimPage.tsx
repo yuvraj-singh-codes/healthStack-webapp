@@ -194,7 +194,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px" }}>
+              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px",lineHeight:"1.3" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
@@ -260,7 +260,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         <Box sx={{ position: "relative" }}>
                           <Box
                             sx={{
-                              maxHeight: expanded ? "none" : "100px",
+                              maxHeight: expanded ? "none" : "50px",
                               overflow: "hidden",
                               color: "#333333",
                               fontSize: "13px",
@@ -279,6 +279,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                   wordBreak: "break-word",
                                   hyphens: "auto",
                                   overflowWrap: "break-word",
+                                  lineHeight: "1.3",
                                 }}
                                 dangerouslySetInnerHTML={{
                                   __html: para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
@@ -287,7 +288,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                             ))}
                           </Box>
                           <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
-                            <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1 }}>
+                            <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1,p:"1px" }}>
                               {expanded ? "Read less" : "Read more"}
                               {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
                             </Button>
@@ -427,10 +428,10 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} <IconButton component="a"
                                       href={item?.url}
                                       target="_blank"
-                                      rel="noopener noreferrer" sx={{ color: "#333333", ":hover": { color: "#226296" } }}><LaunchIcon sx={{ fontSize: "18px" }} /></IconButton></Typography>
+                                      rel="noopener noreferrer" sx={{ color: "#333333", ":hover": { color: "#226296" } }}><LaunchIcon sx={{ fontSize: "16px" }} /></IconButton></Typography>
                                     <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
-                                    <Typography sx={{ fontSize: "15px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
-                                    <Typography sx={{ fontSize: "15px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#333333", fontWeight: 600 }}>Summary : </span>{item?.summary}</Typography>
+                                    <Typography sx={{ fontSize: "14px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
+                                    <Typography sx={{ fontSize: "14px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#333333" }}>Summary: </span>{item?.summary}</Typography>
                                   </Box>
                                 </Box>
                               </Grid>
