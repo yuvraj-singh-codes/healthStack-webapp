@@ -117,7 +117,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
 
   const toggleExpand = () => setExpanded((prev) => !prev);
 
-  const paragraphs = newClaim[0]?.claimOverallEvidenceRatingDescription
+  const paragraphs = newClaim[0]?.claimDescription
     ?.split("\n")
     .filter(Boolean) || [];
 
@@ -194,7 +194,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px",lineHeight:"1.3" }}>
+              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px", lineHeight: "1.3" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
@@ -287,8 +287,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                               />
                             ))}
                           </Box>
-                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center" }}>
-                            <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1,p:"1px" }}>
+                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center", mt: 2 }}>
+                            <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1, p: "1px" }}>
                               {expanded ? "Read less" : "Read more"}
                               {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
                             </Button>
@@ -412,7 +412,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     <Box sx={{ marginY: 1 }}>
                       <Typography
                         onClick={toggleText4}
-                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, justifyContent: "space-between" }}
+                        sx={{ fontSize: "20px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, justifyContent: "space-between" }}
                       >
                         Sources
                         <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
@@ -422,16 +422,25 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                           <Grid container >
                             {newClaim[0]?.claimSources.map((item, index) => (
                               <Grid item xs={12} mt={1} key={index}>
-                                <Box sx={{ display: "flex", gap: "5px" }}>
-                                  <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>{index + 1}.</Typography>
+                                <Box sx={{ display: "flex", gap: "5px" ,mb:1}}>
+                                  <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>[{index + 1}]</Typography>
                                   <Box>
-                                    <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} <IconButton component="a"
-                                      href={item?.url}
-                                      target="_blank"
-                                      rel="noopener noreferrer" sx={{ color: "#333333", ":hover": { color: "#226296" } }}><LaunchIcon sx={{ fontSize: "16px" }} /></IconButton></Typography>
-                                    <Typography sx={{ fontSize: "14px", color: "gray", }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
-                                    <Typography sx={{ fontSize: "14px", color: "#616161", fontWeight: 600 }}>{item?.publisher}</Typography>
-                                    <Typography sx={{ fontSize: "14px", color: "gray", fontWeight: "normal", py: "1px", }}><span style={{ color: "#333333" }}>Summary: </span>{item?.summary}</Typography>
+                                    <Grid container>
+                                      <Grid item xs={10}>
+                                        <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} </Typography>
+                                      </Grid>
+                                      <Grid item xs={2}>
+                                        <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center"}}>
+                                        <IconButton component="a"
+                                          href={item?.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer" sx={{ color: "#333333", ":hover": { color: "#226296" },mt:-.5 }}><LaunchIcon sx={{ fontSize: "16px" }} /></IconButton>
+                                        </Box>
+                                      </Grid>
+                                    </Grid>
+                                    <Typography sx={{ fontSize: "14px", color: "gray",mt:.5 }}>{item?.authors}{" "}{`(${item?.year})`}</Typography>
+                                    <Typography sx={{ fontSize: "14px", color: "#616161", fontWeight: 600, fontStyle: "italic",mt:.5 }}>{item?.publisher}</Typography>
+                                    <Typography sx={{ fontSize: "14px", color: "gray", fontWeight: "normal", py: "1px",mt:1 }}><span style={{ color: "#333333" }}>Summary: </span>{item?.summary}</Typography>
                                   </Box>
                                 </Box>
                               </Grid>
@@ -476,11 +485,11 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                   <Button onClick={() => {
                     dispatch(setValue(0));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "20px", borderRadius: "50px", width: "300px",py:1 }} >  All Health Goals </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "20px", borderRadius: "50px", width: "256px" }} >  All Health Goals </Button>
                   <Button onClick={() => {
                     dispatch(setValue(1));
                     navigate("/dashboard/home");
-                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "20px", borderRadius: "50px", width: "300px",py:1 }} >  All Protocols </Button>
+                  }} sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "20px", borderRadius: "50px", width: "256px", }} >  All Protocols </Button>
                 </Box>
               </Stack>
             </Box>
