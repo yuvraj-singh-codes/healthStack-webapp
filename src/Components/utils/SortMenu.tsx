@@ -78,7 +78,10 @@ export const SortMenu = ({
           <MenuItem
             key={index}
             disableRipple
-            onClick={() => onChange(option)}
+            onClick={(e) => {
+              e.preventDefault();
+              onChange(option);
+            }}
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -96,7 +99,10 @@ export const SortMenu = ({
             </Typography>
             <Checkbox
               checked={selectedSortValue[option] || false}
-              onChange={() => onChange(option)}
+              onChange={(e) => {
+                e.stopPropagation();
+                onChange(option);
+              }}
               icon={
                 <span
                   style={{

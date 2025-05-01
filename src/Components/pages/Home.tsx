@@ -16,6 +16,7 @@ import timerIcon from "../../assets/images/timer.svg";
 import dollarIcon from "../../assets/images/dollar.svg"
 import StatusIndicator from '../utils/StatusIndicator';
 import { colorBoxes } from '../utils/StatusColor';
+import { EvidenceColorBoxes } from '../utils/StatusColor';
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
@@ -273,7 +274,7 @@ const HomePage: React.FC = () => {
             <ConfirmTourModal onClose={setIsOpen} />
             {/* Tabs */}
             <Box sx={{ position: "sticky", top: "57px", zIndex: 100, bgcolor: "#ffffff" }}>
-                <Box p={1} sx={{ display: "flex", justifyContent: "center" }}>
+                <Box p={1} sx={{ display: "flex", justifyContent: "start" }}>
                     <Box sx={{ border: '1px solid #A8A8A8', borderRadius: "50px" }}>
                         <Button
                             onClick={() => handleTabChange(0)}
@@ -288,7 +289,7 @@ const HomePage: React.FC = () => {
                                 "&:hover": { bgcolor: activeTab === 0 ? "#00B44A" : "#f0f0f0" },
                             }}
                         >
-                            Benefits
+                            Goals
                         </Button>
                         <Button
                             onClick={() => handleTabChange(1)}
@@ -308,7 +309,7 @@ const HomePage: React.FC = () => {
                     </Box>
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
-                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333", fontFamily: "open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "#00C853" : "#226296" }}>{activeTab === 0 ? "Health Benefit:" : "Health Protocol:"}</span></Typography>
+                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333", fontFamily: "open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "grey" : "#226296", fontWeight: '1000' }}>{activeTab === 0 ? "Health Goal:" : "Protocol:"}</span></Typography>
                     <Box sx={{ display: "flex", mt: 1, gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu
@@ -327,7 +328,7 @@ const HomePage: React.FC = () => {
                 <Box sx={{ padding: 2 }}>
                     {
                         benefitLoading ? <SkeletonLoader /> : (
-                            <Grid container spacing={1}>
+                            <Grid container spacing={2}>
                                 {benefit?.length > 0 ? (benefit?.map((item, index) => (
                                     <Grid item xs={4} sm={4} key={index}>
                                         <Card
@@ -339,7 +340,10 @@ const HomePage: React.FC = () => {
                                                 border: "1.6px solid #e5e5e5",
                                                 backgroundColor: '#f9f9f9',
                                                 p: "5px",
-                                                boxShadow: "none"
+                                                boxShadow: "none",
+                                                height: "100%",
+                                                display: "flex",
+                                                flexDirection: "column"
                                             }}
                                         >
                                             <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
@@ -379,7 +383,7 @@ const HomePage: React.FC = () => {
                 <Box sx={{ padding: 2 }}>
                     {
                         protocolLoading ? <SkeletonLoader /> : (
-                            <Grid container spacing={1}>
+                            <Grid container spacing={2}>
                                 {protocol?.length > 0 ? (protocol?.map((item, index) => (
                                     <Grid item xs={4} sm={4} key={index}>
                                         <Card
@@ -391,7 +395,10 @@ const HomePage: React.FC = () => {
                                                 border: "1.6px solid #e5e5e5",
                                                 backgroundColor: '#f9f9f9',
                                                 p: "5px",
-                                                boxShadow: "none"
+                                                boxShadow: "none",
+                                                height: "100%",
+                                                display: "flex",
+                                                flexDirection: "column"
                                             }}
                                         >
                                             <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
@@ -417,11 +424,11 @@ const HomePage: React.FC = () => {
                                                 {item?.protocolCategories[0]}
                                             </Typography>
                                             <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "5px",mt:1 }}>
-                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={EvidenceColorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                             </Typography>
                                             <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "5px",mt:"5px" }}>
-                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={EvidenceColorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                             </Typography>
                                         </Card>

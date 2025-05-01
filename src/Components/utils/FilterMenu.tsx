@@ -85,7 +85,10 @@ export const FilterMenu = ({
 
         <MenuItem
           disableRipple
-          onClick={() => onSelectAll(!allSelected)}
+          onClick={(e) => {
+            e.preventDefault();
+            onSelectAll(!allSelected);
+          }}
           sx={{ display: "flex", justifyContent: "space-between", padding: "4px 10px" }}
         >
           <Typography variant="body2" sx={{ fontSize: "14px", color: "#212121" }}>
@@ -93,7 +96,10 @@ export const FilterMenu = ({
           </Typography>
           <Checkbox
             checked={allSelected}
-            onChange={(e) => onSelectAll(e.target.checked)}
+            onChange={(e) => {
+              e.stopPropagation();
+              onSelectAll(e.target.checked);
+            }}
             icon={
               <span
                 style={{
@@ -127,7 +133,10 @@ export const FilterMenu = ({
           <MenuItem
             key={index}
             disableRipple
-            onClick={() => onChange(option)}
+            onClick={(e) => {
+              e.preventDefault();
+              onChange(option);
+            }}
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -145,7 +154,10 @@ export const FilterMenu = ({
             </Typography>
             <Checkbox
               checked={selectedFilters[option] || false}
-              onChange={() => onChange(option)}
+              onChange={(e) => {
+                e.stopPropagation();
+                onChange(option);
+              }}
               icon={
                 <span
                   style={{

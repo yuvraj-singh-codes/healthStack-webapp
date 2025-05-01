@@ -163,7 +163,10 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     }}
                   >
                     <img
-                      onClick={handleBack}
+                      onClick={()=>{
+                        dispatch(setValue(1));
+                        navigate("/dashboard/home");
+                      }}
                       src={singleProtocol?.protocolImageID}
                       alt={singleProtocol?.protocolName}
                       style={{
@@ -179,7 +182,10 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                   {/* Second Image */}
                   <Box sx={{ width: "130px", height: "80px", position: "relative", zIndex: 2, borderRadius: "10px", }}>
                     <img
-                      onClick={handleBack}
+                      onClick={()=>{
+                      dispatch(setValue(0));
+                      navigate("/dashboard/home");
+                      }}
                       src={singleBenefit?.benefitImageID}
                       alt={singleBenefit?.benefitName}
                       style={{
@@ -480,7 +486,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 }
               </Box>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
-              <Stack spacing={2} mt={2}>
+              <Stack spacing={2} mt={8}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
                   <Button onClick={() => {
                     dispatch(setValue(0));

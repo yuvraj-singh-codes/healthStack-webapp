@@ -74,7 +74,7 @@ const LandingPage = () => {
                     style={{ height: "90px", width: "auto", cursor: "pointer" }}
                 />
             </Box>
-            <Typography sx={{ color: "#333333", fontSize: "24px", fontWeight: 600 }}>
+            <Typography sx={{ color: "#226296", fontSize: "24px", fontWeight: 600 }}>
                 Discover <strong style={{ color: "#00C853" }}>health habits</strong> <br /> that work for you.
             </Typography>
             <Button size='small' onClick={handleRedirect} sx={{ color: "#fff", my: 1, width: "256px", borderRadius: "30px", bgcolor: "#00C853", textTransform: "capitalize", fontWeight: 700, fontSize: "20px", ":hover": { bgcolor: "#00C865" } }}>
