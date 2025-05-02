@@ -70,23 +70,12 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   gap="4px"
 }) => {
   // Function to reverse the score
-  const reverseScore = (score: number): number => {
-    const scoreMap: { [key: number]: number } = {
-      1: 5,
-      2: 4,
-      3: 3,
-      4: 2,
-      5: 1
-    };
-    return scoreMap[score] || score;
-  };
-
-  const reversedValue = reverseScore(Math.round(value));
+  const roundedValue = Math.round(value);
 
   return (
     <Box display="flex" alignItems="center" gap={gap}>
       {colorBoxes.map((color, index) => {
-        const isFilled = index < reversedValue;
+        const isFilled = index < roundedValue;
 
         return (
           <Box

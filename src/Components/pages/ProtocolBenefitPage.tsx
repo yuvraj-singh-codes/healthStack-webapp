@@ -172,9 +172,27 @@ const ProtocolBenefitPage: React.FC = () => {
         <>
             <SearchComponent />
             <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
-            <Box sx={{ maxWidth: 600, margin: "auto", p: 1 }}>
+            <Box sx={{ maxWidth: 600, margin: "auto", p: 1, paddingLeft:'16px', paddingRight:'16px' }}>
                 <Card sx={{ boxShadow: "none", py: "2px", bgcolor: "#ffffff" }}>
-                    <Grid container>
+                    <Grid container spacing={2}>
+                        <Grid item xs={4} >
+                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
+                                <img
+                                    src={protocolsData?.protocolImageID}
+                                    alt={protocolsData?.protocolName}
+                                    style={{
+                                        borderRadius: "10px",
+                                        objectFit: "fill",
+                                        width: "100%",
+                                        height: "65px"
+                                    }}
+                                />
+                                <Button fullWidth onClick={() => {
+                                    dispatch(setValue(1));
+                                    nevigate("/dashboard/home");
+                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                            </Box>
+                        </Grid>
                         <Grid item xs={8} >
                             <Typography
                                 sx={{
@@ -196,41 +214,26 @@ const ProtocolBenefitPage: React.FC = () => {
                                 {protocolsData?.protocolDescription}
                             </Typography>
 
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1, ml: 2 }}>
-                                <img
-                                    src={protocolsData?.protocolImageID}
-                                    alt={protocolsData?.protocolName}
-                                    style={{
-                                        borderRadius: "10px",
-                                        objectFit: "fill",
-                                        width: "100%",
-                                        height: "65px"
-                                    }}
-                                />
-                                <Button fullWidth onClick={() => {
-                                    dispatch(setValue(1));
-                                    nevigate("/dashboard/home");
-                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
-                            </Box>
-                        </Grid>
-                    </Grid>
-                    <Grid container mt={"5px"}>
-                        <Grid item xs={12}>
+                            <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
-                                <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"10px" }}>
-                                    <img src={timerIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
+                                    <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
-                                <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"10px" }}>
-                                    <img src={dollarIcon} alt='' height={'15px'} width={'14px'} />  <StatusIndicator size={14} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
+                                    <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>
                         </Grid>
+
+                        </Grid>
+                    </Grid>
+                    <Grid container mt={"5px"}>
+                        
                     </Grid>
                 </Card>
+                <Box sx={{ borderTop: '1px solid #E0E0E0', marginTop:'10px' }} />
                 {/* Filter Section */}
                 <Box
                     sx={{
@@ -243,7 +246,7 @@ const ProtocolBenefitPage: React.FC = () => {
                     }}
                 >
                     <Typography sx={{ fontSize: "20px", color: "#333333",fontWeight:"bold",lineHeight: "1.1", }}>
-                        <span style={{ fontWeight: "bold" }}>Health Benefits</span> linked to {protocolsData?.protocolName}:
+                        <span style={{ fontWeight: "bold" }}>Health Benefits</span> of {protocolsData?.protocolName}:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={2} mt={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={benefitFilterOption} />

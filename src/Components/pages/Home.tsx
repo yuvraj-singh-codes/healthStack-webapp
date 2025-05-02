@@ -16,7 +16,7 @@ import timerIcon from "../../assets/images/timer.svg";
 import dollarIcon from "../../assets/images/dollar.svg"
 import StatusIndicator from '../utils/StatusIndicator';
 import { colorBoxes } from '../utils/StatusColor';
-import { EvidenceColorBoxes } from '../utils/StatusColor';
+
 
 const HomePage: React.FC = () => {
     const dispatch = useDispatch()
@@ -309,7 +309,7 @@ const HomePage: React.FC = () => {
                     </Box>
                 </Box>
                 <Box marginLeft="auto" pl={2} py={1}>
-                    <Typography sx={{ fontSize: "20px", fontWeight: "bold", color: "#333333", fontFamily: "open Sans" }}>Select a <span style={{ color: activeTab === 0 ? "grey" : "#226296", fontWeight: '1000' }}>{activeTab === 0 ? "Health Goal:" : "Protocol:"}</span></Typography>
+                    <Typography sx={{ fontSize: "20px", color: "#333333", fontFamily: "Open Sans" }}>Select a <span style={{ color: "#333333", fontWeight: '700' }}>{activeTab === 0 ? "Health Goal:" : "Protocol:"}</span></Typography>
                     <Box sx={{ display: "flex", mt: 1, gap: 2 }}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={activeTab === 1 ? protocolFilterOption : benefitFilterOption} />
                         <FilterMenu
@@ -328,7 +328,7 @@ const HomePage: React.FC = () => {
                 <Box sx={{ padding: 2 }}>
                     {
                         benefitLoading ? <SkeletonLoader /> : (
-                            <Grid container spacing={2}>
+                            <Grid container spacing={1.5}>
                                 {benefit?.length > 0 ? (benefit?.map((item, index) => (
                                     <Grid item xs={4} sm={4} key={index}>
                                         <Card
@@ -341,9 +341,6 @@ const HomePage: React.FC = () => {
                                                 backgroundColor: '#f9f9f9',
                                                 p: "5px",
                                                 boxShadow: "none",
-                                                height: "100%",
-                                                display: "flex",
-                                                flexDirection: "column"
                                             }}
                                         >
                                             <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
@@ -359,12 +356,12 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item.benefitName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.benefitCategories[0]}
                                             </Typography>
@@ -383,7 +380,7 @@ const HomePage: React.FC = () => {
                 <Box sx={{ padding: 2 }}>
                     {
                         protocolLoading ? <SkeletonLoader /> : (
-                            <Grid container spacing={2}>
+                            <Grid container spacing={1.5}>
                                 {protocol?.length > 0 ? (protocol?.map((item, index) => (
                                     <Grid item xs={4} sm={4} key={index}>
                                         <Card
@@ -396,9 +393,7 @@ const HomePage: React.FC = () => {
                                                 backgroundColor: '#f9f9f9',
                                                 p: "5px",
                                                 boxShadow: "none",
-                                                height: "100%",
-                                                display: "flex",
-                                                flexDirection: "column"
+                                          
                                             }}
                                         >
                                             <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
@@ -414,21 +409,21 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '.9', }}
+                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '.9', }}
                                             >
                                                 {item.protocolName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
+                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.protocolCategories[0]}
                                             </Typography>
                                             <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "5px",mt:1 }}>
-                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={EvidenceColorBoxes} />
+                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                             </Typography>
                                             <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "5px",mt:"5px" }}>
-                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={EvidenceColorBoxes} />
+                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                             </Typography>
                                         </Card>

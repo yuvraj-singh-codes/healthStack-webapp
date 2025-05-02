@@ -1,9 +1,10 @@
 import { Typography } from "@mui/material";
 
 const Paragraph = () => (
-    <Typography sx={{ color: "#333333", textAlign: "center", fontSize: "12px",  }}>
-      HealthStack may not always be perfect. Verify important details.
+    <Typography sx={{ color: "#49454F", textAlign: "center", fontSize: "11px",  }}>
+      This prototype may contain errors. Verify important details.
     </Typography>
 );
 
 export default Paragraph;
+                                 

@@ -163,10 +163,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     }}
                   >
                     <img
-                      onClick={()=>{
-                        dispatch(setValue(1));
-                        navigate("/dashboard/home");
-                      }}
+                      onClick={handleBack}
                       src={singleProtocol?.protocolImageID}
                       alt={singleProtocol?.protocolName}
                       style={{
@@ -486,7 +483,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 }
               </Box>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
-              <Stack spacing={2} mt={8}>
+              <Stack spacing={2} mt={6}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
                   <Button onClick={() => {
                     dispatch(setValue(0));

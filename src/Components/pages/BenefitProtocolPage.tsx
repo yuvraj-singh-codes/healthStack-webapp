@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
 import SearchComponent from '../utils/Search';
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import ConfirmTourModal from '../utils/ConfirmTourModal';
 import { setValue } from '../../features/tabSlice';
@@ -189,9 +189,27 @@ const BenefitProtocolPage: React.FC = () => {
             <SearchComponent />
             <ProtocolBenefitModal isOpen={isOpen} onClose={setIsOpen} />
             <ConfirmTourModal onClose={setIsOpen} />
-            <Box sx={{ maxWidth: 600, margin: 'auto', p: 1 }}>
+            <Box sx={{ maxWidth: 600, margin: 'auto', p: 1, paddingLeft:"16px", paddingRight:'16px' }}>
                 <Card sx={{ boxShadow: 'none', py: "2px", bgcolor: "#ffffff" }}>
-                    <Grid container>
+                    <Grid container spacing={2}>
+                        <Grid item xs={4}>
+                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center", gap: 1 }}>
+                                <img
+                                    src={benefitData?.benefitImageID}
+                                    alt={benefitData?.benefitName}
+                                    style={{
+                                        borderRadius: "5px",
+                                        objectFit: "cover",
+                                        width: "100%",
+                                        height: "80px"
+                                    }}
+                                />
+                                <Button fullWidth onClick={() => {
+                                    dispatch(setValue(0));
+                                    nevigate("/dashboard/home");
+                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px" }} > <MdKeyboardArrowLeft size={20} /> All Benefits </Button>
+                            </Box>
+                        </Grid>
                         <Grid item xs={8}>
                             <Typography
                                 sx={{
@@ -211,31 +229,14 @@ const BenefitProtocolPage: React.FC = () => {
                             </Typography>
                             <Typography
                                 variant="body2"
-                                sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', width:'180px' }}
                             >
                                 {benefitData?.benefitDescription}
                             </Typography>
                         </Grid>
-                        <Grid item xs={4}>
-                            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1, ml: 2 }}>
-                                <img
-                                    src={benefitData?.benefitImageID}
-                                    alt={benefitData?.benefitName}
-                                    style={{
-                                        borderRadius: "10px",
-                                        objectFit: "fill",
-                                        width: "100%",
-                                        height: "65px"
-                                    }}
-                                />
-                                <Button fullWidth onClick={() => {
-                                    dispatch(setValue(0));
-                                    nevigate("/dashboard/home");
-                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#00C853", color: "#ffffff", ":hover": { bgcolor: "#00B44A" }, fontSize: "12px", borderRadius: "50px" }} >All Benefits <MdKeyboardArrowRight size={20} /></Button>
-                            </Box>
-                        </Grid>
                     </Grid>
                 </Card>
+                <Box sx={{ borderTop: '1px solid #E0E0E0', marginTop:'10px' }} />
                 <Box
                     sx={{
                         bgcolor: "#ffffff",
@@ -247,8 +248,8 @@ const BenefitProtocolPage: React.FC = () => {
                         pb:1
                     }}
                 >
-                    <Typography sx={{ fontSize: "20px", color: "#333333",fontWeight:"bold",lineHeight: "1.1" }}>
-                        <span style={{ fontWeight: "bold" }}>Protocols</span> linked to {benefitData?.benefitName}:
+                    <Typography sx={{ fontSize: "20px", color: "#333333",lineHeight: "1.1" }}>
+                        <span style={{ }}>Protocols</span> for <strong style={{fontWeight:'900px'}} >{benefitData?.benefitName}</strong>:
                     </Typography>
                     <Box marginLeft="auto" display="flex" alignItems="center" gap={1} mt={1}>
                         <SortMenu onChange={handleSortChange} selectedSortValue={selectedSortValue} options={protocolFilterOption} />
