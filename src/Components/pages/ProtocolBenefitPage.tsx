@@ -19,7 +19,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import StatusIndicator from '../utils/StatusIndicator';
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import { setValue } from '../../features/tabSlice';
-import { colorBoxes } from '../utils/StatusColor';
+import { colorBoxes, EvidenceColorBoxes } from '../utils/StatusColor';
 import timerIcon from "../../assets/images/timer.svg";
 import dollarIcon from "../../assets/images/dollar.svg"
 
@@ -217,11 +217,11 @@ const ProtocolBenefitPage: React.FC = () => {
                             <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
                                 <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
-                                    <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                    <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={EvidenceColorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
                                 <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
-                                    <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                    <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={EvidenceColorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>

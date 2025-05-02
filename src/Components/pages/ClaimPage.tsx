@@ -197,7 +197,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               </Grid>
             </Grid>
             <Box sx={{ mt: 1 }}>
-              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "13px", lineHeight: "1.3" }}>
+              <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "14px", lineHeight: "1.3" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
@@ -263,7 +263,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         <Box sx={{ position: "relative" }}>
                           <Box
                             sx={{
-                              maxHeight: expanded ? "none" : "50px",
+                              maxHeight: expanded ? "none" : "57px",
                               overflow: "hidden",
                               color: "#333333",
                               fontSize: "13px",
@@ -278,7 +278,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                 paragraph
                                 sx={{
                                   color: "#333333",
-                                  fontSize: "13px",
+                                  fontSize: "14px",
                                   wordBreak: "break-word",
                                   hyphens: "auto",
                                   overflowWrap: "break-word",
