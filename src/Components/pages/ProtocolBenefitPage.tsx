@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setBenefit } from '../../features/allStateSlice';
 import SearchComponent from '../utils/Search';
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import StatusIndicator from '../utils/StatusIndicator';
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import { setValue } from '../../features/tabSlice';
@@ -190,7 +190,7 @@ const ProtocolBenefitPage: React.FC = () => {
                                 <Button fullWidth onClick={() => {
                                     dispatch(setValue(1));
                                     nevigate("/dashboard/home");
-                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "10px", borderRadius: "50px" }} >All Protocols <MdKeyboardArrowRight size={20} /></Button>
+                                }} size='small' sx={{ textTransform: "capitalize", bgcolor: "#226296", color: "#ffffff", ":hover": { bgcolor: "#226296" }, fontSize: "12px", borderRadius: "50px" }} > <MdKeyboardArrowLeft size={20} /> All Protocols</Button>
                             </Box>
                         </Grid>
                         <Grid item xs={8} >
