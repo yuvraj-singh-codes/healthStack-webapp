@@ -35,7 +35,7 @@ const data: dataTypes[] = [
         text: "Strengthen Your Immunity",
         color: "#226296",
         // linkTo: "benefit_005"
-        linkTo: "benefit_005"
+        linkTo: "benefit_017"
     },
     {
         icon: browsAll,
