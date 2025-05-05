@@ -30,26 +30,35 @@ const ClaimModal: React.FC<AlertDialogProps> = ({
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
                     <Box>
-                        <Typography sx={{ mt: 1 }}>
-                            This page gives you a summary of the research linking this Protocol to the Health Benefit you selected
+                        <Typography sx={{ mt: 1, color: "#333333" }}>
+                            This page gives you a <strong style={{ color: "#333333" }}>summary of the research</strong> linking the <strong style={{ color: "#00C853" }}>Health Goal</strong> and <strong style={{ color: "#226296" }}>Protocol</strong> you selected.
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }}>
-                            The <strong>Overall Evidence</strong> score combines.
+                            <strong>Overall Evidence</strong> {" "} (
+                            <span style={{ display: "inline-flex", alignItems: "center" }}><img src="/images/book.png" alt="" style={{
+                                height: "19px",
+                                width: "18px",
+                                verticalAlign: "middle",
+                            }} /></span>
+                            ) combines.
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }}>
-                            <strong>Impact:</strong> how strongly the protocol influences this benefit
+                            <strong><span><img src="/images/arrow.png" alt="arrow" /></span>Impact:</strong> how strongly the protocol influences this benefit
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }}>
-                            <strong>Maturity:</strong> how well-established the research is.
+                            <strong><span><img src="/images/books.png" alt="books" /></span>{" "}Maturity:</strong> how well-established the research is.
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }}>
-                            <strong>Consensus:</strong> how much agreement there is among experts
+                            <strong><span><img src="/images/hands.png" alt="books" /></span>{" "}Consensus:</strong> how much agreement there is among experts
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }}>
-                            You’ll also find step-by-step instructions on how to follow the protocol effectively.
+                        Tap on any <strong>Source</strong> if you’d like to read the research yourself.
                         </Typography>
                         <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }} >
-                            Feel free to explore — you can tap the references to check out the original research yourself!
+                        Last but not least: <strong>instructions</strong> for how to do the Protocol correctly.
+                        </Typography>
+                        <Typography sx={{ mt: 1, color: "#333333", fontSize: "16px", }} >
+                        That’s it - we hope you enjoy using HealthstStack Early Access!
                         </Typography>
                     </Box>
                     <Box sx={{ display: "flex", justifyContent: "center" }}>

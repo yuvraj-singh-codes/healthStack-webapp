@@ -111,9 +111,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
         return "Unknown";
     }
   };
-  const handleBack = () => {
-    window.history.back();
-  };
+  
 
   const toggleExpand = () => setExpanded((prev) => !prev);
 
@@ -163,7 +161,10 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     }}
                   >
                     <img
-                      onClick={handleBack}
+                      onClick={()=>{
+                        dispatch(setValue(1));
+                        navigate("/dashboard/home");
+                        }}
                       src={singleProtocol?.protocolImageID}
                       alt={singleProtocol?.protocolName}
                       style={{
@@ -171,6 +172,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         objectFit: "fill",
                         width: "100%",
                         height: "100%",
+                        
                       }}
                     />
                   </Box>

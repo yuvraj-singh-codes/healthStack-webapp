@@ -34,16 +34,14 @@ const HomePageModal: React.FC<AlertDialogProps> = ({
                             It’s your first time here—let’s give you a quick tour.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            On this page, you can browse Health Benefits or Health Protocols.
+                            On this page, you can browse:
+                        </Typography>
+                        
+                        <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
+                            <span style={{ color: "#00C853", fontWeight: 700,fontSize:"18px" }}>Health Goals:</span>  the outcomes you care about—like better sleep or heart health.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            Use the filters and sort options to explore by category, time, or cost.
-                        </Typography>
-                        <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            <span style={{ color: "#00C853", fontWeight: 700,fontSize:"18px" }}>Benefits</span> are the outcomes you care about—like better sleep or heart health.
-                        </Typography>
-                        <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            <span style={{ color: "#226296", fontWeight: 700,fontSize:"18px" }}>Protocols</span> are the actions that help you get there—like meditation or resistance training.
+                            <span style={{ color: "#226296", fontWeight: 700,fontSize:"18px" }}>Protocols</span> the actions that help you get there—like meditation or cardiovascular exercise.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
                             <span style={{ fontWeight: 700 }}>Ready to go?</span><br></br>Tap a Benefit to see the protocols that support it

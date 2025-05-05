@@ -200,28 +200,28 @@ const ProtocolBenefitPage: React.FC = () => {
                                     color: '#226296',
                                     fontSize: '24px',
                                     mt: "-6px",
-                                    lineHeight: "1.1" 
+                                    lineHeight: "1.1"
                                 }}
                             >
                                 {protocolsData?.protocolName}
                             </Typography>
                             <Typography
-                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "14px", wordBreak: "break-word",mb:"2px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                                sx={{ fontWeight: 'bold', color: '#A8A8A8',marginLeft:"1px", fontSize: "14px", wordBreak: "break-word",mb:"2px", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
                                 {protocolsData?.protocolCategories[0]}
                             </Typography>
-                            <Typography variant="body2" sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
+                            <Typography variant="body2" sx={{ color: "#333333",marginLeft:"1px", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}>
                                 {protocolsData?.protocolDescription}
                             </Typography>
 
                             <Grid item xs={12}>
-                            <Box sx={{ display: "flex", alignItems: "center", gap: "10px", py: "2px" }}>
+                            <Box sx={{ display: "flex", alignItems: "start", justifyContent: "start", gap: "10px", py: "2px" }}>
                                 <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
-                                    <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={EvidenceColorBoxes} />
+                                    <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
-                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
-                                    <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={EvidenceColorBoxes} />
+                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'start', justifyContent: "start", fontWeight: "bold",gap:"6px" }}>
+                                    <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>
                             </Box>

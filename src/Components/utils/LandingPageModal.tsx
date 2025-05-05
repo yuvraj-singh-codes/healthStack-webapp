@@ -19,18 +19,16 @@ const LandingPageModal: React.FC<AlertDialogProps> = ({
     };
     return (
         <Dialog open={isOpen}
-            sx={{ maxWidth: 600, margin: "auto" }} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
-            <DialogTitle id="alert-dialog-title" sx={{ fontSize: "20px", color: "#333333", fontWeight: 700, mt: 2 }}>Welcome to HealthStack (Early Access)
+            sx={{ maxWidth: 489, margin: "auto" }} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
+            <DialogTitle id="alert-dialog-title" sx={{ fontSize: "24px", color: "#333333", fontWeight: 700, mt: 2 }}>Welcome to HealthStack (Early Access)
             </DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
                     <Box>
-                        <Typography sx={{ color: "#333333", fontSize: "16px", }}>
-                            This is an early version of HealthStack. Some info may be incomplete or inaccurate. Please verify key details and consult a health professional before making any lifestyle changes.
-                        </Typography>
-                        <Typography sx={{ color: "#333333", fontSize: "16px",mt:2 }}>
-                        We hope you enjoy your experience. We’d love to hear your feedback!
-                        </Typography>
+                        <Typography sx={{ color: "#333333", fontSize: "20px" }}>
+                        <span style={{ color: "#333333", fontSize: "24px", fontWeight: 700 }}>HealthStack is still under development.</span> Some info may be incomplete or inaccurate. Please verify key details and consult a health professional before making any lifestyle changes.                        </Typography>
+                        <Typography sx={{fontSize: "20px",mt:2, color: "#333333" }}>
+                        We hope you enjoy your experience using <span style={{fontWeight:700, color: "#333333", fontSize:"24px"}}>HealthStack Early Access!</span>  </Typography>
                     </Box>
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <Button

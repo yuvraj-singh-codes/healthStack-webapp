@@ -93,11 +93,11 @@ export default function App() {
           </Routes>
 
           <FeedBackAlert
-            open={open}
+            open={false}   //open={open} 
             onClose={handleClose}
             handleRatingClick={handleRatingClick}
             formData={formData}
-          />
+          />   
         </Box>
       </BrowserRouter>
     </Provider>

@@ -40,7 +40,7 @@ const ConfirmTourModal: React.FC<AlertDialogProps> = ({ onClose }) => {
                                 borderRadius: "30px",
                                 bgcolor: "#00C853",
                                 textTransform: "capitalize",
-                                fontWeight: 600,
+                                fontWeight: 700,
                                 ":hover": { bgcolor: "#00B44A" },
                                 width: "219px",
                                 height: "40px",
@@ -61,11 +61,12 @@ const ConfirmTourModal: React.FC<AlertDialogProps> = ({ onClose }) => {
                                 border: "1px solid #A8A8A8",
                                 bgcolor: "#E8E5E5",
                                 textTransform: "capitalize",
-                                fontWeight: 600,
+                                fontWeight: 700,
                                 ":hover": { bgcolor: "#E8E5f5" },
                                 width: "219px",
                                 height: "40px",
-                                mt: 2
+                                mt: 2,
+                                
                             }}
                         >
                             Exit tour
