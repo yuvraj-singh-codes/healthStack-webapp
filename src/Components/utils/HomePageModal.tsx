@@ -44,7 +44,7 @@ const HomePageModal: React.FC<AlertDialogProps> = ({
                             <span style={{ color: "#226296", fontWeight: 700,fontSize:"18px" }}>Protocols</span> the actions that help you get there—like meditation or cardiovascular exercise.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            <span style={{ fontWeight: 700 }}>Ready to go?</span><br></br>Tap a Benefit to see the protocols that support it
+                            <span style={{ fontWeight: 700 }}>Ready to go?</span><br></br>Tap a Benefit to see the protocols that support it.
                         </Typography>
                     </Box>
                     <Box sx={{ display: "flex", justifyContent: "center" }}>

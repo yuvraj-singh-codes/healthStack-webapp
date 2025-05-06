@@ -201,7 +201,7 @@ const BenefitProtocolPage: React.FC = () => {
                                         borderRadius: "5px",
                                         objectFit: "cover",
                                         width: "100%",
-                                        height: "80px"
+                                        
                                     }}
                                 />
                                 <Button fullWidth onClick={() => {

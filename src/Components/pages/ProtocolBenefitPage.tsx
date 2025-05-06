@@ -182,9 +182,9 @@ const ProtocolBenefitPage: React.FC = () => {
                                     alt={protocolsData?.protocolName}
                                     style={{
                                         borderRadius: "10px",
-                                        objectFit: "fill",
+                                        objectFit: "cover",
                                         width: "100%",
-                                        height: "65px"
+                                       
                                     }}
                                 />
                                 <Button fullWidth onClick={() => {
@@ -216,11 +216,11 @@ const ProtocolBenefitPage: React.FC = () => {
 
                             <Grid item xs={12}>
                             <Box sx={{ display: "flex", alignItems: "start", justifyContent: "start", gap: "10px", py: "2px" }}>
-                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px" }}>
+                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'center', justifyContent: "center", fontWeight: "bold",gap:"6px", marginTop:"8px"}}>
                                     <img src={timerIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                 </Typography>
-                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'start', justifyContent: "start", fontWeight: "bold",gap:"6px" }}>
+                                <Typography sx={{ fontSize: 10, display: "flex", alignItems: 'start', justifyContent: "start", fontWeight: "bold",gap:"6px", marginTop:"8px" }}>
                                     <img src={dollarIcon} alt='' height={'13px'} width={'14px'} />  <StatusIndicator size={13} value={protocolsData?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                     {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                 </Typography>

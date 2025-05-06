@@ -34,7 +34,7 @@ const ProtocolBenefitModal: React.FC<AlertDialogProps> = ({
                         Here you’ll see the <strong style={{color:'#226296'}}>Protocols</strong> to achieve the <strong style={{color:"#00C853"}}>Health Goal</strong> you selected.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            Each one includes <strong>time</strong> and <strong>cost</strong> estimates, plus the strength of the <strong>scientific evidence</strong> behind it.
+                            Each one includes <strong>time</strong> and <strong>cost</strong> estimates, and the strength of the <strong>scientific evidence</strong> behind it.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
                             <strong>Tap a Protocol</strong>  to explore how it supports your health, what the research says, and how to follow it.

@@ -158,6 +158,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       height: "80px",
                       zIndex: 2,
                       borderRadius: "10px",
+                      
                     }}
                   >
                     <img
@@ -169,9 +170,10 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       alt={singleProtocol?.protocolName}
                       style={{
                         borderRadius: "10px",
-                        objectFit: "fill",
+                        objectFit: "cover",
                         width: "100%",
-                        height: "100%",
+                        
+                        
                         
                       }}
                     />
@@ -189,16 +191,16 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       alt={singleBenefit?.benefitName}
                       style={{
                         borderRadius: "10px",
-                        objectFit: "fill",
+                        objectFit: "cover",
                         width: "100%",
-                        height: "100%"
+                        
                       }}
                     />
                   </Box>
                 </Box>
               </Grid>
             </Grid>
-            <Box sx={{ mt: 1 }}>
+            <Box sx={{ mt: 2 }}>
               <Typography sx={{ wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", fontSize: "14px", lineHeight: "1.3" }}>
                 {newClaim[0]?.claimMechanisms}
               </Typography>

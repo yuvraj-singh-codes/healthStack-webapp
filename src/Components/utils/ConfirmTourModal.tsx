@@ -53,6 +53,9 @@ const ConfirmTourModal: React.FC<AlertDialogProps> = ({ onClose }) => {
                             onClick={() => {
                                 onClose(false)
                                 handleExit();
+                                localStorage.setItem('isHomeModalTour', 'false')
+                                localStorage.setItem('isProtocolBenefitTour', 'false')
+                                localStorage.setItem('isClaimTourModal', 'false')
                             }}
                             fullWidth
                             sx={{
@@ -66,7 +69,7 @@ const ConfirmTourModal: React.FC<AlertDialogProps> = ({ onClose }) => {
                                 width: "219px",
                                 height: "40px",
                                 mt: 2,
-                                
+
                             }}
                         >
                             Exit tour

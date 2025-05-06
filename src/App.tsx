@@ -57,7 +57,8 @@ export default function App() {
         <Box>
           <TrackPageViews />
           <CookieConsent buttonText="Accept" onAccept={() => ReactGA.initialize('G-KDDY2YF56F')}>
-            Analytics improve our site. No personal data. <a href="/privacy-policy">More</a>
+          We use cookies to understand how people use HealthStack and to improve the experience.
+          By clicking Accept, you agree to the use of analytics. <a href="/privacy-policy">Learn more</a>
           </CookieConsent>
           {/* Routes for the main application */}
           <Routes>
@@ -93,11 +94,11 @@ export default function App() {
           </Routes>
 
           <FeedBackAlert
-            open={false}   //open={open} 
+            open={false}   //open={open}
             onClose={handleClose}
             handleRatingClick={handleRatingClick}
             formData={formData}
-          />   
+          />
         </Box>
       </BrowserRouter>
     </Provider>
