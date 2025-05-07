@@ -52,7 +52,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   }}
                 >
                   {/* Centered Image */}
-                  <Box sx={{ width: "100%", height: "65px",mb:1 }}>
+                  <Box sx={{ width: "100%", height: "auto",mb:1 }}>
                     <img
                       src={item.protocolImageID}
                       alt={item.protocolName}
