@@ -201,7 +201,7 @@ const BenefitProtocolPage: React.FC = () => {
                                         borderRadius: "5px",
                                         objectFit: "cover",
                                         width: "100%",
-                                        
+
                                     }}
                                 />
                                 <Button fullWidth onClick={() => {
@@ -217,7 +217,7 @@ const BenefitProtocolPage: React.FC = () => {
                                     color: '#00C853',
                                     fontSize: '24px',
                                     mt: "-6px",
-                                    lineHeight: "1.1" 
+                                    lineHeight: "1.1"
                                 }}
                             >
                                 {benefitData?.benefitName}
@@ -229,7 +229,7 @@ const BenefitProtocolPage: React.FC = () => {
                             </Typography>
                             <Typography
                                 variant="body2"
-                                sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal', width:'180px' }}
+                                sx={{ color: "#333333", fontSize: '12px', wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                             >
                                 {benefitData?.benefitDescription}
                             </Typography>

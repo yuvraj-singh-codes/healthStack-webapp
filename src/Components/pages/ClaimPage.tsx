@@ -111,7 +111,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
         return "Unknown";
     }
   };
-  
+
 
   const toggleExpand = () => setExpanded((prev) => !prev);
 
@@ -158,7 +158,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                       height: "80px",
                       zIndex: 2,
                       borderRadius: "10px",
-                      
+
                     }}
                   >
                     <img
@@ -172,9 +172,9 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         borderRadius: "10px",
                         objectFit: "cover",
                         width: "100%",
-                        
-                        
-                        
+
+
+
                       }}
                     />
                   </Box>
@@ -193,7 +193,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         borderRadius: "10px",
                         objectFit: "cover",
                         width: "100%",
-                        
+
                       }}
                     />
                   </Box>
@@ -294,7 +294,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                               />
                             ))}
                           </Box>
-                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center", mt: 2 }}>
+                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center", mt: 2.5 }}>
                             <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1, p: "1px" }}>
                               {expanded ? "Read less" : "Read more"}
                               {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
@@ -434,7 +434,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                   <Box>
                                     <Grid container>
                                       <Grid item xs={10}>
-                                        <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700, fontStyle: "italic" }}>{item?.title} </Typography>
+                                        <Typography sx={{ fontSize: "14px", color: "#333333", fontWeight: 700 }}>{item?.title} </Typography>
                                       </Grid>
                                       <Grid item xs={2}>
                                         <Box sx={{ display: "flex", justifyContent: "end", alignItems: "center"}}>

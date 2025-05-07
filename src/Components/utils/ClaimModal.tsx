@@ -39,29 +39,29 @@ const ClaimModal: React.FC<AlertDialogProps> = ({
                             {/* <span style={{ display: "inline-flex", alignItems: "center", }}><img src="/images/book.png" alt="" style={{
                                 height: "20px",
                                 width: "24px",
-                                
+
                                 verticalAlign: "middle",
                             }} /></span> */}
                             <Box sx={{display:"flex",alignItems:"center",marginX:"2px"}}> ( <IoBookOutline  /> )    </Box>
-                         combines.
+                         combines:
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            <strong><span><img src="/images/arrow.png" alt="arrow" /></span>Impact:</strong> how strongly the protocol influences this benefit
+                            <strong><span><img src="/images/arrow.png" alt="arrow" /></span>Impact:</strong> how strongly the protocol influences the benefit.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
                             <strong><span><img src="/images/books.png" alt="books" /></span>{" "}Maturity:</strong> how well-established the research is.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
-                            <strong><span><img src="/images/hands.png" alt="books" /></span>{" "}Consensus:</strong> how much agreement there is among experts
+                            <strong><span><img src="/images/hands.png" alt="books" /></span>{" "}Consensus:</strong> how much agreement there is among experts.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }}>
                         Tap on any <strong>Source</strong> if you’d like to read the research yourself.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }} >
-                        Last but not least: <strong>instructions</strong> for how to do the Protocol correctly.
+                        And finally: <strong>instructions</strong> for how to do the protocol correctly.
                         </Typography>
                         <Typography sx={{ mt: 2, color: "#333333", fontSize: "16px", }} >
-                        That’s it - we hope you enjoy using HealthstStack Early Access!
+                        <strong>That’s it</strong>! We hope you enjoy using HealthStack.
                         </Typography>
                     </Box>
                     <Box sx={{ display: "flex", justifyContent: "center" }}>

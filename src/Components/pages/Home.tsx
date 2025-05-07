@@ -285,6 +285,7 @@ const HomePage: React.FC = () => {
                                 color: activeTab === 0 ? "#fff" : "#A8A8A8",
                                 fontWeight: activeTab === 0 ? "bold" : "",
                                 textTransform: "capitalize",
+                                width:"84px",
                                 px: 4,
                                 "&:hover": { bgcolor: activeTab === 0 ? "#00B44A" : "#f0f0f0" },
                             }}
@@ -300,6 +301,7 @@ const HomePage: React.FC = () => {
                                 color: activeTab === 1 ? "#fff" : "#A8A8A8",
                                 fontWeight: activeTab === 1 ? "bold" : "",
                                 textTransform: "capitalize",
+                                width:"84px",
                                 px: 4,
                                 "&:hover": { bgcolor: activeTab === 1 ? "#347AB5" : "#f0f0f0" },
                             }}
@@ -393,7 +395,7 @@ const HomePage: React.FC = () => {
                                                 backgroundColor: '#f9f9f9',
                                                 p: "5px",
                                                 boxShadow: "none",
-                                          
+
                                             }}
                                         >
                                             <Box sx={{ width: "100%", height: "65px", mb: 1 }}>
