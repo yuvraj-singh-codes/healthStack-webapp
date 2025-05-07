@@ -345,7 +345,7 @@ const HomePage: React.FC = () => {
                                                 boxShadow: "none",
                                             }}
                                         >
-                                            <Box sx={{ width: "100%", height: "auto", mb: 1 }}>
+                                            <Box sx={{ width: "100%", height: "auto" }}>
                                                 <img
                                                     src={item.benefitImageID}
                                                     alt={item.benefitName}
@@ -358,12 +358,12 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
+                                                sx={{paddingLeft:"2px", fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1' }}
                                             >
                                                 {item.benefitName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
+                                                sx={{ paddingLeft:"2px", fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.benefitCategories[0]}
                                             </Typography>
@@ -398,7 +398,7 @@ const HomePage: React.FC = () => {
 
                                             }}
                                         >
-                                            <Box sx={{ width: "100%", height: "auto", mb: 1 }}>
+                                            <Box sx={{ width: "100%", height: "auto" }}>
                                                 <img
                                                     src={item.protocolImageID}
                                                     alt={item.protocolName}
@@ -411,21 +411,21 @@ const HomePage: React.FC = () => {
                                                 />
                                             </Box>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#333333', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '.9', }}
+                                                sx={{ paddingLeft:"2px",fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '.9', }}
                                             >
                                                 {item.protocolName}
                                             </Typography>
                                             <Typography
-                                                sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "10px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
+                                                sx={{paddingLeft:"2px", fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: '1.1', mt: '3px' }}
                                             >
                                                 {item?.protocolCategories[0]}
                                             </Typography>
-                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "5px",mt:1 }}>
-                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
+                                            <Typography sx={{paddingLeft:"2px", fontSize: 12, display: "flex", alignItems: 'center', fontWeight: "bold", gap: "5px",mt:1 }}>
+                                                <img src={timerIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeTimeRating)} */}
                                             </Typography>
-                                            <Typography sx={{ fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "5px",mt:"5px" }}>
-                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator size={12} value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
+                                            <Typography sx={{paddingLeft:"2px", fontSize: 12, display: "flex", alignItems: 'center',  fontWeight: "bold", gap: "5px",mt:"5px" }}>
+                                                <img src={dollarIcon} alt='' height={'14px'} width={'12px'}  />  <StatusIndicator value={item?.protocolRelativeCostRating} colorBoxes={colorBoxes} />
                                                 {/* {getRatingLabel(protocolsData?.protocolRelativeCostRating)} */}
                                             </Typography>
                                         </Card>

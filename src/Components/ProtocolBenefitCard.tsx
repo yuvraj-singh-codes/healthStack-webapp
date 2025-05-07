@@ -58,7 +58,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
                   }}
                 >
                   {/* Image */}
-                  <Box sx={{ width: "100%", height: "auto",mb:1 }}>
+                  <Box sx={{ width: "100%", height: "auto" }}>
                     <img
                       src={item.benefitImageID}
                       alt={item.benefitName}
@@ -73,21 +73,21 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({
 
                   {/* Title */}
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ paddingLeft:"2px", fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item.benefitName}
                   </Typography>
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ paddingLeft:"2px", fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item?.benefitCategories[0]}
                   </Typography>
                 </Box>
                 {/* Icons Section */}
-                <Box sx={{ py: "8px", width: "100%" }}>
+                <Box sx={{ py: "8px", paddingLeft:"2px", width: "100%" }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: "5px",mt:"2px" }}>
                       <img src={medalIcon} alt='' height={'14px'} width={'12px'} />
-                      <StatusIndicator size={12} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                      <StatusIndicator value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                     </Box>
                 </Box>
                 <Button fullWidth onClick={() =>

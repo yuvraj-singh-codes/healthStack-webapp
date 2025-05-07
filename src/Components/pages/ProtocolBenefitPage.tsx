@@ -15,11 +15,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setBenefit } from '../../features/allStateSlice';
 import SearchComponent from '../utils/Search';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import StatusIndicator from '../utils/StatusIndicator';
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import { setValue } from '../../features/tabSlice';
-import { colorBoxes, EvidenceColorBoxes } from '../utils/StatusColor';
+import { colorBoxes } from '../utils/StatusColor';
 import timerIcon from "../../assets/images/timer.svg";
 import dollarIcon from "../../assets/images/dollar.svg"
 
@@ -184,7 +184,7 @@ const ProtocolBenefitPage: React.FC = () => {
                                         borderRadius: "10px",
                                         objectFit: "cover",
                                         width: "100%",
-                                       
+
                                     }}
                                 />
                                 <Button fullWidth onClick={() => {
@@ -230,7 +230,7 @@ const ProtocolBenefitPage: React.FC = () => {
                         </Grid>
                     </Grid>
                     <Grid container mt={"5px"}>
-                        
+
                     </Grid>
                 </Card>
                 <Box sx={{ borderTop: '1px solid #E0E0E0', marginTop:'10px' }} />

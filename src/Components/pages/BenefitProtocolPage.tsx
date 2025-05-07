@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/Store';
 import { setProtocol } from '../../features/allStateSlice';
 import SearchComponent from '../utils/Search';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import ProtocolBenefitModal from '../utils/ProtocolBenefitModal';
 import ConfirmTourModal from '../utils/ConfirmTourModal';
 import { setValue } from '../../features/tabSlice';

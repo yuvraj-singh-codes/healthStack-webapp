@@ -230,7 +230,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                               <Grid container>
                                 <Grid item xs={7}>
                                   <Typography sx={{ color: "#333333", fontSize: "16px" }}>
-                                    Overall Evidence :
+                                    Overall Evidence:
                                     <Typography component="span" sx={{ color: "#333333", fontSize: "16px", fontWeight: 700 }}>
                                       {" "}
                                       {getTextualDescription(newClaim[0]?.claimOverallEvidenceRating)}
@@ -250,7 +250,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                       pt: "3px"
                                     }}
                                   >
-                                    <StatusIndicator size={16} value={newClaim[0]?.claimOverallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
+                                    <StatusIndicator size={14} value={newClaim[0]?.claimOverallEvidenceRating} colorBoxes={EvidenceColorBoxes} />
                                     <img src={medalIcon} alt="" height={"17px"} width={"16px"} style={{ marginLeft: "5px" }} />
                                   </Box>
                                 </Grid>
@@ -330,8 +330,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <StatusIndicator size={16} value={newClaim[0]?.claimImpactRating} colorBoxes={EvidenceColorBoxes} />
-                                  <img src={targetIcon} alt="" height={"20px"} width={"20px"} style={{ marginLeft: "5px", marginBottom: "4px" }} />
+                                  <StatusIndicator size={14} value={newClaim[0]?.claimImpactRating} colorBoxes={EvidenceColorBoxes} />
+                                  <img src={targetIcon} alt="" height={"17px"} width={"16px"} style={{ marginLeft: "5px", marginBottom: "4px" }} />
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>
@@ -367,7 +367,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <StatusIndicator size={16} value={newClaim[0]?.claimMaturityRating} colorBoxes={EvidenceColorBoxes} />
+                                  <StatusIndicator size={14} value={newClaim[0]?.claimMaturityRating} colorBoxes={EvidenceColorBoxes} />
                                   <img src={booksIcon} alt="" height={"17px"} width={"16px"} style={{ marginLeft: "5px" }} />
 
                                 </Box>
@@ -405,8 +405,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                     gap: "5px",
                                   }}
                                 >
-                                  <StatusIndicator size={16} value={newClaim[0]?.claimConsensusRating} colorBoxes={EvidenceColorBoxes} />
-                                  <img src={handShakeIcon} alt="" height={"19px"} width={"20px"} style={{ marginLeft: "5px" }} />
+                                  <StatusIndicator size={14} value={newClaim[0]?.claimConsensusRating} colorBoxes={EvidenceColorBoxes} />
+                                  <img src={handShakeIcon} alt="" height={"17px"} width={"16px"} style={{ marginLeft: "5px" }} />
                                 </Box>
                               </Box>
                               <Typography sx={{ color: "#333333", fontSize: "13px", mt: 1 }}>

@@ -73,7 +73,9 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({
   const roundedValue = Math.round(value);
 
   return (
-    <Box display="flex" alignItems="center" width="100%" gap={gap}>
+    <Box display="flex" alignItems="center"  sx={{
+      ...(size ? {} : { width: "80%" }),
+    }} gap={gap}>
       {colorBoxes.map((color, index) => {
         const isFilled = index < roundedValue;
 
@@ -81,8 +83,15 @@ const StatusIndicator: React.FC<StatusIndicatorProps> = ({
           <Box
             key={index}
             sx={{
-              flex: 1,
-              aspectRatio: '1 / 1',
+              ...(size
+                ? {
+                    width: size,
+                    height: size,
+                  }
+                : {
+                    flex: 1,
+                    aspectRatio: '1 / 1',
+                  }),
               borderRadius: "50%",
               backgroundColor: isFilled ? color : "",
               border: `1px solid ${color}`,

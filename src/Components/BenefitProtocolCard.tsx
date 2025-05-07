@@ -52,7 +52,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   }}
                 >
                   {/* Centered Image */}
-                  <Box sx={{ width: "100%", height: "auto",mb:1 }}>
+                  <Box sx={{ width: "100%", height: "auto" }}>
                     <img
                       src={item.protocolImageID}
                       alt={item.protocolName}
@@ -67,12 +67,12 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   {/* Title */}
                   {/* Title */}
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ paddingLeft:"2px",fontWeight: 'bold', color: '#333333', fontSize: "14px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item.protocolName}
                   </Typography>
                   <Typography
-                    sx={{ fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
+                    sx={{ paddingLeft:"2px",fontWeight: 'bold', color: '#A8A8A8', fontSize: "12px", wordBreak: "break-word", overflowWrap: "break-word", hyphens: "auto", lineHeight: 'normal' }}
                   >
                     {item?.protocolCategories[0]}
                   </Typography>
@@ -80,7 +80,7 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
 
                 {/* Icons Section */}
                 <Box
-                  sx={{ py: 1, width: "100%" }}
+                  sx={{ py: 1, paddingLeft:"2px", width: "100%" }}
                 >
                   <Box sx={{
                     display: 'flex',
@@ -90,15 +90,15 @@ const BenefitProtocolCard: React.FC<BenefitProtocolCardProps> = ({ benefitId, da
                   }}>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "5px" }}>
                       <img src={timerIcon} alt='' height={'13px'} width={'12px'} />
-                      <StatusIndicator size={13} value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} gap={"3px"} />
+                      <StatusIndicator value={item?.protocolRelativeTimeRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center',gap: "5px" }}>
                       <img src={dollerIcon} alt='' height={'13px'} width={'12px'} />
-                      <StatusIndicator size={13} value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} gap={"3px"} />
+                      <StatusIndicator value= {item?.protocolRelativeCostRating} colorBoxes={colorBoxes} gap={"3px"} />
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: "5px",mt:"2px" }}>
                       <img src={medalIcon} alt='' height={'13px'} width={'12px'} />
-                      <StatusIndicator size={13} value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} gap={"3px"} />
+                      <StatusIndicator value={overallEvidenceRating} colorBoxes={EvidenceColorBoxes} gap={"3px"} />
                     </Box>
                   </Box>
                 </Box>
