@@ -420,7 +420,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                     <Box sx={{ marginY: 1 }}>
                       <Typography
                         onClick={toggleText4}
-                        sx={{ fontSize: "20px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, justifyContent: "space-between" }}
+                        sx={{ fontSize: "16px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, justifyContent: "space-between" }}
                       >
                         Sources
                         <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_4 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
@@ -431,7 +431,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                             {newClaim[0]?.claimSources.map((item, index) => (
                               <Grid item xs={12} mt={1} key={index}>
                                 <Box sx={{ display: "flex", gap: "5px" ,mb:1}}>
-                                  <Typography sx={{ fontSize: "16px", color: "#333333", fontWeight: 700 }}>[{index + 1}]</Typography>
+                                  <Typography sx={{ fontSize: "15px", color: "#333333", fontWeight: 700 }}>[{index + 1}]</Typography>
                                   <Box>
                                     <Grid container>
                                       <Grid item xs={10}>
@@ -465,7 +465,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
               <Box mt={1}>
                 <Typography
                   onClick={toggleText2}
-                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 600, width: "auto", justifyContent: "space-between" }}
+                  sx={{ fontSize: "18px", color: "#333333", cursor: "pointer", display: "flex", alignItems: "center", gap: "10px", fontWeight: 700, justifyContent: "space-between" }}
                 >
                   How to do it
                   <IconButton size="small" sx={{ color: "#333333", fontSize: "24px", mt: "3px" }}>{showText.text_2 ? <IoIosArrowUp /> : <IoIosArrowDown />}</IconButton>
@@ -488,7 +488,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                 }
               </Box>
               <Divider sx={{ bgcolor: "#E8E5E5", mt: 1 }} />
-              <Stack spacing={2} mt={6}>
+              <Stack spacing={2} mt={2}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 1 }}>
                   <Button onClick={() => {
                     dispatch(setValue(0));
