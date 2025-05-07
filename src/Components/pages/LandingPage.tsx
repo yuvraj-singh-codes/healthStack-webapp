@@ -64,7 +64,7 @@ const LandingPage = () => {
         }
     }, []);
     return (
-        <Box className="bg-[#FFFFFF] family" sx={{ maxWidth: 600, margin: "auto", py: 2, textAlign: 'center' }}>
+        <Box className="bg-[#FFFFFF] family" sx={{ maxWidth: 500, margin: "auto", py: 2, textAlign: 'center' }}>
             <LandingPageModal isOpen={isOpen} onClose={setIsOpen} />
             <Box>
                 <img
