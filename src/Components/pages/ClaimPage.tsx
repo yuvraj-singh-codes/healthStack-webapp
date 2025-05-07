@@ -267,7 +267,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                         <Box sx={{ position: "relative" }}>
                           <Box
                             sx={{
-                              maxHeight: expanded ? "none" : "57px",
+                              maxHeight: expanded ? "none" : "125px",
                               overflow: "hidden",
                               color: "#333333",
                               fontSize: "13px",
@@ -286,7 +286,8 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                                   wordBreak: "break-word",
                                   hyphens: "auto",
                                   overflowWrap: "break-word",
-                                  lineHeight: "1.3",
+                                  lineHeight: index === paragraphs.length - 1 ? "normal" : "1.3",
+                                  marginBottom: index === paragraphs.length - 1 ? 0 : undefined,
                                 }}
                                 dangerouslySetInnerHTML={{
                                   __html: para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
@@ -294,7 +295,7 @@ const ClaimPage: React.FC<FeedbackProps> = ({ setOpen }) => {
                               />
                             ))}
                           </Box>
-                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center", mt: 2.5 }}>
+                          <Box sx={{ textAlign: "center", display: "flex", justifyContent: "center", mt: 0.5 }}>
                             <Button size="small" onClick={toggleExpand} sx={{ color: "#333333", textTransform: "capitalize", display: "flex", alignItems: 'center', gap: 1, p: "1px" }}>
                               {expanded ? "Read less" : "Read more"}
                               {expanded ? <MdOutlineKeyboardArrowUp size={20} /> : <MdOutlineKeyboardArrowDown size={20} />}
