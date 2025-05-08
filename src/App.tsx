@@ -36,6 +36,8 @@ export default function App() {
     email: "",
   });
 
+  console.log(open)
+
   // Retrieve or generate the session ID
   const sessionID = sessionStorage.getItem("sessionID") || Date.now().toString(); // Use the current time as a fallback session ID
   sessionStorage.setItem("sessionID", sessionID); // Store the session ID in sessionStorage
